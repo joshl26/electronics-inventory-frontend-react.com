@@ -1,6 +1,6 @@
 {
   "name": "electronicsnventoryfrontend",
-  "description": "First pre release version",
+  "description": "First pre release demo version",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
