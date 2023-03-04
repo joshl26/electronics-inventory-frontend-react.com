@@ -1,0 +1,9 @@
+.header_container {
+  width: 100vw;
+  height: 10vh;
+}
+
+.header_text {
+  color: red;
+  font-size: 5em;
+}

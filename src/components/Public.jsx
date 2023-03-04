@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 
 import React from "react";
+import LoginHeader from "../features/pages/LoginHeader";
 
 const Public = () => {
   const content = (
     <section className="public">
-      <Link to="/login">Employee Login</Link>
+      <LoginHeader />
     </section>
   );
 

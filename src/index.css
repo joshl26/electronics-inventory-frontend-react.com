@@ -109,13 +109,12 @@ a:focus-visible {
 }
 
 .public {
-  padding: 1em;
+  /* padding: 1em; */
   flex-grow: 1;
   background-image: url("./img/background2.jpg");
   background-size: cover;
   background-position: top right;
   background-blend-mode: multiply;
-  
 }
 
 .public__main,
