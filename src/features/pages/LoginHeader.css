@@ -7,3 +7,8 @@
   color: red;
   font-size: 5em;
 }
+
+.header_icon {
+  width: 25px;
+  height: 25px;
+}
