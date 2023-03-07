@@ -23,15 +23,11 @@ const LoginHeader = () => {
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Solutions</Nav.Link>
             <NavDropdown title="Plans and Pricing" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Free Tier</NavDropdown.Item>
+              <NavDropdown.Item href="/">Free Tier</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">
-                Creator Tier
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/">Creator Tier</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">
-                Corporate Tier
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/">Corporate Tier</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
