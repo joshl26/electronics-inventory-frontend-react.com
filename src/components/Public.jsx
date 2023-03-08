@@ -4,13 +4,34 @@ import LoginHeader from "../features/pages/LoginHeader";
 import HeroImage from "../features/pages/HeroImage";
 import "./Public.scss";
 import LoginFooter from "../features/pages/LoginFooter";
+import { Container } from "react-bootstrap";
+import SwipeUpIcon from "../svg/SwipeUpIcon.json";
+import Lottie from "lottie-react";
 
 const Public = () => {
+  const SwipeUpClickHandler = () => {
+    console.log("Swipe up clikc handler");
+  };
+
   const content = (
     <section className="public">
+        <Lottie
+          onClick={SwipeUpClickHandler}
+          className="swipe-up-icon"
+          animationData={SwipeUpIcon}
+          loop={true}
+        />
+
       <HeroImage />
       <LoginHeader />
-      <div className="large_spacer"></div>
+
+      <div className="large-spacer">
+        <Container>
+          <h1 className="hero-header-text">
+            Electronics Inventory Managament and Control Software
+          </h1>
+        </Container>
+      </div>
       <LandingPage />
       <LoginFooter />
     </section>

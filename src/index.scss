@@ -24,7 +24,7 @@
   /* COLORS */
   --BGCOLOR: #264653;
   --BORDER-COLOR: #fff;
-  --COLOR: #fff;
+  --COLOR: #ffffff;
   --ERROR: firebrick;
   --INACTIVE: lightgray;
   --LINK-COLOR: whitesmoke;
@@ -35,6 +35,14 @@
   --TABLE-BGCOLOR: #fff;
   --TABLE-COLOR: #000;
   --INPUT-INVALID: #f00;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  color: var(--COLOR);
 }
 
 /* || UTILITY CLASSES */

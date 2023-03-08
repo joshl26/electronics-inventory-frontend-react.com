@@ -6,6 +6,27 @@
   bottom: 0px;
 }
 
-.large_spacer {
+.large-spacer {
   height: 100vh;
+  z-index: 1;
+}
+
+.hero-header-text {
+  opacity: 0.95;
+  font-family: "Gloock", serif;
+  font-size: 8.5em;
+  padding-top: 10vh;
+  text-shadow: 2.5px 2.5px #0b090a;
+}
+
+.swipe-up-icon {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10000;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+  opacity: 0.6;
+  width: 40px;
+  height: 40px;
 }
