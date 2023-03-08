@@ -29,4 +29,5 @@
 .navbar {
   opacity: 0.9;
   background-color: #161a1d !important;
+  z-index: 10 !important;
 }

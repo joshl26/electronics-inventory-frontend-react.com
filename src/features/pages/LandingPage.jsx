@@ -1,4 +1,3 @@
-import { Button } from "react-bootstrap";
 import "./LandingPage.scss";
 
 const LandingPage = () => {
