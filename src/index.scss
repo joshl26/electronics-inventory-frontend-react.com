@@ -90,15 +90,6 @@ a {
   text-decoration: none;
 }
 
-a:any-link {
-  color: var(--LINK-COLOR);
-}
-
-a:hover,
-a:focus-visible {
-  color: var(--LINK-HOVER);
-}
-
 /* || PAGES */
 
 .public,
@@ -367,6 +358,10 @@ tr {
   .form__action-buttons {
     position: static;
   }
+}
+
+.dropdown-menu {
+  background-color: #d3d3d3 !important;
 }
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "custom";

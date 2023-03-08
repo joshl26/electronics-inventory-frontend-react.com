@@ -20,7 +20,9 @@ const LoginHeader = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">What is Ei?</Nav.Link>
+            <Nav.Link className="active" href="#features">
+              What is Ei?
+            </Nav.Link>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Solutions</Nav.Link>
             <NavDropdown title="Plans and Pricing" id="collasible-nav-dropdown">
@@ -32,9 +34,9 @@ const LoginHeader = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="/login">Employee Login</Nav.Link>
+            <Nav.Link href="/login">User Login</Nav.Link>
             <Nav.Link eventKey={2} href="/">
-              New User Signup
+              Signup
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

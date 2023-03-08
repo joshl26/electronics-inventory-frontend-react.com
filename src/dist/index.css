@@ -88,15 +88,6 @@ a {
   text-decoration: none;
 }
 
-a:any-link {
-  color: var(--LINK-COLOR);
-}
-
-a:hover,
-a:focus-visible {
-  color: var(--LINK-HOVER);
-}
-
 /* || PAGES */
 .public,
 .welcome {
@@ -360,6 +351,10 @@ tr {
     position: static;
   }
 }
+.dropdown-menu {
+  background-color: #d3d3d3 !important;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
