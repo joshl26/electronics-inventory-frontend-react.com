@@ -1,20 +1,21 @@
 import "./LoginHeader.scss";
-import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import brandIcon from "../../img/eiicon.png";
 import Lottie from "lottie-react";
 import HamburgerMenu from "../../svg/HamburgerMenu.json";
 
 const LoginHeader = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Lottie animationData={HamburgerMenu} loop={true} />
       <Container className="navbar_container">
         <Navbar.Brand href="#home">
-          <img className="header_icon" src={brandIcon} />
+          <Lottie
+            className="header_icon"
+            animationData={HamburgerMenu}
+            loop={true}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

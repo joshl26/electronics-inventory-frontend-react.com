@@ -1,0 +1,17 @@
+.hero_image {
+  height: 100vh;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: var(--BGCOLOR);
+}
+
+.background_image {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  min-width: 100%;
+  height: 100vh;
+}

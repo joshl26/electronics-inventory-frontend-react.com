@@ -10,7 +10,7 @@
 
 :root {
   /* COLORS */
-  --BGCOLOR: #0f172a;
+  --BGCOLOR: #264653;
   --BORDER-COLOR: #fff;
   --COLOR: #fff;
   --ERROR: firebrick;
@@ -109,12 +109,7 @@ a:focus-visible {
 }
 
 .public {
-  /* padding: 1em; */
-  flex-grow: 1;
-  background-image: url("./img/background2.jpg");
-  background-size: cover;
-  background-position: top right;
-  background-blend-mode: multiply;
+  background-color: var(--BGCOLOR);
 }
 
 .public__main,
@@ -373,3 +368,5 @@ tr {
     position: static;
   }
 }
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "custom";

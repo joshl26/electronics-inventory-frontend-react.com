@@ -1,0 +1,10 @@
+// change the theme
+$theme-colors: (
+  "primary": rgb(105, 235, 100),
+  "dark": #0c71f6,
+  "light": #e0fbfc,
+  "danger": #e0fbfc,
+  "bg-dark": red,
+);
+// Import Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
