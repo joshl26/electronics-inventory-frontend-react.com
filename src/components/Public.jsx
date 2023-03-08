@@ -10,17 +10,18 @@ import Lottie from "lottie-react";
 
 const Public = () => {
   const SwipeUpClickHandler = () => {
+    window.scrollTo(0, 0);
     console.log("Swipe up clikc handler");
   };
 
   const content = (
     <section className="public">
-        <Lottie
-          onClick={SwipeUpClickHandler}
-          className="swipe-up-icon"
-          animationData={SwipeUpIcon}
-          loop={true}
-        />
+      <Lottie
+        onClick={SwipeUpClickHandler}
+        className="swipe-up-icon"
+        animationData={SwipeUpIcon}
+        loop={true}
+      />
 
       <HeroImage />
       <LoginHeader />
@@ -28,7 +29,7 @@ const Public = () => {
       <div className="large-spacer">
         <Container>
           <h1 className="hero-header-text">
-            Electronics Inventory Managament and Control Software
+            Electronics Inventory Management and Control Software
           </h1>
         </Container>
       </div>
