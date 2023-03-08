@@ -3,6 +3,7 @@ import LandingPage from "../features/pages/LandingPage";
 import LoginHeader from "../features/pages/LoginHeader";
 import HeroImage from "../features/pages/HeroImage";
 import "./Public.scss";
+import LoginFooter from "../features/pages/LoginFooter";
 
 const Public = () => {
   const content = (
@@ -11,7 +12,7 @@ const Public = () => {
       <LoginHeader />
       <div className="large_spacer"></div>
       <LandingPage />
-      <div className="spacer"></div>
+      <LoginFooter />
     </section>
   );
 
