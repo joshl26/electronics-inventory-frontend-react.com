@@ -4,14 +4,14 @@ import LoginHeader from "../features/pages/LoginHeader";
 import HeroImage from "../features/pages/HeroImage";
 import "./Public.scss";
 import LoginFooter from "../features/pages/LoginFooter";
-import { Container } from "react-bootstrap";
 import SwipeUpIcon from "../svg/SwipeUpIcon.json";
 import Lottie from "lottie-react";
+import { Row, Col, Container } from "react-bootstrap";
+import CustomerGallery from "../features/pages/CustomerGallery";
 
 const Public = () => {
   const SwipeUpClickHandler = () => {
     window.scrollTo(0, 0);
-    console.log("Swipe up clikc handler");
   };
 
   const content = (
@@ -34,6 +34,8 @@ const Public = () => {
         </Container>
       </div>
       <LandingPage />
+      <CustomerGallery />
+
       <LoginFooter />
     </section>
   );

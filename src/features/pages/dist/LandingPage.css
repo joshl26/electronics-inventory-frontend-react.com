@@ -1,5 +1,5 @@
 .landing_container {
-  height: 300vh;
+  height: 100vh;
   background-color: #161a1d;
   z-index: 1;
 }
@@ -8,6 +8,12 @@
   height: 5vh;
 }
 
+.spacer_large {
+  height: 100vh;
+}
+
 .business-metrics {
   margin: 0 auto;
+  position: absolute;
+  left: 20%;
 }

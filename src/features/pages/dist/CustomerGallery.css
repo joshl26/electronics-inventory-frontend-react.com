@@ -1,0 +1,15 @@
+.customer-gallery {
+  z-index: 1;
+  height: 100vh;
+  background-color: #f4a261;
+  opacity: 0.95;
+}
+
+.customer-icon {
+  width: 400px;
+  padding-top: 5em;
+}
+
+.customer-header-text {
+  font-family: "Cabin", sans-serif;
+}
