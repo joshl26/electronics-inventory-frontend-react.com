@@ -7,6 +7,8 @@ import { useLoginMutation } from "./authApiSlice";
 
 import usePersist from "../../hooks/usePersist";
 
+import "./Login.scss";
+
 const Login = () => {
   const userRef = useRef();
   const errRef = useRef();
@@ -59,9 +61,9 @@ const Login = () => {
   if (isLoading) return <p>Loading...</p>;
 
   const content = (
-    <section className="public">
+    <div className="public">
       <header>
-        <h1>Employee Login</h1>
+        <h1>User Login</h1>
       </header>
       <main className="login">
         <p ref={errRef} className={errClass} aria-live="assertive">
@@ -107,7 +109,7 @@ const Login = () => {
       <footer>
         <Link to="/">Back to Home</Link>
       </footer>
-    </section>
+    </div>
   );
 
   return content;

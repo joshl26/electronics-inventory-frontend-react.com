@@ -28,6 +28,10 @@
   --INPUT-INVALID: #f00;
 }
 
+html {
+  background-color: #161a1d;
+}
+
 p,
 h1,
 .h1,
@@ -36,7 +40,8 @@ h2,
 h3,
 .h3,
 h4,
-.h4 {
+.h4,
+label {
   color: var(--COLOR);
 }
 

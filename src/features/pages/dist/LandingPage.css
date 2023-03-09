@@ -1,5 +1,5 @@
 .landing_container {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #161a1d;
   z-index: 1;
 }
