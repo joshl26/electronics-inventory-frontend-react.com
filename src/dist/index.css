@@ -28,6 +28,10 @@
   --INPUT-INVALID: #f00;
 }
 
+#root {
+  background-color: #161a1d;
+}
+
 html {
   background-color: #161a1d;
 }
@@ -41,7 +45,8 @@ h3,
 .h3,
 h4,
 .h4,
-label {
+label,
+tr {
   color: var(--COLOR);
 }
 
@@ -105,8 +110,10 @@ select {
   flex-flow: column nowrap;
 }
 
-a {
-  text-decoration: none;
+a,
+h1,
+.h1 {
+  text-decoration: none !important;
 }
 
 /* || PAGES */
