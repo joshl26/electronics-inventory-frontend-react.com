@@ -10,7 +10,7 @@ import JohnDeere from "../../svg/johndeere.svg";
 const CustomerGallery = () => {
   return (
     <div className="customer-gallery">
-      <Container>
+      <Container className="customer-gallery-container">
         <div className="spacer"></div>
         <h1 className="customer-header-text">These companies trust Ei:</h1>
         <Row>

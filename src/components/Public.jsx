@@ -29,7 +29,9 @@ const Public = () => {
       <div className="large-spacer">
         <Container>
           <h1 className="hero-header-text">
-            Electronics Inventory Management and Control Software
+            <Container>
+              Electronics Inventory Management and Control Software
+            </Container>
           </h1>
         </Container>
       </div>

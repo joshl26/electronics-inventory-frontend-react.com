@@ -2,9 +2,18 @@
   min-height: 98vh;
 }
 
-.form {
-  margin: 0 auto;
-  width: 70vw;
+@media screen and (min-width: 769px) {
+  .form {
+    margin: 0 auto;
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    margin: 0 auto;
+    width: 60vw;
+  }
 }
 
 .login-header-text {

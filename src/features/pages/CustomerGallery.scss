@@ -5,12 +5,34 @@
   opacity: 0.85;
 }
 
-.customer-icon {
-  width: 400px;
-  padding-top: 5em;
+@media screen and (min-width: 769px) {
+  .customer-header-text {
+    font-family: "Cabin", sans-serif;
+    font-size: 5em;
+  }
+
+  .customer-icon {
+    width: 400px;
+    padding-top: 5em;
+  }
+
+  .customer-gallery-container {
+    width: 90vw;
+  }
 }
 
-.customer-header-text {
-  font-family: "Cabin", sans-serif;
-  font-size: 5em;
+@media screen and (max-width: 768px) {
+  .customer-header-text {
+    font-family: "Cabin", sans-serif;
+    font-size: 1.5em;
+  }
+
+  .customer-icon {
+    width: 100px;
+    padding-top: 5em;
+  }
+
+  .customer-gallery-container {
+    width: 90vw !important;
+  }
 }

@@ -11,12 +11,25 @@
   z-index: 1;
 }
 
-.hero-header-text {
-  opacity: 0.95;
-  font-family: "Gloock", serif;
-  font-size: 8.5em;
-  padding-top: 10vh;
-  text-shadow: 2.5px 2.5px #0b090a;
+@media screen and (min-width: 769px) {
+  .hero-header-text {
+    opacity: 0.95;
+    font-family: "Gloock", serif;
+    font-size: 8.5em;
+    padding-top: 10vh;
+    text-shadow: 2.5px 2.5px #0b090a;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-header-text {
+    margin: 0 auto;
+    opacity: 0.95;
+    font-family: "Gloock", serif;
+    font-size: 3em;
+    padding-top: 20vh;
+    text-shadow: 2.5px 2.5px #0b090a;
+  }
 }
 
 .swipe-up-icon {

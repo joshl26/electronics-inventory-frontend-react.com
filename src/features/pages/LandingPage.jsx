@@ -7,10 +7,10 @@ const LandingPage = () => {
   return (
     <>
       <div className="landing_container">
-        <Container>
+        <Container className="landing-text-container">
           <div className="spacer"></div>
-          <h1>Why choose our Software?</h1>
-          <p>
+          <h1 className="landing-header">Why choose our Software?</h1>
+          <p className="landing-paragraph">
             Doggo ipsum he made many woofs very jealous pupper wow very biscit
             heckin good boys and girls, doggorino. boof doge ur givin me a
             spook. Dat tungg tho big ol long bois borking doggo much ruin diet
