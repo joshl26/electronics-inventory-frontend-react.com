@@ -1,8 +1,18 @@
 .public {
-  height: 100vh;
+  min-height: 98vh;
 }
 
 .form {
   margin: 0 auto;
-  width: 50vw;
+  width: 70vw;
+}
+
+.login-header-text {
+  padding-left: 1em;
+  padding-top: 0.5em;
+}
+
+.login-footer-link {
+  padding-bottom: 1em;
+  padding-left: 1em;
 }

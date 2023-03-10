@@ -277,10 +277,12 @@ tr {
 }
 
 .form__persist {
+  padding-top: 1em;
   display: flex;
   align-items: center;
-  width: 100%;
   gap: 0.5em;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .form__title-row {

@@ -63,12 +63,19 @@ const Login = () => {
   const content = (
     <div className="public">
       <header>
-        <h1>User Login</h1>
+        <h1 className="login-header-text">User Login</h1>
       </header>
       <main className="login">
         <p ref={errRef} className={errClass} aria-live="assertive">
           {errMsg}
         </p>
+        <div className="spacer"></div>
+        <div className="spacer"></div>
+        <div className="spacer"></div>
+        <div className="spacer"></div>
+        <div className="spacer"></div>
+        <div className="spacer"></div>
+        <div className="spacer"></div>
 
         <form className="form" onSubmit={handleSubmit}>
           <label htmlFor="username">Username:</label>
@@ -92,6 +99,8 @@ const Login = () => {
             value={password}
             required
           />
+          <div className="spacer"></div>
+
           <button className="form__submit-button">Sign In</button>
 
           <label htmlFor="persist" className="form__persist">
@@ -107,7 +116,7 @@ const Login = () => {
         </form>
       </main>
       <footer>
-        <Link to="/">Back to Home</Link>
+        <Link className="login-footer-link" to="/">Back to Home</Link>
       </footer>
     </div>
   );
