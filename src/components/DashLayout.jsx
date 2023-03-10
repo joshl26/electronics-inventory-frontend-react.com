@@ -3,6 +3,7 @@ import DashHeader from "./DashHeader";
 import DashFooter from "./DashFooter";
 import { Container } from "react-bootstrap";
 import "./DashLayout.scss";
+import Cards from "./Cards";
 
 const DashLayout = () => {
   return (
@@ -11,7 +12,7 @@ const DashLayout = () => {
       <div className="dash-container">
         <Outlet />
         <div className="dash-main-container">
-          <h1>Playground</h1>
+          <Cards />
         </div>
       </div>
       <DashFooter />
