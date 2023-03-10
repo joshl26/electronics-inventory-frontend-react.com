@@ -45,6 +45,10 @@ html {
   background-color: #161a1d;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 p,
 h1,
 h2,
@@ -170,6 +174,10 @@ h1 {
 
 .dash-header__container--small {
   max-width: 800px;
+}
+
+.dash-header__title {
+  padding-bottom: 0.25em;
 }
 
 .dash-header__nav {

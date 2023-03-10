@@ -11,7 +11,7 @@ const DashLayout = () => {
       <div className="dash-container">
         <Outlet />
         <div className="dash-main-container">
-          <h1> Playground</h1>
+          <h1>Playground</h1>
         </div>
       </div>
       <DashFooter />

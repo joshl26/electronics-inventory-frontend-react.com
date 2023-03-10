@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import "./Welcome.scss";
 
 const Welcome = () => {
   const { username, isManager, isAdmin } = useAuth();
@@ -12,8 +13,8 @@ const Welcome = () => {
 
   const content = (
     <section className="welcome">
-      <p>{today}</p>
-      <h1>Welcome {username}</h1>
+      <p className="welcome-today-text">{today}</p>
+      <h1 className="welcome-header-text">Welcome {username}</h1>
       <p>
         <Link to="/dash/notes" />
         View Notes
