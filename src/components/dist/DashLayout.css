@@ -1,0 +1,8 @@
+.dash-main-container {
+  position: absolute;
+  top: 7vh;
+  left: 15vw;
+  width: 85vw;
+  height: 90vh;
+  background-color: whitesmoke;
+}
