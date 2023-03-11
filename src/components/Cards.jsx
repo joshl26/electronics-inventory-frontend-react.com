@@ -9,15 +9,21 @@ const initItems = [
   { id: "4", content: "one", order: 3 },
   { id: "5", content: "two", order: 4 },
   { id: "6", content: "three", order: 5 },
+  { id: "7", content: "one", order: 6 },
+  { id: "8", content: "two", order: 7 },
+  { id: "9", content: "three", order: 8 },
+  { id: "10", content: "one", order: 9 },
+  { id: "11", content: "two", order: 10 },
+  { id: "12", content: "three", order: 11 },
 ];
 
 // Items positioning methods
 const getXPos = (item) => {
-  return `${item.order * 100 + 8 * item.order + 8}px`;
+  return `${item.order * 200 + 60 * item.order + 23}px`;
 };
 
 const getYPos = (item) => {
-  return `8px`;
+  return `16px`;
 };
 
 var longPress;
@@ -243,19 +249,19 @@ function Cards() {
           <p>{ghost.item.content}</p>
         </div>
       )}
-      <h6 style={{ position: "fixed", left: 0, bottom: 100 }}>
+      <h6 style={{ position: "fixed", left: 500, bottom: 150 }}>
         UI log : {UILog && UILog.toString()}
       </h6>
-      <h6 style={{ position: "fixed", left: 0, bottom: 80 }}>
+      <h6 style={{ position: "fixed", left: 500, bottom: 130 }}>
         rearranged item: {lastRearrangedItemId && lastRearrangedItemId}
       </h6>
-      <h6 style={{ position: "fixed", left: 0, bottom: 60 }}>
+      <h6 style={{ position: "fixed", left: 500, bottom: 110 }}>
         touch over id: {touchOverId}
       </h6>
-      <h6 style={{ position: "fixed", left: 0, bottom: 40 }}>
+      <h6 style={{ position: "fixed", left: 500, bottom: 90 }}>
         touch status: {touchStatus}
       </h6>
-      <h6 style={{ position: "fixed", left: 0, bottom: 20 }}>
+      <h6 style={{ position: "fixed", left: 500, bottom: 20 }}>
         dnd status: {dndStatus}
       </h6>
     </div>

@@ -1,8 +1,8 @@
 .note {
-  background-color: rgb(172, 172, 172);
+  background-color: rgb(134, 134, 134);
   border-radius: 4px;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   position: absolute;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
   transition: left 0.2s, top 0.2s, right 0.2s, box-shadow 0.2s;
@@ -23,6 +23,7 @@
   left: 2vw;
   top: 5vh;
   height: 100%;
-  width: 100%;
+  width: fit-content;
   position: absolute;
+  display: flexbox;
 }
