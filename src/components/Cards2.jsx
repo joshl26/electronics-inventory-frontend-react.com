@@ -37,9 +37,6 @@ const Cards2 = () => {
 
   return (
     <div>
-      <button style={{ marginLeft: "45%" }} onClick={onHandle}>
-        {value === true ? "Increase" : "Decrease"} Grid by 2 columns
-      </button>
       <ResponsiveGridLayout
         className="layout"
         layouts={layout}
@@ -48,7 +45,7 @@ const Cards2 = () => {
         rowHeight={281}
         width={1200}
       >
-        <div key="a" style={{ backgroundColor: "#264653" }}>
+        <div key="a" style={{ backgroundColor: "#E76F51" }}>
           <DemoComponent />
         </div>
         <div key="b" style={{ backgroundColor: "#2A9D8F" }}>

@@ -1,5 +1,5 @@
-const DemoComponent = (props) => {
-  return <div>Card-{props.children}</div>;
+const DemoComponent = () => {
+  return <div>Card</div>;
 };
 
 export default DemoComponent;
