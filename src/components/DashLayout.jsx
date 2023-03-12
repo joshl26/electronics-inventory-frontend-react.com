@@ -6,6 +6,7 @@ import "./DashLayout.scss";
 import Cards from "./Cards";
 import Cards2 from "./Cards2";
 import AddRemoveLayout from "./AddRemoveLayout";
+import ReactGridLayout from "./ReactGridLayout";
 
 const DashLayout = () => {
   return (
@@ -15,8 +16,9 @@ const DashLayout = () => {
         <Outlet />
         <div className="dash-main-container">
           {/* <Cards /> */}
-          <Cards2 />
+          {/* <Cards2 /> */}
           {/* <AddRemoveLayout /> */}
+          <ReactGridLayout />
         </div>
       </div>
       <DashFooter />
