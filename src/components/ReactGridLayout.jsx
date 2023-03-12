@@ -3,16 +3,16 @@ import { Responsive, WidthProvider } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 
-// import "../App.css";
+import "./ReactGridLayout.scss";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 const ReactGridLayout = () => {
   const [layouts, setLayouts] = useState(null);
   const [widgetArray, setWidgetArray] = useState([
-    { i: "widget1", x: 0, y: 0, w: 2, h: 2 },
-    { i: "widget2", x: 2, y: 2, w: 2, h: 2 },
-    { i: "widget3", x: 4, y: 4, w: 2, h: 2 },
+    { i: "widget1", x: 0, y: 0, w: 2, h: 2, c: "#264653" },
+    { i: "widget2", x: 2, y: 0, w: 2, h: 2, c: "#2A9D8F" },
+    { i: "widget3", x: 4, y: 0, w: 2, h: 2, c: "#E9C46A" },
   ]);
 
   const handleModify = (layouts, layout) => {
@@ -25,6 +25,7 @@ const ReactGridLayout = () => {
       tempArray[Number(position.i)].height = position.h;
     });
     setWidgetArray(tempArray);
+    console.log(tempArray);
   };
 
   const handleAdd = () => {
@@ -32,6 +33,7 @@ const ReactGridLayout = () => {
       ...widgetArray,
       { i: "widget" + (widgetArray.length + 1), x: 0, y: 0, w: 2, h: 2 },
     ]);
+    console.log(widgetArray);
   };
 
   const handleDelete = (key) => {
@@ -65,6 +67,7 @@ const ReactGridLayout = () => {
           return (
             <div
               className="reactGridItem"
+              style={{ backgroundColor: widget.c }}
               key={index}
               data-grid={{
                 x: widget?.x,

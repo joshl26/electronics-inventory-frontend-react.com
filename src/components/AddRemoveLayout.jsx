@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { WidthProvider, Responsive } from "react-grid-layout";
 import _ from "lodash";
-import "./AddRemoveLayout.scss";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -65,7 +64,7 @@ const AddRemoveLayout = () => {
       items: state.items.concat({
         i: "n" + state.newCounter,
         x: (state.items.length * 2) % (state.cols || 12),
-        y: Infinity, // puts it at the bottom
+        y: 100, // puts it at the bottom
         w: 2,
         h: 2,
       }),
