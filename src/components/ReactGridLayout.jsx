@@ -13,6 +13,9 @@ const ReactGridLayout = () => {
     { i: "widget1", x: 0, y: 0, w: 2, h: 2, c: "#264653" },
     { i: "widget2", x: 2, y: 0, w: 2, h: 2, c: "#2A9D8F" },
     { i: "widget3", x: 4, y: 0, w: 2, h: 2, c: "#E9C46A" },
+    { i: "widget3", x: 6, y: 0, w: 2, h: 2, c: "#2A9D8F" },
+    { i: "widget4", x: 0, y: 0, w: 2, h: 2, c: "#F4A261" },
+    { i: "widget4", x: 2, y: 2, w: 2, h: 2, c: "#E76F51" },
   ]);
 
   const handleModify = (layouts, layout) => {
