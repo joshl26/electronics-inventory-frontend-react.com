@@ -5,6 +5,7 @@ import "react-resizable/css/styles.css";
 
 import "./ReactGridLayout.scss";
 
+//TODO
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 const ReactGridLayout = () => {
