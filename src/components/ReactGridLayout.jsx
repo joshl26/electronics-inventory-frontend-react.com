@@ -26,6 +26,7 @@ const ReactGridLayout = () => {
       tempArray[Number(position.i)].y = position.y;
       tempArray[Number(position.i)].width = position.w;
       tempArray[Number(position.i)].height = position.h;
+      return position;
     });
     setWidgetArray(tempArray);
     console.log(tempArray);
