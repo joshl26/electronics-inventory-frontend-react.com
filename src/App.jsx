@@ -31,7 +31,6 @@ function App() {
             <Route element={<Prefetch />}>
               <Route path="dash" element={<DashLayout />}>
                 <Route index element={<Welcome />} />
-
                 <Route
                   element={
                     <RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />
