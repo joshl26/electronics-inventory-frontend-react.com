@@ -35,7 +35,14 @@ const ReactGridLayout = () => {
   const handleAdd = () => {
     setWidgetArray([
       ...widgetArray,
-      { i: "widget" + (widgetArray.length + 1), x: 0, y: 0, w: 2, h: 2 },
+      {
+        i: "widget" + (widgetArray.length + 1),
+        x: 0,
+        y: 0,
+        w: 2,
+        h: 2,
+        c: "#E76F51",
+      },
     ]);
     console.log(widgetArray);
   };
