@@ -43,8 +43,8 @@ const router = createBrowserRouter(
         >
           <Route element={<Prefetch />}>
             <Route path="dash">
-              <Route index element={<Welcome />} />
-              <Route element={<DashLayout />} />
+              <Route index element={<DashLayout />} />
+              <Route element={<Welcome />} />
               <Route
                 element={
                   <RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />
