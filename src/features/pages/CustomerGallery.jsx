@@ -15,21 +15,21 @@ const CustomerGallery = () => {
         <h1 className="customer-header-text">These companies trust Ei:</h1>
         <Row>
           <Col>
-            <img className="customer-icon" src={Visa} />
+            <img alt="visa_icon" className="customer-icon" src={Visa} />
           </Col>
           <Col>
-            <img className="customer-icon" src={Coinbase} />
+            <img alt="coinbase_icon" className="customer-icon" src={Coinbase} />
           </Col>
           <Col>
-            <img className="customer-icon" src={Google} />
+            <img alt="google_icon" className="customer-icon" src={Google} />
           </Col>
         </Row>
         <Row>
           <Col>
-            <img className="customer-icon" src={GrandHyatt} />
+            <img alt="grandhyatt_icon" className="customer-icon" src={GrandHyatt} />
           </Col>
           <Col>
-            <img className="customer-icon" src={JohnDeere} />
+            <img alt="johndeers_icon" className="customer-icon" src={JohnDeere} />
           </Col>
         </Row>
       </Container>
