@@ -27,6 +27,7 @@ import PersistLogin from "./features/auth/PersistLogin";
 import RequireAuth from "./features/auth/RequireAuth";
 import { ROLES } from "./config/roles";
 import ErrorPage from "./error-page";
+import ReactGridLayout from "./components/ReactGridLayout";
 
 if (process.env.NODE_ENV === "production") disableReactDevTools();
 
@@ -42,9 +43,8 @@ const router = createBrowserRouter(
           element={<RequireAuth allowedRoles={[...Object.values(ROLES)]} />}
         >
           <Route element={<Prefetch />}>
-            <Route path="dash">
-              <Route index element={<DashLayout />} />
-              <Route element={<Welcome />} />
+            <Route element={<DashLayout />} path="dash">
+              <Route index element={<ReactGridLayout />} />
               <Route
                 element={
                   <RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />

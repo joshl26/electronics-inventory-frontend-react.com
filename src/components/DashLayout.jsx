@@ -11,10 +11,10 @@ const DashLayout = () => {
     <div>
       <DashHeader />
       <div className="dash-container">
-        <Outlet />
         <Welcome />
         <div className="dash-main-container">
-          <ReactGridLayout />
+          <Outlet />
+          {/* <ReactGridLayout /> */}
         </div>
       </div>
       <DashFooter />
