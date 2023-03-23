@@ -28,50 +28,154 @@ import RequireAuth from "./features/auth/RequireAuth";
 import { ROLES } from "./config/roles";
 import ErrorPage from "./error-page";
 
-
 if (process.env.NODE_ENV === "production") disableReactDevTools();
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
-      {/* public routes */}
-      <Route index element={<Public />} />
-      <Route path="login" element={<Login />} />
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route path="/" element={<Layout />}>
+//       {/* public routes */}
+//       <Route index element={<Public />} />
+//       <Route path="login" element={<Login />} />
 
-      {/* Protected Routes */}
-      <Route element={<PersistLogin />}>
-        <Route
-          element={<RequireAuth allowedRoles={[...Object.values(ROLES)]} />}
-        >
-          <Route element={<Prefetch />}>
-            <Route path="dash" element={<DashLayout />}>
-              <Route index element={<Welcome />} />
-              <Route
-                element={
-                  <RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />
-                }
-              >
-                <Route path="users">
-                  <Route index element={<UsersList />} />
-                  <Route path=":id" element={<EditUser />} />
-                  <Route path="new" element={<NewUserForm />} />
-                </Route>
-              </Route>
+//       {/* Protected Routes */}
+//       <Route element={<PersistLogin />}>
+//         <Route
+//           element={<RequireAuth allowedRoles={[...Object.values(ROLES)]} />}
+//         >
+//           <Route element={<Prefetch />}>
+//             <Route path="dash" element={<DashLayout />}>
+//               <Route index element={<Welcome />} />
+//               <Route
+//                 element={
+//                   <RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />
+//                 }
+//               >
+//                 <Route path="users">
+//                   <Route index element={<UsersList />} />
+//                   <Route path=":id" element={<EditUser />} />
+//                   <Route path="new" element={<NewUserForm />} />
+//                 </Route>
+//               </Route>
 
-              <Route path="notes">
-                <Route index element={<NotesList />} />
-                <Route path=":id" element={<EditNote />} />
-                <Route path="new" element={<NewNote />} />
-              </Route>
-            </Route>
-            {/* End Dash */}
-          </Route>
-        </Route>
-      </Route>
-      {/* End Protected Routes */}
-    </Route>
-  )
-);
+//               <Route path="notes">
+//                 <Route index element={<NotesList />} />
+//                 <Route path=":id" element={<EditNote />} />
+//                 <Route path="new" element={<NewNote />} />
+//               </Route>
+//             </Route>
+//             {/* End Dash */}
+//           </Route>
+//         </Route>
+//       </Route>
+//       {/* End Protected Routes */}
+//     </Route>
+//   )
+// );
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        errorElement: <ErrorPage />,
+        children: [
+          { index: true, element: <Public /> },
+          {
+            errorElement: <ErrorPage />,
+            path: "login",
+            element: <Login />,
+          },
+          {
+            errorElement: <ErrorPage />,
+            element: <PersistLogin />,
+            children: [
+              {
+                errorElement: <ErrorPage />,
+                element: (
+                  <RequireAuth allowedRoles={[...Object.values(ROLES)]} />
+                ),
+                children: [
+                  {
+                    errorElement: <ErrorPage />,
+                    element: <Prefetch />,
+                    children: [
+                      {
+                        errorElement: <ErrorPage />,
+                        path: "dash",
+                        element: <DashLayout />,
+                        children: [
+                          {
+                            errorElement: <ErrorPage />,
+                            index: true,
+                            element: <Welcome />,
+                          },
+                          {
+                            errorElement: <ErrorPage />,
+                            element: (
+                              <RequireAuth
+                                allowedRoles={[ROLES.Manager, ROLES.Admin]}
+                              />
+                            ),
+                            children: [
+                              {
+                                errorElement: <ErrorPage />,
+                                path: "users",
+                                children: [
+                                  {
+                                    errorElement: <ErrorPage />,
+                                    index: true,
+                                    element: <UsersList />,
+                                  },
+                                  {
+                                    errorElement: <ErrorPage />,
+                                    element: <EditUser />,
+                                    path: ":id",
+                                  },
+                                  {
+                                    errorElement: <ErrorPage />,
+                                    element: <NewUserForm />,
+                                    path: "new",
+                                  },
+                                ],
+                              },
+                              {
+                                errorElement: <ErrorPage />,
+                                path: "notes",
+                                children: [
+                                  {
+                                    errorElement: <ErrorPage />,
+                                    index: true,
+                                    element: <NotesList />,
+                                  },
+                                  {
+                                    errorElement: <ErrorPage />,
+                                    element: <EditNote />,
+                                    path: ":id",
+                                  },
+                                  {
+                                    errorElement: <ErrorPage />,
+                                    element: <NewNote />,
+                                    path: "new",
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -86,4 +190,3 @@ root.render(
     </React.StrictMode>
   </ThemeProvider>
 );
-
