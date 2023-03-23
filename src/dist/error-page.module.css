@@ -1,0 +1,11 @@
+.error_page_container {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  width: 100vw;
+  height: 100vh;
+}
+
+.spacer {
+  height: 43vh;
+}
