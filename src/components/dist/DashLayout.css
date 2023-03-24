@@ -1,12 +1,7 @@
-.dash-container {
-  height: 85vh;
-}
-
 .dash-sidebar-container {
-  top: 10vh;
   position: fixed;
   background-color: #636363;
-  height: 85vh;
+  height: 100%;
   width: 15vw;
   padding: 1em;
 }

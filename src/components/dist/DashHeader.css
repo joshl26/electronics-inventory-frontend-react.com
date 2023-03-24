@@ -7,6 +7,10 @@
   border-bottom: 1px solid var(--BORDER-COLOR);
 }
 
+.dash-header-link {
+  vertical-align: middle;
+}
+
 .spacer {
   height: 10vh;
 }

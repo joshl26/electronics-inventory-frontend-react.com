@@ -156,8 +156,6 @@ h1 {
 
 /* || DASH HEADER, CONTAINER & FOOTER */
 
-
-
 .dash-header__container {
   display: flex;
   flex-flow: row nowrap;
@@ -167,10 +165,6 @@ h1 {
 
 .dash-header__container--small {
   max-width: 800px;
-}
-
-.dash-header__title {
-  padding-bottom: 0.25em;
 }
 
 .dash-header__nav {
