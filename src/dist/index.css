@@ -149,15 +149,6 @@ h1,
 }
 
 /* || DASH HEADER, CONTAINER & FOOTER */
-.dash-header {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background-color: var(--BGCOLOR);
-  padding: 0 0.5em;
-  border-bottom: 1px solid var(--BORDER-COLOR);
-}
-
 .dash-header__container {
   display: flex;
   flex-flow: row nowrap;
@@ -178,14 +169,6 @@ h1,
   flex-flow: row nowrap;
   justify-content: flex-end;
   gap: 0.5em;
-}
-
-.dash-container {
-  padding: 0.75em 0.5em 0.5em;
-  flex-grow: 1;
-  width: 15vw;
-  background-color: #264653;
-  height: 85vh;
 }
 
 .dash-footer {
@@ -363,14 +346,6 @@ tr {
 @media screen and (min-width: 768px) {
   body {
     font-size: 1.25rem;
-  }
-
-  .dash-header {
-    padding: 0 1em;
-  }
-
-  .dash-container {
-    padding: 1em;
   }
 
   .table {

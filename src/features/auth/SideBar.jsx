@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import "./Welcome.scss";
+import "./SideBar.scss";
 
-const Welcome = () => {
+const SideBar = () => {
   const { username, isManager, isAdmin } = useAuth();
 
   const date = new Date();
@@ -40,4 +40,4 @@ const Welcome = () => {
   return content;
 };
 
-export default Welcome;
+export default SideBar;

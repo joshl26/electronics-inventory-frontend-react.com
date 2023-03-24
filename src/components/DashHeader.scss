@@ -1,0 +1,12 @@
+.dash-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--BGCOLOR);
+  padding: 0 0.5em;
+  border-bottom: 1px solid var(--BORDER-COLOR);
+}
+
+.spacer {
+  height: 10vh;
+}

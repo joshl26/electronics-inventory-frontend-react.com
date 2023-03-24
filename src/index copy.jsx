@@ -15,7 +15,7 @@ import Layout from "./components/Layout";
 import Public from "./components/Public";
 import Login from "./features/auth/Login";
 import DashLayout from "./components/DashLayout";
-import Welcome from "./features/auth/Welcome";
+import Welcome from "./features/auth/SideBar";
 import NotesList from "./features/notes/NotesList";
 import UsersList from "./features/users/UsersList";
 import EditUser from "./features/users/EditUser";

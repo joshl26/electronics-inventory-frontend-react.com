@@ -11,6 +11,8 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 
 import { useSendLogoutMutation } from "../features/auth/authApiSlice";
 
+import "./DashHeader.scss";
+
 import useAuth from "../hooks/useAuth";
 
 const DASH_REGEX = /^\/dash(\/)?$/;
