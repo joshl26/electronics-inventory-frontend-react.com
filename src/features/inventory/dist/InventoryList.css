@@ -5,3 +5,7 @@
 .part__description {
   width: 500px;
 }
+
+.part__owner {
+  width: 200px;
+}

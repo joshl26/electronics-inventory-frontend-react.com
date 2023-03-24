@@ -16,7 +16,7 @@ const InventoryList = () => {
       <td className="table__cell">{part.part_name}</td>
       <td className="table__cell">{part.part_description}</td>
       <td className="table__cell">{part.stock_qty}</td>
-      <td className="table__cell">{part.user}</td>
+      <td className="table__cell">{part.backorder_qty}</td>
       <td className="table__cell">{part.qty}</td>
 
       <td className="table__cell">
@@ -41,13 +41,13 @@ const InventoryList = () => {
           <th scope="col" className="table__th part__qty">
             Qty
           </th>
-          <th scope="col" className="table__th part__owner">
-            Owner
+          <th scope="col" className="table__th part__backqty">
+            Back Qty
           </th>
           <th scope="col" className="table__th part__owner">
-            Owner
+            Created by
           </th>
-          <th scope="col" className="table__th part__description">
+          <th scope="col" className="table__th part__edit">
             Edit
           </th>
         </tr>

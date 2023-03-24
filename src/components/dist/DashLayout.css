@@ -1,6 +1,6 @@
 .dash-sidebar-container {
   position: fixed;
-  background-color: #636363;
+  background-color: var(--color-one);
   height: 100%;
   width: 15vw;
   padding: 1em;

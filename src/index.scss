@@ -23,6 +23,7 @@
 :root {
   /* COLORS */
   --BGCOLOR: #161a1d;
+  --SIDEBARBGCOLOR: #264653;
   --BORDER-COLOR: #fff;
   --COLOR: #ffffff;
   --ERROR: firebrick;
@@ -35,6 +36,11 @@
   --TABLE-BGCOLOR: #fff;
   --TABLE-COLOR: #fff;
   --INPUT-INVALID: #f00;
+  --color-one: #264653;
+  --color-two: #2a9d8f;
+  --color-three: #e9c46a;
+  --color-four: #f4a261;
+  --color-five: #e76f51;
 }
 
 #root {
@@ -91,6 +97,7 @@ tr {
 .icon-button:hover,
 .icon-button:focus-visible {
   transform: scale(1.2);
+  color: var(--color-three);
 }
 
 .icon-button[disabled] {
