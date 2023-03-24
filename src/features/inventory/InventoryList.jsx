@@ -1,5 +1,8 @@
 import str from "../../mock_data/parts.json";
 import Part from "../inventory/Part";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import "./InventoryList.scss";
 
 const InventoryList = () => {
   // const parts = JSON.stringify(str);
@@ -7,30 +10,44 @@ const InventoryList = () => {
   console.log(str);
 
   const tableContent = str.map((part) => (
-    <Part key={part._id} noteId={part._id}>
-      <h1>{part.part_name}</h1>
-    </Part>
+    // <Part key={part._id} noteId={part._id}>
+
+    <tr className="table__row">
+      <td className="table__cell">{part.part_name}</td>
+      <td className="table__cell">{part.part_description}</td>
+      <td className="table__cell">{part.stock_qty}</td>
+      <td className="table__cell">{part.user}</td>
+      <td className="table__cell">{part.qty}</td>
+
+      <td className="table__cell">
+        <button className="icon-button table__button">
+          <FontAwesomeIcon icon={faPenToSquare} />
+        </button>
+      </td>
+    </tr>
+
+    // </Part>
   ));
   const content = (
     <table className="table table--notes">
       <thead className="table__thead">
         <tr>
-          <th scope="col" className="table__th note__status">
-            Username
+          <th scope="col" className="table__th part__name">
+            Part Name
           </th>
-          <th scope="col" className="table__th note__created">
-            Created
+          <th scope="col" className="table__th part__description">
+            Description
           </th>
-          <th scope="col" className="table__th note__updated">
-            Updated
+          <th scope="col" className="table__th part__qty">
+            Qty
           </th>
-          <th scope="col" className="table__th note__title">
-            Title
-          </th>
-          <th scope="col" className="table__th note__username">
+          <th scope="col" className="table__th part__owner">
             Owner
           </th>
-          <th scope="col" className="table__th note__edit">
+          <th scope="col" className="table__th part__owner">
+            Owner
+          </th>
+          <th scope="col" className="table__th part__description">
             Edit
           </th>
         </tr>
