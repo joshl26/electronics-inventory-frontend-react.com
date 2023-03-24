@@ -15,24 +15,33 @@ const SideBar = () => {
     <section className="welcome">
       <p className="welcome-today-text">{today}</p>
       <h1 className="welcome-header-text">Welcome {username}</h1>
-      <p>
-        <Link to="/dash/notes" />
-        View Notes
-      </p>
-      <p>
-        <Link to="/dash/notes/new" />
-        Add new Notes
-      </p>
+
+      <Link to="/dash">
+        <p className="sidebar-links"> DashBoard</p>
+      </Link>
+
+      <Link to="/dash/inventory">
+        <p className="sidebar-links"> Electronics Inventory</p>
+      </Link>
+      <Link to="/dash/inventory/new">
+        <p className="sidebar-links"> Add Parts to Inventory</p>
+      </Link>
+      <Link to="/dash/notes">
+        <p className="sidebar-links"> View Notes</p>
+      </Link>
+      <Link to="/dash/notes/new">
+        <p className="sidebar-links"> Add new Notes</p>
+      </Link>
+
       {(isManager || isAdmin) && (
-        <p>
-          <Link to="/dash/users" /> View User Settings
-        </p>
+        <Link to="/dash/users">
+          <p className="sidebar-links">View User Settings</p>
+        </Link>
       )}
       {(isManager || isAdmin) && (
-        <p>
-          <Link to="/dash/users/new" />
-          Add new User
-        </p>
+        <Link to="/dash/users/new">
+          <p className="sidebar-links"> Add new User</p>
+        </Link>
       )}
     </section>
   );

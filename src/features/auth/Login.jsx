@@ -69,13 +69,6 @@ const Login = () => {
         <p ref={errRef} className={errClass} aria-live="assertive">
           {errMsg}
         </p>
-        <div className="spacer"></div>
-        <div className="spacer"></div>
-        <div className="spacer"></div>
-        <div className="spacer"></div>
-        <div className="spacer"></div>
-        <div className="spacer"></div>
-        <div className="spacer"></div>
 
         <form className="form" onSubmit={handleSubmit}>
           <label htmlFor="username">Username:</label>
@@ -116,7 +109,9 @@ const Login = () => {
         </form>
       </main>
       <footer>
-        <Link className="login-footer-link" to="/">Back to Home</Link>
+        <Link className="login-footer-link" to="/">
+          Back to Home
+        </Link>
       </footer>
     </div>
   );
