@@ -1,9 +1,16 @@
-import data from "../../mock_data/parts.json";
+import str from "../../mock_data/parts.json";
 import Part from "../inventory/Part";
 
 const InventoryList = () => {
-  const tableContent =
-    data?.length && data.map((_id) => <Part key={_id} noteId={_id} />);
+  // const parts = JSON.stringify(str);
+
+  console.log(str);
+
+  const tableContent = str.map((part) => (
+    <Part key={part._id} noteId={part._id}>
+      <h1>{part.part_name}</h1>
+    </Part>
+  ));
   const content = (
     <table className="table table--notes">
       <thead className="table__thead">

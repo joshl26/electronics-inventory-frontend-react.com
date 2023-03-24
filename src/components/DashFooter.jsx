@@ -8,26 +8,9 @@ const DashFooter = () => {
   const { username, status } = useAuth();
 
   const navigate = useNavigate();
-  const { pathname } = useLocation();
-
-  const onGoHomeClicked = () => navigate("/dash");
-
-  let goHomeButton = null;
-  if (pathname !== "/dash") {
-    goHomeButton = (
-      <button
-        className="dash-footer__button icon-button"
-        title="Home"
-        onClick={onGoHomeClicked}
-      >
-        <FontAwesomeIcon icon={faHouse} />
-      </button>
-    );
-  }
 
   const content = (
     <footer className="dash-footer">
-      {/* {goHomeButton} */}
       <p className="dash-footer-paragraph">Current User: {username}</p>
       <p className="dash-footer-paragraph">Status: {status}</p>
     </footer>
