@@ -15,11 +15,9 @@ const SideBar = () => {
     <section className="welcome">
       <p className="welcome-today-text">{today}</p>
       <h1 className="welcome-header-text">Welcome {username}</h1>
-
       <Link to="/dash">
         <p className="sidebar-links"> DashBoard</p>
       </Link>
-
       <Link to="/dash/inventory">
         <p className="sidebar-links"> Electronics Inventory</p>
       </Link>
@@ -32,7 +30,6 @@ const SideBar = () => {
       <Link to="/dash/notes/new">
         <p className="sidebar-links"> Add new Notes</p>
       </Link>
-
       {(isManager || isAdmin) && (
         <Link to="/dash/users">
           <p className="sidebar-links">View User Settings</p>

@@ -15,7 +15,6 @@ import Layout from "./components/Layout";
 import Public from "./components/Public";
 import Login from "./features/auth/Login";
 import DashLayout from "./components/DashLayout";
-import Welcome from "./features/auth/SideBar";
 import NotesList from "./features/notes/NotesList";
 import UsersList from "./features/users/UsersList";
 import EditUser from "./features/users/EditUser";
@@ -28,6 +27,9 @@ import RequireAuth from "./features/auth/RequireAuth";
 import { ROLES } from "./config/roles";
 import ErrorPage from "./error-page";
 import ReactGridLayout from "./components/ReactGridLayout";
+import InventoryList from "./features/inventory/InventoryList";
+import EditPart from "./features/inventory/EditPart";
+import NewPart from "./features/inventory/NewPart";
 
 if (process.env.NODE_ENV === "production") disableReactDevTools();
 
@@ -60,6 +62,11 @@ const router = createBrowserRouter(
                 <Route index element={<NotesList />} />
                 <Route path=":id" element={<EditNote />} />
                 <Route path="new" element={<NewNote />} />
+              </Route>
+              <Route path="inventory">
+                <Route index element={<InventoryList />} />
+                <Route path=":id" element={<EditPart />} />
+                <Route path="new" element={<NewPart />} />
               </Route>
             </Route>
             {/* End Dash */}
