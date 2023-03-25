@@ -63,7 +63,7 @@ const NewPartForm = ({ users }) => {
           </div>
         </div>
         <label className="form__label" htmlFor="title">
-          Title:
+          Part Name:
         </label>
         <input
           className={`form__input ${validTitleClass}`}
