@@ -76,7 +76,7 @@ const NewPartForm = ({ users }) => {
         />
 
         <label className="form__label" htmlFor="text">
-          Text:
+          Description:
         </label>
         <textarea
           className={`form__input form__input--text ${validTextClass}`}
@@ -86,7 +86,7 @@ const NewPartForm = ({ users }) => {
           onChange={onTextChanged}
         />
 
-        <label
+        {/* <label
           className="form__label form__checkbox-container"
           htmlFor="username"
         >
@@ -100,7 +100,7 @@ const NewPartForm = ({ users }) => {
           onChange={onUserIdChanged}
         >
           {options}
-        </select>
+        </select> */}
       </form>
     </>
   );
