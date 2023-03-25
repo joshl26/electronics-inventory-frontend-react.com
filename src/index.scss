@@ -237,6 +237,11 @@ tr {
   padding: 0.5em;
 }
 
+.table__cell {
+  max-height: 30vh;
+  overflow-y: hidden;
+}
+
 .table__cell:last-child {
   display: grid;
   place-content: center;

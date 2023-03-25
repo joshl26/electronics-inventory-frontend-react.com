@@ -13,11 +13,11 @@ const InventoryList = () => {
     // <Part key={part._id} noteId={part._id}>
 
     <tr className="table__row">
-      <td className="table__cell">{part.part_name}</td>
-      <td className="table__cell">{part.part_description}</td>
+      <td className="table__cell">{part.partname}</td>
+      <td className="table__cell">{part.description}</td>
       <td className="table__cell">{part.stock_qty}</td>
-      <td className="table__cell">{part.backorder_qty}</td>
-      <td className="table__cell">{part.qty}</td>
+      <td className="table__cell">{part.back_qty}</td>
+      <td className="table__cell">{part.username}</td>
 
       <td className="table__cell">
         <button className="icon-button table__button">
@@ -32,27 +32,27 @@ const InventoryList = () => {
     <table className="table table--notes">
       <thead className="table__thead">
         <tr>
-          <th scope="col" className="table__th part__name">
+          <th scope="col" className="table__th">
             Part Name
           </th>
-          <th scope="col" className="table__th part__description">
+          <th scope="col" className="table__th">
             Description
           </th>
-          <th scope="col" className="table__th part__qty">
+          <th scope="col" className="table__th">
             Qty
           </th>
-          <th scope="col" className="table__th part__backqty">
+          <th scope="col" className="table__th">
             Back Qty
           </th>
-          <th scope="col" className="table__th part__owner">
+          <th scope="col" className="table__th">
             Created by
           </th>
-          <th scope="col" className="table__th part__edit">
+          <th scope="col" className="table__th">
             Edit
           </th>
         </tr>
       </thead>
-      <tbody>{tableContent}</tbody>
+      <tbody className="table__row">{tableContent}</tbody>
     </table>
   );
   return content;

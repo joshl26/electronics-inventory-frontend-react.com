@@ -1,7 +1,15 @@
-import React from "react";
+import { useSelector } from "react-redux";
+import { selectAllUsers } from "../users/usersApiSlice";
+import NewPartForm from "./NewPartForm";
 
 const NewPart = () => {
-  return <h1>NewPart</h1>;
+  const users = useSelector(selectAllUsers);
+
+  if (!users?.length) return <p>Not Currently Available</p>;
+
+  const content = <NewPartForm users={users} />;
+
+  return content;
 };
 
 export default NewPart;
