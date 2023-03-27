@@ -39,7 +39,6 @@ const NewPartForm = ({ users }) => {
   const options = users.map((user) => {
     return (
       <option key={user.id} value={user.id}>
-        {" "}
         {user.username}
       </option>
     );
@@ -50,9 +49,8 @@ const NewPartForm = ({ users }) => {
   const validTextClass = !text ? "form__input--incomplete" : "";
 
   const content = (
-    <>
+    <div>
       <p className={errClass}>{error?.data?.message}</p>
-
       <form className="form" onSubmit={onSavePartClicked}>
         <div className="form__title-row">
           <h2>Add New Part</h2>
@@ -86,6 +84,16 @@ const NewPartForm = ({ users }) => {
           onChange={onTextChanged}
         />
 
+        <label className="form__label" htmlFor="text">
+          Qty:
+        </label>
+        <textarea
+          className={`form__input form__input--text ${validTextClass}`}
+          id="text"
+          name="text"
+          value={text}
+          onChange={onTextChanged}
+        />
         {/* <label
           className="form__label form__checkbox-container"
           htmlFor="username"
@@ -102,7 +110,7 @@ const NewPartForm = ({ users }) => {
           {options}
         </select> */}
       </form>
-    </>
+    </div>
   );
 
   return content;
