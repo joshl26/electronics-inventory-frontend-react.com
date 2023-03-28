@@ -112,9 +112,7 @@ const renderLabel = (props) => {
 const stepAround = curveCardinal.tension(0.5);
 
 // eslint-disable-next-line import/no-default-export
-export default class AreaChartDemo extends React.Component {
-  static displayName = "AreaChartDemo";
-
+export default class BarChart1 extends React.Component {
   state = initialState;
 
   handleChangeData = () => {

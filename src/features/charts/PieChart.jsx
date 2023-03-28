@@ -188,7 +188,6 @@ export default class Demo extends Component {
         className="pie-chart-wrapper"
         style={{ width: "100%", height: "100%" }}
       >
-        {/* <button onClick={this.handleChangeAnimation}>change animation</button> */}
         <ResponsiveContainer>
           <PieChart style={{ width: "100%", height: "100%" }}>
             <Legend />
@@ -205,7 +204,6 @@ export default class Demo extends Component {
               {data02.map((entry, index) => (
                 <Cell key={`slice-${index}`} fill={colors[index % 10]} />
               ))}
-              {/* <Label value="test" position="outside" /> */}
               <LabelList position="outside" />
             </Pie>
           </PieChart>
