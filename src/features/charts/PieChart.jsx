@@ -184,22 +184,16 @@ export default class Demo extends Component {
     const { data01, data02, data03 } = this.state;
 
     return (
-      <div className="pie-charts">
-        <a
-          href="javascript: void(0);"
-          className="btn update"
-          onClick={this.handleChangeData}
-        >
-          change data
-        </a>
-        <br />
-        {/* <p>Simple PieChart</p> */}
-        <div className="pie-chart-wrapper">
-          {/* <button onClick={this.handleChangeAnimation}>change animation</button> */}
-          <PieChart width={400} height={400}>
+      <div
+        className="pie-chart-wrapper"
+        style={{ width: "100%", height: "100%" }}
+      >
+        {/* <button onClick={this.handleChangeAnimation}>change animation</button> */}
+        <ResponsiveContainer>
+          <PieChart style={{ width: "100%", height: "100%" }}>
             <Legend />
             <Pie
-              data={data01}
+              data={data02}
               dataKey="value"
               cx={200}
               cy={200}
@@ -208,157 +202,14 @@ export default class Demo extends Component {
               outerRadius={80}
               label
             >
-              {data01.map((entry, index) => (
-                <Cell key={`slice-${index}`} fill={colors[index % 10]} />
-              ))}
-              <Label value="test" position="outside" />
-              <LabelList position="outside" />
-            </Pie>
-            {/* <Pie
-              data={data02}
-              dataKey="value"
-              cx={600}
-              cy={200}
-              startAngle={180}
-              endAngle={-180}
-              innerRadius={60}
-              outerRadius={80}
-              label={renderLabelContent}
-              paddingAngle={5}
-              isAnimationActive={this.state.animation}
-            >
               {data02.map((entry, index) => (
                 <Cell key={`slice-${index}`} fill={colors[index % 10]} />
               ))}
-              <Label width={50} position="center">
-                测试换行 测试杭欢
-              </Label>
-            </Pie> */}
-          </PieChart>
-        </div>
-
-        {/* <p>PieChart with two donut</p>
-        <div className="pie-chart-wrapper">
-          <PieChart width={400} height={400}>
-            <Legend verticalAlign="top" />
-            <Pie
-              data={data01}
-              dataKey="value"
-              cx={200}
-              cy={200}
-              innerRadius={50}
-              outerRadius={80}
-            />
-            <Pie
-              data={data03}
-              dataKey="value"
-              cx={200}
-              cy={200}
-              innerRadius={80}
-              outerRadius={100}
-            />
-          </PieChart>
-        </div> */}
-
-        {/* <p>PieChart wrapped by ResponsiveContainer</p>
-        <div
-          className="pie-chart-wrapper"
-          style={{ width: "50%", height: "100%", backgroundColor: "#f5f5f5" }}
-        >
-          <ResponsiveContainer>
-            <PieChart>
-              <Pie
-                data={data01}
-                nameKey="name"
-                dataKey="value"
-                innerRadius="25%"
-                outerRadius="40%"
-              />
-              <Pie
-                data={data01}
-                dataKey="v"
-                innerRadius="45%"
-                outerRadius="80%"
-              />
-              <Tooltip trigger="click" />
-            </PieChart>
-          </ResponsiveContainer>
-        </div> */}
-
-        {/* <p>PieChart wrapped by ResponsiveContainer</p>
-        <div
-          className="pie-chart-wrapper"
-          style={{ width: "50%", height: "100%", backgroundColor: "#f5f5f5" }}
-        >
-          <ResponsiveContainer>
-            <PieChart onMouseEnter={this.handlePieChartEnter}>
-              <Pie
-                data={data01}
-                dataKey="value"
-                innerRadius="25%"
-                outerRadius="40%"
-                activeIndex={this.state.activeIndex}
-                activeShape={renderActiveShape}
-                onMouseEnter={this.onPieEnter}
-                isAnimationActive={false}
-              >
-                {data01.map((entry, index) => (
-                  <Cell key={`slice-${index}`} fill={colors[index % 10]} />
-                ))}
-                <Label value="test" />
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
-        </div> */}
-
-        {/* <p>PieChart has bug about tooltip</p>
-        <div className="pie-chart-wrapper" style={{ width: '50%', height: '100%', backgroundColor: '#f5f5f5' }}>
-          <ResponsiveContainer>
-            <PieChart>
-              <Pie
-                data={data01}
-                dataKey="value"
-                innerRadius="25%"
-                outerRadius="40%"
-                // onMouseEnter={this.handleEnter}
-                onMouseLeave={this.handleLeave}
-              >
-                {data01.map((entry, index) => (
-                  <Cell
-                    key={`slice-${index}`}
-                    fill={colors[index % 10]}
-                    fillOpacity={this.state.activeIndex === index ? 1 : 0.25}
-                  />
-                ))}
-                <Label value="test" />
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
-        </div> */}
-        {/* <div>
-          <p>
-            Pie chart with pattern fill. This improves accessibility by helping people who have difficulty
-            differentiating colors.
-          </p>
-          <svg>
-            <defs>
-              <pattern id="pattern-checkers" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-                <rect className="checker" x="0" width="5" height="5" y="0" />
-                <rect className="checker" x="10" width="5" height="5" y="10" />
-              </pattern>
-            </defs>
-          </svg>
-          <PieChart width={800} height={400}>
-            <Legend />
-            <Pie data={data04} dataKey="value" cx={200} cy={200} startAngle={180} endAngle={0} outerRadius={80} label>
-              <Cell key="slice-1" fill="url(#pattern-checkers)" />
-              <Cell key="slice-2" fill="blue" />
-
-              <Label className="saghanlabel" value="test" position="outside" fill="black" />
+              {/* <Label value="test" position="outside" /> */}
               <LabelList position="outside" />
             </Pie>
           </PieChart>
-        </div> */}
+        </ResponsiveContainer>
       </div>
     );
   }
