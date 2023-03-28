@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
+import PieChart from "../features/charts/PieChart";
 
 import "./ReactGridLayout.scss";
 
@@ -101,6 +102,7 @@ const ReactGridLayout = () => {
                 x
               </button>
               <div>{widget.i}</div>
+              {widget.i === "widget1" ? <PieChart /> : ""}
             </div>
           );
         })}
