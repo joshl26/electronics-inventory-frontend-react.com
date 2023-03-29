@@ -4,6 +4,7 @@ import { useAddNewPartMutation } from "./partsApiSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import { set } from "lodash";
+import { FilePicker } from "../../components/FilePicker";
 
 const NewPartForm = ({ users, partTypes }) => {
   const [addNewPart, { isLoading, isSuccess, isError, error }] =
@@ -114,6 +115,7 @@ const NewPartForm = ({ users, partTypes }) => {
         >
           {options}
         </select>
+        <FilePicker />
       </form>
     </div>
   );
