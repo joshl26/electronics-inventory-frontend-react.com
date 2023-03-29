@@ -19,7 +19,8 @@ var settingsSlice = (0, _toolkit.createSlice)({
       partPackageStyle: "",
       partImages: [],
       partKeyWords: [],
-      partSMT: false
+      partSMT: false,
+      partType: "resistor"
     }
   },
   reducers: {

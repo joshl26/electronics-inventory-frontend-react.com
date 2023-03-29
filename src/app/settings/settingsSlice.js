@@ -13,6 +13,7 @@ export const settingsSlice = createSlice({
       partImages: [],
       partKeyWords: [],
       partSMT: false,
+      partType: "resistor",
     },
   },
   reducers: {

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-import PieChart from "../features/charts/PieChart";
-import BarChart1 from "../features/charts/BarChart1";
+// import PieChart from "../features/charts/PieChart";
+// import BarChart1 from "../features/charts/BarChart1";
 
 import "./ReactGridLayout.scss";
-import AreaChart1 from "../features/charts/AreaChart1";
+// import AreaChart1 from "../features/charts/AreaChart1";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -35,20 +35,20 @@ const ReactGridLayout = () => {
     console.log(tempArray);
   };
 
-  const handleAdd = () => {
-    setWidgetArray([
-      ...widgetArray,
-      {
-        i: "widget" + (widgetArray.length + 1),
-        x: 0,
-        y: 0,
-        w: 2,
-        h: 2,
-        c: "#E76F51",
-      },
-    ]);
-    console.log(widgetArray);
-  };
+  // const handleAdd = () => {
+  //   setWidgetArray([
+  //     ...widgetArray,
+  //     {
+  //       i: "widget" + (widgetArray.length + 1),
+  //       x: 0,
+  //       y: 0,
+  //       w: 2,
+  //       h: 2,
+  //       c: "#E76F51",
+  //     },
+  //   ]);
+  //   console.log(widgetArray);
+  // };
 
   const handleDelete = (key) => {
     const tempArray = widgetArray.slice();
@@ -104,9 +104,9 @@ const ReactGridLayout = () => {
                 x
               </button>
               {/* <div>{widget.i}</div> */}
-              {widget.i === "widget1" ? <PieChart /> : ""}
+              {/* {widget.i === "widget1" ? <PieChart /> : ""}
               {widget.i === "widget2" ? <BarChart1 /> : ""}
-              {widget.i === "widget3" ? <AreaChart1 /> : ""}
+              {widget.i === "widget3" ? <AreaChart1 /> : ""} */}
             </div>
           );
         })}
