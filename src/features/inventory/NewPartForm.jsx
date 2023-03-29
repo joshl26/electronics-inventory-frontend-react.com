@@ -10,6 +10,7 @@ const NewPartForm = ({ users }) => {
 
   const navigate = useNavigate();
 
+  const [qty, setQty] = useState(0);
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [userId, setUserId] = useState(users[0].id);
@@ -25,14 +26,14 @@ const NewPartForm = ({ users }) => {
 
   const onTitleChanged = (e) => setTitle(e.target.value);
   const onTextChanged = (e) => setText(e.target.value);
-  const onUserIdChanged = (e) => setUserId(e.target.value);
+  const onQtyChanged = (e) => setQty(e.target.value);
 
   const canSave = [title, text, userId].every(Boolean) && !isLoading;
 
   const onSavePartClicked = async (e) => {
     e.preventDefault();
     if (canSave) {
-      await addNewPart({ user: userId, title, text });
+      await addNewPart({ user: userId, title, text, qty });
     }
   };
 
@@ -84,31 +85,18 @@ const NewPartForm = ({ users }) => {
           onChange={onTextChanged}
         />
 
-        <label className="form__label" htmlFor="text">
+        <label className="form__label" htmlFor="qty">
           Qty:
         </label>
-        <textarea
+        <input
           className={`form__input form__input--text ${validTextClass}`}
-          id="text"
-          name="text"
-          value={text}
-          onChange={onTextChanged}
+          id="qty"
+          name="qty"
+          type="number"
+          onChange={onQtyChanged}
+          value={qty}
         />
-        {/* <label
-          className="form__label form__checkbox-container"
-          htmlFor="username"
-        >
-          ASSIGNED TO:
-        </label>
-        <select
-          id="username"
-          name="username"
-          className="form__select"
-          value={userId}
-          onChange={onUserIdChanged}
-        >
-          {options}
-        </select> */}
+        <input type="reset"></input>
       </form>
     </div>
   );
