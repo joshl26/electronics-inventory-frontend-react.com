@@ -3,8 +3,6 @@ import { apiSlice } from "./api/apiSlice";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import authReducer from "../features/auth/authSlice";
 import settingsReducer from "./settings/settingsSlice";
-import { composeWithDevTools } from "@redux-devtools/extension";
-import { applyMiddleware } from "redux";
 
 export const store = configureStore({
   reducer: {

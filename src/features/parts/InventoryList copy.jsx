@@ -1,5 +1,5 @@
 import str from "../../mock_data/parts.json";
-import Part from "../inventory/Part";
+import Part from "./Part";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import "./InventoryList.scss";
@@ -9,7 +9,7 @@ const InventoryList = () => {
 
   console.log(str);
 
-  const tableContent = str.map((part, idx) => (
+  const tableContent = Part.map((part, idx) => (
     // <Part key={part._id} noteId={part._id}>
 
     <tr key={idx} className="table__row">

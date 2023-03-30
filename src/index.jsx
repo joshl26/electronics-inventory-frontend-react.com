@@ -27,9 +27,9 @@ import RequireAuth from "./features/auth/RequireAuth";
 import { ROLES } from "./config/roles";
 import ErrorPage from "./error-page";
 import ReactGridLayout from "./components/ReactGridLayout";
-import InventoryList from "./features/inventory/InventoryList";
-import EditPart from "./features/inventory/EditPart";
-import NewPart from "./features/inventory/NewPart";
+import PartsList from "./features/parts/PartsList";
+import EditPart from "./features/parts/EditPart";
+import NewPart from "./features/parts/NewPart";
 
 if (process.env.NODE_ENV === "production") disableReactDevTools();
 
@@ -64,7 +64,7 @@ const router = createBrowserRouter(
                 <Route path="new" element={<NewNote />} />
               </Route>
               <Route path="parts">
-                <Route index element={<InventoryList />} />
+                <Route index element={<PartsList />} />
                 <Route path=":id" element={<EditPart />} />
                 <Route path="new" element={<NewPart />} />
               </Route>

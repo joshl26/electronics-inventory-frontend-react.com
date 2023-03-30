@@ -15,10 +15,6 @@ var _authSlice = _interopRequireDefault(require("../features/auth/authSlice"));
 
 var _settingsSlice = _interopRequireDefault(require("./settings/settingsSlice"));
 
-var _extension = require("@redux-devtools/extension");
-
-var _redux = require("redux");
-
 var _reducer;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
