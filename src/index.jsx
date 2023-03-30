@@ -63,7 +63,7 @@ const router = createBrowserRouter(
                 <Route path=":id" element={<EditNote />} />
                 <Route path="new" element={<NewNote />} />
               </Route>
-              <Route path="inventory">
+              <Route path="parts">
                 <Route index element={<InventoryList />} />
                 <Route path=":id" element={<EditPart />} />
                 <Route path="new" element={<NewPart />} />

@@ -9,10 +9,10 @@ const InventoryList = () => {
 
   console.log(str);
 
-  const tableContent = str.map((part) => (
+  const tableContent = str.map((part, idx) => (
     // <Part key={part._id} noteId={part._id}>
 
-    <tr className="table__row">
+    <tr key={idx} className="table__row">
       <td className="table__cell">{part.partname}</td>
       <td className="table__cell">{part.description}</td>
       <td className="table__cell">{part.stock_qty}</td>

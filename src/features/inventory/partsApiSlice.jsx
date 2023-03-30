@@ -38,7 +38,8 @@ export const partsApiSlice = apiSlice.injectEndpoints({
         body: {
           ...initialPart,
         },
-      }),
+      }
+      ),
       invalidatesTags: [{ type: "Part", id: "LIST" }],
     }),
     updatePart: builder.mutation({

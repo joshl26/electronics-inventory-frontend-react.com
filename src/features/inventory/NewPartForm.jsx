@@ -12,7 +12,7 @@ const NewPartForm = ({ users, partTypes }) => {
 
   const navigate = useNavigate();
 
-  const [partType, setPartType] = useState("");
+  const [partType, setPartType] = useState("None");
   const [qty, setQty] = useState(0);
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
@@ -24,8 +24,8 @@ const NewPartForm = ({ users, partTypes }) => {
       setText("");
       setUserId("");
       setQty(0);
-      setPartType("");
-      navigate("/dash/inventory");
+      setPartType("None");
+      navigate("/dash/parts");
     }
   }, [isSuccess, navigate]);
 
@@ -43,8 +43,12 @@ const NewPartForm = ({ users, partTypes }) => {
     }
   };
 
-  const options = partTypes.map((types) => {
-    return <option value={types}>{types}</option>;
+  const options = partTypes.map((types, idx) => {
+    return (
+      <option key={idx} value={types}>
+        {types}
+      </option>
+    );
   });
 
   const errClass = isError ? "errmsg" : "offscreen";

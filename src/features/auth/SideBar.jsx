@@ -18,10 +18,10 @@ const SideBar = () => {
       <Link to="/dash">
         <p className="sidebar-links"> DashBoard</p>
       </Link>
-      <Link to="/dash/inventory">
+      <Link to="/dash/parts">
         <p className="sidebar-links"> Electronics Inventory</p>
       </Link>
-      <Link to="/dash/inventory/new">
+      <Link to="/dash/parts/new">
         <p className="sidebar-links"> Add Parts to Inventory</p>
       </Link>
       <Link to="/dash/notes">
