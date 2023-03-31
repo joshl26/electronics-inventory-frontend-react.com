@@ -49,25 +49,31 @@ const PartsList = () => {
       filteredIds.map((partId) => <Part key={partId} partId={partId} />);
 
     content = (
-      <table className="table table--notes">
+      <table className="table table--parts">
         <thead className="table__thead">
           <tr>
-            <th scope="col" className="table__th note__status">
+            <th scope="col" className="table__th part__name">
               Part Name
             </th>
-            <th scope="col" className="table__th note__created">
+            <th scope="col" className="table__th part__description">
               Description
             </th>
-            <th scope="col" className="table__th note__updated">
+            <th scope="col" className="table__th part__qty">
               Qty
             </th>
-            <th scope="col" className="table__th note__title">
+            <th scope="col" className="table__th part__type">
               Part Type
             </th>
-            <th scope="col" className="table__th note__username">
+            <th scope="col" className="table__th part__username">
               Owner
             </th>
-            <th scope="col" className="table__th note__edit">
+            <th scope="col" className="table__th part__created">
+              Created
+            </th>
+            <th scope="col" className="table__th part__updated">
+              Updated
+            </th>
+            <th scope="col" className="table__th part__edit">
               Edit
             </th>
           </tr>

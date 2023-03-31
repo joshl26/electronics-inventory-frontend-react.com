@@ -30,12 +30,13 @@ const Part = ({ partId }) => {
 
     return (
       <tr className="table__row">
-        <td className="table__cell part__created">{part.name}</td>
-        <td className="table__cell part__updated">{part.description}</td>
-        <td className="table__cell part__title">{part.qty}</td>
-        <td className="table__cell part__username">{part.partType}</td>
+        <td className="table__cell part__name">{part.name}</td>
+        <td className="table__cell part__description">{part.description}</td>
+        <td className="table__cell part__qty">{part.qty}</td>
+        <td className="table__cell part__type">{part.partType}</td>
         <td className="table__cell part__username">{part.username}</td>
-
+        <td className="table__cell part__created">{part.createdAt}</td>
+        <td className="table__cell part__updated">{part.updatedAt}</td>
         <td className="table__cell">
           <button className="icon-button table__button" onClick={handleEdit}>
             <FontAwesomeIcon icon={faPenToSquare} />
