@@ -7,14 +7,15 @@ import "./PartsList.scss";
 const PartsList = () => {
   const { username, isManager, isAdmin } = useAuth();
 
+  //TODO Determnine why the first argument in useGetPartsQuery needs to be undetermined here
   const {
     data: parts,
     isLoading,
     isSuccess,
     isError,
     error,
-  } = useGetPartsQuery("partslist", {
-    pollingInterval: 15000,
+  } = useGetPartsQuery(undefined, {
+    pollingInterval: 60000,
     refetchOnFocus: true,
     refetchOnMountOrArgChange: true,
   });

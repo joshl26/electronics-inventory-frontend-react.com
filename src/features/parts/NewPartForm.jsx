@@ -14,14 +14,14 @@ const NewPartForm = ({ users, partTypes }) => {
 
   const [partType, setPartType] = useState("None");
   const [qty, setQty] = useState(0);
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
   const [userId, setUserId] = useState(users[0].id);
 
   useEffect(() => {
     if (isSuccess) {
-      setTitle("");
-      setText("");
+      setName("");
+      setDescription("");
       setUserId("");
       setQty(0);
       setPartType("None");
@@ -29,17 +29,17 @@ const NewPartForm = ({ users, partTypes }) => {
     }
   }, [isSuccess, navigate]);
 
-  const onTitleChanged = (e) => setTitle(e.target.value);
-  const onTextChanged = (e) => setText(e.target.value);
+  const onNameChanged = (e) => setName(e.target.value);
+  const onDescriptionChanged = (e) => setDescription(e.target.value);
   const onQtyChanged = (e) => setQty(e.target.value);
   const onPartTypeChanged = (e) => setPartType(e.target.value);
 
-  const canSave = [title, text, userId].every(Boolean) && !isLoading;
+  const canSave = [name, description, userId].every(Boolean) && !isLoading;
 
   const onSavePartClicked = async (e) => {
     e.preventDefault();
     if (canSave) {
-      await addNewPart({ user: userId, title, text, qty, partType });
+      await addNewPart({ user: userId, name, description, qty, partType });
     }
   };
 
@@ -52,8 +52,8 @@ const NewPartForm = ({ users, partTypes }) => {
   });
 
   const errClass = isError ? "errmsg" : "offscreen";
-  const validTitleClass = !title ? "form__input--incomplete" : "";
-  const validTextClass = !text ? "form__input--incomplete" : "";
+  const validNameClass = !name ? "form__input--incomplete" : "";
+  const validDescriptionClass = !description ? "form__input--incomplete" : "";
 
   const content = (
     <div>
@@ -74,24 +74,24 @@ const NewPartForm = ({ users, partTypes }) => {
           Part Name:
         </label>
         <input
-          className={`form__input ${validTitleClass}`}
-          id="title"
-          name="title"
+          className={`form__input ${validNameClass}`}
+          id="name"
+          name="name"
           type="text"
           autoComplete="off"
-          value={title}
-          onChange={onTitleChanged}
+          value={name}
+          onChange={onNameChanged}
         />
 
-        <label className="form__label" htmlFor="text">
+        <label className="form__label" htmlFor="description">
           Description:
         </label>
         <textarea
-          className={`form__input form__input--text ${validTextClass}`}
-          id="text"
-          name="text"
-          value={text}
-          onChange={onTextChanged}
+          className={`form__input form__input--text ${validDescriptionClass}`}
+          id="description"
+          name="description"
+          value={description}
+          onChange={onDescriptionChanged}
         />
 
         <label className="form__label" htmlFor="qty">

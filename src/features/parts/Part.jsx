@@ -34,6 +34,8 @@ const Part = ({ partId }) => {
         <td className="table__cell part__updated">{part.description}</td>
         <td className="table__cell part__title">{part.qty}</td>
         <td className="table__cell part__username">{part.partType}</td>
+        <td className="table__cell part__username">{part.username}</td>
+
         <td className="table__cell">
           <button className="icon-button table__button" onClick={handleEdit}>
             <FontAwesomeIcon icon={faPenToSquare} />
