@@ -354,6 +354,10 @@ tr {
     grid-template-columns: repeat(3, 1fr) 2fr repeat(2, 1fr);
   }
 
+  .table--parts {
+    grid-template-columns: repeat(5, 1fr) 2fr repeat(2, 1fr);
+  }
+
   .note__created,
 .note__updated,
 .note__username {

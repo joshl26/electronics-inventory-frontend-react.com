@@ -29,7 +29,7 @@ const Part = ({ partId }) => {
     const handleEdit = () => navigate(`/dash/parts/${partId}`);
 
     return (
-      <tr className="table__row">
+      <tr>
         <td className="table__cell part__name">{part.name}</td>
         <td className="table__cell part__description">{part.description}</td>
         <td className="table__cell part__qty">{part.qty}</td>
@@ -37,7 +37,7 @@ const Part = ({ partId }) => {
         <td className="table__cell part__username">{part.username}</td>
         <td className="table__cell part__created">{part.createdAt}</td>
         <td className="table__cell part__updated">{part.updatedAt}</td>
-        <td className="table__cell">
+        <td className="table__cell part__edit">
           <button className="icon-button table__button" onClick={handleEdit}>
             <FontAwesomeIcon icon={faPenToSquare} />
           </button>
