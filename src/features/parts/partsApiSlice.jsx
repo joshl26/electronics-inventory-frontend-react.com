@@ -1,10 +1,7 @@
 import { createSelector, createEntityAdapter } from "@reduxjs/toolkit";
 import { apiSlice } from "../../app/api/apiSlice";
 
-const partsAdapter = createEntityAdapter({
-  sortComparer: (a, b) =>
-    a.completed === b.completed ? 0 : a.completed ? 1 : -1,
-});
+const partsAdapter = createEntityAdapter({});
 
 const initialState = partsAdapter.getInitialState();
 
@@ -38,8 +35,7 @@ export const partsApiSlice = apiSlice.injectEndpoints({
         body: {
           ...initialPart,
         },
-      }
-      ),
+      }),
       invalidatesTags: [{ type: "Part", id: "LIST" }],
     }),
     updatePart: builder.mutation({
@@ -54,7 +50,7 @@ export const partsApiSlice = apiSlice.injectEndpoints({
     }),
     deletePart: builder.mutation({
       query: ({ id }) => ({
-        url: `/parts`,
+        url: "/parts",
         method: "DELETE",
         body: { id },
       }),

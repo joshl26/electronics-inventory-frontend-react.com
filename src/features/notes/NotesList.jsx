@@ -38,6 +38,9 @@ const NotesList = () => {
       );
     }
 
+    console.log(filteredIds);
+    console.log(notes);
+
     const tableContent =
       ids?.length &&
       filteredIds.map((noteId) => <Note key={noteId} noteId={noteId} />);

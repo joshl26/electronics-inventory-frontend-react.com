@@ -1,60 +1,81 @@
-import str from "../../mock_data/parts.json";
+// import str from "../../mock_data/parts.json";
 import Part from "./Part";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { useGetPartsQuery } from "./partsApiSlice";
+import useAuth from "../../hooks/useAuth";
 import "./PartsList.scss";
 
 const PartsList = () => {
-  // const parts = JSON.stringify(str);
+  const { username, isManager, isAdmin } = useAuth();
 
-  console.log(str);
+  const {
+    data: parts,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+  } = useGetPartsQuery("partslist", {
+    pollingInterval: 15000,
+    refetchOnFocus: true,
+    refetchOnMountOrArgChange: true,
+  });
 
-  const tableContent = str.map((part, idx) => (
-    // <Part key={part._id} noteId={part._id}>
+  let content;
 
-    <tr key={idx} className="table__row">
-      <td className="table__cell">{part.partname}</td>
-      <td className="table__cell">{part.description}</td>
-      <td className="table__cell">{part.stock_qty}</td>
-      <td className="table__cell">{part.back_qty}</td>
-      <td className="table__cell">{part.username}</td>
+  if (isLoading) content = <p>Loading...</p>;
 
-      <td className="table__cell">
-        <button className="icon-button table__button">
-          <FontAwesomeIcon icon={faPenToSquare} />
-        </button>
-      </td>
-    </tr>
+  if (isError) {
+    content = <p className="errmsg">{error?.data?.message}</p>;
+  }
 
-    // </Part>
-  ));
-  const content = (
-    <table className="table table--notes">
-      <thead className="table__thead">
-        <tr>
-          <th scope="col" className="table__th">
-            Part Name
-          </th>
-          <th scope="col" className="table__th">
-            Description
-          </th>
-          <th scope="col" className="table__th">
-            Qty
-          </th>
-          <th scope="col" className="table__th">
-            Back Qty
-          </th>
-          <th scope="col" className="table__th">
-            Created by
-          </th>
-          <th scope="col" className="table__th">
-            Edit
-          </th>
-        </tr>
-      </thead>
-      <tbody className="table__row">{tableContent}</tbody>
-    </table>
-  );
+  if (isSuccess) {
+    const { ids, entities } = parts;
+
+    let filteredIds;
+
+    if (isManager || isAdmin) {
+      filteredIds = [...ids];
+    } else {
+      filteredIds = ids.filter(
+        (noteId) => entities[noteId].username === username
+      );
+    }
+
+    // console.log(filteredIds);
+    // console.log(parts);
+
+    const tableContent =
+      ids?.length &&
+      filteredIds.map((partId) => <Part key={partId} partId={partId} />);
+
+    content = (
+      <table className="table table--notes">
+        <thead className="table__thead">
+          <tr>
+            <th scope="col" className="table__th note__status">
+              Part Name
+            </th>
+            <th scope="col" className="table__th note__created">
+              Description
+            </th>
+            <th scope="col" className="table__th note__updated">
+              Qty
+            </th>
+            <th scope="col" className="table__th note__title">
+              Part Type
+            </th>
+            <th scope="col" className="table__th note__username">
+              Owner
+            </th>
+            <th scope="col" className="table__th note__edit">
+              Edit
+            </th>
+          </tr>
+        </thead>
+        <tbody>{tableContent}</tbody>
+      </table>
+    );
+  }
+
   return content;
 };
 

@@ -3,10 +3,15 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 import { useSelector } from "react-redux";
-import { selectPartById } from "./partsApiSlice";
+import { selectPartById, selectAllParts } from "./partsApiSlice";
 
 const Part = ({ partId }) => {
+  console.log(partId);
   const part = useSelector((state) => selectPartById(state, partId));
+  const pal = useSelector((state) => selectAllParts(state));
+
+  console.log(part);
+  console.log(pal);
 
   const navigate = useNavigate();
 
@@ -21,22 +26,14 @@ const Part = ({ partId }) => {
       month: "long",
     });
 
-    const handleEdit = () => navigate(`/dash/part/${partId}`);
+    const handleEdit = () => navigate(`/dash/parts/${partId}`);
 
     return (
       <tr className="table__row">
-        <td className="table__cell part__status">
-          {part.completed ? (
-            <span className="part__status--completed">Completed</span>
-          ) : (
-            <span className="part__status--open">Open</span>
-          )}
-        </td>
-        <td className="table__cell part__created">{created}</td>
-        <td className="table__cell part__updated">{updated}</td>
-        <td className="table__cell part__title">{part.title}</td>
-        <td className="table__cell part__username">{part.username}</td>
-
+        <td className="table__cell part__created">{part.name}</td>
+        <td className="table__cell part__updated">{part.description}</td>
+        <td className="table__cell part__title">{part.qty}</td>
+        <td className="table__cell part__username">{part.partType}</td>
         <td className="table__cell">
           <button className="icon-button table__button" onClick={handleEdit}>
             <FontAwesomeIcon icon={faPenToSquare} />

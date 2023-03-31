@@ -3,10 +3,14 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 import { useSelector } from "react-redux";
-import { selectNoteById } from "./notesApiSlice";
+import { selectNoteById, selectAllNotes } from "./notesApiSlice";
 
 const Note = ({ noteId }) => {
+  console.log(noteId);
   const note = useSelector((state) => selectNoteById(state, noteId));
+
+  const pal = useSelector((state) => selectAllNotes(state));
+  console.log(pal);
 
   const navigate = useNavigate();
 
