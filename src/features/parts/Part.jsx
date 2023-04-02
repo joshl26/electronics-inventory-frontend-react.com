@@ -3,28 +3,28 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 import { useSelector } from "react-redux";
-import { selectPartById, selectAllParts } from "./partsApiSlice";
+import { selectPartById } from "./partsApiSlice";
 
 const Part = ({ partId }) => {
   console.log(partId);
   const part = useSelector((state) => selectPartById(state, partId));
-  const pal = useSelector((state) => selectAllParts(state));
+  // const pal = useSelector((state) => selectAllParts(state));
 
-  console.log(part);
-  console.log(pal);
+  // console.log(part);
+  // console.log(pal);
 
   const navigate = useNavigate();
 
   if (part) {
-    const created = new Date(part.createdAt).toLocaleString("en-US", {
-      day: "numeric",
-      month: "long",
-    });
+    // const created = new Date(part.createdAt).toLocaleString("en-US", {
+    //   day: "numeric",
+    //   month: "long",
+    // });
 
-    const updated = new Date(part.updatedAt).toLocaleString("en-US", {
-      day: "numeric",
-      month: "long",
-    });
+    // const updated = new Date(part.updatedAt).toLocaleString("en-US", {
+    //   day: "numeric",
+    //   month: "long",
+    // });
 
     const handleEdit = () => navigate(`/dash/parts/${partId}`);
 

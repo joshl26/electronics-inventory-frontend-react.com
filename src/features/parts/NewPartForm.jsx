@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAddNewPartMutation } from "./partsApiSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
-import { set } from "lodash";
+// import { set } from "lodash";
 import { FilePicker } from "../../components/FilePicker";
 
 const NewPartForm = ({ users, partTypes }) => {
