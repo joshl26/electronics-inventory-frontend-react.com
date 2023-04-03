@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { selectPartById } from "./partsApiSlice";
 
 const Part = ({ partId }) => {
-  console.log(partId);
+  // console.log(partId);
   const part = useSelector((state) => selectPartById(state, partId));
   // const pal = useSelector((state) => selectAllParts(state));
 

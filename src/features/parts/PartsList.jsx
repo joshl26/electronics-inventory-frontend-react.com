@@ -22,8 +22,8 @@ const PartsList = () => {
 
   let content;
 
-  console.log(isLoading);
-  console.log(isSuccess);
+  // console.log(isLoading);
+  // console.log(isSuccess);
 
   if (isLoading) content = <p>Loading...</p>;
 
