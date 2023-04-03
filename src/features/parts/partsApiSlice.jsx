@@ -46,6 +46,7 @@ export const partsApiSlice = apiSlice.injectEndpoints({
           ...initialPart,
         },
       }),
+      // invalidatesTags: (result, error, arg) => [{ type: "Part", id: arg.id }],
       invalidatesTags: (result, error, arg) => [{ type: "Part", id: arg.id }],
     }),
     deletePart: builder.mutation({

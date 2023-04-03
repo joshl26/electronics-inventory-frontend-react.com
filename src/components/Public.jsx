@@ -6,7 +6,7 @@ import "./Public.scss";
 import LoginFooter from "../features/pages/LoginFooter";
 import SwipeUpIcon from "../svg/SwipeUpIcon.json";
 import Lottie from "lottie-react";
-import { Row, Col, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import CustomerGallery from "../features/pages/CustomerGallery";
 
 const Public = () => {

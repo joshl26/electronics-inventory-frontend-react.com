@@ -23,10 +23,15 @@ const EditPartForm = ({ part, users, partTypes }) => {
   const [description, setDescription] = useState(part.description);
   const [qty, setQty] = useState(part.qty);
   const [partType, setPartType] = useState(part.partType);
-  const [completed, setCompleted] = useState(part.completed);
+  // const [completed, setCompleted] = useState(part.completed);
   const [userId, setUserId] = useState(part.user);
 
   useEffect(() => {
+    // console.log("Edit Part form UseEffect");
+    // console.log(isLoading);
+    // console.log(isSuccess);
+    // console.log(error);
+
     if (isSuccess || isDelSuccess) {
       setName("");
       setDescription("");
@@ -39,8 +44,8 @@ const EditPartForm = ({ part, users, partTypes }) => {
 
   const onNameChanged = (e) => setName(e.target.value);
   const onDescriptionChanged = (e) => setDescription(e.target.value);
-  const onQtyChanged = (e) => setDescription(e.target.value);
-  const onPartTypeChanged = (e) => setDescription(e.target.value);
+  const onQtyChanged = (e) => setQty(e.target.value);
+  const onPartTypeChanged = (e) => setPartType(e.target.value);
 
   const canSave =
     [name, description, qty, partType, userId].every(Boolean) && !isLoading;
@@ -54,7 +59,6 @@ const EditPartForm = ({ part, users, partTypes }) => {
         description,
         qty,
         partType,
-        completed,
       });
     }
   };
@@ -90,7 +94,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
 
   const errClass = isError || isDelError ? "errmsg" : "offscreen";
   const validNameClass = !name ? "form__input--incomplete" : "";
-  // const validDescriptionClass = !description ? "form__input--incomplete" : "";
+  const validDescriptionClass = !description ? "form__input--incomplete" : "";
 
   const errContent = (error?.data?.message || delerror?.data?.message) ?? "";
 
@@ -143,7 +147,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
           Description:
         </label>
         <textarea
-          className={`form__input form__input--text ${validNameClass}`}
+          className={`form__input form__input--text ${validDescriptionClass}`}
           id="note-text"
           name="description"
           value={description}

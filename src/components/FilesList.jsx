@@ -6,7 +6,7 @@ import styles from "./FilesList.module.scss";
 const FilesListItem = ({ name, id, onClear, uploadComplete }) => {
   const handleClear = useCallback(() => {
     onClear(id);
-  }, []);
+  }, [id, onClear]);
 
   return (
     <li className={styles.files_list_item}>
