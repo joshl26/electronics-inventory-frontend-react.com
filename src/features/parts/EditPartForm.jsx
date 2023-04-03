@@ -60,11 +60,13 @@ const EditPartForm = ({ part, users, partTypes }) => {
         qty,
         partType,
       });
+      navigate(`/dash/parts/`);
     }
   };
 
   const onDeletePartClicked = async () => {
     await deletePart({ id: part.id });
+    navigate(`/dash/parts/`);
   };
 
   const created = new Date(part.createdAt).toLocaleString("en-US", {

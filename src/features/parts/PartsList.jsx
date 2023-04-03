@@ -1,6 +1,6 @@
 // import str from "../../mock_data/parts.json";
-import Part from "./Part";
 import { useGetPartsQuery } from "./partsApiSlice";
+import Part from "./Part";
 import useAuth from "../../hooks/useAuth";
 import "./PartsList.scss";
 
@@ -15,7 +15,7 @@ const PartsList = () => {
     isError,
     error,
   } = useGetPartsQuery(undefined, {
-    pollingInterval: 60000,
+    pollingInterval: 15000,
     refetchOnFocus: true,
     refetchOnMountOrArgChange: true,
   });

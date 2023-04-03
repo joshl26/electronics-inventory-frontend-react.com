@@ -16,15 +16,15 @@ const Part = ({ partId }) => {
   const navigate = useNavigate();
 
   if (part) {
-    // const created = new Date(part.createdAt).toLocaleString("en-US", {
-    //   day: "numeric",
-    //   month: "long",
-    // });
+    const created = new Date(part.createdAt).toLocaleString("en-US", {
+      day: "numeric",
+      month: "long",
+    });
 
-    // const updated = new Date(part.updatedAt).toLocaleString("en-US", {
-    //   day: "numeric",
-    //   month: "long",
-    // });
+    const updated = new Date(part.updatedAt).toLocaleString("en-US", {
+      day: "numeric",
+      month: "long",
+    });
 
     const handleEdit = () => navigate(`/dash/parts/${partId}`);
 
@@ -35,8 +35,8 @@ const Part = ({ partId }) => {
         <td className="table__cell part__qty">{part.qty}</td>
         <td className="table__cell part__type">{part.partType}</td>
         <td className="table__cell part__username">{part.username}</td>
-        <td className="table__cell part__created">{part.createdAt}</td>
-        <td className="table__cell part__updated">{part.updatedAt}</td>
+        <td className="table__cell part__created">{created}</td>
+        <td className="table__cell part__updated">{updated}</td>
         <td className="table__cell part__edit">
           <button className="icon-button table__button" onClick={handleEdit}>
             <FontAwesomeIcon icon={faPenToSquare} />

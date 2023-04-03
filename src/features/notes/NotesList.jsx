@@ -38,8 +38,8 @@ const NotesList = () => {
       );
     }
 
-    console.log(filteredIds);
-    console.log(notes);
+    // console.log(filteredIds);
+    // console.log(notes);
 
     const tableContent =
       ids?.length &&
