@@ -41,7 +41,6 @@ const EditPartForm = ({ part, users, partTypes }) => {
   const onDescriptionChanged = (e) => setDescription(e.target.value);
   const onQtyChanged = (e) => setDescription(e.target.value);
   const onPartTypeChanged = (e) => setDescription(e.target.value);
-  const onUserIdChanged = (e) => setUserId(e.target.value);
 
   const canSave =
     [name, description, qty, partType, userId].every(Boolean) && !isLoading;
