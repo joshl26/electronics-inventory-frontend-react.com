@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../hooks/useAuth";
+import { FilePicker } from "../../components/FilePicker";
 
-const EditPartForm = ({ part, users }) => {
+const EditPartForm = ({ part, users, partTypes }) => {
   const { isManager, isAdmin } = useAuth();
 
   const [updatePart, { isLoading, isSuccess, isError, error }] =
@@ -38,9 +39,8 @@ const EditPartForm = ({ part, users }) => {
 
   const onNameChanged = (e) => setName(e.target.value);
   const onDescriptionChanged = (e) => setDescription(e.target.value);
-  // const onQtyChanged = (e) => setDescription(e.target.value);
-  // const onPartTypeChanged = (e) => setDescription(e.target.value);
-  const onCompletedChanged = (e) => setCompleted((prev) => !prev);
+  const onQtyChanged = (e) => setDescription(e.target.value);
+  const onPartTypeChanged = (e) => setDescription(e.target.value);
   const onUserIdChanged = (e) => setUserId(e.target.value);
 
   const canSave =
@@ -81,10 +81,10 @@ const EditPartForm = ({ part, users }) => {
     second: "numeric",
   });
 
-  const options = users.map((user) => {
+  const options = partTypes.map((types, idx) => {
     return (
-      <option key={user.id} value={user.id}>
-        {user.username}
+      <option key={idx} value={types}>
+        {types}
       </option>
     );
   });
@@ -154,34 +154,11 @@ const EditPartForm = ({ part, users }) => {
           <div className="form__divider">
             <label
               className="form__label form__checkbox-container"
-              htmlFor="note-completed"
-            >
-              WORK COMPLETE:
-              <input
-                className="form__checkbox"
-                id="note-completed"
-                name="completed"
-                type="checkbox"
-                checked={completed}
-                onChange={onCompletedChanged}
-              />
-            </label>
-
-            <label
-              className="form__label form__checkbox-container"
               htmlFor="note-username"
             >
-              ASSIGNED TO:
+              Creator:
             </label>
-            <select
-              id="note-username"
-              name="username"
-              className="form__select"
-              value={userId}
-              onChange={onUserIdChanged}
-            >
-              {options}
-            </select>
+            {part.username}
           </div>
           <div className="form__divider">
             <p className="form__created">
@@ -196,6 +173,32 @@ const EditPartForm = ({ part, users }) => {
             </p>
           </div>
         </div>
+        <label className="form__label" htmlFor="qty">
+          Qty:
+        </label>
+        <input
+          min="0"
+          max="10000"
+          className="form__input"
+          id="qty"
+          name="qty"
+          type="number"
+          onChange={onQtyChanged}
+          value={qty}
+        />
+        <label className="form__label" htmlFor="parttype">
+          Part Type:
+        </label>
+        <select
+          id="parttype"
+          name="parttype"
+          className="form__select"
+          value={partType}
+          onChange={onPartTypeChanged}
+        >
+          {options}
+        </select>
+        <FilePicker />
       </form>
     </>
   );

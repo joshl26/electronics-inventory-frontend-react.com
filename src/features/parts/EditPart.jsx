@@ -5,6 +5,20 @@ import { selectAllUsers } from "../users/usersApiSlice";
 import EditPartForm from "./EditPartForm";
 
 const EditPart = () => {
+  const partTypes = [
+    "None",
+    "Resistor",
+    "Capacitor",
+    "Inductors",
+    "Diodes",
+    "LED",
+    "Transistors",
+    "Crystals",
+    "Oscillators",
+    "Relays",
+    "Switches",
+  ];
+
   const { id } = useParams();
 
   const part = useSelector((state) => selectPartById(state, id));
@@ -12,7 +26,7 @@ const EditPart = () => {
 
   const content =
     part && users ? (
-      <EditPartForm part={part} users={users} />
+      <EditPartForm part={part} users={users} partTypes={partTypes} />
     ) : (
       <p>Loading...</p>
     );
