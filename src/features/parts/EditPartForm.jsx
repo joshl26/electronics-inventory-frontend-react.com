@@ -23,6 +23,8 @@ const EditPartForm = ({ part, users, partTypes }) => {
   const [description, setDescription] = useState(part.description);
   const [qty, setQty] = useState(part.qty);
   const [partType, setPartType] = useState(part.partType);
+  // const [partImages, setPartImages] = useState(part.images);
+
   // const [completed, setCompleted] = useState(part.completed);
   const [userId, setUserId] = useState(part.user);
 
@@ -92,6 +94,10 @@ const EditPartForm = ({ part, users, partTypes }) => {
         {types}
       </option>
     );
+  });
+
+  const partImages = part.images.map((image, idx) => {
+    return <img src={image.url} />;
   });
 
   const errClass = isError || isDelError ? "errmsg" : "offscreen";
@@ -203,6 +209,8 @@ const EditPartForm = ({ part, users, partTypes }) => {
         >
           {options}
         </select>
+        {partImages}
+
         <FilePicker />
       </form>
     </>
