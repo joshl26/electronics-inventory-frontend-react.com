@@ -2,7 +2,7 @@
 import { useGetPartsQuery } from "./partsApiSlice";
 import Part from "./Part";
 import useAuth from "../../hooks/useAuth";
-import "./PartsList.scss";
+import classes from "./PartsList.module.scss";
 
 const PartsList = () => {
   const { username, isManager, isAdmin } = useAuth();
@@ -55,7 +55,7 @@ const PartsList = () => {
       <table className="table table--parts">
         <thead className="table__thead">
           <tr>
-            <th scope="col" className="table__th part__name">
+            <th scope="col" className={`table__th ${classes.part__name}`}>
               Part Name
             </th>
             <th scope="col" className="table__th part__description">
@@ -69,6 +69,9 @@ const PartsList = () => {
             </th>
             <th scope="col" className="table__th part__username">
               Owner
+            </th>
+            <th scope="col" className="table__th part__images">
+              Images
             </th>
             <th scope="col" className="table__th part__created">
               Created

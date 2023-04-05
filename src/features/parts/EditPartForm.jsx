@@ -6,6 +6,8 @@ import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../hooks/useAuth";
 import { FilePicker } from "../../components/FilePicker";
 
+import classes from "./EditPartForm.module.scss";
+
 const EditPartForm = ({ part, users, partTypes }) => {
   const { isManager, isAdmin } = useAuth();
 
@@ -97,7 +99,11 @@ const EditPartForm = ({ part, users, partTypes }) => {
   });
 
   const partImages = part.images.map((image, idx) => {
-    return <img src={image.url} />;
+    return (
+      <div key={idx}>
+        <img src={image.url} />
+      </div>
+    );
   });
 
   const errClass = isError || isDelError ? "errmsg" : "offscreen";

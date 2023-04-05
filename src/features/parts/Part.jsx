@@ -5,10 +5,22 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectPartById } from "./partsApiSlice";
 
+import classes from "./Part.module.scss";
+
 const Part = ({ partId }) => {
   // console.log(partId);
   const part = useSelector((state) => selectPartById(state, partId));
   // const pal = useSelector((state) => selectAllParts(state));
+
+  const partImages = part.images.map((image, idx) => {
+    return (
+      <div key={idx}>
+        <a href={image.url}>
+          <img className={classes.partlist_image} src={image.url} />
+        </a>
+      </div>
+    );
+  });
 
   // console.log(part);
   // console.log(pal);
@@ -35,8 +47,9 @@ const Part = ({ partId }) => {
         <td className="table__cell part__qty">{part.qty}</td>
         <td className="table__cell part__type">{part.partType}</td>
         <td className="table__cell part__username">{part.username}</td>
+        <td className="table__cell part__updated">{partImages}</td>
+        <td className="table__cell part__images">{updated}</td>
         <td className="table__cell part__created">{created}</td>
-        <td className="table__cell part__updated">{updated}</td>
         <td className="table__cell part__edit">
           <button className="icon-button table__button" onClick={handleEdit}>
             <FontAwesomeIcon icon={faPenToSquare} />
