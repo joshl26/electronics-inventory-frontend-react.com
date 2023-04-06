@@ -32,7 +32,7 @@ const ReactGridLayout = () => {
       return position;
     });
     setWidgetArray(tempArray);
-    console.log(tempArray);
+    // console.log(tempArray);
   };
 
   // const handleAdd = () => {
