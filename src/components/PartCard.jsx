@@ -7,15 +7,15 @@ import { Row, Col, Container } from "react-bootstrap";
 const PartCard = ({ partId }) => {
   const part = useSelector((state) => selectPartById(state, partId));
 
-  const partImages = part.images.map((image, idx) => {
-    return (
-      <div key={image._id}>
-        <a href={image.url}>
-          <img className={classes.partcard_image} src={image.url} />
-        </a>
-      </div>
-    );
-  });
+  // const partImages = part.images.map((image, idx) => {
+  //   return (
+  //     <div key={image._id}>
+  //       <a href={image.url}>
+  //         <img className={classes.partcard_image} src={image.url} />
+  //       </a>
+  //     </div>
+  //   );
+  // });
 
   return (
     <div key={part._id} className={classes.partcard_container}>
@@ -40,7 +40,6 @@ const PartCard = ({ partId }) => {
                   Part Type
                 </h2>
               </Col>
-
               <Col>
                 <h3 className={`classes.parttype_text ${classes.text}`}>
                   {part.partType}
