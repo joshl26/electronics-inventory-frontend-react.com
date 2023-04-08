@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useUpdatePartMutation, useDeletePartMutation } from "./partsApiSlice";
-import { useNavigate } from "react-router-dom";
+import { useAsyncError, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../hooks/useAuth";
@@ -21,58 +21,6 @@ const EditPartForm = ({ part, users, partTypes }) => {
 
   const navigate = useNavigate();
 
-  const [name, setName] = useState(part.name);
-  const [description, setDescription] = useState(part.description);
-  const [qty, setQty] = useState(part.qty);
-  const [partType, setPartType] = useState(part.partType);
-  // const [partImages, setPartImages] = useState(part.images);
-
-  // const [completed, setCompleted] = useState(part.completed);
-  const [userId, setUserId] = useState(part.user);
-
-  useEffect(() => {
-    // console.log("Edit Part form UseEffect");
-    // console.log(isLoading);
-    // console.log(isSuccess);
-    // console.log(error);
-
-    if (isSuccess || isDelSuccess) {
-      setName("");
-      setDescription("");
-      setUserId("");
-      setQty(0);
-      setPartType("");
-      navigate("/dash/parts");
-    }
-  }, [isSuccess, isDelSuccess, navigate]);
-
-  const onNameChanged = (e) => setName(e.target.value);
-  const onDescriptionChanged = (e) => setDescription(e.target.value);
-  const onQtyChanged = (e) => setQty(e.target.value);
-  const onPartTypeChanged = (e) => setPartType(e.target.value);
-
-  const canSave =
-    [name, description, qty, partType, userId].every(Boolean) && !isLoading;
-
-  const onSavePartClicked = async (e) => {
-    if (canSave) {
-      await updatePart({
-        id: part.id,
-        user: userId,
-        name,
-        description,
-        qty,
-        partType,
-      });
-      navigate(`/dash/parts/`);
-    }
-  };
-
-  const onDeletePartClicked = async () => {
-    await deletePart({ id: part.id });
-    navigate(`/dash/parts/`);
-  };
-
   const created = new Date(part.createdAt).toLocaleString("en-US", {
     day: "numeric",
     month: "long",
@@ -89,6 +37,93 @@ const EditPartForm = ({ part, users, partTypes }) => {
     minute: "numeric",
     second: "numeric",
   });
+
+  const [name, setName] = useState(part.name);
+  const [description, setDescription] = useState(part.description);
+  const [qty, setQty] = useState(part.qty);
+  const [partType, setPartType] = useState(part.partType);
+  const [createdBy, setCreatedBy] = useState(created);
+  const [updatedAt, setUpdatedAt] = useState(updated);
+  const [images, setImages] = useState(part.images);
+  const [partNumber, setPartNumber] = useState(part.partNumber);
+  const [lotId, setLotId] = useState(part.lotId);
+  const [serialNumber, setSerialNumber] = useState(part.serialNumber);
+  const [manufacturer, setManufacturer] = useState(part.manufacturer);
+  const [mfgDate, setMfgDate] = useState(part.serialNumber);
+  const [backOrder, setBackOrder] = useState(part.backOrder);
+  const [vendorName, setVendorName] = useState(part.vendorName);
+  const [partPackage, setPartPackage] = useState(part.partPackage);
+  const [partLocation, setPartLocation] = useState(part.serialNumber);
+
+  // const [partImages, setPartImages] = useState(part.images);
+
+  // const [completed, setCompleted] = useState(part.completed);
+  const [userId, setUserId] = useState(part.user);
+
+  useEffect(() => {
+    // console.log("Edit Part form UseEffect");
+    // console.log(isLoading);
+    // console.log(isSuccess);
+    // console.log(error);
+
+    if (isSuccess || isDelSuccess) {
+      setUserId("");
+      setName("");
+      setDescription("");
+      setQty(0);
+      setPartType("");
+      setCreatedBy("");
+      setUpdatedAt("");
+      setImages("");
+      setPartNumber("");
+      setLotId("");
+      setSerialNumber("");
+      setManufacturer("");
+      setMfgDate("");
+      setBackOrder(0);
+      setVendorName("");
+      setPartPackage("");
+      setPartLocation("");
+      navigate("/dash/parts");
+    }
+  }, [isSuccess, isDelSuccess, navigate]);
+
+  const onNameChanged = (e) => setName(e.target.value);
+  const onDescriptionChanged = (e) => setDescription(e.target.value);
+  const onQtyChanged = (e) => setQty(e.target.value);
+  const onPartTypeChanged = (e) => setPartType(e.target.value);
+
+  const canSave = [name, description, userId].every(Boolean) && !isLoading;
+
+  const onSavePartClicked = async (e) => {
+    if (canSave) {
+      await updatePart({
+        id: part.id,
+        user: userId,
+        name,
+        description,
+        qty,
+        partType,
+        updatedAt,
+        images,
+        partNumber,
+        lotId,
+        serialNumber,
+        manufacturer,
+        mfgDate,
+        backOrder,
+        vendorName,
+        partPackage,
+        partLocation,
+      });
+      navigate(`/dash/parts/`);
+    }
+  };
+
+  const onDeletePartClicked = async () => {
+    await deletePart({ id: part.id });
+    navigate(`/dash/parts/`);
+  };
 
   const options = partTypes.map((types, idx) => {
     return (
@@ -129,7 +164,6 @@ const EditPartForm = ({ part, users, partTypes }) => {
   const content = (
     <div>
       <p className={errClass}>{errContent}</p>
-
       <form className="form" onSubmit={(e) => e.preventDefault()}>
         <div className="form__title-row">
           <h2>Edit Part #{part.ticket}</h2>
@@ -157,7 +191,6 @@ const EditPartForm = ({ part, users, partTypes }) => {
           value={name}
           onChange={onNameChanged}
         />
-
         <label className="form__label" htmlFor="note-text">
           Description:
         </label>
@@ -176,7 +209,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
             >
               Creator:
             </label>
-            {part.username}
+            {createdBy}
           </div>
           <div className="form__divider">
             <p className="form__created">
@@ -217,7 +250,6 @@ const EditPartForm = ({ part, users, partTypes }) => {
           {options}
         </select>
         {partImages}
-
         <FilePicker />
       </form>
     </div>

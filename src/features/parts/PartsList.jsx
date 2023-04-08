@@ -1,6 +1,5 @@
 // import str from "../../mock_data/parts.json";
 import { useGetPartsQuery } from "./partsApiSlice";
-import Part from "./Part";
 import useAuth from "../../hooks/useAuth";
 import classes from "./PartsList.module.scss";
 import PartCard from "../../components/PartCard";
@@ -42,11 +41,9 @@ const PartsList = () => {
       );
     }
 
-    const tableContent =
+    content =
       ids?.length &&
       filteredIds.map((partId) => <PartCard key={partId} partId={partId} />);
-
-    content = <div>{tableContent}</div>;
   }
 
   return content;

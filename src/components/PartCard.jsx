@@ -7,10 +7,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const PartCard = ({ partId }) => {
-  console.log(partId);
+  // console.log(partId);
   const part = useSelector((state) => selectPartById(state, partId));
 
-  console.log(part);
+  // console.log(part);
 
   const [expand, setExpand] = useState(false);
 
@@ -27,7 +27,7 @@ const PartCard = ({ partId }) => {
   };
 
   const imageContent = part.images.map((image) => (
-    <Col>
+    <Col key={image._id}>
       <div key={image._id}>
         <a href={image.url}>
           <img className={classes.partcard_image} src={image.url} />
@@ -40,8 +40,8 @@ const PartCard = ({ partId }) => {
     part.description.split(/\s+/).slice(0, 34).join(" ") + "...";
 
   return (
-    <>
-      <div key={part._id} className={classes.partcard_container}>
+    <div key={part._id}>
+      <div className={classes.partcard_container}>
         <Container>
           <Row>
             <Col>
@@ -257,7 +257,7 @@ const PartCard = ({ partId }) => {
         </Container>
       </div>
       <div className={classes.spacer}></div>
-    </>
+    </div>
   );
 };
 
