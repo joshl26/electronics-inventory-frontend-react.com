@@ -129,7 +129,7 @@ const PartCard = ({ partId }) => {
                     Location
                   </h2>
                   <h3 className={`classes.partlocation_text ${classes.text}`}>
-                    {part.location}
+                    {part.partLocation}
                   </h3>
                 </Col>
                 <Col>
@@ -137,7 +137,7 @@ const PartCard = ({ partId }) => {
                     Package Type
                   </h2>
                   <h3 className={`classes.partpackage_text ${classes.text}`}>
-                    {part.package}
+                    {part.partPackage}
                   </h3>
                 </Col>
               </Row>
@@ -203,7 +203,7 @@ const PartCard = ({ partId }) => {
                     Updated By
                   </h2>
                   <h3 className={`classes.partupdated_text ${classes.text}`}>
-                    {part.username}
+                    {part.updatedBy}
                   </h3>
                 </Col>
                 <Col>
@@ -219,7 +219,7 @@ const PartCard = ({ partId }) => {
                     Creator
                   </h2>
                   <h3 className={`classes.partcreator_text ${classes.text}`}>
-                    {part.username}
+                    {part.user}
                   </h3>
                 </Col>
               </Row>

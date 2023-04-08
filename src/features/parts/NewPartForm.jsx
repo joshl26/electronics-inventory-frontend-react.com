@@ -17,6 +17,18 @@ const NewPartForm = ({ users, partTypes }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [userId, setUserId] = useState(users[0].id);
+  // const [updatedBy, setUpdatedBy] = useState(username);
+  // const [updatedAt, setUpdatedAt] = useState(updated);
+  const [images, setImages] = useState([]);
+  const [partNumber, setPartNumber] = useState("None");
+  const [lotId, setLotId] = useState("None");
+  const [serialNumber, setSerialNumber] = useState("None");
+  const [manufacturer, setManufacturer] = useState("None");
+  const [mfgDate, setMfgDate] = useState("None");
+  const [backOrder, setBackOrder] = useState(0);
+  const [vendorName, setVendorName] = useState("None");
+  const [partPackage, setPartPackage] = useState("None");
+  const [partLocation, setPartLocation] = useState("None");
 
   useEffect(() => {
     if (isSuccess) {
@@ -39,7 +51,23 @@ const NewPartForm = ({ users, partTypes }) => {
   const onSavePartClicked = async (e) => {
     e.preventDefault();
     if (canSave) {
-      await addNewPart({ user: userId, name, description, qty, partType });
+      await addNewPart({
+        user: userId,
+        name,
+        description,
+        qty,
+        partType,
+        images,
+        partNumber,
+        lotId,
+        serialNumber,
+        manufacturer,
+        mfgDate,
+        backOrder,
+        vendorName,
+        partPackage,
+        partLocation,
+      });
     }
   };
 

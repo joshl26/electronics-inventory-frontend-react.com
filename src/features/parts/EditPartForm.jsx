@@ -9,7 +9,7 @@ import { FilePicker } from "../../components/FilePicker";
 import classes from "./EditPartForm.module.scss";
 
 const EditPartForm = ({ part, users, partTypes }) => {
-  const { isManager, isAdmin } = useAuth();
+  const { username, isManager, isAdmin } = useAuth();
 
   const [updatePart, { isLoading, isSuccess, isError, error }] =
     useUpdatePartMutation();
@@ -42,7 +42,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
   const [description, setDescription] = useState(part.description);
   const [qty, setQty] = useState(part.qty);
   const [partType, setPartType] = useState(part.partType);
-  const [createdBy, setCreatedBy] = useState(created);
+  const [updatedBy, setUpdatedBy] = useState(username);
   const [updatedAt, setUpdatedAt] = useState(updated);
   const [images, setImages] = useState(part.images);
   const [partNumber, setPartNumber] = useState(part.partNumber);
@@ -72,7 +72,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
       setDescription("");
       setQty(0);
       setPartType("");
-      setCreatedBy("");
+      setUpdatedBy("");
       setUpdatedAt("");
       setImages("");
       setPartNumber("");
@@ -105,6 +105,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
         qty,
         partType,
         updatedAt,
+        updatedBy,
         images,
         partNumber,
         lotId,
@@ -207,9 +208,9 @@ const EditPartForm = ({ part, users, partTypes }) => {
               className="form__label form__checkbox-container"
               htmlFor="note-username"
             >
-              Creator:
+              Updated By:
             </label>
-            {createdBy}
+            {updatedBy}
           </div>
           <div className="form__divider">
             <p className="form__created">
