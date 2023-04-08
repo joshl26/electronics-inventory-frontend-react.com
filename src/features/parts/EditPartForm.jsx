@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
 import { useUpdatePartMutation, useDeletePartMutation } from "./partsApiSlice";
-import { useAsyncError, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../hooks/useAuth";
 import { FilePicker } from "../../components/FilePicker";
 
 import classes from "./EditPartForm.module.scss";
+import EditPartCard from "../parts/EditPartCard";
 
 const EditPartForm = ({ part, users, partTypes }) => {
   const { username, isManager, isAdmin } = useAuth();
+
+  console.log(part);
 
   const [updatePart, { isLoading, isSuccess, isError, error }] =
     useUpdatePartMutation();
@@ -96,6 +99,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
   const canSave = [name, description, userId].every(Boolean) && !isLoading;
 
   const onSavePartClicked = async (e) => {
+    e.preventDefault();
     if (canSave) {
       await updatePart({
         id: part.id,
@@ -117,13 +121,18 @@ const EditPartForm = ({ part, users, partTypes }) => {
         partPackage,
         partLocation,
       });
-      navigate(`/dash/parts/`);
+      navigate(`/dash/parts`);
     }
   };
 
   const onDeletePartClicked = async () => {
     await deletePart({ id: part.id });
     navigate(`/dash/parts/`);
+  };
+
+  const onImageDeleteClicked = (e) => {
+    e.preventDefault();
+    console.log(e);
   };
 
   const options = partTypes.map((types, idx) => {
@@ -138,7 +147,9 @@ const EditPartForm = ({ part, users, partTypes }) => {
     return (
       <div key={idx}>
         <img className={classes.part_image} src={image.url} />
-        <a>Delete</a>
+        <a href="" onClick={(e) => onImageDeleteClicked(e)}>
+          <p>Delete</p>
+        </a>
       </div>
     );
   });
@@ -165,7 +176,8 @@ const EditPartForm = ({ part, users, partTypes }) => {
   const content = (
     <div>
       <p className={errClass}>{errContent}</p>
-      <form className="form" onSubmit={(e) => e.preventDefault()}>
+      <h2>Edit Part #{part.ticket2}</h2>
+      {/* <form className="form" onSubmit={(e) => e.preventDefault()}>
         <div className="form__title-row">
           <h2>Edit Part #{part.ticket}</h2>
           <div className="form__action-buttons">
@@ -204,13 +216,16 @@ const EditPartForm = ({ part, users, partTypes }) => {
         />
         <div className="form__row">
           <div className="form__divider">
-            <label
-              className="form__label form__checkbox-container"
-              htmlFor="note-username"
-            >
-              Updated By:
-            </label>
-            {updatedBy}
+            <p className="form__created">
+              Created:
+              <br />
+              {part.username}
+            </p>
+            <p className="form__updated">
+              Updated:
+              <br />
+              {updatedBy}
+            </p>
           </div>
           <div className="form__divider">
             <p className="form__created">
@@ -231,7 +246,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
         <input
           min="0"
           max="10000"
-          className="form__input"
+          className={`classes.form__input ${classes.qty}`}
           id="qty"
           name="qty"
           type="number"
@@ -252,7 +267,8 @@ const EditPartForm = ({ part, users, partTypes }) => {
         </select>
         {partImages}
         <FilePicker />
-      </form>
+      </form> */}
+      <EditPartCard part={part} />
     </div>
   );
 

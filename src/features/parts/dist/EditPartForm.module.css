@@ -1,3 +1,8 @@
 .part_image {
   width: 200px;
 }
+
+.qty {
+  width: 50px;
+  height: 2em;
+}

@@ -1,14 +1,14 @@
 import React from "react";
-import classes from "./PartCard.module.scss";
+import classes from "./EditPartCard.module.scss";
 import { useSelector } from "react-redux";
-import { selectPartById } from "../features/parts/partsApiSlice";
+import { selectPartById } from "./partsApiSlice";
 import { Row, Col, Container } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const PartCard = ({ partId }) => {
+const EditPartCard = ({ part, users, partTypes }) => {
   // console.log(partId);
-  const part = useSelector((state) => selectPartById(state, partId));
+  // const part = useSelector((state) => selectPartById(state, partId));
 
   // console.log(part);
 
@@ -278,4 +278,4 @@ const PartCard = ({ partId }) => {
   );
 };
 
-export default PartCard;
+export default EditPartCard;

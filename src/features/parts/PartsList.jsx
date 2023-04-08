@@ -1,7 +1,6 @@
 // import str from "../../mock_data/parts.json";
 import { useGetPartsQuery } from "./partsApiSlice";
 import useAuth from "../../hooks/useAuth";
-import classes from "./PartsList.module.scss";
 import PartCard from "../../components/PartCard";
 
 const PartsList = () => {
