@@ -101,7 +101,8 @@ const EditPartForm = ({ part, users, partTypes }) => {
   const partImages = part.images.map((image, idx) => {
     return (
       <div key={idx}>
-        <img src={image.url} />
+        <img className={classes.part_image} src={image.url} />
+        <a>Delete</a>
       </div>
     );
   });
@@ -126,7 +127,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
   }
 
   const content = (
-    <>
+    <div>
       <p className={errClass}>{errContent}</p>
 
       <form className="form" onSubmit={(e) => e.preventDefault()}>
@@ -219,7 +220,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
 
         <FilePicker />
       </form>
-    </>
+    </div>
   );
 
   return content;

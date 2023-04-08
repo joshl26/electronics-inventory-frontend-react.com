@@ -57,15 +57,15 @@ const router = createBrowserRouter(
                   <Route path=":id" element={<EditNote />} />
                   <Route path="new" element={<NewNote />} />
                 </Route>
-                <Route path="parts">
-                  <Route index element={<PartsList />} />
-                  <Route path=":id" element={<EditPart />} />
-                  <Route path="new" element={<NewPart />} />
-                </Route>{" "}
                 <Route path="users">
                   <Route index element={<UsersList />} />
                   <Route path=":id" element={<EditUser />} />
                   <Route path="new" element={<NewUserForm />} />
+                </Route>
+                <Route path="parts">
+                  <Route index element={<PartsList />} />
+                  <Route path=":id" element={<EditPart />} />
+                  <Route path="new" element={<NewPart />} />
                 </Route>
               </Route>
             </Route>
