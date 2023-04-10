@@ -98,7 +98,7 @@ const NewPartForm = ({ users, partTypes }) => {
             </button>
           </div>
         </div>
-        <label className="form__label" htmlFor="title">
+        <label className="form__label" htmlFor="name">
           Part Name:
         </label>
         <input

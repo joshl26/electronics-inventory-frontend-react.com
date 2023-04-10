@@ -12,17 +12,15 @@ import classes from "./EditPartForm.module.scss";
 const EditPartForm = ({ part, users, partTypes }) => {
   const { username, isManager, isAdmin } = useAuth();
 
-  const [expand, setExpand] = useState(false);
+  // const handleEdit = (e) => {
+  //   e.preventDefault();
+  //   navigate(`/dash/parts/${part._id}`);
+  // };
 
-  const handleEdit = (e) => {
-    e.preventDefault();
-    navigate(`/dash/parts/${part._id}`);
-  };
-
-  const expandCard = (e) => {
-    e.preventDefault();
-    setExpand(!expand);
-  };
+  // const expandCard = (e) => {
+  //   e.preventDefault();
+  //   setExpand(!expand);
+  // };
 
   const imageContent = part.images.map((image) => (
     <Col key={image._id}>
@@ -93,7 +91,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
     // console.log(isLoading);
     // console.log(isSuccess);
     // console.log(error);
-    
+
     if (isSuccess || isDelSuccess) {
       setUserId("");
       setName("");
@@ -120,6 +118,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
   const onDescriptionChanged = (e) => setDescription(e.target.value);
   const onQtyChanged = (e) => setQty(e.target.value);
   const onPartTypeChanged = (e) => setPartType(e.target.value);
+  const onPartNumberChanged = (e) => setPartNumber(e.target.value);
 
   const canSave = [name, description, userId].every(Boolean) && !isLoading;
 
@@ -199,7 +198,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
   }
 
   const content = (
-    <div>
+    <form>
       <p className={errClass}>{errContent}</p>
       <h2>Edit Part #{part.ticket2}</h2>
       <div className="form__action-buttons">
@@ -225,11 +224,16 @@ const EditPartForm = ({ part, users, partTypes }) => {
                     </h2>
                   </Col>
                   <Col>
-                    <h2 className={`classes.partname_text ${classes.text}`}>
-                      <a onClick={(e) => handleEdit(e)} href="/">
-                        {part.name}
-                      </a>
-                    </h2>
+                    <label htmlFor="name" />
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      autoComplete="off"
+                      value={name}
+                      onChange={onNameChanged}
+                      className={`classes.partname_text ${classes.text}`}
+                    ></input>
                   </Col>
                 </Row>
                 <Row>
@@ -239,9 +243,16 @@ const EditPartForm = ({ part, users, partTypes }) => {
                     </h2>
                   </Col>
                   <Col>
-                    <h2 className={`classes.parttype_text ${classes.text}`}>
-                      {part.partNumber}
-                    </h2>
+                    <label htmlFor="partNumber" />
+                    <input
+                      id="partNumber"
+                      name="partNUmber"
+                      type="text"
+                      autoComplete="off"
+                      value={partNumber}
+                      onChange={onPartNumberChanged}
+                      className={`classes.parttype_text ${classes.text}`}
+                    ></input>
                   </Col>
                 </Row>
               </Col>
@@ -251,6 +262,23 @@ const EditPartForm = ({ part, users, partTypes }) => {
                     <h2 className={`classes.parttype_header ${classes.text}`}>
                       Part Type:
                     </h2>
+
+                    <label
+                      className="form__label form__checkbox-container"
+                      htmlFor="note-username"
+                    >
+                      ASSIGNED TO:
+                    </label>
+                    <select
+                      id="note-username"
+                      name="username"
+                      className="form__select"
+                      value={partType}
+                      onChange={onPartTypeChanged}
+                    >
+                      {options}
+                    </select>
+
                     <h2 className={`classes.parttype_text ${classes.text}`}>
                       {part.partType}
                     </h2>
@@ -273,188 +301,140 @@ const EditPartForm = ({ part, users, partTypes }) => {
             </Row>
             <Row>
               <Col>
-                <h3 className={`classes.partdescription_text ${classes.text}`}>
-                  {expand ? part.description : shortDescription}
-                </h3>
+                <label className="form__label" htmlFor="description"></label>
+                <textarea
+                  className={`classes.partdescription_text ${classes.text}`}
+                  id="description"
+                  name="description"
+                  value={description}
+                  onChange={onDescriptionChanged}
+                />
               </Col>
             </Row>
-            {expand ? (
-              <>
-                <Row>
-                  <Col>
-                    <h2 className={`classes.partqty_header ${classes.text}`}>
-                      Stock Qty
-                    </h2>
-                    <h3 className={`classes.partqty_text ${classes.text}`}>
-                      {part.qty}
-                    </h3>
-                  </Col>
-                  <Col>
-                    <h2 className={`classes.partqty_header ${classes.text}`}>
-                      Backorder Qty
-                    </h2>
-                    <h3 className={`classes.partqty_text ${classes.text}`}>
-                      {part.backOrder}
-                    </h3>
-                  </Col>
-                  <Col>
-                    <h2
-                      className={`classes.partlocation_header ${classes.text}`}
-                    >
-                      Location
-                    </h2>
-                    <h3 className={`classes.partlocation_text ${classes.text}`}>
-                      {part.partLocation}
-                    </h3>
-                  </Col>
-                  <Col>
-                    <h2
-                      className={`classes.partpackage_header ${classes.text}`}
-                    >
-                      Package Type
-                    </h2>
-                    <h3 className={`classes.partpackage_text ${classes.text}`}>
-                      {part.partPackage}
-                    </h3>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <h2
-                      className={`classes.partupdated_header ${classes.text}`}
-                    >
-                      S/N
-                    </h2>
-                    <h3 className={`classes.partupdated_text ${classes.text}`}>
-                      {part.serialNumber}
-                    </h3>
-                  </Col>
-                  <Col>
-                    <h2
-                      className={`classes.partupdated_header ${classes.text}`}
-                    >
-                      Lot ID
-                    </h2>
-                    <h3 className={`classes.partupdated_text ${classes.text}`}>
-                      {part.lotId}
-                    </h3>
-                  </Col>
-                  <Col>
-                    <h2
-                      className={`classes.partupdated_header ${classes.text}`}
-                    >
-                      Mfg. Date
-                    </h2>
-                    <h3 className={`classes.partupdated_text ${classes.text}`}>
-                      {part.mfgDate}
-                    </h3>
-                  </Col>
-                  <Col>
-                    <h2
-                      className={`classes.partupdated_header ${classes.text}`}
-                    >
-                      Manufacturer
-                    </h2>
-                    <h3 className={`classes.partupdated_text ${classes.text}`}>
-                      {part.manufacturer}
-                    </h3>
-                  </Col>
-                  {part.vendor ? (
-                    <Col>
-                      <h2
-                        className={`classes.partupdated_header ${classes.text}`}
-                      >
-                        Vendor
-                      </h2>
-                      <h3
-                        className={`classes.partupdated_text ${classes.text}`}
-                      >
-                        {part.vendor.vendorName}
-                      </h3>
-                    </Col>
-                  ) : (
-                    ""
-                  )}
-                </Row>
-                <Row>
-                  <Col>
-                    <h2
-                      className={`classes.partupdated_header ${classes.text}`}
-                    >
-                      Last Updated
-                    </h2>
-                    <h3 className={`classes.partupdated_text ${classes.text}`}>
-                      {updated}
-                    </h3>
-                  </Col>
-                  <Col>
-                    <h2
-                      className={`classes.partupdated_header ${classes.text}`}
-                    >
-                      Updated By
-                    </h2>
-                    <h3 className={`classes.partupdated_text ${classes.text}`}>
-                      {part.updatedBy}
-                    </h3>
-                  </Col>
-                  <Col>
-                    <h2
-                      className={`classes.partcreated_header ${classes.text}`}
-                    >
-                      Date Created
-                    </h2>
-                    <h3 className={`classes.partcreated_text ${classes.text}`}>
-                      {created}
-                    </h3>
-                  </Col>
-                  <Col>
-                    <h2
-                      className={`classes.partcreator_header ${classes.text}`}
-                    >
-                      Creator
-                    </h2>
-                    <h3 className={`classes.partcreator_text ${classes.text}`}>
-                      {part.user}
-                    </h3>
-                  </Col>
-                </Row>
-              </>
-            ) : (
-              ""
-            )}
 
-            <Row>
-              <div className={classes.anchor_expand}>
-                {!expand ? (
-                  <a href="/" onClick={(e) => expandCard(e)}>
-                    Expand Part Info
-                  </a>
+            <>
+              <Row>
+                <Col>
+                  <h2 className={`classes.partqty_header ${classes.text}`}>
+                    Stock Qty
+                  </h2>
+                  <h3 className={`classes.partqty_text ${classes.text}`}>
+                    {part.qty}
+                  </h3>
+                </Col>
+                <Col>
+                  <h2 className={`classes.partqty_header ${classes.text}`}>
+                    Backorder Qty
+                  </h2>
+                  <h3 className={`classes.partqty_text ${classes.text}`}>
+                    {part.backOrder}
+                  </h3>
+                </Col>
+                <Col>
+                  <h2 className={`classes.partlocation_header ${classes.text}`}>
+                    Location
+                  </h2>
+                  <h3 className={`classes.partlocation_text ${classes.text}`}>
+                    {part.partLocation}
+                  </h3>
+                </Col>
+                <Col>
+                  <h2 className={`classes.partpackage_header ${classes.text}`}>
+                    Package Type
+                  </h2>
+                  <h3 className={`classes.partpackage_text ${classes.text}`}>
+                    {part.partPackage}
+                  </h3>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <h2 className={`classes.partupdated_header ${classes.text}`}>
+                    S/N
+                  </h2>
+                  <h3 className={`classes.partupdated_text ${classes.text}`}>
+                    {part.serialNumber}
+                  </h3>
+                </Col>
+                <Col>
+                  <h2 className={`classes.partupdated_header ${classes.text}`}>
+                    Lot ID
+                  </h2>
+                  <h3 className={`classes.partupdated_text ${classes.text}`}>
+                    {part.lotId}
+                  </h3>
+                </Col>
+                <Col>
+                  <h2 className={`classes.partupdated_header ${classes.text}`}>
+                    Mfg. Date
+                  </h2>
+                  <h3 className={`classes.partupdated_text ${classes.text}`}>
+                    {part.mfgDate}
+                  </h3>
+                </Col>
+                <Col>
+                  <h2 className={`classes.partupdated_header ${classes.text}`}>
+                    Manufacturer
+                  </h2>
+                  <h3 className={`classes.partupdated_text ${classes.text}`}>
+                    {part.manufacturer}
+                  </h3>
+                </Col>
+                {part.vendor ? (
+                  <Col>
+                    <h2
+                      className={`classes.partupdated_header ${classes.text}`}
+                    >
+                      Vendor
+                    </h2>
+                    <h3 className={`classes.partupdated_text ${classes.text}`}>
+                      {part.vendor.vendorName}
+                    </h3>
+                  </Col>
                 ) : (
-                  <a
-                    className={classes.anchor_collapse}
-                    href="/"
-                    onClick={(e) => expandCard(e)}
-                  >
-                    Collapse Part Info
-                  </a>
+                  ""
                 )}
-              </div>
-              <div>
-                <a
-                  className={classes.anchor_openpart}
-                  href="/"
-                  onClick={(e) => handleEdit(e)}
-                >
-                  Edit Part
-                </a>
-              </div>
-            </Row>
+              </Row>
+              <Row>
+                <Col>
+                  <h2 className={`classes.partupdated_header ${classes.text}`}>
+                    Last Updated
+                  </h2>
+                  <h3 className={`classes.partupdated_text ${classes.text}`}>
+                    {updated}
+                  </h3>
+                </Col>
+                <Col>
+                  <h2 className={`classes.partupdated_header ${classes.text}`}>
+                    Updated By
+                  </h2>
+                  <h3 className={`classes.partupdated_text ${classes.text}`}>
+                    {part.updatedBy}
+                  </h3>
+                </Col>
+                <Col>
+                  <h2 className={`classes.partcreated_header ${classes.text}`}>
+                    Date Created
+                  </h2>
+                  <h3 className={`classes.partcreated_text ${classes.text}`}>
+                    {created}
+                  </h3>
+                </Col>
+                <Col>
+                  <h2 className={`classes.partcreator_header ${classes.text}`}>
+                    Creator
+                  </h2>
+                  <h3 className={`classes.partcreator_text ${classes.text}`}>
+                    {part.user}
+                  </h3>
+                </Col>
+              </Row>
+            </>
           </Container>
         </div>
         <div className={classes.spacer}></div>
       </div>
-      {/* <EditPartCard part={part} /> */}
-    </div>
+    </form>
   );
 
   return content;
