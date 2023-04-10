@@ -9,18 +9,11 @@ import { Row, Col, Container } from "react-bootstrap";
 
 import classes from "./EditPartForm.module.scss";
 
-const EditPartForm = ({ part, users, partTypes }) => {
+import { useSelector } from "react-redux";
+import { selectUsersById } from "../users/usersApiSlice";
+
+const EditPartForm = ({ part, partTypes }) => {
   const { username, isManager, isAdmin } = useAuth();
-
-  // const handleEdit = (e) => {
-  //   e.preventDefault();
-  //   navigate(`/dash/parts/${part._id}`);
-  // };
-
-  // const expandCard = (e) => {
-  //   e.preventDefault();
-  //   setExpand(!expand);
-  // };
 
   const imageContent = part.images.map((image) => (
     <Col key={image._id}>
@@ -31,11 +24,6 @@ const EditPartForm = ({ part, users, partTypes }) => {
       </div>
     </Col>
   ));
-
-  const shortDescription =
-    part.description.split(/\s+/).slice(0, 34).join(" ") + "...";
-
-  console.log(part);
 
   const [updatePart, { isLoading, isSuccess, isError, error }] =
     useUpdatePartMutation();
@@ -65,6 +53,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
   });
 
   const [name, setName] = useState(part.name);
+  const [creator, setCreator] = useState(part.user);
   const [description, setDescription] = useState(part.description);
   const [qty, setQty] = useState(part.qty);
   const [partType, setPartType] = useState(part.partType);
@@ -75,11 +64,13 @@ const EditPartForm = ({ part, users, partTypes }) => {
   const [lotId, setLotId] = useState(part.lotId);
   const [serialNumber, setSerialNumber] = useState(part.serialNumber);
   const [manufacturer, setManufacturer] = useState(part.manufacturer);
-  const [mfgDate, setMfgDate] = useState(part.serialNumber);
+  const [mfgDate, setMfgDate] = useState(part.mfgDate);
   const [backOrder, setBackOrder] = useState(part.backOrder);
   const [vendorName, setVendorName] = useState(part.vendorName);
   const [partPackage, setPartPackage] = useState(part.partPackage);
-  const [partLocation, setPartLocation] = useState(part.serialNumber);
+  const [partLocation, setPartLocation] = useState(part.partLocation);
+
+  const user = useSelector((state) => selectUsersById(state, creator));
 
   // const [partImages, setPartImages] = useState(part.images);
 
@@ -116,9 +107,16 @@ const EditPartForm = ({ part, users, partTypes }) => {
 
   const onNameChanged = (e) => setName(e.target.value);
   const onDescriptionChanged = (e) => setDescription(e.target.value);
-  const onQtyChanged = (e) => setQty(e.target.value);
+  const onStockQtyChanged = (e) => setQty(e.target.value);
   const onPartTypeChanged = (e) => setPartType(e.target.value);
   const onPartNumberChanged = (e) => setPartNumber(e.target.value);
+  const onBackorderQtyChanged = (e) => setBackOrder(e.target.value);
+  const onLocationChanged = (e) => setPartLocation(e.target.value);
+  const onPackageTypeChanged = (e) => setPartPackage(e.target.value);
+  const onSerialNumberChanged = (e) => setSerialNumber(e.target.value);
+  const onLotIdChanged = (e) => setLotId(e.target.value);
+  const onMfgDateChanged = (e) => setMfgDate(e.target.value);
+  const onManufacturerChanged = (e) => setManufacturer(e.target.value);
 
   const canSave = [name, description, userId].every(Boolean) && !isLoading;
 
@@ -222,7 +220,6 @@ const EditPartForm = ({ part, users, partTypes }) => {
                     <h2 className={classes.partname_header}>Part Name:</h2>
                   </Col>
                   <Col>
-                    <label htmlFor="name" />
                     <input
                       id="name"
                       name="name"
@@ -239,7 +236,6 @@ const EditPartForm = ({ part, users, partTypes }) => {
                     <h2 className={classes.parttype_header}>Part Number:</h2>
                   </Col>
                   <Col>
-                    <label htmlFor="partNumber" />
                     <input
                       id="partNumber"
                       name="partNUmber"
@@ -270,8 +266,6 @@ const EditPartForm = ({ part, users, partTypes }) => {
                     >
                       {options}
                     </select>
-
-                    <h2 className={classes.parttype_text}>{part.partType}</h2>
                   </Col>
 
                   {part.images?.length !== 0 ? (
@@ -308,58 +302,101 @@ const EditPartForm = ({ part, users, partTypes }) => {
                 <Col>
                   <h2 className={classes.partqty_header}>Stock Qty</h2>
                   <input
-                    value={part.qty}
+                    id="stockqty"
+                    name="stockqty"
+                    type="number"
+                    value={qty}
                     className={classes.partqty_text}
+                    onChange={onStockQtyChanged}
                   ></input>
                 </Col>
                 <Col>
                   <h2 className={classes.partqty_header}>Backorder Qty</h2>
-                  <h3 className={classes.partqty_text}>{part.backOrder}</h3>
+                  <input
+                    min="0"
+                    max="10000"
+                    id="backorder"
+                    name="backorder"
+                    type="number"
+                    value={backOrder}
+                    className={classes.partqty_text}
+                    onChange={onBackorderQtyChanged}
+                  ></input>
                 </Col>
                 <Col>
                   <h2 className={classes.partlocation_header}>Location</h2>
-                  <h3 className={classes.partlocation_text}>
-                    {part.partLocation}
-                  </h3>
+                  <input
+                    id="location"
+                    name="location"
+                    type="text"
+                    autoComplete="off"
+                    value={partLocation}
+                    onChange={onLocationChanged}
+                    className={classes.partname_text}
+                  ></input>
                 </Col>
                 <Col>
                   <h2 className={classes.partpackage_header}>Package Type</h2>
-                  <h3 className={classes.partpackage_text}>
-                    {part.partPackage}
-                  </h3>
+                  <input
+                    id="package"
+                    name="package"
+                    type="text"
+                    autoComplete="off"
+                    value={partPackage}
+                    onChange={onPackageTypeChanged}
+                    className={classes.partname_text}
+                  ></input>
                 </Col>
               </Row>
               <Row>
                 <Col>
                   <h2 className={classes.partupdated_header}>S/N</h2>
-                  <h3 className={classes.partupdated_text}>
-                    {part.serialNumber}
-                  </h3>
+                  <input
+                    id="serialnumber"
+                    name="serialnumber"
+                    type="text"
+                    autoComplete="off"
+                    value={serialNumber}
+                    onChange={onSerialNumberChanged}
+                    className={classes.partname_text}
+                  ></input>
                 </Col>
                 <Col>
                   <h2 className={classes.partupdated_header}>Lot ID</h2>
-                  <h3 className={classes.partupdated_text}>{part.lotId}</h3>
+                  <input
+                    id="lotid"
+                    name="lotid"
+                    type="text"
+                    autoComplete="off"
+                    value={lotId}
+                    onChange={onLotIdChanged}
+                    className={classes.partname_text}
+                  ></input>
                 </Col>
                 <Col>
                   <h2 className={classes.partupdated_header}>Mfg. Date</h2>
-                  <h3 className={classes.partupdated_text}>{part.mfgDate}</h3>
+                  <input
+                    id="mfgdate"
+                    name="mfgdate"
+                    type="text"
+                    autoComplete="off"
+                    value={mfgDate}
+                    onChange={onMfgDateChanged}
+                    className={classes.partname_text}
+                  ></input>
                 </Col>
                 <Col>
                   <h2 className={classes.partupdated_header}>Manufacturer</h2>
-                  <h3 className={classes.partupdated_text}>
-                    {part.manufacturer}
-                  </h3>
+                  <input
+                    id="manufacturer"
+                    name="manufacturer"
+                    type="text"
+                    autoComplete="off"
+                    value={manufacturer}
+                    onChange={onManufacturerChanged}
+                    className={classes.partname_text}
+                  ></input>
                 </Col>
-                {part.vendor ? (
-                  <Col>
-                    <h2 className={classes.partupdated_header}>Vendor</h2>
-                    <h3 className={classes.partupdated_text}>
-                      {part.vendor.vendorName}
-                    </h3>
-                  </Col>
-                ) : (
-                  ""
-                )}
               </Row>
               <Row>
                 <Col>
@@ -368,7 +405,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
                 </Col>
                 <Col>
                   <h2 className={classes.partupdated_header}>Updated By</h2>
-                  <h3 className={classes.partupdated_text}>{part.updatedBy}</h3>
+                  <h3 className={classes.partupdated_text}>{updatedBy}</h3>
                 </Col>
                 <Col>
                   <h2 className={classes.partcreated_header}>Date Created</h2>
@@ -376,7 +413,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
                 </Col>
                 <Col>
                   <h2 className={classes.partcreator_header}>Creator</h2>
-                  <h3 className={classes.partcreator_text}>{part.user}</h3>
+                  <h3 className={classes.partcreator_text}>{user.username}</h3>
                 </Col>
               </Row>
             </>
