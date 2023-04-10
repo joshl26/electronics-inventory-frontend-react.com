@@ -17,6 +17,7 @@ import Login from "./features/auth/Login";
 import DashLayout from "./components/DashLayout";
 import NotesList from "./features/notes/NotesList";
 import UsersList from "./features/users/UsersList";
+import PartsList from "./features/parts/PartsList";
 import EditUser from "./features/users/EditUser";
 import NewUserForm from "./features/users/NewUserForm";
 import EditNote from "./features/notes/EditNote";
@@ -27,7 +28,7 @@ import RequireAuth from "./features/auth/RequireAuth";
 import { ROLES } from "./config/roles";
 import ErrorPage from "./error-page";
 import ReactGridLayout from "./components/ReactGridLayout";
-import PartsList from "./features/parts/PartsList";
+
 import EditPart from "./features/parts/EditPart";
 import NewPart from "./features/parts/NewPart";
 
@@ -52,6 +53,11 @@ const router = createBrowserRouter(
                   <RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />
                 }
               >
+                <Route path="parts">
+                  <Route index element={<PartsList />} />
+                  <Route path=":id" element={<EditPart />} />
+                  <Route path="new" element={<NewPart />} />
+                </Route>
                 <Route path="notes">
                   <Route index element={<NotesList />} />
                   <Route path=":id" element={<EditNote />} />
@@ -61,11 +67,6 @@ const router = createBrowserRouter(
                   <Route index element={<UsersList />} />
                   <Route path=":id" element={<EditUser />} />
                   <Route path="new" element={<NewUserForm />} />
-                </Route>
-                <Route path="parts">
-                  <Route index element={<PartsList />} />
-                  <Route path=":id" element={<EditPart />} />
-                  <Route path="new" element={<NewPart />} />
                 </Route>
               </Route>
             </Route>

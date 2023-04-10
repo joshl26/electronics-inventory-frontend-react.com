@@ -1,11 +1,8 @@
 // import str from "../../mock_data/parts.json";
 import { useGetPartsQuery } from "./partsApiSlice";
-import useAuth from "../../hooks/useAuth";
 import PartCard from "../../components/PartCard";
 
 const PartsList = () => {
-  const { username, isManager, isAdmin } = useAuth();
-
   //TODO Determnine why the first argument in useGetPartsQuery needs to be undetermined here
   const {
     data: parts,
@@ -28,21 +25,21 @@ const PartsList = () => {
   }
 
   if (isSuccess) {
-    const { ids, entities } = parts;
+    const { ids } = parts;
 
-    let filteredIds;
+    // let filteredIds;
 
-    if (isManager || isAdmin) {
-      filteredIds = [...ids];
-    } else {
-      filteredIds = ids.filter(
-        (noteId) => entities[noteId].username === username
-      );
-    }
+    // if (isManager || isAdmin) {
+    //   filteredIds = [...ids];
+    // } else {
+    //   filteredIds = ids.filter(
+    //     (noteId) => entities[noteId].username === username
+    //   );
+    // }
 
     content =
       ids?.length &&
-      filteredIds.map((partId) => <PartCard key={partId} partId={partId} />);
+      ids.map((partId) => <PartCard key={partId} partId={partId} />);
   }
 
   return content;

@@ -13,5 +13,5 @@
 
 .spacer {
   height: 10vh;
-  width: 100%;
+  width: fit-content;
 }
