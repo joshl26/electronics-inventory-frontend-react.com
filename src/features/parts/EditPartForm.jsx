@@ -219,9 +219,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
               <Col>
                 <Row>
                   <Col>
-                    <h2 className={`classes.partname_header ${classes.text}`}>
-                      Part Name:
-                    </h2>
+                    <h2 className={classes.partname_header}>Part Name:</h2>
                   </Col>
                   <Col>
                     <label htmlFor="name" />
@@ -232,15 +230,13 @@ const EditPartForm = ({ part, users, partTypes }) => {
                       autoComplete="off"
                       value={name}
                       onChange={onNameChanged}
-                      className={`classes.partname_text ${classes.text}`}
+                      className={classes.partname_text}
                     ></input>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <h2 className={`classes.parttype_header ${classes.text}`}>
-                      Part Number:
-                    </h2>
+                    <h2 className={classes.parttype_header}>Part Number:</h2>
                   </Col>
                   <Col>
                     <label htmlFor="partNumber" />
@@ -251,7 +247,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
                       autoComplete="off"
                       value={partNumber}
                       onChange={onPartNumberChanged}
-                      className={`classes.parttype_text ${classes.text}`}
+                      className={classes.parttype_text}
                     ></input>
                   </Col>
                 </Row>
@@ -259,15 +255,11 @@ const EditPartForm = ({ part, users, partTypes }) => {
               <Col>
                 <Row>
                   <Col>
-                    <h2 className={`classes.parttype_header ${classes.text}`}>
-                      Part Type:
-                    </h2>
-
                     <label
-                      className="form__label form__checkbox-container"
+                      className={classes.parttype_header}
                       htmlFor="note-username"
                     >
-                      ASSIGNED TO:
+                      Part Type:
                     </label>
                     <select
                       id="note-username"
@@ -279,9 +271,7 @@ const EditPartForm = ({ part, users, partTypes }) => {
                       {options}
                     </select>
 
-                    <h2 className={`classes.parttype_text ${classes.text}`}>
-                      {part.partType}
-                    </h2>
+                    <h2 className={classes.parttype_text}>{part.partType}</h2>
                   </Col>
 
                   {part.images?.length !== 0 ? (
@@ -301,11 +291,12 @@ const EditPartForm = ({ part, users, partTypes }) => {
             </Row>
             <Row>
               <Col>
-                <label className="form__label" htmlFor="description"></label>
                 <textarea
-                  className={`classes.partdescription_text ${classes.text}`}
+                  className={classes.partdescription_text}
                   id="description"
                   name="description"
+                  type="text"
+                  autoComplete="off"
                   value={description}
                   onChange={onDescriptionChanged}
                 />
@@ -315,79 +306,54 @@ const EditPartForm = ({ part, users, partTypes }) => {
             <>
               <Row>
                 <Col>
-                  <h2 className={`classes.partqty_header ${classes.text}`}>
-                    Stock Qty
-                  </h2>
-                  <h3 className={`classes.partqty_text ${classes.text}`}>
-                    {part.qty}
-                  </h3>
+                  <h2 className={classes.partqty_header}>Stock Qty</h2>
+                  <input
+                    value={part.qty}
+                    className={classes.partqty_text}
+                  ></input>
                 </Col>
                 <Col>
-                  <h2 className={`classes.partqty_header ${classes.text}`}>
-                    Backorder Qty
-                  </h2>
-                  <h3 className={`classes.partqty_text ${classes.text}`}>
-                    {part.backOrder}
-                  </h3>
+                  <h2 className={classes.partqty_header}>Backorder Qty</h2>
+                  <h3 className={classes.partqty_text}>{part.backOrder}</h3>
                 </Col>
                 <Col>
-                  <h2 className={`classes.partlocation_header ${classes.text}`}>
-                    Location
-                  </h2>
-                  <h3 className={`classes.partlocation_text ${classes.text}`}>
+                  <h2 className={classes.partlocation_header}>Location</h2>
+                  <h3 className={classes.partlocation_text}>
                     {part.partLocation}
                   </h3>
                 </Col>
                 <Col>
-                  <h2 className={`classes.partpackage_header ${classes.text}`}>
-                    Package Type
-                  </h2>
-                  <h3 className={`classes.partpackage_text ${classes.text}`}>
+                  <h2 className={classes.partpackage_header}>Package Type</h2>
+                  <h3 className={classes.partpackage_text}>
                     {part.partPackage}
                   </h3>
                 </Col>
               </Row>
               <Row>
                 <Col>
-                  <h2 className={`classes.partupdated_header ${classes.text}`}>
-                    S/N
-                  </h2>
-                  <h3 className={`classes.partupdated_text ${classes.text}`}>
+                  <h2 className={classes.partupdated_header}>S/N</h2>
+                  <h3 className={classes.partupdated_text}>
                     {part.serialNumber}
                   </h3>
                 </Col>
                 <Col>
-                  <h2 className={`classes.partupdated_header ${classes.text}`}>
-                    Lot ID
-                  </h2>
-                  <h3 className={`classes.partupdated_text ${classes.text}`}>
-                    {part.lotId}
-                  </h3>
+                  <h2 className={classes.partupdated_header}>Lot ID</h2>
+                  <h3 className={classes.partupdated_text}>{part.lotId}</h3>
                 </Col>
                 <Col>
-                  <h2 className={`classes.partupdated_header ${classes.text}`}>
-                    Mfg. Date
-                  </h2>
-                  <h3 className={`classes.partupdated_text ${classes.text}`}>
-                    {part.mfgDate}
-                  </h3>
+                  <h2 className={classes.partupdated_header}>Mfg. Date</h2>
+                  <h3 className={classes.partupdated_text}>{part.mfgDate}</h3>
                 </Col>
                 <Col>
-                  <h2 className={`classes.partupdated_header ${classes.text}`}>
-                    Manufacturer
-                  </h2>
-                  <h3 className={`classes.partupdated_text ${classes.text}`}>
+                  <h2 className={classes.partupdated_header}>Manufacturer</h2>
+                  <h3 className={classes.partupdated_text}>
                     {part.manufacturer}
                   </h3>
                 </Col>
                 {part.vendor ? (
                   <Col>
-                    <h2
-                      className={`classes.partupdated_header ${classes.text}`}
-                    >
-                      Vendor
-                    </h2>
-                    <h3 className={`classes.partupdated_text ${classes.text}`}>
+                    <h2 className={classes.partupdated_header}>Vendor</h2>
+                    <h3 className={classes.partupdated_text}>
                       {part.vendor.vendorName}
                     </h3>
                   </Col>
@@ -397,36 +363,20 @@ const EditPartForm = ({ part, users, partTypes }) => {
               </Row>
               <Row>
                 <Col>
-                  <h2 className={`classes.partupdated_header ${classes.text}`}>
-                    Last Updated
-                  </h2>
-                  <h3 className={`classes.partupdated_text ${classes.text}`}>
-                    {updated}
-                  </h3>
+                  <h2 className={classes.partupdated_header}>Last Updated</h2>
+                  <h3 className={classes.partupdated_text}>{updated}</h3>
                 </Col>
                 <Col>
-                  <h2 className={`classes.partupdated_header ${classes.text}`}>
-                    Updated By
-                  </h2>
-                  <h3 className={`classes.partupdated_text ${classes.text}`}>
-                    {part.updatedBy}
-                  </h3>
+                  <h2 className={classes.partupdated_header}>Updated By</h2>
+                  <h3 className={classes.partupdated_text}>{part.updatedBy}</h3>
                 </Col>
                 <Col>
-                  <h2 className={`classes.partcreated_header ${classes.text}`}>
-                    Date Created
-                  </h2>
-                  <h3 className={`classes.partcreated_text ${classes.text}`}>
-                    {created}
-                  </h3>
+                  <h2 className={classes.partcreated_header}>Date Created</h2>
+                  <h3 className={classes.partcreated_text}>{created}</h3>
                 </Col>
                 <Col>
-                  <h2 className={`classes.partcreator_header ${classes.text}`}>
-                    Creator
-                  </h2>
-                  <h3 className={`classes.partcreator_text ${classes.text}`}>
-                    {part.user}
-                  </h3>
+                  <h2 className={classes.partcreator_header}>Creator</h2>
+                  <h3 className={classes.partcreator_text}>{part.user}</h3>
                 </Col>
               </Row>
             </>
