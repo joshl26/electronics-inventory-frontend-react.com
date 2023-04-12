@@ -7,10 +7,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const PartCard = ({ partId }) => {
-  console.log(partId);
+  // console.log(partId);
   const part = useSelector((state) => selectPartById(state, partId));
 
-  console.log(part);
+  // console.log(part);
 
   const [expand, setExpand] = useState(false);
 

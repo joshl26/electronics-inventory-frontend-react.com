@@ -8,6 +8,9 @@ const useAuth = () => {
   let isAdmin = false;
   let status = "Employee";
 
+  // Assign value to a key
+  sessionStorage.setItem("token", token);
+
   if (token) {
     const decoded = jwtDecode(token);
     const { username, roles } = decoded.UserInfo;
