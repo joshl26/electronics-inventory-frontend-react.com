@@ -1,19 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { setCredentials } from "../features/auth/authSlice";
 
-function ImagePicker() {
-  //   let user = JSON.parse(sessionStorage.getItem("jwt"));
-  //   const token = user.jwt.id;
-
-  // Access value associated with the key
+function ImagePicker(props) {
   const token = sessionStorage.getItem("token");
 
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [res, setRes] = useState({});
+  const [imageData, setImageData] = useState("");
 
   const handleSelectFile = (e) => setFile(e.target.files[0]);
+
+  useEffect(() => {
+    console.log(file);
+    console.log(imageData);
+  }, [file, imageData]);
+
   const handleUpload = async () => {
     const config = {
       headers: {
@@ -35,9 +37,25 @@ function ImagePicker() {
         data,
         config
       );
-      // const res = await axios.post("http://localhost:3024/upload", data);
 
       setRes(res.data);
+
+      // console.log(res.data);
+
+      setImageData({
+        _id: res.data.asset_id,
+        url: res.data.url,
+        fileName: res.data.public_id,
+      });
+
+      props.setImages([
+        ...props.images,
+        {
+          _id: res.data.asset_id,
+          url: res.data.url,
+          fileName: res.data.public_id,
+        },
+      ]);
     } catch (error) {
       alert(error.message);
     } finally {

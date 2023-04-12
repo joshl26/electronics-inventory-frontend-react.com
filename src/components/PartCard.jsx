@@ -47,7 +47,7 @@ const PartCard = ({ partId }) => {
     <Col key={image._id}>
       <div key={image._id}>
         <a href={image.url}>
-          <img className={classes.partcard_image} src={image.url} />
+          <img alt="" className={classes.partcard_image} src={image.url} />
         </a>
       </div>
     </Col>
