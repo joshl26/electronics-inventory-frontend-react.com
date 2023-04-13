@@ -1,7 +1,3 @@
-* {
-  border: red solid 1px;
-}
-
 .text {
   color: black;
 }
@@ -12,6 +8,7 @@
   border-radius: 1em;
   padding: 1em;
   margin: 0 auto;
+  border: solid rgb(66, 66, 66) 1em;
 }
 
 .partcard_image {
@@ -24,4 +21,8 @@
 
 .spacer {
   height: 5vh;
+}
+
+.border {
+  border: black solid 2px;
 }

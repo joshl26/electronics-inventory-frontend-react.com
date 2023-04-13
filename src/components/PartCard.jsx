@@ -58,17 +58,19 @@ const PartCard = ({ partId }) => {
 
   return (
     <div key={part._id}>
+      <div className={classes.spacer}></div>
+
       <div className={classes.partcard_container}>
-        <Container>
-          <Row>
-            <Col>
-              <Row>
-                <Col>
+        <Container className={classes.border}>
+          <Row className={classes.border}>
+            <Col className={classes.border}>
+              <Row className={classes.border}>
+                <Col className={classes.border}>
                   <h2 className={`classes.partname_header ${classes.text}`}>
                     Part Name:
                   </h2>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partname_text ${classes.text}`}>
                     <a onClick={(e) => handleEdit(e)} href="/">
                       {part.name}
@@ -76,22 +78,22 @@ const PartCard = ({ partId }) => {
                   </h2>
                 </Col>
               </Row>
-              <Row>
-                <Col>
+              <Row className={classes.border}>
+                <Col className={classes.border}>
                   <h2 className={`classes.parttype_header ${classes.text}`}>
                     Part Number:
                   </h2>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.parttype_text ${classes.text}`}>
                     {part.partNumber}
                   </h2>
                 </Col>
               </Row>
             </Col>
-            <Col>
-              <Row>
-                <Col>
+            <Col className={classes.border}>
+              <Row className={classes.border}>
+                <Col className={classes.border}>
                   <h2 className={`classes.parttype_header ${classes.text}`}>
                     Part Type:
                   </h2>
@@ -104,10 +106,10 @@ const PartCard = ({ partId }) => {
                   [imageContent]
                 ) : (
                   <>
-                    <Col>
+                    <Col className={classes.border}>
                       <p className={classes.text}>No Images</p>
                     </Col>
-                    <Col>
+                    <Col className={classes.border}>
                       <p className={classes.text}>No Images</p>
                     </Col>
                   </>
@@ -115,8 +117,8 @@ const PartCard = ({ partId }) => {
               </Row>
             </Col>
           </Row>
-          <Row>
-            <Col>
+          <Row className={classes.border}>
+            <Col className={classes.border}>
               <h3 className={`classes.partdescription_text ${classes.text}`}>
                 {expand ? part.description : shortDescription}
               </h3>
@@ -124,8 +126,8 @@ const PartCard = ({ partId }) => {
           </Row>
           {expand ? (
             <>
-              <Row>
-                <Col>
+              <Row className={classes.border}>
+                <Col className={classes.border}>
                   <h2 className={`classes.partqty_header ${classes.text}`}>
                     Stock Qty
                   </h2>
@@ -133,7 +135,7 @@ const PartCard = ({ partId }) => {
                     {part.qty}
                   </h3>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partqty_header ${classes.text}`}>
                     Backorder Qty
                   </h2>
@@ -141,7 +143,7 @@ const PartCard = ({ partId }) => {
                     {part.backOrder}
                   </h3>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partlocation_header ${classes.text}`}>
                     Location
                   </h2>
@@ -149,7 +151,7 @@ const PartCard = ({ partId }) => {
                     {part.partLocation}
                   </h3>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partpackage_header ${classes.text}`}>
                     Package Type
                   </h2>
@@ -158,8 +160,8 @@ const PartCard = ({ partId }) => {
                   </h3>
                 </Col>
               </Row>
-              <Row>
-                <Col>
+              <Row className={classes.border}>
+                <Col className={classes.border}>
                   <h2 className={`classes.partupdated_header ${classes.text}`}>
                     S/N
                   </h2>
@@ -167,7 +169,7 @@ const PartCard = ({ partId }) => {
                     {part.serialNumber}
                   </h3>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partupdated_header ${classes.text}`}>
                     Lot ID
                   </h2>
@@ -175,7 +177,7 @@ const PartCard = ({ partId }) => {
                     {part.lotId}
                   </h3>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partupdated_header ${classes.text}`}>
                     Mfg. Date
                   </h2>
@@ -183,7 +185,7 @@ const PartCard = ({ partId }) => {
                     {part.mfgDate}
                   </h3>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partupdated_header ${classes.text}`}>
                     Manufacturer
                   </h2>
@@ -192,7 +194,7 @@ const PartCard = ({ partId }) => {
                   </h3>
                 </Col>
                 {part.vendor ? (
-                  <Col>
+                  <Col className={classes.border}>
                     <h2
                       className={`classes.partupdated_header ${classes.text}`}
                     >
@@ -206,8 +208,8 @@ const PartCard = ({ partId }) => {
                   ""
                 )}
               </Row>
-              <Row>
-                <Col>
+              <Row className={classes.border}>
+                <Col className={classes.border}>
                   <h2 className={`classes.partupdated_header ${classes.text}`}>
                     Last Updated
                   </h2>
@@ -215,7 +217,7 @@ const PartCard = ({ partId }) => {
                     {updated}
                   </h3>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partupdated_header ${classes.text}`}>
                     Updated By
                   </h2>
@@ -223,7 +225,7 @@ const PartCard = ({ partId }) => {
                     {part.updatedBy}
                   </h3>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partcreated_header ${classes.text}`}>
                     Date Created
                   </h2>
@@ -231,7 +233,7 @@ const PartCard = ({ partId }) => {
                     {created}
                   </h3>
                 </Col>
-                <Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partcreator_header ${classes.text}`}>
                     Creator
                   </h2>
@@ -249,7 +251,7 @@ const PartCard = ({ partId }) => {
             <div className={classes.anchor_expand}>
               {!expand ? (
                 <a href="/" onClick={(e) => expandCard(e)}>
-                  Expand Part Info
+                  <h2>Expand Part Info</h2>
                 </a>
               ) : (
                 <a
@@ -257,7 +259,7 @@ const PartCard = ({ partId }) => {
                   href="/"
                   onClick={(e) => expandCard(e)}
                 >
-                  Collapse Part Info
+                  <h2>Collapse Part Info</h2>
                 </a>
               )}
             </div>
@@ -267,13 +269,12 @@ const PartCard = ({ partId }) => {
                 href="/"
                 onClick={(e) => handleEdit(e)}
               >
-                Edit Part
+                <h2>Edit Part</h2>
               </a>
             </div>
           </Row>
         </Container>
       </div>
-      <div className={classes.spacer}></div>
     </div>
   );
 };

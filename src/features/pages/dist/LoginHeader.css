@@ -31,3 +31,11 @@
   background-color: #161a1d !important;
   z-index: 10 !important;
 }
+
+.link_text {
+  color: #9f9f9f;
+}
+
+.link_text:hover {
+  color: #b4b4b4;
+}
