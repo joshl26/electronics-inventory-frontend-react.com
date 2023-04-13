@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Lottie from "lottie-react";
 import HamburgerMenu from "../../svg/HamburgerMenu.json";
+import { Link } from "react-router-dom";
 
 const LoginHeader = () => {
   return (
@@ -34,7 +35,9 @@ const LoginHeader = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="/login">User Login</Nav.Link>
+            <Nav.Link>
+              <Link to="/login"> User Login</Link>
+            </Nav.Link>
             <Nav.Link eventKey={2} href="/">
               Signup
             </Nav.Link>
