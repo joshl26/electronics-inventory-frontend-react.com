@@ -45,6 +45,16 @@ const NewPartForm = ({ users, partTypes }) => {
   const onDescriptionChanged = (e) => setDescription(e.target.value);
   const onQtyChanged = (e) => setQty(e.target.value);
   const onPartTypeChanged = (e) => setPartType(e.target.value);
+  const onImagesChanged = (e) => setImages(e.target.value);
+  const onPartNumberChanged = (e) => setPartNumber(e.target.value);
+  const onLotIdChanged = (e) => setLotId(e.target.value);
+  const onSerialNumberChanged = (e) => setSerialNumber(e.target.value);
+  const onManufacturerChanged = (e) => setManufacturer(e.target.value);
+  const onMfgDateChanged = (e) => setMfgDate(e.target.value);
+  const onBackOrderChanged = (e) => setBackOrder(e.target.value);
+  const onVendorName = (e) => setVendorName(e.target.value);
+  const onPartPackageChanged = (e) => setPartPackage(e.target.value);
+  const onPartLocationChanged = (e) => setPartLocation(e.target.value);
 
   const canSave = [name, description, userId].every(Boolean) && !isLoading;
 
