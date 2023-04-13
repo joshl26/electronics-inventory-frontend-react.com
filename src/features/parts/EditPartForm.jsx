@@ -61,7 +61,7 @@ const EditPartForm = ({ part, partTypes }) => {
   const [updatedAt, setUpdatedAt] = useState(updated);
   const [images, setImages] = useState(part.images);
   const [newImages, setNewImages] = useState([]);
-  const [deletedImages, setDeleteImages] = useState([]);
+  const [deletedImages, setDeletedImages] = useState(part.deletedImages);
   const [partNumber, setPartNumber] = useState(part.partNumber);
   const [lotId, setLotId] = useState(part.lotId);
   const [serialNumber, setSerialNumber] = useState(part.serialNumber);
@@ -86,6 +86,7 @@ const EditPartForm = ({ part, partTypes }) => {
     // console.log(error);
 
     console.log(images);
+    console.log(deletedImages);
 
     if (isSuccess || isDelSuccess) {
       setUserId("");
@@ -97,7 +98,7 @@ const EditPartForm = ({ part, partTypes }) => {
       setUpdatedAt("");
       // setImages("");
       setNewImages("");
-      setDeleteImages("");
+      // setDeletedImages([]);
       setPartNumber("");
       setLotId("");
       setSerialNumber("");
@@ -109,7 +110,7 @@ const EditPartForm = ({ part, partTypes }) => {
       setPartLocation("");
       navigate("/dash/parts");
     }
-  }, [isSuccess, isDelSuccess, navigate, images]);
+  }, [isSuccess, isDelSuccess, navigate, images, deletedImages]);
 
   const onNameChanged = (e) => setName(e.target.value);
   const onDescriptionChanged = (e) => setDescription(e.target.value);
@@ -162,13 +163,18 @@ const EditPartForm = ({ part, partTypes }) => {
     navigate(`/dash/parts`);
   };
 
-  const onImageDeleteClicked = (e) => {
+  const onImageDeleteClicked = async (e) => {
     e.preventDefault();
     console.log(e.target.getAttribute("name"));
 
-    const id = e.target.getAttribute("name");
+    const fileName = e.target.getAttribute("name");
 
-    setImages(images.filter((image) => image._id !== id));
+    const tag = {
+      fileName: fileName,
+    };
+    setDeletedImages([...deletedImages, tag]);
+
+    setImages(images.filter((image) => image.fileName !== fileName));
   };
 
   const options = partTypes.map((types, idx) => {
@@ -184,7 +190,7 @@ const EditPartForm = ({ part, partTypes }) => {
       <div key={idx}>
         <img alt="" className={classes.part_image} src={image.url} />
         <a href="/" onClick={onImageDeleteClicked}>
-          <p name={image._id}>Delete</p>
+          <p name={image.fileName}>Delete</p>
         </a>
       </div>
     );

@@ -32,15 +32,11 @@ function ImagePicker(props) {
       data.append("my_file", file);
       const res = await axios.post(
         "http://localhost:3500/parts/upload",
-        // "http://localhost:3024/upload",
-
         data,
         config
       );
 
       setRes(res.data);
-
-      // console.log(res.data);
 
       setImageData({
         _id: res.data.asset_id,
