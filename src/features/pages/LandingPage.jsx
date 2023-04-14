@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import "./LandingPage.scss";
 import Lottie from "lottie-react";
 import BusinessMetrics from "../../svg/BusinessMetrics.json";
+import { faChampagneGlasses } from "@fortawesome/free-solid-svg-icons";
 
 const LandingPage = () => {
   return (
@@ -10,25 +11,23 @@ const LandingPage = () => {
         <div className="spacer"></div>
         <h1 className="landing-header">Why choose our Software?</h1>
         <p className="landing-paragraph">
-          Doggo ipsum he made many woofs very jealous pupper wow very biscit
-          heckin good boys and girls, doggorino. boof doge ur givin me a spook.
-          Dat tungg tho big ol long bois borking doggo much ruin diet boof,
-          puggo porgo yapper. Many pats length boy wow very biscit tungg such
-          treat blop waggy wags, heckin good boys and girls pats most angery
-          pupper I have ever seen corgo. Maximum borkdrive heckin good boys and
-          girls doggorino snoot big ol heckin angery woofer, woofer porgo clouds
-          big ol pupper. Smol most angery pupper I have ever seen length boy
-          noodle horse puggo, such treat thicc. Doing me a frighten wow such
-          tempt such treat shoob many pats long woofer many pats noodle horse,
-          adorable doggo I am bekom fat borking doggo doggo much ruin diet
-          doggorino. Adorable doggo wow very biscit clouds thicc woofer, super
-          chub boof.
+          Electronics inventory software is the best way to keep track of stock
+          and ensure that your business has the right items in the right
+          amounts. It can provide you with real-time data on current stock
+          levels and allow you to quickly and accurately reorder items when
+          necessary. It can also allow you to track and trace items from the
+          moment they enter your inventory until the moment they are sold,
+          providing you with an unprecedented level of visibility and control
+          over your inventory. Finally, electronics inventory software can help
+          you easily manage pricing, discounts, returns, and other aspects of
+          inventory management. In short, electronics inventory software can
+          provide your business with a powerful and efficient way to manage
+          inventory and ensure that you have the right items in the right
+          amounts at all times..
         </p>
-        <Lottie
-          className="business-metrics"
-          animationData={BusinessMetrics}
-          loop={true}
-        />
+        <div className="business-metrics">
+          <Lottie animationData={BusinessMetrics} loop={true} />
+        </div>
       </Container>
     </div>
   );
