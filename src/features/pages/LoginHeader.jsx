@@ -9,33 +9,41 @@ import { Link } from "react-router-dom";
 
 const LoginHeader = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar
+      className="navbar fixed-top navbar-light bg-light"
+      collapseOnSelect
+      expand="lg"
+      bg="dark"
+      variant="dark"
+    >
       <Container className="navbar_container">
         <Navbar.Brand>
-          <Lottie
+          <h1 className="logo_text">Ei</h1>
+
+          {/* <Lottie
             className="header_icon"
             animationData={HamburgerMenu}
             loop={true}
-          />
+          /> */}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className="active" href="#features">
-              <Link className="link_text" to="/">
-                What is Ei?
+            <div className="nav-item">
+              <Link className="nav-link" to="/">
+                Inventory Tracker
               </Link>
-            </Nav.Link>
-            <Nav.Link href="#features">
-              <Link className="link_text" to="/">
+            </div>
+            <div className="nav-item">
+              <Link className="nav-link" to="/">
+                How It Works
+              </Link>
+            </div>
+            <div className="nav-item">
+              <Link className="nav-link" to="/">
                 Features
               </Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link className="link_text" to="/">
-                Solutions
-              </Link>
-            </Nav.Link>
+            </div>
             <NavDropdown title="Plans and Pricing" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/">Free Tier</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -45,16 +53,12 @@ const LoginHeader = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link>
-              <Link className="link_text" to="/login">
-                User Login
-              </Link>
-            </Nav.Link>
-            <Nav.Link eventKey={2}>
-              <Link className="link_text" to="/">
-                Signup
-              </Link>
-            </Nav.Link>
+            <Link className="link_text" to="/">
+              Signup
+            </Link>
+            <Link className="link_text" to="/login">
+              Log In
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

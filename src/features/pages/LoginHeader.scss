@@ -27,9 +27,11 @@
 }
 
 .navbar {
-  opacity: 0.9;
+  opacity: 0.99;
   background-color: #161a1d !important;
   z-index: 10 !important;
+  position: fixed;
+  width: 100%;
 }
 
 .link_text {
@@ -37,4 +39,16 @@
 }
 .link_text:hover {
   color: rgb(180, 180, 180);
+}
+
+.logo_text {
+  font-family: "Figtree", sans-serif;
+  margin: 0;
+  font-size: 2em;
+}
+
+.nav-item {
+  display: block;
+  margin: 0;
+  padding: 0;
 }
