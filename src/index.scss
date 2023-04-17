@@ -138,12 +138,12 @@ h1 {
 
 /* || PAGES */
 
-.public,
-.welcome {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+// .public,
+// .welcome {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1rem;
+// }
 
 .public {
   background-color: var(--BGCOLOR);
@@ -417,4 +417,19 @@ tr {
   width: 400px;
   height: 50px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-login {
+    border-radius: 1.25em;
+    width: 90px;
+  }
+
+  .btn-signup {
+    border-radius: 1.5em;
+    width: 300px;
+    height: 50px;
+    font-weight: bold;
+    font-size: small;
+  }
 }

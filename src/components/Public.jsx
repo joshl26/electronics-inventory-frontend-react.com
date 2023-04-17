@@ -21,7 +21,7 @@ const Public = () => {
         animationData={SwipeUpIcon}
         loop={true}
       />
-      <HeroImage />
+      {/* <HeroImage /> */}
       <LoginHeader />
       <div className="header-spacer"></div>
       <LandingPage />
