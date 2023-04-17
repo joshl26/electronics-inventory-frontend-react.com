@@ -6,6 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Lottie from "lottie-react";
 import HamburgerMenu from "../../svg/HamburgerMenu.json";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const LoginHeader = () => {
   return (
@@ -53,11 +54,13 @@ const LoginHeader = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Link className="link_text" to="/">
-              Signup
+            <Link className="nav-link" to="/signup">
+              <Button className="btn-login" variant="danger">
+                Signup
+              </Button>
             </Link>
-            <Link className="link_text" to="/login">
-              Log In
+            <Link className="nav-link" to="/login">
+              <Button className="btn-login">Log In</Button>
             </Link>
           </Nav>
         </Navbar.Collapse>

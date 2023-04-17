@@ -17,10 +17,6 @@
   padding: 0px;
 }
 
-.navbar_container {
-  min-width: 95vw;
-}
-
 .nav-link {
   padding-left: 1em !important;
   padding-right: 1em !important;
@@ -51,4 +47,15 @@
   display: block;
   margin: 0;
   padding: 0;
+}
+
+.btn-login:hover {
+  color: white;
+  background-color: #264653;
+  border-color: #264653;
+}
+
+.btn-login {
+  border-radius: 1.25em;
+  width: 90px;
 }

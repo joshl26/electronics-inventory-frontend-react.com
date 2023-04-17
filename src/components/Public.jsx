@@ -26,15 +26,7 @@ const Public = () => {
       <HeroImage />
       <LoginHeader />
 
-      <div className="large-spacer">
-        <Container>
-          <h1 className="hero-header-text">
-            <Container>
-              Electronics Inventory Management and Control Software
-            </Container>
-          </h1>
-        </Container>
-      </div>
+      <div className="large-spacer"></div>
       <LandingPage />
       <CustomerGallery />
 
