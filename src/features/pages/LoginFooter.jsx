@@ -11,7 +11,7 @@ const LoginFooter = () => {
         <SocialIcon url="https://github.com/" />
         <SocialIcon url="https://google.com/" />
       </div>
-      <div className="spacer"></div>
+      <div className="spacer-footer"></div>
     </Container>
   );
 };

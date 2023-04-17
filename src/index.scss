@@ -399,3 +399,22 @@ tr {
 }
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "custom";
+
+.btn-login:hover,
+.btn-signup:hover {
+  color: white;
+  background-color: #264653;
+  border-color: #264653;
+}
+
+.btn-login {
+  border-radius: 1.25em;
+  width: 90px;
+}
+
+.btn-signup {
+  border-radius: 1.5em;
+  width: 400px;
+  height: 50px;
+  font-weight: bold;
+}

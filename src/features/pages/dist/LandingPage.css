@@ -1,12 +1,54 @@
+.landing-one {
+  width: 100vw;
+  background-color: RGBA(211, 211, 211, 0.7);
+  height: 75vh;
+  padding: 0;
+}
+
+.landing-two {
+  padding: 0;
+  margin: 0;
+  height: 75vh;
+}
+
+.landing-three {
+  height: 100vh;
+}
+
+.cube-one {
+  height: 75vh;
+  background-color: grey;
+}
+
+.cube-two {
+  height: 75vh;
+  background-color: white;
+}
+
+.landing-one-text {
+  color: black;
+}
+
+.landing-spacer {
+  height: 2.5vh;
+}
+
+.landing-one-image {
+  position: absolute;
+  top: 15vh;
+  right: 10vw;
+  height: 50vh;
+  width: 50vw;
+}
+
 @media screen and (min-width: 769px) {
   .landing_container {
     min-height: 100vh;
-    background-color: #161a1d;
     z-index: 1;
   }
 
   .spacer {
-    height: 5vh;
+    height: 20vh;
   }
 
   .spacer_large {

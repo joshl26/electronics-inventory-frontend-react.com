@@ -6,7 +6,6 @@ import "./Public.scss";
 import LoginFooter from "../features/pages/LoginFooter";
 import SwipeUpIcon from "../svg/SwipeUpIcon.json";
 import Lottie from "lottie-react";
-import { Container } from "react-bootstrap";
 import CustomerGallery from "../features/pages/CustomerGallery";
 
 const Public = () => {
@@ -22,14 +21,11 @@ const Public = () => {
         animationData={SwipeUpIcon}
         loop={true}
       />
-
       <HeroImage />
       <LoginHeader />
-
-      <div className="large-spacer"></div>
+      <div className="header-spacer"></div>
       <LandingPage />
-      <CustomerGallery />
-
+      {/* <CustomerGallery /> */}
       <LoginFooter />
     </section>
   );

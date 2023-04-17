@@ -5,7 +5,6 @@
   top: 0px;
   bottom: 0px;
   right: 0px;
-  background-color: var(--BGCOLOR);
 }
 
 .background_image {
@@ -15,6 +14,6 @@
   min-width: 100%;
   height: 100vh;
   /* Add the blur effect */
-  filter: blur(7px);
-  -webkit-filter: blur(7px);
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
 }
