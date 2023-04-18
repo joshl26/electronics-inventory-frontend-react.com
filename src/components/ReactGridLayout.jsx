@@ -104,9 +104,9 @@ const ReactGridLayout = () => {
                 x
               </button>
               {/* <div>{widget.i}</div> */}
-              {/* {widget.i === "widget1" ? <PieChart /> : ""}
+              {widget.i === "widget1" ? <PieChart /> : ""}
               {widget.i === "widget2" ? <BarChart1 /> : ""}
-              {widget.i === "widget3" ? <AreaChart1 /> : ""} */}
+              {widget.i === "widget3" ? <AreaChart1 /> : ""}
             </div>
           );
         })}

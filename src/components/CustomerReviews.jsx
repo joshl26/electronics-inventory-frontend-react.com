@@ -45,7 +45,7 @@ const CustomerReviews = () => {
         "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_6_mvavra.png",
       datePublished: "Jan 10, 2023",
       reviewBody:
-        "Having used numerous electronics inventory management systems over my many years in the trade, I was skeptical of the claims at first. After using this software for a year I can truly say that it was the best decision our company ever made. Overall revenue has increased 50% over a period of one year. Highly reccomended!",
+        "Having used numerous electronics inventory management systems over my many years in the trade. Overall revenue has increased 50% over a period of one year. Highly reccomended!",
       reviewRating: {
         bestRating: "5",
         ratingValue: "4",
@@ -70,7 +70,7 @@ const CustomerReviews = () => {
     {
       _id: 5,
       author: "Grayson Andersen",
-      jobTitle: "Electrical Engineer at Microverse",
+      jobTitle: "Advanced Robotics Engineer",
       authorImage:
         "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_4_cbbidr.png",
       datePublished: "March 21, 2023",
@@ -85,7 +85,7 @@ const CustomerReviews = () => {
     {
       _id: 6,
       author: "Luc Monroe",
-      jobTitle: "Electrical Engineer at Microverse",
+      jobTitle: "Embedded Electronics Expert",
       authorImage:
         "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_3_ntncyb.png",
       datePublished: "November 5, 2022",
@@ -121,6 +121,10 @@ const CustomerReviews = () => {
       <h1 className="slider_header">
         Your professional inventory management platform
       </h1>
+      <h3 className="slider_header">
+        See what people are saying about Electronics Inventory Management and
+        Control Software.
+      </h3>
       <Slide responsive={responsiveSettings}>
         {data.map((review, index) => (
           <div
@@ -131,6 +135,8 @@ const CustomerReviews = () => {
           </div>
         ))}
       </Slide>
+
+      {/* <CustomerReviewCard review={data[0]} /> */}
     </div>
   );
 };

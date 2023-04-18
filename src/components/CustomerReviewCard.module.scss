@@ -1,6 +1,14 @@
-.review_card_container {
+.review_card_outer_container {
+  padding-top: 25px;
+  width: 600px;
+  min-height: 350px;
+  margin: 0 auto;
+}
+
+.review_card_inner_container {
+  padding: 25px;
   width: 550px;
-  height: 400px;
+  min-height: 300px;
   background-color: aliceblue;
   border-radius: 2em;
   margin: 0 auto;
@@ -14,12 +22,27 @@
 
 .review_author {
   color: black;
+  font-size: 1.75em;
 }
 
 .review_body {
   color: black;
+  font-size: 1.25em;
 }
 
 .review_date {
   color: black;
+}
+
+.review_job_title {
+  color: black;
+  font-size: 1.25em;
+}
+
+.col_2 {
+  text-align: left;
+}
+
+.spacer {
+  height: 1em;
 }

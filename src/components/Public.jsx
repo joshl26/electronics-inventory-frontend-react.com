@@ -26,7 +26,7 @@ const Public = () => {
       <div className="header-spacer"></div>
       <LandingPage />
       {/* <CustomerGallery /> */}
-      <LoginFooter />
+      {/* <LoginFooter /> */}
     </section>
   );
 

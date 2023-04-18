@@ -46,7 +46,7 @@ const LandingPage = () => {
         </Container>
       </div>
       <CustomerReviews />
-      <div className="landing-two">
+      {/* <div className="landing-two">
         <Row>
           <Col xs={12} md={6} lg={6} className="cube-one">
             <div className="cube-one"></div>
@@ -64,8 +64,9 @@ const LandingPage = () => {
             <div className="cube-four"></div>
           </Col>
         </Row>
-      </div>
+      </div> */}
 
+      <div className="spacer_small"></div>
       <div className="landing-three">
         <Container>
           <h1 className="landing-header">Why choose our Software?</h1>
