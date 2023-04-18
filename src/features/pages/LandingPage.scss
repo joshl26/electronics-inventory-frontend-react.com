@@ -5,7 +5,7 @@
 
 .cube-one {
   height: 75vh;
-  background-color: grey;
+  background-color: rgba(42, 157, 143, 0.8);
   padding: 0;
   margin: 0;
 }
@@ -17,17 +17,22 @@
   background-color: white;
 }
 
-.landing-one-text {
-  color: black;
+.cube-three {
+  height: 75vh;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.cube-four {
+  height: 75vh;
+  padding: 0;
+  margin: 0;
+  background-color: #e9c46a;
 }
 
 .landing-spacer {
   height: 2.5vh;
-}
-
-.landing-one-image {
-  height: 150px;
-  width: 100%;
 }
 
 .landing-one-row {
@@ -35,11 +40,32 @@
   height: 300px;
 }
 
+.header-spacer {
+  height: 7vh;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
 @media screen and (min-width: 769px) {
+  .landing-one-text {
+    color: black;
+  }
+
   .landing-one {
+    min-height: 80vh;
     width: 100vw;
-    background-color: RGBA(211, 211, 211, 0.7);
+    background-color: RGBA(211, 211, 211, 0.5);
     padding: 0;
+  }
+
+  .spacer_small {
+    height: 10vh;
   }
 
   .spacer {
@@ -66,13 +92,44 @@
   .landing-header {
     font-size: 3em;
   }
+
+  .landing-header-1 {
+  }
+
+  .landing-header-2 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .landing-header-3 {
+    padding-bottom: 1em;
+  }
+
+  .landing-one-image {
+    position: absolute;
+    object-fit: cover;
+    height: 55vh;
+    width: 33vw;
+    min-width: 350px;
+    border-radius: 2em;
+    background-color: rgb(171, 255, 255);
+    box-shadow: 10px 10px 5px #5c5c5c;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .landing-one-text {
+    color: black;
+  }
+
+  .spacer_small {
+    height: 75px;
+  }
   .landing-one {
     width: 100vw;
     background-color: RGBA(211, 211, 211, 0.7);
     padding: 0;
+    min-height: 100vh;
   }
 
   .landing_container {
@@ -99,7 +156,27 @@
     font-size: 0.75em;
   }
 
-  .landing-header {
-    font-size: 1.5em;
+  .landing-header-1 {
+    font-size: 1.3em;
+  }
+
+  .landing-header-2 {
+    font-size: 1.125em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .landing-header-3 {
+    font-size: 1em;
+    padding-bottom: 1em;
+  }
+
+  .landing-one-image {
+    position: absolute;
+    object-fit: cover;
+    height: 40vh;
+    width: 40vw;
+    border-radius: 2em;
+    background-color: aqua;
   }
 }

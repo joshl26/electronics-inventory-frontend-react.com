@@ -1,0 +1,7 @@
+.review_card_container {
+  width: 550px;
+  height: 400px;
+  background-color: aliceblue;
+  border-radius: 2em;
+  margin: 0 auto;
+}

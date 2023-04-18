@@ -1,0 +1,25 @@
+.review_card_container {
+  width: 550px;
+  height: 400px;
+  background-color: aliceblue;
+  border-radius: 2em;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.review_author {
+  color: black;
+}
+
+.review_body {
+  color: black;
+}
+
+.review_date {
+  color: black;
+}

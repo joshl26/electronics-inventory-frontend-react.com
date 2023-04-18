@@ -1,58 +1,69 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import "./LandingPage.scss";
 import Lottie from "lottie-react";
 import BusinessMetrics from "../../svg/BusinessMetrics.json";
+
+import ei_1 from "../../img/ei_1.png";
+import CustomerReviews from "../../components/CustomerReviews";
 
 const LandingPage = () => {
   return (
     <>
       <div className="landing-one">
+        <div className="header-spacer"></div>
         <Container>
+          <div className="spacer_small"></div>
           <Row>
             <Col xs={12} md={6} lg={6}>
-              <div className="spacer"></div>
-              <h3 className="landing-one-text">Inventory Control Simplified</h3>
-              <h1 className="landing-one-text">Manage your parts inventory</h1>
-              <h1 className="landing-one-text">in seconds, FROM ANYWHERE!</h1>
-              <h3 className="landing-one-text">
+              <h3 className="landing-one-text landing-header-3">
+                Inventory Control Simplified
+              </h3>
+              <h1 className="landing-one-text landing-header-1">
+                Manage your parts inventory
+              </h1>
+              <h1 className="landing-one-text landing-header-1">
+                in seconds, FROM ANYWHERE!
+              </h1>
+              <h2 className="landing-one-text landing-header-2">
                 Take the guesswork out of inventory control and management.
                 Repetetive tasks like repurchase set points, inventory costing,
                 JIT managment are automaticallly calculated by our software.
-              </h3>
+              </h2>
               <div className="landing-spacer"></div>
-              <Container>
+              <Container className="align-center">
                 <Button variant="danger" className="btn-signup">
                   Sign Up Now and Start your Free Trial!
                 </Button>
               </Container>
             </Col>
             <Col xs={12} md={6} lg={6}>
-              <div className="landing-one-image"></div>
+              <div className="landing-one-image">
+                <Image className="landing-one-image" src={ei_1}></Image>
+              </div>
             </Col>
           </Row>
           <div className="spacer"></div>
         </Container>
       </div>
+      <CustomerReviews />
       <div className="landing-two">
-        <Container>
-          <Row>
-            <Col xs={12} md={6} lg={6} className="cube-one">
-              <div className="cube-one"></div>
-            </Col>
-            <Col xs={12} md={6} lg={6} className="cube-two">
-              <div className="cube-two"></div>
-            </Col>
-          </Row>
+        <Row>
+          <Col xs={12} md={6} lg={6} className="cube-one">
+            <div className="cube-one"></div>
+          </Col>
+          <Col xs={12} md={6} lg={6} className="cube-two">
+            <div className="cube-two"></div>
+          </Col>
+        </Row>
 
-          <Row>
-            <Col xs={12} md={6} lg={6} className="cube-two">
-              <div className="cube-two"></div>
-            </Col>
-            <Col xs={12} md={6} lg={6} className="cube-one">
-              <div className="cube-one"></div>
-            </Col>
-          </Row>
-        </Container>
+        <Row>
+          <Col xs={12} md={6} lg={6} className="cube-three">
+            <div className="cube-three"></div>
+          </Col>
+          <Col xs={12} md={6} lg={6} className="cube-four">
+            <div className="cube-four"></div>
+          </Col>
+        </Row>
       </div>
 
       <div className="landing-three">

@@ -1,0 +1,80 @@
+[
+  {
+    "_id": 1,
+    "author": "Trey Mora",
+    "jobTitle": "Electrical Engineer at Microverse",
+    "authorImage": "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_1_h0cruy.png",
+    "datePublished": "2023-02-16",
+    "reviewBody": "Electronics Inventory has allowed our business to save 35% time in searching for unused inventory.",
+    "reviewRating": {
+      "bestRating": "5",
+      "ratingValue": "4",
+      "worstRating": "1"
+    }
+  },
+  {
+    "_id": 2,
+    "author": "Safwan Higgins",
+    "jobTitle": "Purchasing Manager at TrendLogic",
+    "authorImage": "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_2_vd88wm.png",
+    "datePublished": "2022-11-04",
+    "reviewBody": "Maintaining JIT inventory levels has been a challenge tarditionally. All of that changed when we purhcased Electronics Inventory. We have seen a cost reduction of $25,000 across our worldwide lcoations.",
+    "reviewRating": {
+      "bestRating": "5",
+      "ratingValue": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "_id": 3,
+    "author": "Marshall Harper",
+    "jobTitle": "Senior Electrical Engineer",
+    "authorImage": "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_6_mvavra.png",
+    "datePublished": "2023-02-16",
+    "reviewBody": "Having used numerous electronics inventory management systems over my many years in the trade, I was skeptical of the claims at first. After using this software for a year I can truly say that it was the best decision our company ever made. Overall revenue has increased 50% over a period of one year. Highly reccomended!",
+    "reviewRating": {
+      "bestRating": "5",
+      "ratingValue": "4",
+      "worstRating": "1"
+    }
+  },
+  {
+    "_id": 4,
+    "author": "Trey Mora",
+    "jobTitle": "Electrical Engineer at Microverse",
+    "authorImage": "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_1_h0cruy.png",
+    "datePublished": "2023-02-16",
+    "reviewBody": "Electronics Inventory has allowed our business to save 35% time in searching for unused inventory.",
+    "reviewRating": {
+      "bestRating": "5",
+      "ratingValue": "4",
+      "worstRating": "1"
+    }
+  },
+  {
+    "_id": 5,
+    "author": "Trey Mora",
+    "jobTitle": "Electrical Engineer at Microverse",
+    "authorImage": "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_1_h0cruy.png",
+    "datePublished": "2023-02-16",
+    "reviewBody": "Electronics Inventory has allowed our business to save 35% time in searching for unused inventory.",
+    "reviewRating": {
+      "bestRating": "5",
+      "ratingValue": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "_id": 6,
+    "author": "Trey Mora",
+    "jobTitle": "Electrical Engineer at Microverse",
+    "authorImage": "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_1_h0cruy.png",
+    "datePublished": "2023-02-16",
+    "reviewBody": "Electronics Inventory has allowed our business to save 35% time in searching for unused inventory.",
+    "reviewRating": {
+      "bestRating": "5",
+      "ratingValue": "5",
+      "worstRating": "1"
+    }
+  }
+]
