@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-// import PieChart from "../features/charts/PieChart";
-// import BarChart1 from "../features/charts/BarChart1";
+import PieChart from "../features/charts/PieChart";
+import BarChart1 from "../features/charts/BarChart1";
 
 import "./ReactGridLayout.scss";
-// import AreaChart1 from "../features/charts/AreaChart1";
+import AreaChart1 from "../features/charts/AreaChart1";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
