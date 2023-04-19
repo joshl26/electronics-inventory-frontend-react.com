@@ -10,11 +10,10 @@ const LandingPage = () => {
   return (
     <>
       <div className="landing-one">
-        <div className="header-spacer"></div>
         <Container>
-          <div className="spacer_small"></div>
+          <div className="spacer_medium"></div>
           <Row>
-            <Col xs={12} md={6} lg={6}>
+            <Col className="landing_one_row" xs={12} md={6} lg={6}>
               <h3 className="landing-one-text landing-header-3">
                 Inventory Control Simplified
               </h3>
@@ -36,13 +35,14 @@ const LandingPage = () => {
                 </Button>
               </Container>
             </Col>
-            <Col xs={12} md={6} lg={6}>
+            <Col className="landing_one_row" xs={12} md={6} lg={6}>
+              <div className="spacer_small"></div>
               <div className="landing-one-image">
                 <Image className="landing-one-image" src={ei_1}></Image>
               </div>
             </Col>
           </Row>
-          <div className="spacer"></div>
+          <div className="spacer_small"></div>
         </Container>
       </div>
       <CustomerReviews />
@@ -84,11 +84,11 @@ const LandingPage = () => {
             software can provide your business with a powerful and efficient way
             to manage inventory and ensure that you have the right items in the
             right amounts at all times..
-          </p>
+          </p>{" "}
+          <div className="business-metrics">
+            <Lottie animationData={BusinessMetrics} loop={true} />
+          </div>
         </Container>
-        <div className="business-metrics">
-          <Lottie animationData={BusinessMetrics} loop={true} />
-        </div>
       </div>
     </>
   );

@@ -1,53 +1,108 @@
-.header_container {
-  width: 100vw;
-  height: 10vh;
+@media screen and (min-width: 769px) {
+  .header_container {
+    width: 100vw;
+    height: 10vh;
+  }
+
+  .header_text {
+    color: red;
+    font-size: 5em;
+  }
+
+  .header_icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .navbar-brand {
+    padding: 0px;
+  }
+
+  .nav-link {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+    color: white;
+  }
+
+  .navbar {
+    opacity: 0.99;
+    background-color: #161a1d !important;
+    z-index: 10 !important;
+    position: fixed;
+    width: 100%;
+    height: 7.5dvh;
+  }
+
+  .link_text {
+    color: rgb(159, 159, 159);
+  }
+  .link_text:hover {
+    color: rgb(180, 180, 180);
+  }
+
+  .logo_text {
+    font-family: "Figtree", sans-serif;
+    margin: 0;
+    font-size: 2em;
+  }
+
+  .nav-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
 }
 
-.header_text {
-  color: red;
-  font-size: 5em;
-}
+@media screen and (min-width: 769px) {
+  .header_container {
+    width: 100vw;
+    height: 10vh;
+  }
 
-.header_icon {
-  width: 60px;
-  height: 60px;
-}
+  .header_text {
+    color: red;
+    font-size: 5em;
+  }
 
-.navbar-brand {
-  padding: 0px;
-}
+  .header_icon {
+    width: 60px;
+    height: 60px;
+  }
 
-.nav-link {
-  padding-left: 1em !important;
-  padding-right: 1em !important;
-  color: white;
-}
+  .navbar-brand {
+    padding: 0px;
+  }
 
-.navbar {
-  opacity: 0.99;
-  background-color: #161a1d !important;
-  z-index: 10 !important;
-  position: fixed;
-  width: 100%;
-}
+  .nav-link {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+    color: white;
+  }
 
-.link_text {
-  color: rgb(159, 159, 159);
-}
-.link_text:hover {
-  color: rgb(180, 180, 180);
-}
+  .navbar {
+    opacity: 0.99;
+    background-color: #161a1d !important;
+    z-index: 10 !important;
+    position: fixed;
+    width: 100%;
+  }
 
-.logo_text {
-  font-family: "Figtree", sans-serif;
-  margin: 0;
-  font-size: 2em;
+  .link_text {
+    color: rgb(159, 159, 159);
+  }
+  .link_text:hover {
+    color: rgb(180, 180, 180);
+  }
+
+  .logo_text {
+    font-family: "Figtree", sans-serif;
+    margin: 0;
+    font-size: 2em;
+  }
+
+  .nav-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
 }
-
-.nav-item {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-

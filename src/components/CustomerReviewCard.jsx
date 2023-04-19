@@ -11,12 +11,10 @@ const CustomerReviewCard = ({ review }) => {
       <Container className={classes.review_card_inner_container}>
         <Row>
           <div className={classes.spacer}></div>
-          <Col md={3}>
-            <div>
-              <Image className={classes.image} src={review.authorImage} />
-            </div>
+          <Col xs={1} md={3}>
+            <Image className={classes.image} src={review.authorImage} />
           </Col>
-          <Col md={9} className={classes.col_2}>
+          <Col xs={1} md={9} className={classes.col_2}>
             <div className={classes.spacer}></div>
             <h4 className={classes.review_author}>{review.author}</h4>
             <p className={classes.review_job_title}>{review.jobTitle}</p>
@@ -34,6 +32,7 @@ const CustomerReviewCard = ({ review }) => {
 
         <p className={classes.review_date}>{review.datePublished}</p>
       </Container>
+      <div className={classes.spacer}></div>
     </div>
   );
 };

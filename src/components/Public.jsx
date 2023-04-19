@@ -23,7 +23,6 @@ const Public = () => {
       />
       {/* <HeroImage /> */}
       <LoginHeader />
-      <div className="header-spacer"></div>
       <LandingPage />
       {/* <CustomerGallery /> */}
       {/* <LoginFooter /> */}

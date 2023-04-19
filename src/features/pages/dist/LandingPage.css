@@ -1,58 +1,54 @@
-.landing-two {
-  padding: 0;
-  margin: 0;
-}
-
-.cube-one {
-  height: 75vh;
-  background-color: rgba(42, 157, 143, 0.8);
-  padding: 0;
-  margin: 0;
-}
-
-.cube-two {
-  height: 75vh;
-  padding: 0;
-  margin: 0;
-  background-color: white;
-}
-
-.cube-three {
-  height: 75vh;
-  padding: 0;
-  margin: 0;
-  background-color: white;
-}
-
-.cube-four {
-  height: 75vh;
-  padding: 0;
-  margin: 0;
-  background-color: #e9c46a;
-}
-
-.landing-spacer {
-  height: 2.5vh;
-}
-
-.landing-one-row {
-  width: 100vw;
-  height: 300px;
-}
-
-.header-spacer {
-  height: 7vh;
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-center {
-  text-align: center;
-}
-
 @media screen and (min-width: 769px) {
+  .landing-two {
+    padding: 0;
+    margin: 0;
+  }
+
+  .cube-one {
+    height: 75vh;
+    background-color: rgba(42, 157, 143, 0.8);
+    padding: 0;
+    margin: 0;
+  }
+
+  .cube-two {
+    height: 75vh;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+  }
+
+  .cube-three {
+    height: 75vh;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+  }
+
+  .cube-four {
+    height: 75vh;
+    padding: 0;
+    margin: 0;
+    background-color: #e9c46a;
+  }
+
+  .landing-spacer {
+    height: 2.5vh;
+  }
+
+  .landing-one-row {
+    width: 100vw;
+    height: 300px;
+  }
+
+  .align-left {
+    text-align: left;
+  }
+
+  .align-center {
+    text-align: center;
+  }
+
   .landing-one-text {
     color: black;
   }
@@ -65,11 +61,15 @@
   }
 
   .spacer_small {
-    height: 10vh;
+    height: 2.5vh;
+  }
+
+  .spacer_medium {
+    height: 20vh;
   }
 
   .spacer {
-    height: 20vh;
+    height: 15vh;
   }
 
   .spacer_large {
@@ -93,48 +93,105 @@
     font-size: 3em;
   }
 
+  .landing-header-1 {
+    font-family: "Gloock", serif;
+    font-size: 2em;
+  }
+
   .landing-header-2 {
     padding-top: 1em;
     padding-bottom: 1em;
   }
 
   .landing-header-3 {
+    font-size: 2.75em;
+    font-family: "Figtree", sans-serif;
     padding-bottom: 1em;
   }
 
   .landing-one-image {
     position: absolute;
     object-fit: cover;
-    height: 55vh;
-    width: 33vw;
+    width: 45vw;
     min-width: 350px;
-    border-radius: 2em;
-    background-color: #abffff;
+    border-radius: 0.5em;
     box-shadow: 10px 10px 5px #5c5c5c;
   }
 }
 @media screen and (max-width: 768px) {
+  .landing-two {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+
+  .cube-one {
+    height: 75vh;
+    background-color: rgba(42, 157, 143, 0.8);
+    padding: 0;
+    margin: 0;
+  }
+
+  .cube-two {
+    height: 75vh;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+  }
+
+  .cube-three {
+    height: 75vh;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+  }
+
+  .cube-four {
+    height: 75vh;
+    padding: 0;
+    margin: 0;
+    background-color: #e9c46a;
+  }
+
+  .landing-spacer {
+    height: 2.5vh;
+  }
+
+  .landing-one-row {
+    width: 100vw;
+    height: 300px;
+  }
+
+  .align-left {
+    text-align: left;
+  }
+
+  .align-center {
+    text-align: center;
+  }
+
   .landing-one-text {
     color: black;
   }
 
   .spacer_small {
-    height: 75px;
+    height: 2.5vh;
+  }
+
+  .spacer_medium {
+    height: 15vh;
+    min-height: 50px;
   }
 
   .landing-one {
     width: 100vw;
     background-color: RGBA(211, 211, 211, 0.7);
     padding: 0;
-    min-height: 100vh;
+    height: 100%;
   }
 
   .landing_container {
     background-color: #161a1d;
-  }
-
-  .spacer {
-    height: 5vh;
   }
 
   .spacer_large {
@@ -142,7 +199,8 @@
   }
 
   .business-metrics {
-    margin: 0 auto;
+    left: -10vw;
+    position: relative;
   }
 
   .landing-text-container {
@@ -160,20 +218,24 @@
   .landing-header-2 {
     font-size: 1.125em;
     padding-top: 1em;
-    padding-bottom: 1em;
   }
 
   .landing-header-3 {
-    font-size: 1em;
+    font-size: 1.75em;
     padding-bottom: 1em;
+    text-align: center;
   }
 
   .landing-one-image {
+    padding-top: 15px;
+    padding-left: 1vw;
     position: absolute;
     object-fit: cover;
-    height: 40vh;
-    width: 40vw;
-    border-radius: 2em;
-    background-color: aqua;
+    width: 90vw;
+    border-radius: 0.5em;
+  }
+
+  .landing_one_row {
+    min-height: 250px;
   }
 }

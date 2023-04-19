@@ -6,6 +6,24 @@
     padding-top: 20vh;
     text-shadow: 2.5px 2.5px #0b090a;
   }
+
+  .swipe-up-icon {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 10000;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    opacity: 0.6;
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-spacer {
+    width: 100vw;
+    position: relative;
+    background-color: RGBA(211, 211, 211, 0.7);
+  }
 }
 @media screen and (max-width: 768px) {
   .hero-header-text {
@@ -16,21 +34,22 @@
     padding-top: 20vh;
     text-shadow: 2.5px 2.5px #0b090a;
   }
-}
-.swipe-up-icon {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 10000;
-  background-color: #d3d3d3;
-  border-radius: 50%;
-  opacity: 0.6;
-  width: 40px;
-  height: 40px;
-}
 
-.header-spacer {
-  height: 5vh;
-  width: 100vw;
-  position: relative;
+  .swipe-up-icon {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 10000;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    opacity: 0.6;
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-spacer {
+    width: 100vw;
+    position: relative;
+    background-color: RGBA(211, 211, 211, 0.7);
+  }
 }
