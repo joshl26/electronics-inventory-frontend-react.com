@@ -31,7 +31,7 @@ const CustomerReviews = () => {
         "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_2_vd88wm.png",
       datePublished: "December 2, 2022",
       reviewBody:
-        "Maintaining JIT inventory levels has been a challenge. All of that changed when we purchased Electronics Inventory.We saw a cost reduction of $25,000 across our worldwide lcoations.",
+        "Maintaining JIT inventory levels has been a challenge. All of that changed when we purchased Electronics Inventory. We saw a cost reduction of $25,000 across our worldwide locations.",
       reviewRating: {
         bestRating: "5",
         ratingValue: "5",
