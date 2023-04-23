@@ -15,6 +15,7 @@ const initItems = [
   { id: "10", content: "one", order: 9 },
   { id: "11", content: "two", order: 10 },
   { id: "12", content: "three", order: 11 },
+  { id: "13", content: "three", order: 12 },
 ];
 
 // Items positioning methods
