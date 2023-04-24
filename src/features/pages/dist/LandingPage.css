@@ -61,7 +61,7 @@
   }
 
   .spacer_small {
-    height: 2.5vh;
+    height: 5vh;
   }
 
   .spacer_medium {
@@ -93,14 +93,20 @@
     font-size: 3em;
   }
 
+  .landing-header-1-inline {
+    font-size: 1.5em;
+    font-family: "Figtree", sans-serif;
+  }
+
   .landing-header-1 {
     font-family: "Gloock", serif;
-    font-size: 2em;
+    font-size: 4em;
   }
 
   .landing-header-2 {
     padding-top: 1em;
     padding-bottom: 1em;
+    font-family: "Figtree", sans-serif;
   }
 
   .landing-header-3 {
@@ -211,19 +217,24 @@
     font-size: 0.75em;
   }
 
-  .landing-header-1 {
-    font-size: 1.3em;
+  .landing-header-1-inline {
+    display: inline-block;
+    font-size: 2em;
+    font-family: "Gloock", serif;
   }
 
   .landing-header-2 {
     font-size: 1.125em;
     padding-top: 1em;
+    font-family: "Gloock", serif;
   }
 
   .landing-header-3 {
+    display: inline-block;
     font-size: 1.75em;
     padding-bottom: 1em;
     text-align: center;
+    font-family: "Figtree", sans-serif;
   }
 
   .landing-one-image {

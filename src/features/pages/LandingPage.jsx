@@ -14,14 +14,11 @@ const LandingPage = () => {
           <div className="spacer_medium"></div>
           <Row>
             <Col className="landing_one_row" xs={12} md={6} lg={6}>
-              <h3 className="landing-one-text landing-header-3">
-                Inventory Control Simplified
-              </h3>
               <h1 className="landing-one-text landing-header-1">
-                Manage your parts inventory
-              </h1>
-              <h1 className="landing-one-text landing-header-1">
-                in seconds, FROM ANYWHERE!
+                Inventory Control
+                <h3 className="landing-one-text landing-header-1-inline">
+                  Simplified
+                </h3>
               </h1>
               <h2 className="landing-one-text landing-header-2">
                 Take the guesswork out of inventory control and management.
