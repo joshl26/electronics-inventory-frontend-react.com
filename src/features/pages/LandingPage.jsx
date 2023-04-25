@@ -43,26 +43,6 @@ const LandingPage = () => {
         </Container>
       </div>
       <CustomerReviews />
-      {/* <div className="landing-two">
-        <Row>
-          <Col xs={12} md={6} lg={6} className="cube-one">
-            <div className="cube-one"></div>
-          </Col>
-          <Col xs={12} md={6} lg={6} className="cube-two">
-            <div className="cube-two"></div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col xs={12} md={6} lg={6} className="cube-three">
-            <div className="cube-three"></div>
-          </Col>
-          <Col xs={12} md={6} lg={6} className="cube-four">
-            <div className="cube-four"></div>
-          </Col>
-        </Row>
-      </div> */}
-
       <div className="spacer_small"></div>
       <div className="landing-three">
         <Container>

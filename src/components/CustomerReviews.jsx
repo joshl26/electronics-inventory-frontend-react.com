@@ -31,7 +31,7 @@ const CustomerReviews = () => {
         "https://res.cloudinary.com/dv6keahg3/image/upload/v1681826980/ElectronicsInventory/user_review_images/review_2_vd88wm.png",
       datePublished: "December 2, 2022",
       reviewBody:
-        "Maintaining JIT inventory levels has been a challenge. All of that changed when we purchased Electronics Inventory. We saw a cost reduction of $25,000 across our worldwide locations.",
+        "Maintaining JIT inventory levels has been a challenge. Using Ei we saw a cost reduction of $25,000 across our worldwide locations.",
       reviewRating: {
         bestRating: "5",
         ratingValue: "5",
@@ -120,6 +120,7 @@ const CustomerReviews = () => {
   return (
     <div className="slider_container">
       <Container>
+        <div className="spacer_small"></div>
         <h1 className="slider_header_1">
           Your professional inventory management platform
         </h1>
@@ -128,6 +129,8 @@ const CustomerReviews = () => {
           Control Software.
         </h3>
       </Container>
+      <div className="spacer_small"></div>
+
       <Slide responsive={responsiveSettings}>
         {data.map((review, index) => (
           <div
@@ -138,6 +141,8 @@ const CustomerReviews = () => {
           </div>
         ))}
       </Slide>
+      <div className="spacer_small"></div>
+      <div className="spacer_small"></div>
 
       {/* <CustomerReviewCard review={data[0]} /> */}
     </div>
