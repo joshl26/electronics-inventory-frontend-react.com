@@ -59,7 +59,7 @@ function Cards() {
       }
     }
     // not support IE8
-    // let indexOfItem5 = items.findIndex(item => item.id === id);
+    // let indexOfItem = items.findIndex(item => item.id === id);
     return items[indexOfItem];
   };
 
