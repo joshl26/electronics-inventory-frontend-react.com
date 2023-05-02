@@ -144,6 +144,14 @@ const PartCard = ({ partId }) => {
                   </h3>
                 </Col>
                 <Col className={classes.border}>
+                  <h2 className={`classes.partcreator_header ${classes.text}`}>
+                    Unit Cost
+                  </h2>
+                  <h3 className={`classes.partcreator_text ${classes.text}`}>
+                    {part.cost}
+                  </h3>
+                </Col>
+                <Col className={classes.border}>
                   <h2 className={`classes.partlocation_header ${classes.text}`}>
                     Location
                   </h2>

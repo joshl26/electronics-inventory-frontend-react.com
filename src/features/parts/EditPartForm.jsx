@@ -71,6 +71,7 @@ const EditPartForm = ({ part, partTypes }) => {
   const [vendorName, setVendorName] = useState(part.vendorName);
   const [partPackage, setPartPackage] = useState(part.partPackage);
   const [partLocation, setPartLocation] = useState(part.partLocation);
+  const [cost, setCost] = useState(part.cost);
 
   const user = useSelector((state) => selectUsersById(state, creator));
 
@@ -108,6 +109,7 @@ const EditPartForm = ({ part, partTypes }) => {
       setVendorName("");
       setPartPackage("");
       setPartLocation("");
+      setCost(0.0);
       navigate("/dash/parts");
     }
   }, [isSuccess, isDelSuccess, navigate, images, deletedImages]);
@@ -124,6 +126,7 @@ const EditPartForm = ({ part, partTypes }) => {
   const onLotIdChanged = (e) => setLotId(e.target.value);
   const onMfgDateChanged = (e) => setMfgDate(e.target.value);
   const onManufacturerChanged = (e) => setManufacturer(e.target.value);
+  const onCostChanged = (e) => setCost(e.target.value);
   // const onNewImagesChanged = (e) => setNewImages(e.target.value);
 
   const canSave = [name, description, userId].every(Boolean) && !isLoading;
@@ -152,6 +155,7 @@ const EditPartForm = ({ part, partTypes }) => {
         vendorName,
         partPackage,
         partLocation,
+        cost,
       });
       navigate(`/dash/parts`);
     }
@@ -341,6 +345,23 @@ const EditPartForm = ({ part, partTypes }) => {
                     value={backOrder}
                     className={classes.partqty_text}
                     onChange={onBackorderQtyChanged}
+                  ></input>
+                </Col>
+                <Col className={classes.border}>
+                  <h2 className={`classes.partcreator_header ${classes.text}`}>
+                    Unit Cost
+                  </h2>
+                  <input
+                    min="0.00"
+                    max="10000.00"
+                    step="0.01"
+                    value={cost}
+                    id="cost"
+                    name="cost"
+                    type="number"
+                    autoComplete="off"
+                    onChange={onCostChanged}
+                    className={classes.cost_text}
                   ></input>
                 </Col>
                 <Col>
