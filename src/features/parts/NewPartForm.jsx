@@ -4,19 +4,24 @@ import { useAddNewPartMutation } from "./partsApiSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 // import { set } from "lodash";
+import useAuth from "../../hooks/useAuth";
 import { FilePicker } from "../../components/FilePicker";
 
 const NewPartForm = ({ users, partTypes }) => {
+  const { username, isManager, isAdmin } = useAuth();
+
+  console.log(username);
+
   const [addNewPart, { isLoading, isSuccess, isError, error }] =
     useAddNewPartMutation();
 
   const navigate = useNavigate();
 
-  const [partType, setPartType] = useState("None");
-  const [qty, setQty] = useState(0);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [userId, setUserId] = useState(users[0].id);
+  const [qty, setQty] = useState(0);
+  const [partType, setPartType] = useState("None");
   // const [updatedBy, setUpdatedBy] = useState(username);
   // const [updatedAt, setUpdatedAt] = useState(updated);
   const [images, setImages] = useState([]);
@@ -29,6 +34,7 @@ const NewPartForm = ({ users, partTypes }) => {
   const [vendorName, setVendorName] = useState("None");
   const [partPackage, setPartPackage] = useState("None");
   const [partLocation, setPartLocation] = useState("None");
+  const [cost, setCost] = useState(0.0);
 
   useEffect(() => {
     if (isSuccess) {
@@ -36,7 +42,18 @@ const NewPartForm = ({ users, partTypes }) => {
       setDescription("");
       setUserId("");
       setQty(0);
-      setPartType("None");
+      setPartType("");
+      setImages([]);
+      setPartNumber("");
+      setLotId("");
+      setSerialNumber("");
+      setManufacturer("");
+      setMfgDate("");
+      setBackOrder(0);
+      setVendorName("");
+      setPartPackage("");
+      setPartLocation("");
+      setCost(0.0);
       navigate("/dash/parts");
     }
   }, [isSuccess, navigate]);
@@ -55,6 +72,7 @@ const NewPartForm = ({ users, partTypes }) => {
   const onVendorName = (e) => setVendorName(e.target.value);
   const onPartPackageChanged = (e) => setPartPackage(e.target.value);
   const onPartLocationChanged = (e) => setPartLocation(e.target.value);
+  const onPartCostChanged = (e) => setCost(e.target.value);
 
   const canSave = [name, description, userId].every(Boolean) && !isLoading;
 
