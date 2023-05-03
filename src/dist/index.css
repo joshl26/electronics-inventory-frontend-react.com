@@ -145,10 +145,6 @@ h1,
   margin-top: 1em;
 }
 
-.welcome a::before {
-  content: "➜ ";
-}
-
 /* || DASH HEADER, CONTAINER & FOOTER */
 .dash-header__container {
   display: flex;
