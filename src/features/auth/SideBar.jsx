@@ -28,36 +28,36 @@ const SideBar = () => {
         </Row>
         <Row>
           <Link to="/dash/parts">
-            <p className="sidebar-links"> Electronics Inventory</p>
+            <p className={classes.sidebar_links}> Electronics Inventory</p>
           </Link>
         </Row>
         <Row>
           <Link to="/dash/parts/new">
-            <p className="sidebar-links"> Add Parts to Inventory</p>
+            <p className={classes.sidebar_links}> Add Parts to Inventory</p>
           </Link>
         </Row>
 
         <Row>
           <Link to="/dash/notes">
-            <p className="sidebar-links"> View Notes</p>
+            <p className={classes.sidebar_links}> View Notes</p>
           </Link>
         </Row>
         <Row>
           <Link to="/dash/notes/new">
-            <p className="sidebar-links"> Add new Notes</p>
+            <p className={classes.sidebar_links}> Add new Notes</p>
           </Link>
         </Row>
         <Row>
           {(isManager || isAdmin) && (
             <Link to="/dash/users">
-              <p className="sidebar-links">View User Settings</p>
+              <p className={classes.sidebar_links}>View User Settings</p>
             </Link>
           )}
         </Row>
         <Row>
           {(isManager || isAdmin) && (
             <Link to="/dash/users/new">
-              <p className="sidebar-links"> Add new User</p>
+              <p className={classes.sidebar_links}> Add new User</p>
             </Link>
           )}
         </Row>
