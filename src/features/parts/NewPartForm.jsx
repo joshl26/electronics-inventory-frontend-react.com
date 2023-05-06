@@ -29,8 +29,9 @@ const NewPartForm = ({ users, partTypes }) => {
   const [userId, setUserId] = useState(users[0].id);
   const [qty, setQty] = useState(0);
   const [partType, setPartType] = useState("None");
-  // const [updatedBy, setUpdatedBy] = useState(username);
-  const [createdAt, setCreatedAt] = useState("None");
+  const [createdAt, setCreatedAt] = useState("Not Created Yet");
+  const [editedBy, setEditedBy] = useState("Not Edited Yet");
+  const [editedAt, setEditedAt] = useState("Not Edited Yet");
   const [images, setImages] = useState([]);
   const [partNumber, setPartNumber] = useState("None");
   const [lotId, setLotId] = useState("None");
@@ -81,7 +82,9 @@ const NewPartForm = ({ users, partTypes }) => {
   const onLocationChanged = (e) => setPartLocation(e.target.value);
   const onCostChanged = (e) => setCost(e.target.value);
 
-  const canSave = [name, description, userId].every(Boolean) && !isLoading;
+  // const canSave = [name, description, userId].every(Boolean) && !isLoading;
+
+  const canSave = [name, partNumber, description].every(Boolean) && !isLoading;
 
   const onSavePartClicked = async (e) => {
     e.preventDefault();
@@ -123,7 +126,7 @@ const NewPartForm = ({ users, partTypes }) => {
 
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -131,11 +134,32 @@ const NewPartForm = ({ users, partTypes }) => {
     }
 
     setValidated(true);
+
+    if (canSave) {
+      await addNewPart({
+        user: userId,
+        name,
+        description,
+        qty,
+        partType,
+        images,
+        partNumber,
+        lotId,
+        serialNumber,
+        manufacturer,
+        mfgDate,
+        backOrder,
+        vendorName,
+        partPackage,
+        partLocation,
+        cost,
+      });
+    }
   };
 
   const content = (
     <>
-      <form className={classes.form}>
+      {/* <form className={classes.form}>
         <p className={errClass}>{errContent}</p>
         <h2 className={classes.header}>Create New Part in Inventory</h2>
         <div className={classes.form__action_buttons}>
@@ -207,18 +231,18 @@ const NewPartForm = ({ users, partTypes }) => {
                     </select>
                   </Col>
 
-                  {/* {part.images?.length !== 0 ? (
-                      [imageContent]
-                    ) : (
-                      <>
-                        <Col>
-                          <p className={classes.text}>No Images</p>
-                        </Col>
-                        <Col>
-                          <p className={classes.text}>No Images</p>
-                        </Col>
-                      </>
-                    )} */}
+                  {part.images?.length !== 0 ? (
+                    [imageContent]
+                  ) : (
+                    <>
+                      <Col>
+                        <p className={classes.text}>No Images</p>
+                      </Col>
+                      <Col>
+                        <p className={classes.text}>No Images</p>
+                      </Col>
+                    </>
+                  )}
                 </Row>
               </Col>
             </Row>
@@ -366,89 +390,210 @@ const NewPartForm = ({ users, partTypes }) => {
           </div>
           <div className={classes.spacer}></div>
         </div>
-      </form>
+      </form> */}
       {/* {partImages} */}
       {/* <ImagePicker images={images} setImages={setImages} /> */}
 
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Row className="mb-3">
-          <Form.Group as={Col} md="4" controlId="validationCustom01">
+      {/* <Form noValidate validated={validated} onSubmit={handleSubmit}> */}
+
+      <Form noValidate validated={validated} onSubmit={onSavePartClicked}>
+        <Row className="mt-3 mb-3">
+          <Form.Group as={Col} md="4" controlId="validationPartName">
             <Form.Label>Part Name</Form.Label>
             <Form.Control
+              onChange={onNameChanged}
+              name="partname"
               required
               type="text"
               placeholder="Part Name"
-              defaultValue=""
+              defaultValue={name}
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
-              Please choose a Part Name.
+              Please choose a valid Part Name.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="validationCustomPartNumber">
+          <Form.Group as={Col} md="3" controlId="validationPartNumber">
             <Form.Label>Part Number</Form.Label>
             <Form.Control
+              onChange={onPartNumberChanged}
+              name="partnumber"
               required
               type="text"
               placeholder="Part Number"
-              defaultValue=""
+              defaultValue={partNumber}
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
-              Please choose a Part Number.
+              Please choose a valid Part Number.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="validationCustomUsername">
+          <Form.Group as={Col} md="3" controlId="validationPartType">
             <Form.Label>Part Type</Form.Label>
-            <InputGroup hasValidation>
-              <Form.Control type="text" placeholder="Part Type" required />
-              <Form.Control.Feedback type="invalid">
-                Please choose a Part Type.
-              </Form.Control.Feedback>
-            </InputGroup>
+            <Form.Control
+              onChange={onPartTypeChanged}
+              name="parttype"
+              type="text"
+              placeholder="Part Type"
+              defaultValue={partType}
+            />
           </Form.Group>
         </Row>
-        <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="validationCustomDescription">
+        <Row className="mt-3 mb-3">
+          <Form.Group as={Col} md="8" controlId="validationDescription">
             <Form.Label>Description</Form.Label>
-            <Form.Control type="text" placeholder="Description" />
+            <Form.Control
+              onChange={onDescriptionChanged}
+              name="description"
+              type="text"
+              placeholder="Description"
+              defaultValue={description}
+            />
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCustomStockQty">
+        </Row>
+        <Row>
+          <Form.Group as={Col} md="3" controlId="validationStockQty">
             <Form.Label>Stock Qty</Form.Label>
             <Form.Control
-              defaultValue="0"
+              name="stockqty"
+              defaultValue={qty}
+              onChange={onStockQtyChanged}
               min="0"
               max="10000"
               type="number"
               placeholder="Stock Qty"
             />
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCustomBackorderQty">
+          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
             <Form.Label>Backorder Qty</Form.Label>
             <Form.Control
-              defaultValue="0"
+              onChange={onBackorderQtyChanged}
+              defaultValue={backOrder}
               min="0"
               max="10000"
               type="number"
-              placeholder="Stock Qty"
+              placeholder="Backorder Qty"
+            />
+          </Form.Group>
+          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+            <Form.Label>Unit Cost</Form.Label>
+            <Form.Control
+              onChange={onCostChanged}
+              defaultValue={cost}
+              min="0.00"
+              max="10000.00"
+              step="0.01"
+              type="number"
+              placeholder="Backorder Qty"
             />
           </Form.Group>
         </Row>
-        <Form.Group className="mb-3">
-          <Form.Check
-            required
-            label="Agree to terms and conditions"
-            feedback="You must agree before submitting."
-            feedbackType="invalid"
-          />
-        </Form.Group>
 
-        <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label>Add Part Images</Form.Label>
-          <Form.Control type="file" />
-        </Form.Group>
+        <Row className="mt-3 mb-3">
+          <Form.Group as={Col} md="3" controlId="validationStockQty">
+            <Form.Label>Location</Form.Label>
+            <Form.Control
+              onChange={onLocationChanged}
+              defaultValue={partLocation}
+              type="text"
+              placeholder="Location"
+            />
+          </Form.Group>
+          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+            <Form.Label>Package Type</Form.Label>
+            <Form.Control
+              onChange={onPackageTypeChanged}
+              defaultValue={partPackage}
+              type="text"
+              placeholder="Part Package"
+            />
+          </Form.Group>
+          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+            <Form.Label>Lot Id</Form.Label>
+            <Form.Control
+              onChange={onLotIdChanged}
+              defaultValue={lotId}
+              type="text"
+              placeholder="Lot Id"
+            />
+          </Form.Group>
+        </Row>
 
-        <Button type="submit">Submit form</Button>
+        <Row className="mt-3 mb-3">
+          <Form.Group as={Col} md="3" controlId="validationStockQty">
+            <Form.Label>S/N</Form.Label>
+            <Form.Control
+              defaultValue={serialNumber}
+              onChange={onSerialNumberChanged}
+              type="text"
+              placeholder="Serial Number"
+            />
+          </Form.Group>
+          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+            <Form.Label>Mfg Date</Form.Label>
+            <Form.Control
+              onChange={onMfgDateChanged}
+              defaultValue={mfgDate}
+              type="date"
+              placeholder=""
+            />
+          </Form.Group>
+          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+            <Form.Label>Manufacturer</Form.Label>
+            <Form.Control
+              onChange={onManufacturerChanged}
+              defaultValue={manufacturer}
+              type="text"
+              placeholder="Manufacturer"
+            />
+          </Form.Group>
+        </Row>
+
+        <Row className="mt-3 mb-3">
+          <Form.Group as={Col} md="2" controlId="validationStockQty">
+            <Form.Label>Date Created</Form.Label>
+            <Form.Control
+              readOnly={true}
+              defaultValue={createdAt}
+              type="text"
+              placeholder=""
+            />
+          </Form.Group>
+          <Form.Group as={Col} md="2" controlId="validationBackorderQty">
+            <Form.Label>Created By</Form.Label>
+            <Form.Control defaultValue={userId} type="text" placeholder="" />
+          </Form.Group>
+          <Form.Group as={Col} md="2" controlId="validationStockQty">
+            <Form.Label>Date Edited</Form.Label>
+            <Form.Control
+              defaultValue={editedAt}
+              onChange={onStockQtyChanged}
+              type="text"
+              placeholder=""
+            />
+          </Form.Group>
+          <Form.Group as={Col} md="2" controlId="validationBackorderQty">
+            <Form.Label>Edited By</Form.Label>
+            <Form.Control defaultValue={editedBy} type="text" placeholder="" />
+          </Form.Group>
+        </Row>
+
+        <Row className="mt-3 mb-3">
+          <Form.Group as={Col} md="6" controlId="formFile" className="mb-3">
+            <Form.Label>Add Part Images</Form.Label>
+            <Form.Control type="file" />
+          </Form.Group>
+        </Row>
+
+        <Button
+          className={classes.icon_button}
+          title="Save"
+          onClick={handleSubmit}
+          type="submit"
+          disabled={!canSave}
+        >
+          Save New Part
+        </Button>
       </Form>
     </>
   );
