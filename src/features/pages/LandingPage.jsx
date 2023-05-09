@@ -16,10 +16,10 @@ const LandingPage = () => {
             <Col className="landing_one_row" xs={12} md={6} lg={6}>
               <h1 className="landing-one-text landing-header-1">
                 Inventory Control
-                <h3 className="landing-one-text landing-header-1-inline">
-                  Simplified
-                </h3>
               </h1>
+              <h3 className="landing-one-text landing-header-1-inline">
+                Simplified
+              </h3>
               <h2 className="landing-one-text landing-header-2">
                 Take the guesswork out of inventory control and management.
                 Repetetive tasks like repurchase set points, inventory costing,

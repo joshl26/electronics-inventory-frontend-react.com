@@ -4,7 +4,7 @@ import reviewStar from "../svg/reviewstar.svg";
 import { Image, Col, Row, Container } from "react-bootstrap";
 
 const CustomerReviewCard = ({ review }) => {
-  console.log(review.author);
+  // console.log(review.author);
 
   return (
     <div className={classes.review_card_outer_container}>

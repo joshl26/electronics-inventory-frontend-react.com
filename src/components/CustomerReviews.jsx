@@ -134,6 +134,7 @@ const CustomerReviews = () => {
       <Slide responsive={responsiveSettings}>
         {data.map((review, index) => (
           <div
+            key={index}
             style={{ backgroundColor: "#2A9D8F" }}
             className="each-slide-effect"
           >
