@@ -31,8 +31,8 @@ function ImagePicker(props) {
       const data = new FormData();
       data.append("my_file", file);
       const res = await axios.post(
-        // "http://localhost:3500/parts/upload",
-        "https://electronics-inventory-server.onrender.com/parts/upload",
+        "http://localhost:3500/parts/upload",
+        // "https://electronics-inventory-server.onrender.com/parts/upload",
 
         data,
         config

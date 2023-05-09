@@ -58,7 +58,6 @@ const EditPartForm = ({ part, partTypes }) => {
   const [qty, setQty] = useState(part.qty);
   const [partType, setPartType] = useState(part.partType);
   const [updatedBy, setUpdatedBy] = useState(username);
-  const [updatedAt, setUpdatedAt] = useState(updated);
   const [images, setImages] = useState(part.images);
   const [newImages, setNewImages] = useState([]);
   const [deletedImages, setDeletedImages] = useState(part.deletedImages);
@@ -96,10 +95,9 @@ const EditPartForm = ({ part, partTypes }) => {
       setQty(0);
       setPartType("");
       setUpdatedBy("");
-      setUpdatedAt("");
-      // setImages("");
+      setImages("");
       setNewImages("");
-      // setDeletedImages([]);
+      setDeletedImages([]);
       setPartNumber("");
       setLotId("");
       setSerialNumber("");
@@ -141,7 +139,7 @@ const EditPartForm = ({ part, partTypes }) => {
         description,
         qty,
         partType,
-        updatedAt,
+        backOrder,
         updatedBy,
         images,
         newImages,
@@ -151,7 +149,6 @@ const EditPartForm = ({ part, partTypes }) => {
         serialNumber,
         manufacturer,
         mfgDate,
-        backOrder,
         vendorName,
         partPackage,
         partLocation,
