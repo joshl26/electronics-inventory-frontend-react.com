@@ -12,7 +12,7 @@ import { useAddNewPartMutation } from "./partsApiSlice";
 import useAuth from "../../hooks/useAuth";
 import ImagePicker from "../../components/ImagePicker";
 import { Row, Col } from "react-bootstrap";
-import classes from "./NewPartForm.module.scss";
+import "./NewPartForm.scss";
 
 const NewPartForm = ({ users, partTypes }) => {
   // const { username, isManager, isAdmin } = useAuth();
@@ -125,8 +125,8 @@ const NewPartForm = ({ users, partTypes }) => {
   // const errContent = error?.data?.message ?? "";
 
   // const errClass = isError ? "errmsg" : "offscreen";
-  // const validNameClass = !name ? "form__input__incomplete" : "";
-  // const validDescriptionClass = !description ? "form__input__incomplete" : "";
+  const validNameClass = !name ? "form__input__incomplete" : "";
+  const validDescriptionClass = !description ? "form__input__incomplete" : "";
 
   // const [validated, setValidated] = useState(false);
 
@@ -191,6 +191,8 @@ const NewPartForm = ({ users, partTypes }) => {
       {/* <Form noValidate validated={validated} onSubmit={handleSubmit}> */}
 
       <Form noValidate validated={validated} onSubmit={onSavePartClicked}>
+        <h2>Add New Part to Inventory</h2>
+
         <Row className="mt-3 mb-3">
           <Form.Group as={Col} md="4" controlId="validationPartName">
             <Form.Label>Part Name</Form.Label>
@@ -201,6 +203,7 @@ const NewPartForm = ({ users, partTypes }) => {
               type="text"
               placeholder="Part Name"
               defaultValue={name}
+              className={`form__input ${validNameClass}`}
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
@@ -242,6 +245,7 @@ const NewPartForm = ({ users, partTypes }) => {
               type="text"
               placeholder="Description"
               defaultValue={description}
+              className={`form__input ${validDescriptionClass}`}
             />
           </Form.Group>
         </Row>
@@ -391,7 +395,6 @@ const NewPartForm = ({ users, partTypes }) => {
         {/* {partImages} */}
 
         <Button
-          className={classes.icon_button}
           title="Save"
           onClick={onSavePartClicked}
           // type="submit"

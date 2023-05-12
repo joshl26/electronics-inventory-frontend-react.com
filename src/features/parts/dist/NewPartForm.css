@@ -1,0 +1,88 @@
+.header {
+  padding-left: 1em;
+}
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.75em;
+  background-color: #505050;
+}
+
+.form__checkbox_container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 0.5em;
+}
+
+.form__persist {
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.form__title_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form__input,
+.form__submit_button {
+  padding: 0.5em;
+  border-radius: 15px;
+}
+
+.form__input__text {
+  min-height: 300px;
+}
+
+.form__input__incomplete {
+  border: 1px solid var(--INPUT-INVALID);
+  outline: 1px solid var(--INPUT-INVALID);
+}
+
+.form__checkbox {
+  width: 24px;
+  height: 24px;
+}
+
+.form__select {
+  width: fit-content;
+  padding: 0.25em;
+}
+
+.form__action_buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5em;
+  position: absolute;
+  right: 0.5em;
+}
+
+.form__row {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2em;
+}
+
+.form__divider {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5em;
+}
+
+.partname_header {
+  font-size: 1.5em;
+  padding-left: 1em;
+}
+
+.partnumber_header {
+  font-size: 1.5em;
+  padding-left: 1em;
+}
