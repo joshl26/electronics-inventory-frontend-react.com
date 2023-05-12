@@ -14,6 +14,7 @@ import { selectUsersById } from "../users/usersApiSlice";
 
 const EditPartForm = ({ part, partTypes }) => {
   const { username, isManager, isAdmin } = useAuth();
+  console.log(username);
 
   const imageContent = part.images.map((image) => (
     <Col key={image._id}>
@@ -57,6 +58,8 @@ const EditPartForm = ({ part, partTypes }) => {
   const [description, setDescription] = useState(part.description);
   const [qty, setQty] = useState(part.qty);
   const [partType, setPartType] = useState(part.partType);
+  const [createdBy, setCreatedBy] = useState(part.createdBy);
+
   const [updatedBy, setUpdatedBy] = useState(username);
   const [images, setImages] = useState(part.images);
   const [newImages, setNewImages] = useState([]);
@@ -139,6 +142,7 @@ const EditPartForm = ({ part, partTypes }) => {
         description,
         qty,
         partType,
+        createdBy,
         backOrder,
         updatedBy,
         images,

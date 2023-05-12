@@ -9,15 +9,14 @@ import { useAddNewPartMutation } from "./partsApiSlice";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faSave, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 // import { set } from "lodash";
-// import useAuth from "../../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 import ImagePicker from "../../components/ImagePicker";
 import { Row, Col } from "react-bootstrap";
 import classes from "./NewPartForm.module.scss";
 
 const NewPartForm = ({ users, partTypes }) => {
   // const { username, isManager, isAdmin } = useAuth();
-
-  // console.log(username);
+  const { username } = useAuth();
 
   // const [addNewPart, { isLoading, isSuccess, isError, error }] =
   // useAddNewPartMutation();
@@ -31,6 +30,7 @@ const NewPartForm = ({ users, partTypes }) => {
   const [userId, setUserId] = useState(users[0].id);
   const [qty, setQty] = useState(0);
   const [partType, setPartType] = useState("None");
+  const [createdBy, setCreatedBy] = useState(username);
   const [createdAt] = useState("Not Created Yet");
   const [editedBy] = useState("Not Edited Yet");
   const [editedAt] = useState("Not Edited Yet");
@@ -98,6 +98,7 @@ const NewPartForm = ({ users, partTypes }) => {
         description,
         qty,
         partType,
+        createdBy,
         images,
         partNumber,
         lotId,
@@ -363,7 +364,7 @@ const NewPartForm = ({ users, partTypes }) => {
           </Form.Group>
           <Form.Group as={Col} md="2" controlId="validationBackorderQty">
             <Form.Label>Created By</Form.Label>
-            <Form.Control defaultValue={userId} type="text" placeholder="" />
+            <Form.Control defaultValue={createdBy} type="text" placeholder="" />
           </Form.Group>
           <Form.Group as={Col} md="2" controlId="validationStockQty">
             <Form.Label>Date Edited</Form.Label>
