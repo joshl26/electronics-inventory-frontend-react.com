@@ -6,8 +6,8 @@ import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAddNewPartMutation } from "./partsApiSlice";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faSave, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 // import { set } from "lodash";
 import useAuth from "../../hooks/useAuth";
 import ImagePicker from "../../components/ImagePicker";
@@ -16,7 +16,7 @@ import "./NewPartForm.scss";
 
 const NewPartForm = ({ users, partTypes }) => {
   // const { username, isManager, isAdmin } = useAuth();
-  const { username } = useAuth();
+  const { username, isManager } = useAuth();
 
   // const [addNewPart, { isLoading, isSuccess, isError, error }] =
   // useAddNewPartMutation();
@@ -30,7 +30,7 @@ const NewPartForm = ({ users, partTypes }) => {
   const [userId, setUserId] = useState(users[0].id);
   const [qty, setQty] = useState(0);
   const [partType, setPartType] = useState("None");
-  const [createdBy, setCreatedBy] = useState(username);
+  const [createdBy] = useState(username);
   const [createdAt] = useState("Not Created Yet");
   const [editedBy] = useState("Not Edited Yet");
   const [editedAt] = useState("Not Edited Yet");
@@ -192,6 +192,16 @@ const NewPartForm = ({ users, partTypes }) => {
 
       <Form noValidate validated={validated} onSubmit={onSavePartClicked}>
         <h2>Add New Part to Inventory</h2>
+        <div className="form__action-buttons">
+          <button
+            className="icon-button"
+            title="Save"
+            onClick={onSavePartClicked}
+            disabled={!canSave}
+          >
+            <FontAwesomeIcon icon={faSave} />
+          </button>
+        </div>
 
         <Row className="mt-3 mb-3">
           <Form.Group as={Col} md="4" controlId="validationPartName">
@@ -203,7 +213,7 @@ const NewPartForm = ({ users, partTypes }) => {
               type="text"
               placeholder="Part Name"
               defaultValue={name}
-              className={`form__input ${validNameClass}`}
+              className={validNameClass}
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
@@ -245,7 +255,7 @@ const NewPartForm = ({ users, partTypes }) => {
               type="text"
               placeholder="Description"
               defaultValue={description}
-              className={`form__input ${validDescriptionClass}`}
+              className={validDescriptionClass}
             />
           </Form.Group>
         </Row>
@@ -394,14 +404,14 @@ const NewPartForm = ({ users, partTypes }) => {
 
         {/* {partImages} */}
 
-        <Button
+        {/* <Button
           title="Save"
           onClick={onSavePartClicked}
           // type="submit"
           disabled={!canSave}
         >
           Save New Part
-        </Button>
+        </Button> */}
       </Form>
       <ImagePicker images={images} setImages={setImages} />
     </>

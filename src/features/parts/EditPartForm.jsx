@@ -477,6 +477,17 @@ const EditPartForm = ({ part, partTypes }) => {
 
       <Form noValidate validated={validated} onSubmit={onSavePartClicked}>
         <h2>Edit Part in Inventory</h2>
+        <div className="form__action-buttons">
+          <button
+            className="icon-button"
+            title="Save"
+            onClick={onSavePartClicked}
+            disabled={!canSave}
+          >
+            <FontAwesomeIcon icon={faSave} />
+          </button>
+          {deleteButton}
+        </div>
 
         <Row className="mt-3 mb-3">
           <Form.Group as={Col} md="4" controlId="validationPartName">
@@ -677,7 +688,7 @@ const EditPartForm = ({ part, partTypes }) => {
 
         {/* {partImages} */}
 
-        <Button
+        {/* <Button
           className={classes.icon_button}
           title="Save"
           onClick={onSavePartClicked}
@@ -685,7 +696,7 @@ const EditPartForm = ({ part, partTypes }) => {
           disabled={!canSave}
         >
           Save New Part
-        </Button>
+        </Button> */}
       </Form>
       <ImagePicker images={images} setImages={setImages} />
     </>

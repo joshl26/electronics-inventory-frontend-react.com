@@ -1,16 +1,25 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import classes from "./SideBar.module.scss";
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
 const SideBar = () => {
   const { username, isManager, isAdmin } = useAuth();
 
-  const date = new Date();
+  const delay = 1;
+
+  const [dateState, setDateState] = useState(new Date());
+
   const today = new Intl.DateTimeFormat("en-US", {
     dateStyle: "full",
     timeStyle: "long",
-  }).format(date);
+  }).format(dateState);
+
+  useEffect(() => {
+    setInterval(() => setDateState(new Date()), delay * 1000);
+    return () => {};
+  }, []);
 
   const content = (
     <section className={classes.welcome}>
