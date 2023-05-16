@@ -18,7 +18,7 @@ import Form from "react-bootstrap/Form";
 
 const EditPartForm = ({ part, partTypes }) => {
   const { username, isManager, isAdmin } = useAuth();
-  console.log(username);
+  // console.log(username);
 
   const imageContent = part.images.map((image) => (
     <Col key={image._id}>

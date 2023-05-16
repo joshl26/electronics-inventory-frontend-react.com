@@ -1,15 +1,31 @@
 // import str from "../../mock_data/parts.json";
 
 import { useGetPartsQuery } from "./partsApiSlice";
+import { useUpdateUserMutation, selectAllUsers } from "../users/usersApiSlice";
 import PartCard from "../../components/PartCard";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import React, { useState } from "react";
 import Part from "../parts/Part";
 import { Container } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import useAuth from "../../hooks/useAuth";
 
 const PartsList = () => {
-  const [radioValue, setRadioValue] = useState("Card");
+  const [partsListView] = useState("Card");
+  const [colorMode] = useState("Light");
+
+  const { username } = useAuth();
+
+  const users = useSelector((state) => selectAllUsers(state));
+
+  var currentUser = users.find((user) => user.username === username);
+
+  const [updateUser] = useUpdateUserMutation();
+
+  const onSaveUserClicked = async (e) => {
+    await updateUser({ id: currentUser.id, colorMode, partsListView });
+  };
 
   const radios = [
     { name: "Card View", value: "Card" },
@@ -98,8 +114,8 @@ const PartsList = () => {
                 variant={idx % 2 ? "outline-success" : "outline-danger"}
                 name="radio"
                 value={radio.value}
-                checked={radioValue === radio.value}
-                onChange={(e) => setRadioValue(e.currentTarget.value)}
+                checked={partsListView === radio.value}
+                onChange={(e) => onSaveUserClicked(e)}
               >
                 {radio.name}
               </ToggleButton>
@@ -107,7 +123,7 @@ const PartsList = () => {
           </ButtonGroup>
         </Container>
 
-        {radioValue === "Card" ? cardContent : table}
+        {partsListView === "Card" ? cardContent : table}
       </>
     );
   }
