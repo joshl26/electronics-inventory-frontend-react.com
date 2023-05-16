@@ -245,6 +245,10 @@ tr {
   max-height: 30vh;
   overflow-y: hidden;
 }
+.table__row {
+  width: 90vw;
+  overflow-y: hidden;
+}
 
 .table__cell:last-child {
   display: grid;

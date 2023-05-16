@@ -1,9 +1,22 @@
 // import str from "../../mock_data/parts.json";
+
 import { useGetPartsQuery } from "./partsApiSlice";
 import PartCard from "../../components/PartCard";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import ToggleButton from "react-bootstrap/ToggleButton";
+import React, { useState } from "react";
+import Part from "../parts/Part";
+import { Container } from "react-bootstrap";
 
 const PartsList = () => {
-  //TODO Determnine why the first argument in useGetPartsQuery needs to be undetermined here
+  const [radioValue, setRadioValue] = useState("Card");
+
+  const radios = [
+    { name: "Card View", value: "Card" },
+    { name: "Table View", value: "Table" },
+  ];
+
+  //TODO Determnine why the first argument in useGetPartsQuery needs to be undefined here
   const {
     data: parts,
     isLoading,
@@ -27,6 +40,41 @@ const PartsList = () => {
   if (isSuccess) {
     const { ids } = parts;
 
+    const cardContent =
+      ids?.length &&
+      ids.map((partId) => <PartCard key={partId} partId={partId} />);
+
+    const tableContent =
+      ids?.length && ids.map((partId) => <Part key={partId} partId={partId} />);
+
+    const table = (
+      <table className="table table--notes">
+        <thead className="table__thead">
+          <tr>
+            <th scope="col" className="table__th note__status">
+              Part Name
+            </th>{" "}
+            <th scope="col" className="table__th note__title">
+              Part Type
+            </th>{" "}
+            <th scope="col" className="table__th note__updated">
+              Qty
+            </th>
+            <th scope="col" className="table__th note__created">
+              Description
+            </th>
+            <th scope="col" className="table__th note__edit">
+              Images
+            </th>
+            <th scope="col" className="table__th note__edit">
+              Edit
+            </th>
+          </tr>
+        </thead>
+        <tbody>{tableContent}</tbody>
+      </table>
+    );
+
     // let filteredIds;
 
     // if (isManager || isAdmin) {
@@ -37,9 +85,31 @@ const PartsList = () => {
     //   );
     // }
 
-    content =
-      ids?.length &&
-      ids.map((partId) => <PartCard key={partId} partId={partId} />);
+    content = (
+      <>
+        <div className="spacer_small"></div>
+        <Container>
+          <ButtonGroup>
+            {radios.map((radio, idx) => (
+              <ToggleButton
+                key={idx}
+                id={`radio-${idx}`}
+                type="radio"
+                variant={idx % 2 ? "outline-success" : "outline-danger"}
+                name="radio"
+                value={radio.value}
+                checked={radioValue === radio.value}
+                onChange={(e) => setRadioValue(e.currentTarget.value)}
+              >
+                {radio.name}
+              </ToggleButton>
+            ))}
+          </ButtonGroup>
+        </Container>
+
+        {radioValue === "Card" ? cardContent : table}
+      </>
+    );
   }
 
   return content;
