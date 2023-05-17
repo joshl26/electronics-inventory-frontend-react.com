@@ -12,19 +12,30 @@ import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
 
 const PartsList = () => {
-  const [partsListView] = useState("Card");
-  const [colorMode] = useState("Light");
-
   const { username } = useAuth();
 
   const users = useSelector((state) => selectAllUsers(state));
 
-  var currentUser = users.find((user) => user.username === username);
+  let currentUser = users.find((user) => user.username === username);
+
+  console.log(currentUser);
+
+  const [partsListView, setPartsListView] = useState("Card");
+  const [colorMode] = useState("Light");
 
   const [updateUser] = useUpdateUserMutation();
 
   const onSaveUserClicked = async (e) => {
-    await updateUser({ id: currentUser.id, colorMode, partsListView });
+    await updateUser({
+      id: currentUser.id,
+      username,
+      currentUser: currentUser.roles,
+      active: currentUser.active,
+      colorMode,
+      partsListView,
+    });
+
+    setPartsListView(e.target.value);
   };
 
   const radios = [
@@ -90,16 +101,6 @@ const PartsList = () => {
         <tbody>{tableContent}</tbody>
       </table>
     );
-
-    // let filteredIds;
-
-    // if (isManager || isAdmin) {
-    //   filteredIds = [...ids];
-    // } else {
-    //   filteredIds = ids.filter(
-    //     (noteId) => entities[noteId].username === username
-    //   );
-    // }
 
     content = (
       <>

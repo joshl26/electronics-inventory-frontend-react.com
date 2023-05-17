@@ -5,30 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../hooks/useAuth";
 import ImagePicker from "../../components/ImagePicker";
-import { Row, Col, Container } from "react-bootstrap";
-
-import classes from "./EditPartForm.module.scss";
-
-import { useSelector } from "react-redux";
-import { selectUsersById } from "../users/usersApiSlice";
-
-import Button from "react-bootstrap/Button";
-
+import { Row, Col } from "react-bootstrap";
+// import classes from "./EditPartForm.module.scss";
 import Form from "react-bootstrap/Form";
 
 const EditPartForm = ({ part, partTypes }) => {
   const { username, isManager, isAdmin } = useAuth();
-  // console.log(username);
-
-  const imageContent = part.images.map((image) => (
-    <Col key={image._id}>
-      <div key={image._id}>
-        <a href={image.url}>
-          <img alt="" className={classes.partcard_image} src={image.url} />
-        </a>
-      </div>
-    </Col>
-  ));
 
   const [updatePart, { isLoading, isSuccess, isError, error }] =
     useUpdatePartMutation();
@@ -58,11 +40,10 @@ const EditPartForm = ({ part, partTypes }) => {
   });
 
   const [name, setName] = useState(part.name);
-  const [creator] = useState(part.user);
   const [description, setDescription] = useState(part.description);
   const [qty, setQty] = useState(part.qty);
   const [partType, setPartType] = useState(part.partType);
-  const [createdBy, setCreatedBy] = useState(part.createdBy);
+  const [createdBy] = useState(part.createdBy);
   const [createdAt] = useState(created);
   const [updatedAt] = useState(updated);
   const [updatedBy, setUpdatedBy] = useState(username);
@@ -80,22 +61,9 @@ const EditPartForm = ({ part, partTypes }) => {
   const [partLocation, setPartLocation] = useState(part.partLocation);
   const [cost, setCost] = useState(part.cost);
 
-  const user = useSelector((state) => selectUsersById(state, creator));
-
-  // const [partImages, setPartImages] = useState(part.images);
-
-  // const [completed, setCompleted] = useState(part.completed);
   const [userId, setUserId] = useState(part.user);
 
   useEffect(() => {
-    // console.log("Edit Part form UseEffect");
-    // console.log(isLoading);
-    // console.log(isSuccess);
-    // console.log(error);
-
-    console.log(images);
-    console.log(deletedImages);
-
     if (isSuccess || isDelSuccess) {
       setUserId("");
       setName("");
@@ -175,42 +143,40 @@ const EditPartForm = ({ part, partTypes }) => {
     navigate(`/dash/parts`);
   };
 
-  const onImageDeleteClicked = async (e) => {
-    e.preventDefault();
-    console.log(e.target.getAttribute("name"));
+  // const onImageDeleteClicked = async (e) => {
+  //   e.preventDefault();
+  //   console.log(e.target.getAttribute("name"));
 
-    const fileName = e.target.getAttribute("name");
+  //   const fileName = e.target.getAttribute("name");
 
-    const tag = {
-      fileName: fileName,
-    };
-    setDeletedImages([...deletedImages, tag]);
+  //   const tag = {
+  //     fileName: fileName,
+  //   };
+  //   setDeletedImages([...deletedImages, tag]);
 
-    setImages(images.filter((image) => image.fileName !== fileName));
-  };
+  //   setImages(images.filter((image) => image.fileName !== fileName));
+  // };
 
-  const options = partTypes.map((types, idx) => {
-    return (
-      <option key={idx} value={types}>
-        {types}
-      </option>
-    );
-  });
+  // const options = partTypes.map((types, idx) => {
+  //   return (
+  //     <option key={idx} value={types}>
+  //       {types}
+  //     </option>
+  //   );
+  // });
 
-  const partImages = images.map((image, idx) => {
-    return (
-      <div key={idx}>
-        <img alt="" className={classes.part_image} src={image.url} />
-        <a href="/" onClick={onImageDeleteClicked}>
-          <p name={image.fileName}>Delete</p>
-        </a>
-      </div>
-    );
-  });
+  // const partImages = images.map((image, idx) => {
+  //   return (
+  //     <div key={idx}>
+  //       <img alt="" className={classes.part_image} src={image.url} />
+  //       <a href="/" onClick={onImageDeleteClicked}>
+  //         <p name={image.fileName}>Delete</p>
+  //       </a>
+  //     </div>
+  //   );
+  // });
 
-  const errClass = isError || isDelError ? "errmsg" : "offscreen";
-  const validNameClass = !name ? "form__input--incomplete" : "";
-  // const validDescriptionClass = !description ? "form__input--incomplete" : "";
+  // const errClass = isError || isDelError ? "errmsg" : "offscreen";
 
   const errContent = (error?.data?.message || delerror?.data?.message) ?? "";
 
@@ -231,250 +197,9 @@ const EditPartForm = ({ part, partTypes }) => {
 
   const content = (
     <>
-      {/* <form>
-        <p className={errClass}>{errContent}</p>
-        <h2>Edit Part #{part.ticket2}</h2>
-        <div className="form__action-buttons">
-          <button
-            className="icon-button"
-            title="Save"
-            onClick={onSavePartClicked}
-            disabled={!canSave}
-          >
-            <FontAwesomeIcon icon={faSave} />
-          </button>
-          {deleteButton}
-        </div>
-        <div key={part._id}>
-          <div className={classes.partcard_container}>
-            <Container>
-              <Row>
-                <Col>
-                  <Row>
-                    <Col>
-                      <h2 className={classes.partname_header}>Part Name:</h2>
-                    </Col>
-                    <Col>
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        autoComplete="off"
-                        value={name}
-                        onChange={onNameChanged}
-                        className={classes.partname_text}
-                      ></input>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <h2 className={classes.parttype_header}>Part Number:</h2>
-                    </Col>
-                    <Col>
-                      <input
-                        id="partNumber"
-                        name="partNUmber"
-                        type="text"
-                        autoComplete="off"
-                        value={partNumber}
-                        onChange={onPartNumberChanged}
-                        className={classes.parttype_text}
-                      ></input>
-                    </Col>
-                  </Row>
-                </Col>
-                <Col>
-                  <Row>
-                    <Col>
-                      <label
-                        className={classes.parttype_header}
-                        htmlFor="note-username"
-                      >
-                        Part Type:
-                      </label>
-                      <select
-                        id="note-username"
-                        name="username"
-                        className="form__select"
-                        value={partType}
-                        onChange={onPartTypeChanged}
-                      >
-                        {options}
-                      </select>
-                    </Col>
-
-                    {part.images?.length !== 0 ? (
-                      [imageContent]
-                    ) : (
-                      <>
-                        <Col>
-                          <p className={classes.text}>No Images</p>
-                        </Col>
-                        <Col>
-                          <p className={classes.text}>No Images</p>
-                        </Col>
-                      </>
-                    )}
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <textarea
-                    className={classes.partdescription_text}
-                    id="description"
-                    name="description"
-                    type="text"
-                    autoComplete="off"
-                    value={description}
-                    onChange={onDescriptionChanged}
-                  />
-                </Col>
-              </Row>
-
-              <Row>
-                <Col>
-                  <h2 className={classes.partqty_header}>Stock Qty</h2>
-                  <input
-                    id="stockqty"
-                    name="stockqty"
-                    type="number"
-                    value={qty}
-                    className={classes.partqty_text}
-                    onChange={onStockQtyChanged}
-                  ></input>
-                </Col>
-                <Col>
-                  <h2 className={classes.partqty_header}>Backorder Qty</h2>
-                  <input
-                    min="0"
-                    max="10000"
-                    id="backorder"
-                    name="backorder"
-                    type="number"
-                    value={backOrder}
-                    className={classes.partqty_text}
-                    onChange={onBackorderQtyChanged}
-                  ></input>
-                </Col>
-                <Col className={classes.border}>
-                  <h2 className={`classes.partcreator_header ${classes.text}`}>
-                    Unit Cost
-                  </h2>
-                  <input
-                    min="0.00"
-                    max="10000.00"
-                    step="0.01"
-                    value={cost}
-                    id="cost"
-                    name="cost"
-                    type="number"
-                    autoComplete="off"
-                    onChange={onCostChanged}
-                    className={classes.cost_text}
-                  ></input>
-                </Col>
-                <Col>
-                  <h2 className={classes.partlocation_header}>Location</h2>
-                  <input
-                    id="location"
-                    name="location"
-                    type="text"
-                    autoComplete="off"
-                    value={partLocation}
-                    onChange={onLocationChanged}
-                    className={classes.partname_text}
-                  ></input>
-                </Col>
-                <Col>
-                  <h2 className={classes.partpackage_header}>Package Type</h2>
-                  <input
-                    id="package"
-                    name="package"
-                    type="text"
-                    autoComplete="off"
-                    value={partPackage}
-                    onChange={onPackageTypeChanged}
-                    className={classes.partname_text}
-                  ></input>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <h2 className={classes.partupdated_header}>S/N</h2>
-                  <input
-                    id="serialnumber"
-                    name="serialnumber"
-                    type="text"
-                    autoComplete="off"
-                    value={serialNumber}
-                    onChange={onSerialNumberChanged}
-                    className={classes.partname_text}
-                  ></input>
-                </Col>
-                <Col>
-                  <h2 className={classes.partupdated_header}>Lot ID</h2>
-                  <input
-                    id="lotid"
-                    name="lotid"
-                    type="text"
-                    autoComplete="off"
-                    value={lotId}
-                    onChange={onLotIdChanged}
-                    className={classes.partname_text}
-                  ></input>
-                </Col>
-                <Col>
-                  <h2 className={classes.partupdated_header}>Mfg. Date</h2>
-                  <input
-                    id="mfgdate"
-                    name="mfgdate"
-                    type="text"
-                    autoComplete="off"
-                    value={mfgDate}
-                    onChange={onMfgDateChanged}
-                    className={classes.partname_text}
-                  ></input>
-                </Col>
-                <Col>
-                  <h2 className={classes.partupdated_header}>Manufacturer</h2>
-                  <input
-                    id="manufacturer"
-                    name="manufacturer"
-                    type="text"
-                    autoComplete="off"
-                    value={manufacturer}
-                    onChange={onManufacturerChanged}
-                    className={classes.partname_text}
-                  ></input>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <h2 className={classes.partupdated_header}>Last Updated</h2>
-                  <h3 className={classes.partupdated_text}>{updated}</h3>
-                </Col>
-                <Col>
-                  <h2 className={classes.partupdated_header}>Updated By</h2>
-                  <h3 className={classes.partupdated_text}>{updatedBy}</h3>
-                </Col>
-                <Col>
-                  <h2 className={classes.partcreated_header}>Date Created</h2>
-                  <h3 className={classes.partcreated_text}>{created}</h3>
-                </Col>
-                <Col>
-                  <h2 className={classes.partcreator_header}>Creator</h2>
-                  <h3 className={classes.partcreator_text}>{user.username}</h3>
-                </Col>
-              </Row>
-            </Container>
-          </div>
-          <div className={classes.spacer}></div>
-        </div>
-      </form> */}
-      {/* {partImages}
-      <ImagePicker images={images} setImages={setImages} /> */}
-
+      {errContent}
+      {isError}
+      {isDelError}
       <Form noValidate validated={validated} onSubmit={onSavePartClicked}>
         <h2>Edit Part in Inventory</h2>
         <div className="form__action-buttons">
@@ -678,25 +403,6 @@ const EditPartForm = ({ part, partTypes }) => {
             <Form.Control defaultValue={updatedBy} type="text" placeholder="" />
           </Form.Group>
         </Row>
-
-        {/* <Row className="mt-3 mb-3">
-          <Form.Group as={Col} md="6" controlId="formFile" className="mb-3">
-            <Form.Label>Add Part Images</Form.Label>
-            <Form.Control type="file" />
-          </Form.Group>
-        </Row> */}
-
-        {/* {partImages} */}
-
-        {/* <Button
-          className={classes.icon_button}
-          title="Save"
-          onClick={onSavePartClicked}
-          // type="submit"
-          disabled={!canSave}
-        >
-          Save New Part
-        </Button> */}
       </Form>
       <ImagePicker images={images} setImages={setImages} />
     </>
