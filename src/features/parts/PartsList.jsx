@@ -5,31 +5,50 @@ import { useUpdateUserMutation, selectAllUsers } from "../users/usersApiSlice";
 import PartCard from "../../components/PartCard";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Part from "../parts/Part";
 import { Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
 
 const PartsList = () => {
+  const [partsListView, setPartsListView] = useState("");
+
   const { username } = useAuth();
 
   const users = useSelector((state) => selectAllUsers(state));
 
   let currentUser = users.find((user) => user.username === username);
 
-  console.log(currentUser);
+  // console.log(currentUser.partsListView);
 
-  const [partsListView, setPartsListView] = useState("Card");
-  const [colorMode] = useState("Light");
+  // console.log(currentUser.partsListView);
+
+  // if (currentUser.partsListView) {
+  //   setPartsListView(currentUser.partsListView);
+  // }
+  const [colorMode] = useState("");
 
   const [updateUser] = useUpdateUserMutation();
+
+  // useEffect(() => {
+  //   async function asyncCall() {
+  //     console.log("calling");
+  //     const result = await currentUser.partsListView;
+  //     setPartsListView(currentUser.partsListView);
+  //     console.log(result);
+  //     // Expected output: "resolved"
+  //   }
+  //   return () => {
+  //     asyncCall();
+  //   };
+  // }, [currentUser.partsListView]);
 
   const onSaveUserClicked = async (e) => {
     await updateUser({
       id: currentUser.id,
       username,
-      currentUser: currentUser.roles,
+      roles: currentUser.roles,
       active: currentUser.active,
       colorMode,
       partsListView,
@@ -39,8 +58,8 @@ const PartsList = () => {
   };
 
   const radios = [
-    { name: "Card View", value: "Card" },
-    { name: "Table View", value: "Table" },
+    { name: "Table View", value: "Card" },
+    { name: "Card View", value: "Table" },
   ];
 
   //TODO Determnine why the first argument in useGetPartsQuery needs to be undefined here
@@ -80,10 +99,10 @@ const PartsList = () => {
           <tr>
             <th scope="col" className="table__th note__status">
               Part Name
-            </th>{" "}
+            </th>
             <th scope="col" className="table__th note__title">
               Part Type
-            </th>{" "}
+            </th>
             <th scope="col" className="table__th note__updated">
               Qty
             </th>
@@ -124,7 +143,7 @@ const PartsList = () => {
           </ButtonGroup>
         </Container>
 
-        {partsListView === "Card" ? cardContent : table}
+        {partsListView === "Card" ? table : cardContent}
       </>
     );
   }
