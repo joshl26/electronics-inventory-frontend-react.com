@@ -9,4 +9,5 @@
 
 .hero-link:hover {
   background-color: RGBA(256, 256, 256, 0.1);
+  border-radius: 0.25em;
 }

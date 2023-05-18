@@ -5,8 +5,10 @@
   background-color: var(--BGCOLOR);
   padding: 0 0.5em;
   border-bottom: 1px solid var(--BORDER-COLOR);
+  // height: 200px;
 }
 
 .hero-link:hover {
   background-color: RGBA(256, 256, 256, 0.1);
+  border-radius: 0.25em;
 }

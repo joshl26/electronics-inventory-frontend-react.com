@@ -88,9 +88,9 @@ tr {
 }
 
 .icon-button {
-  width: 48px;
-  height: 48px;
-  font-size: 2.5rem;
+  width: 35px;
+  height: 35px;
+  font-size: 1.5rem;
   background-color: transparent;
   border: none;
   color: var(--COLOR);
@@ -182,7 +182,8 @@ h1 {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-  gap: 0.5em;
+  // gap: 0.5em;
+  padding-right: 0.75em;
 }
 
 .dash-footer {

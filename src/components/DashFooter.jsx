@@ -6,8 +6,8 @@ const DashFooter = () => {
 
   const content = (
     <footer className="dash-footer">
-      <p className="dash-footer-paragraph">Current User: {username}</p>
-      <p className="dash-footer-paragraph">Status: {status}</p>
+      <p className="dash-footer-paragraph">User: {username}</p>
+      <p className="dash-footer-paragraph">Role: {status}</p>
     </footer>
   );
   return content;
