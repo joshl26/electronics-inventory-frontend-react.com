@@ -154,22 +154,53 @@ const DashHeader = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
+              <NavDropdown title="Inventory" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  View Inventory
                 </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.2">
+                  Add New Inventory
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.3">
-                  Something
+                  Edit Inventory
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                  Inventory Transactions
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Purchasing" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  Purchase Order
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.2">
+                  Inventory Levels
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.3">
+                  Cost Reports
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Engineering" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  Engineering BOM
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+
+                <NavDropdown.Item href="#action/3.2">
+                  Datasheets
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+
+                <NavDropdown.Item href="#action/3.3">
+                  MSDA Sheets
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
+            <input type="text" placeholder="Search here" />
             {buttonContent}
           </Navbar.Collapse>
         </Navbar>

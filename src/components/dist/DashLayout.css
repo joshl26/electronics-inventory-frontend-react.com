@@ -8,6 +8,16 @@
   border-right: 1px solid var(--BORDER-COLOR);
 }
 
+.dash-sidebar-container-minimized {
+  position: fixed;
+  background-color: var(--color-one);
+  top: 50px;
+  height: 100%;
+  width: 25px;
+  padding: 1em;
+  border-right: 1px solid var(--BORDER-COLOR);
+}
+
 .dash-outlet-container {
   position: fixed;
   top: 100px;
