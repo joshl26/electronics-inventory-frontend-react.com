@@ -5,13 +5,14 @@
   }
 
   .header_text {
-    color: red;
-    font-size: 5em;
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    padding-top: 0.25em;
   }
 
   .header_icon {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
 
   .navbar-brand {
@@ -51,22 +52,27 @@
     margin: 0;
     padding: 0;
   }
+
+  .animated-logo {
+    width: fit-content;
+  }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 768px) {
   .header_container {
     width: 100vw;
     height: 10vh;
   }
 
   .header_text {
-    color: red;
-    font-size: 5em;
+    color: white;
+    font-size: 1.5em;
+    padding-top: 0.25em;
   }
 
   .header_icon {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
 
   .navbar-brand {

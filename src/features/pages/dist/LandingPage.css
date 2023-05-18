@@ -94,13 +94,13 @@
   }
 
   .landing-header-1-inline {
-    font-size: 7.25em;
+    font-size: 7.25rem;
     font-family: "Figtree", sans-serif;
   }
 
   .landing-header-1 {
     font-family: "Gloock", serif;
-    font-size: 4em;
+    font-size: 4rem;
   }
 
   .landing-header-2 {
@@ -113,15 +113,6 @@
     font-size: 2.75em;
     font-family: "Figtree", sans-serif;
     padding-bottom: 1em;
-  }
-
-  .landing-one-image {
-    position: absolute;
-    object-fit: cover;
-    width: 45vw;
-    min-width: 350px;
-    border-radius: 0.5em;
-    box-shadow: 10px 10px 5px #5c5c5c;
   }
 }
 @media screen and (max-width: 768px) {
@@ -219,7 +210,7 @@
 
   .landing-header-1-inline {
     display: inline-block;
-    font-size: 2em;
+    font-size: 2rem;
     font-family: "Gloock", serif;
   }
 

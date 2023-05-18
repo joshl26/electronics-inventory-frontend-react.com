@@ -12,9 +12,19 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 
 import { useSendLogoutMutation } from "../features/auth/authApiSlice";
 
+import Lottie from "lottie-react";
+import HamburgerMenu from "../svg/HamburgerMenu.json";
+
+import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
+
 import "./DashHeader.scss";
 
 import useAuth from "../hooks/useAuth";
+
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 const DASH_REGEX = /^\/dash(\/)?$/;
 const NOTES_REGEX = /^\/dash\/notes(\/)?$/;
@@ -128,17 +138,41 @@ const DashHeader = () => {
   }
 
   const content = (
-    <header className="dash-header">
-      <div className={`dash-header__container ${dashClass}`}>
+    <header className={`dash-header__container ${dashClass}`}>
+      <div>
         {error ? <p className={errClass}>{error?.data?.message}</p> : ""}
-        <div className="dash-header-link">
-          <Link to="/dash">
-            <h1 className="dash-header__title">
-              Electronics Inventory Dashboard
-            </h1>
-          </Link>
-        </div>
-        <nav className="dash-header__nav">{buttonContent}</nav>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <a href="" className="dash-header__nav hero-link">
+            <Lottie
+              className="header_icon"
+              animationData={HamburgerMenu}
+              loop={false}
+            />
+            <h1 className="header_text">Ei</h1>
+          </a>
+          <Navbar.Brand href="#home"></Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="#features">Features</Nav.Link>
+              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+            {buttonContent}
+          </Navbar.Collapse>
+        </Navbar>
       </div>
     </header>
   );

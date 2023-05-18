@@ -17,15 +17,14 @@ const LoginHeader = () => {
       bg="dark"
       variant="dark"
     >
-      <Container className="navbar_container">
+      <Container>
+        <Lottie
+          className="header_icon"
+          animationData={HamburgerMenu}
+          loop={false}
+        />
         <Navbar.Brand>
           <h1 className="logo_text">Ei</h1>
-
-          {/* <Lottie
-            className="header_icon"
-            animationData={HamburgerMenu}
-            loop={true}
-          /> */}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
