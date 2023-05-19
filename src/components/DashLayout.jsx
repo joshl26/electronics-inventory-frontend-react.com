@@ -51,6 +51,7 @@ const DashLayout = () => {
                   />
                 </svg>
               </button>
+              {sidebarShown ? <DashFooter /> : ""}
             </Col>
           ) : (
             <Col xs={1} md={1} onClick={() => setSideBarShown(!sidebarShown)}>
@@ -81,16 +82,13 @@ const DashLayout = () => {
             </Col>
           )}
 
-          <Col xs={2} md={10}>
+          <Col xs={1} md={10}>
             <div className="dash-outlet-container">
               <Outlet />
             </div>
           </Col>
         </Row>
-        <div className="spacer"></div>
       </div>
-
-      {sidebarShown ? <DashFooter /> : ""}
     </div>
   );
 };

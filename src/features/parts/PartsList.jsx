@@ -123,7 +123,6 @@ const PartsList = () => {
 
     content = (
       <>
-        <div className="spacer"></div>
         <Container>
           <ButtonGroup>
             {radios.map((radio, idx) => (

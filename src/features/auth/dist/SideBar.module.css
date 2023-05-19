@@ -3,8 +3,17 @@
 }
 
 .sidebar_links {
-  font-size: 1.5em;
+  font-size: 1.4em;
   display: inline;
+}
+
+.sidebar_links:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border-radius: 0.125em;
+  padding-left: 0.125em;
+  padding-right: 0.125em;
+  transition: background-color 0.75s;
 }
 
 .welcome_today_text {
