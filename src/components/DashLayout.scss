@@ -6,6 +6,7 @@
   width: 275px;
   padding: 1em;
   border-right: 1px solid var(--BORDER-COLOR);
+  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
 }
 
 .dash-sidebar-container-minimized {
@@ -16,6 +17,7 @@
   width: 25px;
   padding: 1em;
   border-right: 1px solid var(--BORDER-COLOR);
+  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
 }
 
 .dash-outlet-container {
@@ -34,6 +36,7 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  transition: height 0.5s, top 0.5s, left 0.25s;
 }
 
 .sidebar-hide-btn-hidden {
@@ -44,5 +47,14 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: rgb(229, 140, 140);
+  transform: rotate(180deg);
+  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+  // background-color: rgb(229, 140, 140);
+}
+
+.sidebar-hide-btn-hidden:hover {
+  width: 40px;
+  height: 40px;
+  top: 72.5px;
+  left: 12.5px;
 }

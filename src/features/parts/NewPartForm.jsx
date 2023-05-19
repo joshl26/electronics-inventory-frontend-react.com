@@ -404,14 +404,14 @@ const NewPartForm = ({ users, partTypes }) => {
 
         {/* {partImages} */}
 
-        {/* <Button
+        <Button
           title="Save"
           onClick={onSavePartClicked}
           // type="submit"
           disabled={!canSave}
         >
           Save New Part
-        </Button> */}
+        </Button>
       </Form>
       <ImagePicker images={images} setImages={setImages} />
     </>

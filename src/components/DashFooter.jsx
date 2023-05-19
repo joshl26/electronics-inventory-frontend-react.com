@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap";
 import useAuth from "../hooks/useAuth";
 import "./DashFooter.scss";
 
@@ -6,8 +7,10 @@ const DashFooter = () => {
 
   const content = (
     <footer className="dash-footer">
-      <p className="dash-footer-paragraph">User: {username}</p>
-      <p className="dash-footer-paragraph">Role: {status}</p>
+      <div>
+        <p className="dash-footer-paragraph">User: {username}</p>
+        <p className="dash-footer-paragraph">Role: {status}</p>
+      </div>
     </footer>
   );
   return content;
