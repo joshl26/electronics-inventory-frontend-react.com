@@ -12,3 +12,65 @@
   background-color: RGBA(256, 256, 256, 0.1);
   border-radius: 0.25em;
 }
+
+@media screen and (min-width: 769px) {
+  .header_container {
+    width: 100vw;
+    height: 10vh;
+  }
+
+  .header_text {
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    padding-top: 0.25em;
+  }
+
+  .header_icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-brand {
+    padding: 0px;
+  }
+
+  .nav-link {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+    color: white;
+  }
+
+  .navbar-login {
+    opacity: 0.99;
+    background-color: #161a1d !important;
+    z-index: 10 !important;
+    position: fixed;
+    width: 100%;
+    // min-height: 50px;
+    // max-height: 50px;
+    border-bottom: 1px solid var(--BORDER-COLOR);
+  }
+
+  .link_text {
+    color: rgb(159, 159, 159);
+  }
+  .link_text:hover {
+    color: rgb(180, 180, 180);
+  }
+
+  .logo_text {
+    font-family: "Figtree", sans-serif;
+    margin: 0;
+    font-size: 2em;
+  }
+
+  .nav-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .animated-logo {
+    width: fit-content;
+  }
+}

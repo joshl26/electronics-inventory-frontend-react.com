@@ -8,10 +8,12 @@ import HamburgerMenu from "../../svg/HamburgerMenu.json";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
+
+
 const LoginHeader = () => {
   return (
     <Navbar
-      className="navbar fixed-top navbar-light bg-light"
+      className="navbar fixed-top navbar-light bg-light navbar-login"
       collapseOnSelect
       expand="lg"
       bg="dark"
@@ -24,7 +26,7 @@ const LoginHeader = () => {
           loop={false}
         />
         <Navbar.Brand>
-          <h1 className="logo_text">Ei</h1>
+          <h1 className="login_text">Ei</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
