@@ -12,6 +12,7 @@ import {
   faUserGear,
   faUserPlus,
   faRightFromBracket,
+  faLeftFromBracket,
   faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,18 +24,24 @@ const DashLayout = () => {
       <DashHeader />
       <div className="dash-container">
         <Row>
-          <button title="New User">
-            <FontAwesomeIcon icon={faUserPlus} />
-          </button>
           {sidebarShown ? (
             <Col xs={2} md={2} onClick={() => setSideBarShown(!sidebarShown)}>
               <div className="dash-sidebar-container">
                 <SideBar />
               </div>
+              <button className="sidebar-hide-btn" title="New User">
+                <FontAwesomeIcon icon={faRightFromBracket} />
+              </button>
             </Col>
           ) : (
             <Col xs={2} md={2} onClick={() => setSideBarShown(!sidebarShown)}>
-              <div className="dash-sidebar-container-minimized"></div>
+              <div className="dash-sidebar-container-minimized" />
+              <button className="sidebar-hide-btn-hidden" title="New User">
+                <FontAwesomeIcon
+                  className="fa-beat-fade"
+                  icon={faRightFromBracket}
+                />
+              </button>
             </Col>
           )}
 
