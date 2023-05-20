@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.bg-dark {
+  --bs-bg-opacity: 1;
+  background-color: red;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

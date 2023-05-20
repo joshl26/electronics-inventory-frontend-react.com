@@ -6,5 +6,11 @@ $theme-colors: (
   "danger": #e9c46a,
   "bg-dark": red,
 );
+
+.bg-dark {
+  --bs-bg-opacity: 1;
+  background-color: red;
+}
+
 // Import Bootstrap and its default variables
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

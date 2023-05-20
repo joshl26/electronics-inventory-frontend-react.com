@@ -8,17 +8,9 @@ import HamburgerMenu from "../../svg/HamburgerMenu.json";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
-
-
 const LoginHeader = () => {
   return (
-    <Navbar
-      className="navbar fixed-top navbar-light bg-light navbar-login"
-      collapseOnSelect
-      expand="lg"
-      bg="dark"
-      variant="dark"
-    >
+    <Navbar className="navbar-login" collapseOnSelect expand="lg">
       <Container>
         <Lottie
           className="header_icon"

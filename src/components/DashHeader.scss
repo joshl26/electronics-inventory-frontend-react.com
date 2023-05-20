@@ -13,6 +13,14 @@
   border-radius: 0.25em;
 }
 
+.navbar-dash {
+  background-color: green;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+}
+
 @media screen and (min-width: 769px) {
   .header_container {
     width: 100vw;
@@ -34,21 +42,10 @@
     padding: 0px;
   }
 
-  .nav-link {
+  .dash-nav-link {
     padding-left: 1em !important;
     padding-right: 1em !important;
-    color: white;
-  }
-
-  .navbar-login {
-    opacity: 0.99;
-    background-color: #161a1d !important;
-    z-index: 10 !important;
-    position: fixed;
-    width: 100%;
-    // min-height: 50px;
-    // max-height: 50px;
-    border-bottom: 1px solid var(--BORDER-COLOR);
+    color: rgb(255, 255, 255);
   }
 
   .link_text {

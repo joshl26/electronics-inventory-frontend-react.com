@@ -1,63 +1,3 @@
-@media screen and (min-width: 769px) {
-  .header_container {
-    width: 100vw;
-    height: 10vh;
-  }
-
-  .header_text {
-    color: white;
-    font-size: 1.5em;
-    padding-top: 0.25em;
-  }
-
-  .header_icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .navbar-brand {
-    padding: 0px;
-  }
-
-  .nav-link {
-    padding-left: 1em !important;
-    padding-right: 1em !important;
-    color: white;
-  }
-
-  .navbar-login {
-    opacity: 0.99;
-    background-color: #161a1d !important;
-    z-index: 10 !important;
-    position: fixed;
-    width: 100%;
-    border-bottom: 1px solid var(--BORDER-COLOR);
-  }
-
-  .link_text {
-    color: #9f9f9f;
-  }
-
-  .link_text:hover {
-    color: #b4b4b4;
-  }
-
-  .logo_text {
-    font-family: "Figtree", sans-serif;
-    margin: 0;
-    font-size: 2em;
-  }
-
-  .nav-item {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-  .animated-logo {
-    width: fit-content;
-  }
-}
 @media screen and (max-width: 768px) {
   .header_container {
     width: 100vw;
@@ -80,18 +20,17 @@
   }
 
   .nav-link {
-    padding-left: 1em !important;
-    padding-right: 1em !important;
+    padding-left: 1em;
+    padding-right: 1em;
     color: white;
   }
 
   .navbar-login {
     opacity: 0.99;
-    background-color: #161a1d !important;
-    z-index: 10 !important;
+    background-color: #161a1d;
+    z-index: 10;
     position: fixed;
     width: 100%;
-    border-bottom: 1px solid var(--BORDER-COLOR);
   }
 
   .link_text {
@@ -135,7 +74,7 @@
   }
 
   .header_text {
-    color: white;
+    color: black;
     font-size: 1.5em;
     padding-top: 0.25em;
   }
@@ -150,18 +89,17 @@
   }
 
   .nav-link {
-    padding-left: 1em !important;
-    padding-right: 1em !important;
-    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: black;
   }
 
   .navbar-login {
     opacity: 0.99;
-    background-color: #161a1d !important;
-    z-index: 10 !important;
+    background-color: #161a1d;
+    z-index: 10;
     position: fixed;
     width: 100%;
-    border-bottom: 1px solid var(--BORDER-COLOR);
   }
 
   .link_text {

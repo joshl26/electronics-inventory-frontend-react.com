@@ -139,78 +139,73 @@ const DashHeader = () => {
 
   const content = (
     <header className={`dash-header__container ${dashClass}`}>
-      <div>
-        {error ? <p className={errClass}>{error?.data?.message}</p> : ""}
-        <Navbar
-          collapseOnSelect
-          expand="lg"
-          bg="dark"
-          variant="dark"
-          className="navbar fixed-top navbar-light bg-light navbar-login"
-        >
-          <a href="" className="dash-header__nav hero-link">
-            <Lottie
-              className="header_icon"
-              animationData={HamburgerMenu}
-              loop={false}
-            />
-            {/* <h1 className="header_text">Ei</h1> */}
-          </a>
-          <Navbar.Brand href="#home"></Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <NavDropdown title="Inventory" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  View Inventory
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.2">
-                  Add New Inventory
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.3">
-                  Edit Inventory
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Inventory Transactions
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title="Purchasing" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  Purchase Order
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.2">
-                  Inventory Levels
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.3">
-                  Cost Reports
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title="Engineering" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  Engineering BOM
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
+      {error ? <p className={errClass}>{error?.data?.message}</p> : ""}
+      <Navbar collapseOnSelect expand="lg" className="navbar-dash">
+        <a href="" className="dash-header__nav hero-link">
+          <Lottie
+            className="header_icon"
+            animationData={HamburgerMenu}
+            loop={false}
+          />
+          {/* <h1 className="header_text">Ei</h1> */}
+        </a>
+        <Navbar.Brand href="#home"></Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <NavDropdown
+              className="dash-nav-link"
+              title="Inventory"
+              id="collasible-nav-dropdown"
+            >
+              <NavDropdown.Item href="#action/3.1">
+                View Inventory
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.2">
+                Add New Inventory
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.3">
+                Edit Inventory
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Inventory Transactions
+              </NavDropdown.Item>
+            </NavDropdown>
 
-                <NavDropdown.Item href="#action/3.2">
-                  Datasheets
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
+            <NavDropdown title="Purchasing" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">
+                Purchase Order
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.2">
+                Inventory Levels
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.3">
+                Cost Reports
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Engineering" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">
+                Engineering BOM
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
 
-                <NavDropdown.Item href="#action/3.3">
-                  MSDA Sheets
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-            <input type="text" placeholder="Search here" />
-            {buttonContent}
-          </Navbar.Collapse>
-        </Navbar>
-      </div>
+              <NavDropdown.Item href="#action/3.2">Datasheets</NavDropdown.Item>
+              <NavDropdown.Divider />
+
+              <NavDropdown.Item href="#action/3.3">
+                MSDA Sheets
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <input type="text" placeholder="Search here" />
+          {buttonContent}
+        </Navbar.Collapse>
+      </Navbar>
     </header>
   );
 
