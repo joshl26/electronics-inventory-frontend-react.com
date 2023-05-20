@@ -7,12 +7,21 @@ import Lottie from "lottie-react";
 import HamburgerMenu from "../../svg/HamburgerMenu.json";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { useState } from "react";
 
 const LoginHeader = () => {
+  const [colorMode, setColorMode] = useState(true);
+
+  const NavBarStyle =
+    colorMode === true
+      ? "navbar-login nav-bg-light"
+      : "navbar-login nav-bg-dark";
+
   return (
-    <Navbar className="navbar-login" collapseOnSelect expand="lg">
+    <Navbar className={NavBarStyle} collapseOnSelect expand="lg">
       <Container>
         <Lottie
+          onClick={() => setColorMode(!colorMode)}
           className="header_icon"
           animationData={HamburgerMenu}
           loop={false}

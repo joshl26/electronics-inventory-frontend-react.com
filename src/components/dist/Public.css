@@ -1,3 +1,11 @@
+.public-light {
+  background-color: red;
+}
+
+.public-dark {
+  background-color: #0008ff;
+}
+
 @media screen and (min-width: 769px) {
   .hero-header-text {
     opacity: 0.95;

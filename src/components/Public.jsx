@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import LandingPage from "../features/pages/LandingPage";
 import LoginHeader from "../features/pages/LoginHeader";
 import HeroImage from "../features/pages/HeroImage";
@@ -9,12 +9,16 @@ import Lottie from "lottie-react";
 import CustomerGallery from "../features/pages/CustomerGallery";
 
 const Public = () => {
+  const [colorMode, setColorMode] = useState(true);
+
+  const publicStyle = colorMode ? "public-light" : "public-dark";
+
   const SwipeUpClickHandler = () => {
     window.scrollTo(0, 0);
   };
 
   const content = (
-    <section className="public">
+    <section className={publicStyle}>
       <Lottie
         onClick={SwipeUpClickHandler}
         className="swipe-up-icon"

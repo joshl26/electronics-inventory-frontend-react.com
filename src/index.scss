@@ -26,29 +26,37 @@
 
 :root {
   /* COLORS */
-  --BGCOLOR: #161a1d;
-  --SIDEBARBGCOLOR: #264653;
-  --BORDER-COLOR: #fff;
-  --COLOR: #ffffff;
+  --BG-NAVBAR-LOGIN-DARK: #000000;
+  --BG-NAVBAR-LOGIN-LIGHT: #ffffff;
+  --BG-NAVBAR-DASH-DARK: #ffffff;
+  --BG-NAVBAR-DASH-LIGHT: #ffffff;
+  --BG-BODY-DARK: #161a1d;
+  --BG-BODY-LIGHT: #161a1d;
+  --BG-SIDEBAR-DARK: #264653;
+  --BG-SIDEBAR-LIGHT: #264653;
+  --BORDER-LIGHT: #fff;
+  --BORDER-DARK: #fff;
+  --TEXT-LIGHT: #ffffff;
+  --TEXT-DARK: #ffffff;
   --ERROR: firebrick;
   --INACTIVE: lightgray;
-  --LINK-COLOR: whitesmoke;
-  --LINK-HOVER: rgba(245, 245, 245, 0.9);
+  --LINK-COLOR-LIGHT: whitesmoke;
+  --LINK-COLOR-DARK: whitesmoke;
+  --LINK-HOVER-LIGHT: rgba(245, 245, 245, 0.9);
+  --LINK-HOVER-DARK: rgba(245, 245, 245, 0.9);
   --NOTE-BGCOLOR: hsla(240, 64%, 27%, 0.65);
   --STATUS-COMPLETE: limegreen;
   --STATUS-OPEN: firebrick;
-  --TABLE-BGCOLOR: #fff;
-  --TABLE-COLOR: #fff;
+  --TABLE-BGCOLOR-LIGHT: #fff;
+  --TABLE-BGCOLOR-DARK: #fff;
+  --TABLE-COLOR-LIGHT: #fff;
+  --TABLE-COLOR-DARK: #fff;
   --INPUT-INVALID: #f00;
   --color-one: #264653;
   --color-two: #2a9d8f;
   --color-three: #e9c46a;
   --color-four: #f4a261;
   --color-five: #e76f51;
-}
-
-#root {
-  background-color: #161a1d;
 }
 
 html {

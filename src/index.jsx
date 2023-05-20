@@ -30,6 +30,7 @@ import ErrorPage from "./error-page";
 import ReactGridLayout from "./components/ReactGridLayout";
 import EditPart from "./features/parts/EditPart";
 import NewPart from "./features/parts/NewPart";
+import App from "./App";
 
 if (process.env.NODE_ENV === "production") disableReactDevTools();
 
@@ -37,7 +38,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route errorElement={<ErrorPage />} path="/" element={<Layout />}>
       {/* public routes */}
-      <Route index element={<Public />} />
+      <Route index colorMode={true} element={<Public />} />
       <Route path="login" element={<Login />} />
       {/* Protected Routes */}
       <Route element={<PersistLogin />}>

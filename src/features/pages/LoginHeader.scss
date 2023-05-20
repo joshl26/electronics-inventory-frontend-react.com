@@ -99,13 +99,21 @@
 
   .navbar-login {
     opacity: 0.99;
-    background-color: #161a1d;
     z-index: 10;
     position: fixed;
     width: 100%;
+    transition: background-color 0.5s ease 0s, box-shadow 0.5s ease 0s;
     // min-height: 50px;
     // max-height: 50px;
     // border-bottom: 1px solid var(--BORDER-COLOR);
+  }
+
+  .nav-bg-light {
+    background-color: #ffffff;
+  }
+
+  .nav-bg-dark {
+    background-color: #161a1d;
   }
 
   .link_text {
