@@ -30,9 +30,10 @@ import ErrorPage from "./error-page";
 import ReactGridLayout from "./components/ReactGridLayout";
 import EditPart from "./features/parts/EditPart";
 import NewPart from "./features/parts/NewPart";
-import App from "./App";
 
 if (process.env.NODE_ENV === "production") disableReactDevTools();
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -87,7 +88,7 @@ root.render(
   >
     <React.StrictMode>
       <Provider store={store}>
-        <RouterProvider router={router} />
+        <RouterProvider router={router}/>
       </Provider>
     </React.StrictMode>
   </ThemeProvider>

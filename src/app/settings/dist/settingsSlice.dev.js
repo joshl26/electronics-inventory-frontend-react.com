@@ -3,48 +3,35 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.pomoIncrementByAmount = exports.pomoIncrement = exports.settingsSlice = void 0;
+exports["default"] = exports.partsListViewState = exports.colorModeState = exports.settingsSlice = void 0;
 
 var _toolkit = require("@reduxjs/toolkit");
 
 var settingsSlice = (0, _toolkit.createSlice)({
   name: "settings",
   initialState: {
-    newPart: {
-      partName: "",
-      partNumber: "",
-      partDescription: "",
-      partQty: 0,
-      partStocked: false,
-      partPackageStyle: "",
-      partImages: [],
-      partKeyWords: [],
-      partSMT: false,
-      partType: "resistor"
+    userSettings: {
+      colorMode: "",
+      partsListView: ""
     }
   },
   reducers: {
-    pomoIncrement: function pomoIncrement(state) {
-      console.log("Pomo increment..."); //limit pomodoro state to 40 minutes (max)
-
-      if (Number(state.pomodoro) >= 40) {
-        state.pomodoro = 40;
-      } else {
-        state.pomodoro += 1;
-      }
+    colorModeState: function colorModeState(state, action) {
+      console.log("Set color mode to: " + action.payload);
+      state.colorMode = action.payload;
     },
-    pomoIncrementByAmount: function pomoIncrementByAmount(state, action) {
-      console.log("Pomo increment by amount: " + action.payload);
-      state.pomodoro += action.payload;
+    partsListViewState: function partsListViewState(state, action) {
+      console.log("Set parts list view to: " + action.payload);
+      state.partsListView = action.payload;
     }
   }
 }); // Action creators are generated for each case reducer function
 
 exports.settingsSlice = settingsSlice;
 var _settingsSlice$action = settingsSlice.actions,
-    pomoIncrement = _settingsSlice$action.pomoIncrement,
-    pomoIncrementByAmount = _settingsSlice$action.pomoIncrementByAmount;
-exports.pomoIncrementByAmount = pomoIncrementByAmount;
-exports.pomoIncrement = pomoIncrement;
+    colorModeState = _settingsSlice$action.colorModeState,
+    partsListViewState = _settingsSlice$action.partsListViewState;
+exports.partsListViewState = partsListViewState;
+exports.colorModeState = colorModeState;
 var _default = settingsSlice.reducer;
 exports["default"] = _default;

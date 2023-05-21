@@ -3,38 +3,24 @@ import { createSlice } from "@reduxjs/toolkit";
 export const settingsSlice = createSlice({
   name: "settings",
   initialState: {
-    newPart: {
-      partName: "",
-      partNumber: "",
-      partDescription: "",
-      partQty: 0,
-      partStocked: false,
-      partPackageStyle: "",
-      partImages: [],
-      partKeyWords: [],
-      partSMT: false,
-      partType: "resistor",
+    userSettings: {
+      colorMode: "",
+      partsListView: "",
     },
   },
   reducers: {
-    pomoIncrement: (state) => {
-      console.log("Pomo increment...");
-      //limit pomodoro state to 40 minutes (max)
-      if (Number(state.pomodoro) >= 40) {
-        state.pomodoro = 40;
-      } else {
-        state.pomodoro += 1;
-      }
+    colorModeState: (state, action) => {
+      console.log("Set color mode to: " + action.payload);
+      state.colorMode = action.payload;
     },
-    pomoIncrementByAmount: (state, action) => {
-      console.log("Pomo increment by amount: " + action.payload);
-
-      state.pomodoro += action.payload;
+    partsListViewState: (state, action) => {
+      console.log("Set parts list view to: " + action.payload);
+      state.partsListView = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { pomoIncrement, pomoIncrementByAmount } = settingsSlice.actions;
+export const { colorModeState, partsListViewState } = settingsSlice.actions;
 
 export default settingsSlice.reducer;
