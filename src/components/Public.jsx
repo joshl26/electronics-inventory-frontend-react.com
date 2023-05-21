@@ -10,7 +10,9 @@ import CustomerGallery from "../features/pages/CustomerGallery";
 import { useEffect } from "react";
 
 const Public = () => {
-  const [colorMode, setColorMode] = useState([]);
+  const [colorMode, setColorMode] = useState(
+    JSON.parse(localStorage.getItem("colorMode"))
+  );
 
   const publicStyle = colorMode === "Light" ? "public-light" : "public-dark";
 
@@ -18,15 +20,26 @@ const Public = () => {
     window.scrollTo(0, 0);
   };
 
+  const onChangeColorMode = (e) => {
+    console.log("On Change Color Mode " + e);
+
+    if (e === "Light") {
+      setColorMode("Dark");
+      localStorage.setItem("colorMode", JSON.stringify("Dark"));
+    } else {
+      setColorMode("Light");
+      localStorage.setItem("colorMode", JSON.stringify("Light"));
+    }
+  };
+
   useEffect(() => {
     const colorMode = JSON.parse(localStorage.getItem("colorMode"));
 
-    if (colorMode) {
-      setColorMode(colorMode);
-    } else {
+    if (colorMode === null) {
       localStorage.setItem("colorMode", JSON.stringify("Light"));
+      setColorMode("Light");
     }
-  }, [colorMode]);
+  }, [colorMode, publicStyle]);
 
   const content = (
     <section className={publicStyle}>
@@ -37,7 +50,10 @@ const Public = () => {
         loop={true}
       />
       {/* <HeroImage /> */}
-      <LoginHeader setColorMode={setColorMode} colorMode={colorMode} />
+      <LoginHeader
+        onChangeColorMode={onChangeColorMode}
+        colorMode={colorMode}
+      />
       <LandingPage colorMode={colorMode} />
       {/* <CustomerGallery /> */}
       {/* <LoginFooter /> */}

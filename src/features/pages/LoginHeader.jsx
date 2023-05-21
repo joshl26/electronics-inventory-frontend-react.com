@@ -9,11 +9,9 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 
-const LoginHeader = () => {
-  const [colorMode, setColorMode] = useState(true);
-
+const LoginHeader = ({ colorMode, onChangeColorMode }) => {
   const NavBarStyle =
-    colorMode === true
+    colorMode === "Light"
       ? "navbar-login nav-bg-light"
       : "navbar-login nav-bg-dark";
 
@@ -21,7 +19,7 @@ const LoginHeader = () => {
     <Navbar className={NavBarStyle} collapseOnSelect expand="lg">
       <Container>
         <Lottie
-          onClick={() => setColorMode(!colorMode)}
+          onClick={() => onChangeColorMode(colorMode)}
           className="header_icon"
           animationData={HamburgerMenu}
           loop={false}
