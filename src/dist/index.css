@@ -18,7 +18,7 @@
   --BG-NAVBAR-LOGIN-LIGHT: #ffffff;
   --BG-NAVBAR-DASH-DARK: #ffffff;
   --BG-NAVBAR-DASH-LIGHT: #ffffff;
-  --BG-BODY-DARK: #161a1d;
+  --BG-BODY-DARK: #264653;
   --BG-BODY-LIGHT: #161a1d;
   --BG-SIDEBAR-DARK: #264653;
   --BG-SIDEBAR-LIGHT: #264653;
@@ -47,8 +47,12 @@
   --color-five: #e76f51;
 }
 
+#root {
+  background-color: var(--color-five);
+}
+
 html {
-  background-color: #161a1d;
+  background-color: var(--color-five);
 }
 
 body {

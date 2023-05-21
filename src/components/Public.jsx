@@ -14,7 +14,12 @@ const Public = () => {
     JSON.parse(localStorage.getItem("colorMode"))
   );
 
-  const publicStyle = colorMode === "Light" ? "public-light" : "public-dark";
+  const publicStyle =
+    colorMode === "Light"
+      ? "public-light"
+      : "" || colorMode === "Dark"
+      ? "public-dark"
+      : "";
 
   const SwipeUpClickHandler = () => {
     window.scrollTo(0, 0);

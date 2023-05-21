@@ -1,9 +1,9 @@
 .public-light {
-  background-color: red;
+  background-color: var(--color-five);
 }
 
 .public-dark {
-  background-color: #0008ff;
+  background-color: var(--BG-BODY-DARK);
 }
 
 @media screen and (min-width: 769px) {
