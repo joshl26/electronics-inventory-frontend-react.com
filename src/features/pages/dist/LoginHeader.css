@@ -150,6 +150,12 @@
     background-color: white;
   }
 
+  .btn-login-dark {
+    background-color: var(--color-one);
+    border: var(--color-one) solid 1px;
+    color: white;
+  }
+
   .btn-signup-dark:hover {
     background-color: white;
     border: white solid 1px;
@@ -166,9 +172,9 @@
   }
 
   .btn-login-dark:hover {
-    background-color: var(--color-two);
-    border: var(--color-two) solid 1px;
-    color: white;
+    background-color: white;
+    border: white solid 1px;
+    color: black;
   }
 
   .dash-header {
