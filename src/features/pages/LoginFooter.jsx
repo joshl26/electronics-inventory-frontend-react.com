@@ -2,7 +2,7 @@ import "./LoginFooter.scss";
 import { SocialIcon } from "react-social-icons";
 import { Container } from "react-bootstrap";
 
-const LoginFooter = () => {
+const LoginFooter = ({ colorMode }) => {
   return (
     <Container>
       <div className="social-container">
