@@ -32,6 +32,14 @@ const LandingPage = ({ colorMode }) => {
       ? "landing-one-text-light landing-paragraph"
       : "landing-one-text-dark landing-paragraph";
 
+  const landingOneImageStyle =
+    colorMode === "Light"
+      ? "landing-one-image-light"
+      : "landing-one-image-dark";
+
+  const SignupButtonStyle =
+    colorMode === "Light" ? "btn-signup-light" : "btn-signup-dark";
+
   return (
     <>
       <div className="landing-one">
@@ -48,15 +56,15 @@ const LandingPage = ({ colorMode }) => {
               </h2>
               <div className="landing-spacer"></div>
               <Container className="align-center">
-                <Button variant="danger" className="btn-signup">
+                <Button variant="danger" className={SignupButtonStyle}>
                   Sign Up Now and Start your Free Trial!
                 </Button>
               </Container>
             </Col>
             <Col className="landing_one_row" xs={12} md={6} lg={6}>
               <div className="spacer_small"></div>
-              <div className="landing-one-image">
-                <Image className="landing-one-image" src={ei_1}></Image>
+              <div>
+                <Image className={landingOneImageStyle} src={ei_1}></Image>
               </div>
             </Col>
           </Row>

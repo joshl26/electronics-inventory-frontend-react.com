@@ -18,6 +18,9 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
   const LoginButtonStyle =
     colorMode === "Light" ? "btn-login-light" : "btn-login-dark";
 
+  const SignupButtonStyle =
+    colorMode === "Light" ? "btn-signup-light" : "btn-signup-dark";
+
   return (
     <Navbar className={NavBarStyle} collapseOnSelect expand="lg">
       <Container>
@@ -58,7 +61,7 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
           </Nav>
           <Nav>
             <Link className="nav-link" to="/signup">
-              <Button className="btn-login" variant="danger">
+              <Button className={SignupButtonStyle} variant="danger">
                 Signup
               </Button>
             </Link>

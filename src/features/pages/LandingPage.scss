@@ -118,7 +118,26 @@
     padding-bottom: 1em;
   }
 
-  .landing-one-image {
+  .landing-one-image-light {
+    border: var(--color-five) solid 2px;
+  }
+
+  .landing-one-image-dark {
+    border: white solid 2px;
+  }
+
+  .btn-signup-light {
+    background-color: var(--color-three);
+    border: var(--color-three) solid 1px;
+  }
+
+  .btn-signup-light:hover {
+    background-color: white;
+  }
+
+  .btn-signup-dark:hover {
+    background-color: var(--color-three);
+    border: white solid 1px;
   }
 }
 
