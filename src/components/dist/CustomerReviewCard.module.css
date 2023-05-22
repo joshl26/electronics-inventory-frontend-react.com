@@ -10,7 +10,7 @@
     width: 500px;
     min-height: 300px;
     background-color: aliceblue;
-    border-radius: 2em;
+    border-radius: 1.25em;
     margin: 0 auto;
   }
 
@@ -59,7 +59,7 @@
     width: 80vw;
     min-height: 300px;
     background-color: aliceblue;
-    border-radius: 2em;
+    border-radius: 1em;
     margin: 0 auto;
   }
 

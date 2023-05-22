@@ -1,11 +1,21 @@
-.public {
-  min-height: 98vh;
-}
-
 @media screen and (min-width: 769px) {
   .form {
     margin: 0 auto;
     width: 30vw;
+  }
+
+  .login-header-text {
+    padding-left: 1em;
+    padding-top: 0.5em;
+  }
+
+  .login-footer-link {
+    padding-bottom: 1em;
+    padding-left: 1em;
+  }
+
+  .login-icon {
+    width: 100px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -13,13 +23,18 @@
     margin: 0 auto;
     width: 60vw;
   }
-}
-.login-header-text {
-  padding-left: 1em;
-  padding-top: 0.5em;
-}
 
-.login-footer-link {
-  padding-bottom: 1em;
-  padding-left: 1em;
+  .login-header-text {
+    padding-left: 1em;
+    padding-top: 0.5em;
+  }
+
+  .login-footer-link {
+    padding-bottom: 1em;
+    padding-left: 1em;
+  }
+
+  .login-icon {
+    width: 100px;
+  }
 }

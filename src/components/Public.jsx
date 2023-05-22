@@ -60,8 +60,8 @@ const Public = () => {
         colorMode={colorMode}
       />
       <LandingPage colorMode={colorMode} />
-      {/* <CustomerGallery /> */}
-      {/* <LoginFooter /> */}
+      <CustomerGallery />
+      <LoginFooter />
     </section>
   );
 

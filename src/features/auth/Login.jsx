@@ -7,6 +7,9 @@ import { useLoginMutation } from "./authApiSlice";
 
 import usePersist from "../../hooks/usePersist";
 
+import Lottie from "lottie-react";
+import HamburgerMenu from "../../svg/HamburgerMenu.json";
+
 import "./Login.scss";
 
 const Login = () => {
@@ -61,9 +64,14 @@ const Login = () => {
   if (isLoading) return <p>Loading...</p>;
 
   const content = (
-    <div className="public">
+    <div className="login">
       <header>
-        <h1 className="login-header-text">User Login</h1>
+        <Lottie
+          className="login-icon"
+          animationData={HamburgerMenu}
+          loop={false}
+        />
+        <h1 className="login-text">Ei</h1>
       </header>
       <main className="login">
         <p ref={errRef} className={errClass} aria-live="assertive">

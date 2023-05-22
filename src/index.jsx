@@ -33,13 +33,11 @@ import NewPart from "./features/parts/NewPart";
 
 if (process.env.NODE_ENV === "production") disableReactDevTools();
 
-
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route errorElement={<ErrorPage />} path="/" element={<Layout />}>
       {/* public routes */}
-      <Route index colorMode={true} element={<Public />} />
+      <Route index element={<Public />} />
       <Route path="login" element={<Login />} />
       {/* Protected Routes */}
       <Route element={<PersistLogin />}>
@@ -88,7 +86,7 @@ root.render(
   >
     <React.StrictMode>
       <Provider store={store}>
-        <RouterProvider router={router}/>
+        <RouterProvider router={router} />
       </Provider>
     </React.StrictMode>
   </ThemeProvider>
