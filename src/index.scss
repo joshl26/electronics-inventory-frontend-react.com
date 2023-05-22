@@ -28,28 +28,28 @@
   /* COLORS */
   --BG-NAVBAR-LOGIN-DARK: #000000;
   --BG-NAVBAR-LOGIN-LIGHT: #ffffff;
-  --BG-NAVBAR-DASH-DARK: #ffffff;
+  --BG-NAVBAR-DASH-DARK: #000000;
   --BG-NAVBAR-DASH-LIGHT: #ffffff;
   --BG-BODY-DARK: #264653;
-  --BG-BODY-LIGHT: #161a1d;
+  --BG-BODY-LIGHT: #e76f51;
   --BG-SIDEBAR-DARK: #264653;
   --BG-SIDEBAR-LIGHT: #264653;
-  --BORDER-LIGHT: #fff;
-  --BORDER-DARK: #fff;
-  --TEXT-LIGHT: #ffffff;
+  --BORDER-LIGHT: rgb(0, 0, 0);
+  --BORDER-DARK: rgb(255, 255, 255);
+  --TEXT-LIGHT: #000000;
   --TEXT-DARK: #ffffff;
   --ERROR: firebrick;
   --INACTIVE: lightgray;
-  --LINK-COLOR-LIGHT: whitesmoke;
-  --LINK-COLOR-DARK: whitesmoke;
+  --LINK-COLOR-LIGHT: rgb(0, 0, 0);
+  --LINK-COLOR-DARK: rgb(255, 255, 255);
   --LINK-HOVER-LIGHT: rgba(245, 245, 245, 0.9);
   --LINK-HOVER-DARK: rgba(245, 245, 245, 0.9);
   --NOTE-BGCOLOR: hsla(240, 64%, 27%, 0.65);
   --STATUS-COMPLETE: limegreen;
   --STATUS-OPEN: firebrick;
   --TABLE-BGCOLOR-LIGHT: #fff;
-  --TABLE-BGCOLOR-DARK: #fff;
-  --TABLE-COLOR-LIGHT: #fff;
+  --TABLE-BGCOLOR-DARK: #264653;
+  --TABLE-COLOR-LIGHT: rgb(0, 0, 0);
   --TABLE-COLOR-DARK: #fff;
   --INPUT-INVALID: #f00;
   --color-one: #264653;
@@ -412,10 +412,8 @@ tr {
 }
 
 .dropdown-menu {
-  background-color: #d3d3d3 !important;
+  background-color: #e9c46a !important;
 }
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import "custom";
 
 .btn-login:hover,
 .btn-signup:hover {
@@ -450,3 +448,5 @@ tr {
     font-size: small;
   }
 }
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "custom";

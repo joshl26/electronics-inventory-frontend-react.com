@@ -12,8 +12,11 @@ import { useState } from "react";
 const LoginHeader = ({ colorMode, onChangeColorMode }) => {
   const NavBarStyle =
     colorMode === "Light"
-      ? "navbar-login nav-bg-light"
-      : "navbar-login nav-bg-dark";
+      ? "navbar-login navbar-light nav-bg-light"
+      : "navbar-login navbar-dark nav-bg-dark";
+
+  const LoginButtonStyle =
+    colorMode === "Light" ? "btn-login-light" : "btn-login-dark";
 
   return (
     <Navbar className={NavBarStyle} collapseOnSelect expand="lg">
@@ -60,7 +63,7 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
               </Button>
             </Link>
             <Link className="nav-link" to="/login">
-              <Button className="btn-login">Log In</Button>
+              <Button className={LoginButtonStyle}>Log In</Button>
             </Link>
           </Nav>
         </Navbar.Collapse>

@@ -19,10 +19,14 @@
     padding: 0px;
   }
 
-  .nav-link {
+  .nav-link-light {
     padding-left: 1em;
     padding-right: 1em;
-    color: white;
+  }
+
+  .nav-link-dark {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
   .navbar-login {
@@ -88,10 +92,14 @@
     padding: 0px;
   }
 
-  .nav-link {
+  .nav-link-light {
     padding-left: 1em;
     padding-right: 1em;
-    color: black;
+  }
+
+  .nav-link-dark {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
   .navbar-login {
@@ -132,5 +140,21 @@
 
   .animated-logo {
     width: fit-content;
+  }
+
+  .btn-login-light {
+    background-color: var(--color-one);
+    color: #ffffff;
+  }
+
+  .btn-login-light:hover {
+    background-color: white;
+    border: var(--color-one) solid 1px;
+  }
+
+  .btn-login-dark:hover {
+    background-color: var(--color-two);
+    border: var(--color-two) solid 1px;
+    color: white;
   }
 }
