@@ -55,11 +55,9 @@ const LandingPage = ({ colorMode }) => {
                 JIT managment are automaticallly calculated by our software.
               </h2>
               <div className="landing-spacer"></div>
-              <Container className="align-center">
-                <Button variant="danger" className={SignupButtonStyle}>
-                  Sign Up Now and Start your Free Trial!
-                </Button>
-              </Container>
+              <Button variant="danger" className={SignupButtonStyle}>
+                Sign Up Now and Start your Free Trial!
+              </Button>
             </Col>
             <Col className="landing_one_row" xs={12} md={6} lg={6}>
               <div className="spacer_small"></div>

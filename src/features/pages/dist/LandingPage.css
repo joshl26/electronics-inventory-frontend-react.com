@@ -110,6 +110,8 @@
     padding-top: 1em;
     padding-bottom: 1em;
     font-family: "Figtree", sans-serif;
+    width: 85%;
+    text-align: left;
   }
 
   .landing-header-3 {
