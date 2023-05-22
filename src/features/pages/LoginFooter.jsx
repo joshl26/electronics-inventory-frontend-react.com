@@ -6,7 +6,6 @@ const LoginFooter = ({ colorMode }) => {
   return (
     <Container>
       <div className="spacer-footer"></div>
-
       <div className="social-container">
         <SocialIcon url="https://www.linkedin.com/company/90619779/" />
         <SocialIcon url="https://facebook.com/" />
