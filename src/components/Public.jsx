@@ -61,7 +61,7 @@ const Public = () => {
       />
       <LandingPage colorMode={colorMode} />
       <CustomerGallery />
-      <LoginFooter />
+      <LoginFooter colorMode={colorMode} />
     </section>
   );
 

@@ -3,8 +3,11 @@ import { SocialIcon } from "react-social-icons";
 import { Container } from "react-bootstrap";
 
 const LoginFooter = ({ colorMode }) => {
+  const LoginFooterStyle =
+    colorMode === "Light" ? "login-footer-light" : "login-footer-dark";
+
   return (
-    <Container>
+    <div className={LoginFooterStyle}>
       <div className="spacer-footer"></div>
       <div className="social-container">
         <SocialIcon url="https://www.linkedin.com/company/90619779/" />
@@ -13,7 +16,7 @@ const LoginFooter = ({ colorMode }) => {
         <SocialIcon url="https://google.com/" />
       </div>
       <div className="spacer-footer"></div>
-    </Container>
+    </div>
   );
 };
 

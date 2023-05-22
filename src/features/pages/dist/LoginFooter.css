@@ -1,9 +1,13 @@
-.login_footer {
+.login-footer-light {
   position: relative;
-  width: 100%;
-  height: 10vh;
-  background-color: var(--BGCOLOR);
-  z-index: 1;
+  width: 100vw;
+  background-color: white;
+}
+
+.login-footer-dark {
+  position: relative;
+  width: 100vw;
+  background-color: #161a1d;
 }
 
 .social-container {
@@ -12,7 +16,7 @@
 }
 
 .spacer-footer {
-  height: 3vh;
+  height: 5vh;
 }
 
 .social-icon {
