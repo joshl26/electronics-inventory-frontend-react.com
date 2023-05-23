@@ -20,3 +20,15 @@
 .pricing-table-col {
   border: lightgray solid 1px;
 }
+
+.pricing-table-col-special {
+  border: #00d0ff solid 4px;
+}
+
+.spacer-small {
+  height: 5vh;
+}
+
+.spacer-x-small {
+  height: 2vh;
+}
