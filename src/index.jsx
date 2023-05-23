@@ -31,8 +31,8 @@ import ReactGridLayout from "./components/ReactGridLayout";
 import EditPart from "./features/parts/EditPart";
 import NewPart from "./features/parts/NewPart";
 import Features from "./components/Features";
-import Plans from "./components/Features";
-import Pricing from "./components/Features";
+import Plans from "./components/Plans";
+import Pricing from "./components/Pricing";
 
 if (process.env.NODE_ENV === "production") disableReactDevTools();
 

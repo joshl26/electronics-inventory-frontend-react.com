@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LandingPage from "../features/pages/LandingPage";
 import LoginHeader from "../features/pages/LoginHeader";
 // import HeroImage from "../features/pages/HeroImage";
-import "./Features.scss";
+import "./Pricing.scss";
 import LoginFooter from "../features/pages/LoginFooter";
 import SwipeUpIcon from "../svg/SwipeUpIcon.json";
 import Lottie from "lottie-react";
@@ -53,6 +53,8 @@ const Pricing = () => {
         colorMode={colorMode}
       />
       <section className={pricingStyle}>
+        <div className="spacer"></div>
+
         <h1 classname="pricing-header-text">Pricing</h1>
       </section>
       <LoginFooter colorMode={colorMode} />

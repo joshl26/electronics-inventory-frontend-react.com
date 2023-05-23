@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import LandingPage from "../features/pages/LandingPage";
 import LoginHeader from "../features/pages/LoginHeader";
 // import HeroImage from "../features/pages/HeroImage";
-import "./Features.scss";
+import "./Plans.scss";
 import LoginFooter from "../features/pages/LoginFooter";
 import SwipeUpIcon from "../svg/SwipeUpIcon.json";
 import Lottie from "lottie-react";
 import CustomerGallery from "../features/pages/CustomerGallery";
 import { useEffect, useCallback } from "react";
 
-const Features = () => {
+const Plans = () => {
   const [colorMode, setColorMode] = useState(
     JSON.parse(localStorage.getItem("colorMode"))
   );
 
-  const featuresStyle =
+  const plansStyle =
     colorMode === "Light"
-      ? "features-light"
+      ? "plans-light"
       : "" || colorMode === "Dark"
-      ? "features-dark"
+      ? "plans-dark"
       : "";
 
   const SwipeUpClickHandler = () => {
@@ -44,7 +44,7 @@ const Features = () => {
       localStorage.setItem("colorMode", JSON.stringify("Light"));
       setColorMode("Light");
     }
-  }, [colorMode, featuresStyle]);
+  }, [colorMode, plansStyle]);
 
   const content = (
     <>
@@ -52,9 +52,10 @@ const Features = () => {
         onChangeColorMode={onChangeColorMode}
         colorMode={colorMode}
       />
-      <section className={featuresStyle}>
+      <section className={plansStyle}>
         <div className="spacer"></div>
-        <h1 classname="features-header-text">Features</h1>
+
+        <h1 classname="plans-header-text">Plans</h1>
       </section>
       <LoginFooter colorMode={colorMode} />
     </>
@@ -63,4 +64,4 @@ const Features = () => {
   return content;
 };
 
-export default Features;
+export default Plans;
