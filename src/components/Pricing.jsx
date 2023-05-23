@@ -11,6 +11,9 @@ import { useEffect, useCallback } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 const Pricing = () => {
+  const [totalCost, setTotalCost] = useState(50 ^ 0.125);
+  const [numberOfUsers, setNumberOfUsers] = useState(50);
+
   const [colorMode, setColorMode] = useState(
     JSON.parse(localStorage.getItem("colorMode"))
   );
@@ -374,7 +377,7 @@ const Pricing = () => {
               <Row>
                 <div className="spacer-x-small"></div>
 
-                <h1>$17.5USD</h1>
+                <h1>${totalCost}USD</h1>
               </Row>
               <Row>
                 <p>
@@ -389,8 +392,20 @@ const Pricing = () => {
                   more security and controls.
                 </h4>
               </Row>
-              <div className="spacer"></div>
+              <Row>
+                <p>Estimated cost for {numberOfUsers} users</p>
+              </Row>
 
+              <input
+                min="50"
+                max="5000"
+                type="range"
+                value={numberOfUsers}
+                onChange={(e) => {
+                  setTotalCost(35 ^ e.target.value);
+                  setNumberOfUsers(e.target.value);
+                }}
+              ></input>
               <Row>
                 <div>
                   <Button>Contact Sales</Button>

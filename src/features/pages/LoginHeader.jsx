@@ -51,11 +51,13 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
               </Link>
             </div>
             <NavDropdown title="Plans" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/plans">Free Tier</NavDropdown.Item>
+              <NavDropdown.Item href="/pricing">Free Tier</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/plans">Creator Tier</NavDropdown.Item>
+              <NavDropdown.Item href="/pricing">Creator Tier</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/plans">Corporate Tier</NavDropdown.Item>
+              <NavDropdown.Item href="/pricing">
+                Corporate Tier
+              </NavDropdown.Item>
             </NavDropdown>
             <div className="nav-item">
               <Link className="nav-link" to="/pricing">
