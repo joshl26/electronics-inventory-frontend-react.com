@@ -1,13 +1,22 @@
-.pricing-header-text {
+.pricing-h1-text {
+  color: black;
+}
+
+.pricing-h4-text {
   color: black;
 }
 
 .pricing-light {
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--color-five);
 }
 
 .pricing-dark {
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--color-one);
+  color: white;
+}
+
+.pricing-table-col {
+  border: rgb(211, 211, 211) solid 1px;
 }
