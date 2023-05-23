@@ -5,9 +5,12 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Lottie from "lottie-react";
 import HamburgerMenu from "../../svg/HamburgerMenu.json";
+import LightToDarkButton from "../../svg/minimal_light_dark_toggle_button_2.json";
+import DarkToLightButton from "../../svg/minimal_light_dark_toggle_button_1.json";
+import { useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { useState } from "react";
 
 const LoginHeader = ({ colorMode, onChangeColorMode }) => {
   const NavBarStyle =
@@ -59,6 +62,19 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
               <NavDropdown.Item href="/">Corporate Tier</NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          {colorMode === "Light" ? (
+            <Lottie
+              className="header_icon"
+              animationData={LightToDarkButton}
+              loop={false}
+            />
+          ) : (
+            <Lottie
+              className="header_icon"
+              animationData={DarkToLightButton}
+              loop={false}
+            />
+          )}
           <Nav>
             <Link className="nav-link" to="/signup">
               <Button className={SignupButtonStyle} variant="danger">

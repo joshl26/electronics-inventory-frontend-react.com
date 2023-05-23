@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import LandingPage from "../features/pages/LandingPage";
 import LoginHeader from "../features/pages/LoginHeader";
-import HeroImage from "../features/pages/HeroImage";
+// import HeroImage from "../features/pages/HeroImage";
 import "./Public.scss";
 import LoginFooter from "../features/pages/LoginFooter";
 import SwipeUpIcon from "../svg/SwipeUpIcon.json";
 import Lottie from "lottie-react";
 import CustomerGallery from "../features/pages/CustomerGallery";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 
 const Public = () => {
   const [colorMode, setColorMode] = useState(
@@ -29,11 +29,11 @@ const Public = () => {
     console.log("On Change Color Mode " + e);
 
     if (e === "Light") {
-      setColorMode("Dark");
       localStorage.setItem("colorMode", JSON.stringify("Dark"));
+      setColorMode("Dark");
     } else {
-      setColorMode("Light");
       localStorage.setItem("colorMode", JSON.stringify("Light"));
+      setColorMode("Light");
     }
   };
 
