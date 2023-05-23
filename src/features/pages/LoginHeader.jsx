@@ -44,25 +44,26 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
                 Inventory Tracker
               </Link>
             </div>
+
             <div className="nav-item">
-              <Link className="nav-link" to="/">
-                How It Works
-              </Link>
-            </div>
-            <div className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/features">
                 Features
               </Link>
             </div>
-            <NavDropdown title="Plans and Pricing" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/">Free Tier</NavDropdown.Item>
+            <NavDropdown title="Plans" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/plans">Free Tier</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/">Creator Tier</NavDropdown.Item>
+              <NavDropdown.Item href="/plans">Creator Tier</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/">Corporate Tier</NavDropdown.Item>
+              <NavDropdown.Item href="/plans">Corporate Tier</NavDropdown.Item>
             </NavDropdown>
+            <div className="nav-item">
+              <Link className="nav-link" to="/pricing">
+                Pricing
+              </Link>
+            </div>
           </Nav>
-          {colorMode === "Light" ? (
+          {/* {colorMode === "Light" ? (
             <Lottie
               className="header_icon"
               animationData={LightToDarkButton}
@@ -74,7 +75,7 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
               animationData={DarkToLightButton}
               loop={false}
             />
-          )}
+          )} */}
           <Nav>
             <Link className="nav-link" to="/signup">
               <Button className={SignupButtonStyle} variant="danger">
