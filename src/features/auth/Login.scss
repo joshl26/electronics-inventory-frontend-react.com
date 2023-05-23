@@ -1,4 +1,18 @@
 @media screen and (min-width: 769px) {
+  .login-footer {
+    position: absolute;
+    top: 95vh;
+  }
+
+  .login-light {
+    background-color: white;
+    height: 100vh;
+  }
+
+  .login-dark {
+    background-color: #161a1d;
+    height: 100vh;
+  }
   .form {
     margin: 0 auto;
     width: 30vw;
@@ -20,6 +34,14 @@
 }
 
 @media screen and (max-width: 768px) {
+  .login-light {
+    background-color: white;
+  }
+
+  .login-dark {
+    background-color: var(--color-five);
+  }
+
   .form {
     margin: 0 auto;
     width: 60vw;

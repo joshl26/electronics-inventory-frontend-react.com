@@ -20,6 +20,10 @@ const Login = () => {
   const [errMsg, setErrMsg] = useState("");
   const [persist, setPersist] = usePersist();
 
+  const [colorMode, setColorMode] = useState(
+    JSON.parse(localStorage.getItem("colorMode"))
+  );
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -61,10 +65,12 @@ const Login = () => {
 
   const errClass = errMsg ? "errmsg" : "offscreen";
 
+  const loginStyle = colorMode === "Light" ? "login-light" : "login-dark";
+
   if (isLoading) return <p>Loading...</p>;
 
   const content = (
-    <div className="login">
+    <div className={loginStyle}>
       <header>
         <Lottie
           className="login-icon"
@@ -116,7 +122,7 @@ const Login = () => {
           </label>
         </form>
       </main>
-      <footer>
+      <footer className="login-footer">
         <Link className="login-footer-link" to="/">
           Back to Home
         </Link>
