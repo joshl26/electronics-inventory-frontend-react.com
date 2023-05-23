@@ -31,6 +31,8 @@ import ReactGridLayout from "./components/ReactGridLayout";
 import EditPart from "./features/parts/EditPart";
 import NewPart from "./features/parts/NewPart";
 import Features from "./components/Features";
+import Plans from "./components/Features";
+import Pricing from "./components/Features";
 
 if (process.env.NODE_ENV === "production") disableReactDevTools();
 
@@ -40,6 +42,8 @@ const router = createBrowserRouter(
       {/* public routes */}
       <Route index element={<Public />} />
       <Route path="features" element={<Features />} />
+      <Route path="plans" element={<Plans />} />
+      <Route path="pricing" element={<Pricing />} />
       <Route path="login" element={<Login />} />
       {/* Protected Routes */}
       <Route element={<PersistLogin />}>

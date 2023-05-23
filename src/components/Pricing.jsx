@@ -9,16 +9,16 @@ import Lottie from "lottie-react";
 import CustomerGallery from "../features/pages/CustomerGallery";
 import { useEffect, useCallback } from "react";
 
-const Features = () => {
+const Pricing = () => {
   const [colorMode, setColorMode] = useState(
     JSON.parse(localStorage.getItem("colorMode"))
   );
 
-  const featuresStyle =
+  const pricingStyle =
     colorMode === "Light"
-      ? "features-light"
+      ? "pricing-light"
       : "" || colorMode === "Dark"
-      ? "features-dark"
+      ? "pricing-dark"
       : "";
 
   const SwipeUpClickHandler = () => {
@@ -44,7 +44,7 @@ const Features = () => {
       localStorage.setItem("colorMode", JSON.stringify("Light"));
       setColorMode("Light");
     }
-  }, [colorMode, featuresStyle]);
+  }, [colorMode, pricingStyle]);
 
   const content = (
     <>
@@ -52,8 +52,8 @@ const Features = () => {
         onChangeColorMode={onChangeColorMode}
         colorMode={colorMode}
       />
-      <section className={featuresStyle}>
-        <h1 classname="features-header-text">Features</h1>
+      <section className={pricingStyle}>
+        <h1 classname="pricing-header-text">Pricing</h1>
       </section>
       <LoginFooter colorMode={colorMode} />
     </>
@@ -62,4 +62,4 @@ const Features = () => {
   return content;
 };
 
-export default Features;
+export default Pricing;
