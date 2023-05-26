@@ -6,6 +6,11 @@
   background-color: var(--BG-BODY-DARK);
 }
 
+.hamburger-icon {
+  transition: background-color 2s ease 0s, height 2s, width 2s, display 2s;
+  height: 100vh;
+}
+
 @media screen and (min-width: 769px) {
   .hero-header-text {
     opacity: 0.95;
