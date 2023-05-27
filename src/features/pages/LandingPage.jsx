@@ -41,7 +41,8 @@ const LandingPage = ({ colorMode }) => {
     colorMode === "Light" ? "btn-signup-light" : "btn-signup-dark";
 
   return (
-    <>
+    <div>
+      <div className="background-image" />
       <div className="landing-one">
         <Container>
           <div className="spacer_medium"></div>
@@ -69,9 +70,13 @@ const LandingPage = ({ colorMode }) => {
           <div className="spacer_small"></div>
         </Container>
       </div>
+      <div className="spacer_large"></div>
       <CustomerReviews />
-      <div className="spacer_small"></div>
-      <div className="landing-three">
+      <div className="spacer_large"></div>
+
+      {/* <div className="landing-three">
+        <div className="spacer_small"></div>
+
         <Container>
           <h1 className={landingHeaderStyle}>Why choose our Software?</h1>
           <p className={landingParagraphStyle}>
@@ -92,9 +97,9 @@ const LandingPage = ({ colorMode }) => {
           <div className="business-metrics">
             <Lottie animationData={BusinessMetrics} loop={true} />
           </div>
-        </Container>
-      </div>
-    </>
+        </Container> 
+      </div>*/}
+    </div>
   );
 };
 
