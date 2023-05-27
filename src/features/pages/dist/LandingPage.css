@@ -1,4 +1,8 @@
 @media screen and (min-width: 769px) {
+  .customer-reviews {
+    z-index: 10;
+  }
+
   .landing-two {
     padding: 0;
     margin: 0;
@@ -50,7 +54,7 @@
   }
 
   .landing-one-text-light {
-    color: black;
+    color: white;
   }
 
   .landing-one-text-dark {
@@ -58,7 +62,11 @@
   }
 
   .landing-one {
+    background-image: url("/img/background_1.png");
+    background-size: cover;
     min-height: 80vh;
+    height: 100vh;
+    background-repeat: no-repeat;
     width: 100vw;
     padding: 0;
   }
@@ -121,7 +129,7 @@
   }
 
   .landing-one-image-light {
-    border: var(--color-five) solid 2px;
+    border: var(--color-two) solid 2px;
   }
 
   .landing-one-image-dark {

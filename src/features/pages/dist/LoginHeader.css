@@ -3,7 +3,7 @@
 }
 
 .navbar-light {
-  border-bottom: var(--color-one) 2px solid;
+  border-bottom: var(--color-two) 2px solid;
 }
 
 @media screen and (max-width: 768px) {

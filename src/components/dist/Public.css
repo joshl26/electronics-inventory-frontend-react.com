@@ -8,6 +8,15 @@
 
 .hamburger-icon {
   transition: background-color 2s ease 0s, height 2s, width 2s, display 2s;
+  opacity: 0.9;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 25%;
+}
+
+.loading-background {
+  width: 100vw;
   height: 100vh;
 }
 

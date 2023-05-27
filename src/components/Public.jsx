@@ -7,8 +7,10 @@ import LoginFooter from "../features/pages/LoginFooter";
 import SwipeUpIcon from "../svg/SwipeUpIcon.json";
 import Lottie from "lottie-react";
 import CustomerGallery from "../features/pages/CustomerGallery";
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import HamburgerIcon from "../svg/HamburgerMenu.json";
+import { Image } from "react-bootstrap";
+import background from "../img/background_2.png";
 
 const Public = () => {
   const [loading, setLoading] = useState(true);
@@ -43,7 +45,6 @@ const Public = () => {
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
-      console.log("This will run after 1 second!");
       setLoading(false);
     }, 2000);
     return () => {
@@ -62,6 +63,7 @@ const Public = () => {
 
   const content = loading ? (
     <section className={publicStyle}>
+      <Image className="loading-background" src={background} />
       <Lottie
         className="hamburger-icon"
         animationData={HamburgerIcon}
