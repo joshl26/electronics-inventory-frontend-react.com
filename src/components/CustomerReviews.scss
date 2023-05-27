@@ -12,7 +12,7 @@
   }
 
   .slider_container {
-    background-color: #2a9d8f;
+    background-color: rgba($color: #2a9d8f, $alpha: 0.9);
     z-index: 1;
     position: relative;
   }
@@ -33,7 +33,6 @@
 
   .images-wrap {
     height: 600px;
-    background-color: #2a9d8f;
     padding-top: 100px;
   }
 

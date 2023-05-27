@@ -135,7 +135,7 @@ const CustomerReviews = () => {
         {data.map((review, index) => (
           <div
             key={index}
-            style={{ backgroundColor: "#2A9D8F" }}
+            style={{ backgroundColor: "rgba($color: #2a9d8f, $alpha: 0.9)" }}
             className="each-slide-effect"
           >
             <CustomerReviewCard review={review} />
