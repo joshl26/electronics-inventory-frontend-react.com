@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LandingPage from "../features/pages/LandingPage";
 import LoginHeader from "../features/pages/LoginHeader";
-// import HeroImage from "../features/pages/HeroImage";
+import Experience from "../components/Experience";
 import "./Public.scss";
 import LoginFooter from "../features/pages/LoginFooter";
 import SwipeUpIcon from "../svg/SwipeUpIcon.json";
@@ -71,25 +71,40 @@ const Public = () => {
       />
     </section>
   ) : (
-    <section className={publicStyle}>
+    <>
       <Lottie
         onClick={SwipeUpClickHandler}
         className="swipe-up-icon"
         animationData={SwipeUpIcon}
         loop={true}
       />
-      {/* <HeroImage /> */}
       <LoginHeader
         onChangeColorMode={onChangeColorMode}
         colorMode={colorMode}
       />
-      <LandingPage colorMode={colorMode} />
-      <CustomerGallery />
-      <LoginFooter colorMode={colorMode} />
-    </section>
+      <Experience />
+    </>
   );
 
   return content;
 };
 
 export default Public;
+
+{
+  /* <section className={publicStyle}>
+        <Lottie
+          onClick={SwipeUpClickHandler}
+          className="swipe-up-icon"
+          animationData={SwipeUpIcon}
+          loop={true}
+        />
+        <LoginHeader
+          onChangeColorMode={onChangeColorMode}
+          colorMode={colorMode}
+        />
+        <LandingPage colorMode={colorMode} />
+        <CustomerGallery />
+        <LoginFooter colorMode={colorMode} />
+      </section> */
+}

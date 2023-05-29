@@ -49,6 +49,8 @@
 
 #root {
   background-color: var(--color-one);
+  width: 100vw;
+  height: 100vh;
 }
 
 html {
@@ -129,7 +131,6 @@ select {
 
 #root {
   /* React root div */
-  min-height: 100vh;
   display: flex;
   flex-flow: column nowrap;
 }
