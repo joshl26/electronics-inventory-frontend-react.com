@@ -5,23 +5,23 @@ import { OrbitControls, Scroll, ScrollControls } from "@react-three/drei";
 
 import { Office } from "./Office";
 import LandingPage from "../features/pages/LandingPage";
-import LoginHeader from "../features/pages/LoginHeader";
+import { Skateboard } from "./Skateboard";
 import LoginFooter from "../features/pages/LoginFooter";
-import SwipeUpIcon from "../svg/SwipeUpIcon.json";
 import CustomerGallery from "../features/pages/CustomerGallery";
-import Lottie from "lottie-react";
 extend({ OrbitControls, ScrollControls });
 
 const Experience = ({
-  publicStyle,
   colorMode,
   setColorMode,
+  // eslint-disable-next-line
   backgroundColor = { backgroundColor },
 }) => {
+  // eslint-disable-next-line
   const SwipeUpClickHandler = () => {
     window.scrollTo(0, 0);
   };
 
+  // eslint-disable-next-line
   const onChangeColorMode = (e) => {
     console.log("On Change Color Mode " + e);
 
@@ -45,6 +45,7 @@ const Experience = ({
       <ambientLight intensity={1} />
       <OrbitControls enableZoom={false} />
       <ScrollControls pages={5.15} damping={0.25}>
+        <Skateboard />
         <Office />
         <Scroll html>
           <LandingPage colorMode={colorMode} />
