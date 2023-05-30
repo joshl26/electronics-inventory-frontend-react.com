@@ -65,19 +65,16 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
               </Link>
             </div>
           </Nav>
-          {/* {colorMode === "Light" ? (
+          {/* <Nav>
             <Lottie
               className="header_icon"
-              animationData={LightToDarkButton}
+              animationData={
+                colorMode == "Light" ? LightToDarkButton : DarkToLightButton
+              }
               loop={false}
             />
-          ) : (
-            <Lottie
-              className="header_icon"
-              animationData={DarkToLightButton}
-              loop={false}
-            />
-          )} */}
+          </Nav> */}
+
           <Nav>
             <Link className="nav-link" to="/signup">
               <Button className={SignupButtonStyle} variant="danger">

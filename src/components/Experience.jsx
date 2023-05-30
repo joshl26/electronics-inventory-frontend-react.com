@@ -12,7 +12,12 @@ import CustomerGallery from "../features/pages/CustomerGallery";
 import Lottie from "lottie-react";
 extend({ OrbitControls, ScrollControls });
 
-const Experience = ({ publicStyle, colorMode, setColorMode }) => {
+const Experience = ({
+  publicStyle,
+  colorMode,
+  setColorMode,
+  backgroundColor = { backgroundColor },
+}) => {
   const SwipeUpClickHandler = () => {
     window.scrollTo(0, 0);
   };
@@ -31,6 +36,7 @@ const Experience = ({ publicStyle, colorMode, setColorMode }) => {
 
   return (
     <Canvas
+      style={{ background: backgroundColor }}
       camera={{
         fov: 64,
         position: [2.3, 1.5, 2.3],
@@ -38,14 +44,9 @@ const Experience = ({ publicStyle, colorMode, setColorMode }) => {
     >
       <ambientLight intensity={1} />
       <OrbitControls enableZoom={false} />
-      <ScrollControls pages={5.2} damping={0.25}>
+      <ScrollControls pages={5.15} damping={0.25}>
         <Office />
         <Scroll html>
-          <h1 style={{ top: "0", position: "sticky" }}>
-            html in here (optional)
-          </h1>
-          <h1 style={{ top: "100vh", position: "absolute" }}>second page</h1>
-          <h1 style={{ top: "200vh", position: "absolute" }}>third page</h1>
           <LandingPage colorMode={colorMode} />
           <CustomerGallery />
           <LoginFooter colorMode={colorMode} />

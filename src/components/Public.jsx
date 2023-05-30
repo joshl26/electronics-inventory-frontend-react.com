@@ -26,6 +26,7 @@ const Public = () => {
       ? "public-dark"
       : "";
 
+  const backgroundColor = colorMode === "Light" ? "#e76f51" : "#264653";
   const SwipeUpClickHandler = () => {
     window.scrollTo(0, 0);
   };
@@ -82,7 +83,7 @@ const Public = () => {
         onChangeColorMode={onChangeColorMode}
         colorMode={colorMode}
       />
-      <Experience />
+      <Experience backgroundColor={backgroundColor} />
     </>
   );
 
