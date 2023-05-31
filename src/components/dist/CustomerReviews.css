@@ -4,7 +4,7 @@
     margin: 1em;
     width: 40px !important;
     height: 40px !important;
-    background-color: var(--color-three) !important;
+    background-color: #3bcfbe !important;
   }
 
   .default-nav:hover {
@@ -12,7 +12,7 @@
   }
 
   .slider_container {
-    background-color: rgba(42, 157, 143, 0.9);
+    background-color: #2a9d8f;
     z-index: 1;
     position: relative;
     width: 100vw;

@@ -73,17 +73,17 @@ const Public = () => {
     </section>
   ) : (
     <>
-      <Lottie
+      {/* <Lottie
         onClick={SwipeUpClickHandler}
         className="swipe-up-icon"
         animationData={SwipeUpIcon}
         loop={true}
-      />
+      /> */}
       <LoginHeader
         onChangeColorMode={onChangeColorMode}
         colorMode={colorMode}
       />
-      <Experience backgroundColor={backgroundColor} />
+      <Experience colorMode={colorMode} backgroundColor={backgroundColor} />
     </>
   );
 
