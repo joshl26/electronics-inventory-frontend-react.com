@@ -5,6 +5,7 @@ import "./Pricing.scss";
 import LoginFooter from "../features/pages/LoginFooter";
 import { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
   const [totalCost, setTotalCost] = useState(50 ^ 0.125);
@@ -239,7 +240,7 @@ const Pricing = () => {
                   <p>1,000 Workspace command runs per month</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -247,12 +248,19 @@ const Pricing = () => {
                   <p>Single board guests</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
                 <Col xs={1} md={11}>
                   <p>Saved searches</p>
+                </Col>
+              </Row>
+              <Row className="row-border-top">
+                <Col className="col-align-center">
+                  <Link>
+                    <p>Learn More About Standard</p>
+                  </Link>
                 </Col>
               </Row>
             </Col>
@@ -288,10 +296,10 @@ const Pricing = () => {
                 </div>
               </Row>
               <div className="spacer-small"></div>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <h4>EVERYTHING IN STANDARD, PLUS:</h4>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -299,7 +307,7 @@ const Pricing = () => {
                   <p>Views: Calendar, Timeline, Table, Dashboard, and Map</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -308,7 +316,7 @@ const Pricing = () => {
                 </Col>
               </Row>
 
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -316,7 +324,7 @@ const Pricing = () => {
                   <p>Unlimited Workspace command runs</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -324,7 +332,7 @@ const Pricing = () => {
                   <p>Admin and security features</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -332,7 +340,7 @@ const Pricing = () => {
                   <p>Workspace-level templates</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -340,7 +348,7 @@ const Pricing = () => {
                   <p>Collections</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -348,12 +356,19 @@ const Pricing = () => {
                   <p>Observers</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
                 <Col xs={1} md={11}>
                   <p>Simple data export</p>
+                </Col>
+              </Row>
+              <Row className="row-border-top">
+                <Col className="col-align-center">
+                  <Link>
+                    <p>Learn More About Premium</p>
+                  </Link>
                 </Col>
               </Row>
             </Col>
@@ -404,10 +419,10 @@ const Pricing = () => {
                 </div>
               </Row>
               <div className="spacer-small"></div>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <h4>EVERYTHING IN PREMIUM, PLUS:</h4>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -415,7 +430,7 @@ const Pricing = () => {
                   <p>Unlimited Workspaces</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -423,7 +438,7 @@ const Pricing = () => {
                   <p>Organization-wide permissions</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -431,7 +446,7 @@ const Pricing = () => {
                   <p>Organization-visible boards</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -439,7 +454,7 @@ const Pricing = () => {
                   <p>Public board management</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -447,7 +462,7 @@ const Pricing = () => {
                   <p>Multi-board guests</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -455,7 +470,7 @@ const Pricing = () => {
                   <p>Attachment permissions</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -463,7 +478,7 @@ const Pricing = () => {
                   <p>Power-Up administration</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <p>✓</p>
                 </Col>
@@ -471,11 +486,31 @@ const Pricing = () => {
                   <p>Free SSO and user provisioning with Atlassian Access</p>
                 </Col>
               </Row>
+              <Row className="row-border-top">
+                <Col className="col-align-center">
+                  <Link>
+                    <p>Learn More About Enterprise</p>
+                  </Link>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>
-        <div className="spacer"></div>
-        <div className="spacer"></div>
+        <div className="spacer-small" />
+
+        <Row>
+          <Col className="col-align-center">
+            <h1>Compare our Plans</h1>
+            <input type="text" placeholder="Search" />
+          </Col>
+        </Row>
+
+        <div className="spacer-small" />
+
+
+                
+
+
       </section>
 
       <LoginFooter colorMode={colorMode} />
