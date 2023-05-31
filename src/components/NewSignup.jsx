@@ -1,11 +1,53 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import "./NewSignup.scss";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 const NewSignup = ({ colorMode }) => {
   const signupSectionStlye =
     colorMode === "Light" ? "signup-section-light" : "signup-section-dark";
 
-  return <section className={signupSectionStlye}></section>;
+  const onEmailChange = (e) => {
+    console.log(e.target.value);
+  };
+
+  return (
+    <div className={signupSectionStlye}>
+      <div className="spacer"></div>
+      <Container>
+        <Col>
+          <Row>
+            <h1 className="align-center">
+              Havent tried Electronics Inventory before?
+            </h1>
+          </Row>
+          <Row>
+            <h4 className="align-center">
+              Signup for free and join over 2M teams worldwide who <br /> are
+              using Electronics Inventory to get more done.
+            </h4>
+          </Row>
+          <Row>
+            <div className="spacer-small"></div>
+          </Row>
+          <Row>
+            <Col xs={1} md={4}></Col>
+            <Col className="align-right" xs={1} md={2}>
+              <input
+                className="email-input"
+                type="email"
+                placeholder="Email"
+                onChange={onEmailChange}
+              />
+            </Col>
+            <Col xs={1} md={2}>
+              <Button>Sign Up</Button>
+            </Col>
+            <Col xs={1} md={4}></Col>
+          </Row>
+        </Col>
+      </Container>
+    </div>
+  );
 };
 
 export default NewSignup;

@@ -1,9 +1,9 @@
 .signup-section-light {
   height: 50vh;
-  background-image: linear-gradient(var(--color-four), white);
+  background-image: linear-gradient(var(--color-four), var(--color-four), white);
 }
 
 .signup-section-dark {
   height: 50vh;
-  background-image: linear-gradient(var(--color-four), black);
+  background-image: linear-gradient(var(--color-four), var(--color-four), black);
 }

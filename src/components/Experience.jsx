@@ -21,7 +21,6 @@ extend({ OrbitControls, ScrollControls });
 const Experience = ({ colorMode }) => {
   const backgroundColor = colorMode === "Light" ? "#e76f51" : "#264653";
 
-
   return (
     // <Canvas
     //   flat
@@ -53,7 +52,7 @@ const Experience = ({ colorMode }) => {
         maxPolarAngle={0}
         minPolarAngle={Math.PI / 2}
       /> */}
-      <ScrollControls pages={6.15} damping={0.1}>
+      <ScrollControls pages={8.15} damping={0.1}>
         {/* <Skateboard />
         <Office /> */}
         {/* <Suzie /> */}
