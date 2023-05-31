@@ -6,6 +6,7 @@ import LoginFooter from "../features/pages/LoginFooter";
 import { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import features from "../mock_data/features.json";
 
 const Pricing = () => {
   const [totalCost, setTotalCost] = useState(50 ^ 0.125);
@@ -507,10 +508,43 @@ const Pricing = () => {
 
         <div className="spacer-small" />
 
+        <Container>
+          <Row>
+            <Col>
+              <p>FEATURES</p>
+            </Col>
+            <Col className="align-center">
+              <p>FREE</p>
+            </Col>
+            <Col className="align-center">
+              <p>STANDARD</p>
+            </Col>
+            <Col className="align-center">
+              <p>PREMIUM</p>
+            </Col>
+            <Col className="align-center">
+              <p>ENTERPRISE</p>
+            </Col>
+          </Row>
 
-                
-
-
+          {features.map((feature) => (
+            <Row>
+              <Col className="pricing-table-col">{feature.col1}</Col>
+              <Col className="pricing-table-col  align-center">
+                {feature.col2}
+              </Col>
+              <Col className="pricing-table-col  align-center">
+                {feature.col3}
+              </Col>
+              <Col className="pricing-table-col  align-center">
+                {feature.col4}
+              </Col>
+              <Col className="pricing-table-col  align-center">
+                {feature.col5}
+              </Col>
+            </Row>
+          ))}
+        </Container>
       </section>
 
       <LoginFooter colorMode={colorMode} />
