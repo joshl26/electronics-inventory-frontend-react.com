@@ -21,6 +21,7 @@
 
 .pricing-table-col {
   border: lightgray solid 1px;
+  padding-top: 0.5em;
 }
 
 .pricing-table-col-special {

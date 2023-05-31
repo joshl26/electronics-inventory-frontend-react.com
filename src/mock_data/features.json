@@ -2,121 +2,201 @@
   {
     "_id": 1,
     "col1": "UNLIMITED CARDS",
-    "col2": "✓",
+    "col2": "",
     "col3": "✓",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": ""
   },
   {
     "_id": 2,
-    "col1": "BUILT-IN AUTOMATION Powerful no-code automation is built into every Trello board. Start automating",
-    "col2": "✓",
+    "col1": "BUILT-IN AUTOMATION",
+    "col2": "Powerful no-code automation is built into every Electronics Inventory board.",
     "col3": "✓",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Start automating"
   },
   {
     "_id": 3,
     "col1": "ASSIGNEE AND DUE DATES",
-    "col2": "✓",
+    "col2": "",
     "col3": "✓",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": ""
   },
   {
     "_id": 4,
-    "col1": "IOS AND ANDROID MOBILE APPS Download Mobile Apps",
-    "col2": "✓",
+    "col1": "IOS AND ANDROID MOBILE APPS",
+    "col2": "",
     "col3": "✓",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Download mobile app"
   },
   {
     "_id": 5,
-    "col1": "DESKTOP APP Download Mobile Apps",
-    "col2": "✓",
+    "col1": "DESKTOP APP",
+    "col2": "",
     "col3": "✓",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Download desktop app"
   },
   {
     "_id": 6,
     "col1": "UNLIMITED ACTIVITY LOGS",
-    "col2": "✓",
+    "col2": "",
     "col3": "✓",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": ""
   },
   {
     "_id": 7,
-    "col1": " BUILT-IN AUTOMATION Powerful no-code automation is built into every Trello board. Start automating ",
-    "col2": "✓",
-    "col3": "✓",
+    "col1": "Electronics Inventory TEMPLATES",
+    "col2": "Give your team a blueprint for success with tried-and-true templates from the Electronics Inventory community.",
+    "col3": "",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Try a template"
   },
   {
     "_id": 8,
-    "col1": " BUILT-IN AUTOMATION Powerful no-code automation is built into every Trello board. Start automating ",
-    "col2": "✓",
+    "col1": "2-FACTOR AUTHENTICATION",
+    "col2": "",
     "col3": "✓",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": ""
   },
   {
     "_id": 9,
-    "col1": " BUILT-IN AUTOMATION Powerful no-code automation is built into every Trello board. Start automating ",
-    "col2": "✓",
+    "col1": "MOBILE DEVICE MANAGEMENT",
+    "col2": "Enforce security controls on mobile app usage through built-in mobile device management (MDM) support for iOS and Android.",
     "col3": "✓",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": ""
   },
   {
     "_id": 10,
-    "col1": " BUILT-IN AUTOMATION Powerful no-code automation is built into every Trello board. Start automating ",
-    "col2": "✓",
+    "col1": "UNLIMITED POWER-UPS",
+    "col2": "Integrate with more than 200+ apps and tools your team depends on like Slack, Google Drive, Salesforce, and more directly into your Electronics Inventory boards. (Note: Some Power-Ups by our partners require an additional subscription fee.)",
     "col3": "✓",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Learn more"
   },
   {
     "_id": 11,
-    "col1": " BUILT-IN AUTOMATION Powerful no-code automation is built into every Trello board. Start automating ",
-    "col2": "✓",
-    "col3": "✓",
+    "col1": "UNLIMITED BOARDS",
+    "col2": "Create as many Electronics Inventory boards as your team sees fit; from onboarding new hires, to sprint planning, and every team meeting agenda in between.",
+    "col3": "",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": ""
   },
   {
     "_id": 12,
-    "col1": " BUILT-IN AUTOMATION Powerful no-code automation is built into every Trello board. Start automating ",
-    "col2": "✓",
-    "col3": "✓",
+    "col1": "ADVANCED CHECKLISTS",
+    "col2": "Break down projects into byte-sized tasks and get granular by assigning members and due dates to individual tasks.",
+    "col3": "",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": ""
   },
   {
     "_id": 13,
-    "col1": " BUILT-IN AUTOMATION Powerful no-code automation is built into every Trello board. Start automating ",
-    "col2": "✓",
-    "col3": "✓",
+    "col1": "CUSTOM FIELDS",
+    "col2": "Bring process and formality to your workflow by structuring information on Electronics Inventory cards to the task at hand with Custom Fields.",
+    "col3": "",
     "col4": "✓",
-    "col5": "✓"
+    "col5": "✓",
+    "col6": "✓",
+    "link": ""
   },
   {
     "_id": 14,
-    "col1": " BUILT-IN AUTOMATION Powerful no-code automation is built into every Trello board. Start automating ",
-    "col2": "✓",
-    "col3": "✓",
-    "col4": "✓",
-    "col5": "✓"
+    "col1": "DASHBOARD VIEW",
+    "col2": " Electronics Inventory’s reporting tool lets you access real-time insights and communicate your team’s progress in a visual and meaningful way.",
+    "col3": "",
+    "col4": "",
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Learn more"
   },
   {
     "_id": 15,
-    "col1": " BUILT-IN AUTOMATION Powerful no-code automation is built into every Trello board. Start automating ",
-    "col2": "✓",
-    "col3": "✓",
-    "col4": "✓",
-    "col5": "✓"
+    "col1": "TIMELINE VIEW",
+    "col2": "Plan your project, stay on top of every sprint, and see how all of the moving parts fit together over time with Timeline.",
+    "col3": "",
+    "col4": "",
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Learn more"
+  },
+  {
+    "_id": 16,
+    "col1": "TABLE VIEW",
+    "col2": "Bring a clearer perspective to all the work happening across a single board in a list format where you can create and edit cards in just a few clicks.",
+    "col3": "",
+    "col4": "",
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Learn more"
+  },
+  {
+    "_id": 17,
+    "col1": "CALENDAR VIEW",
+    "col2": "Calendar displays start dates, due dates, and advanced checklist items so you can see what lies ahead for your project and stay on top of today’s to-dos.",
+    "col3": "",
+    "col4": "",
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Learn more"
+  },
+  {
+    "_id": 18,
+    "col1": "MAP VIEW",
+    "col2": "Plan an offsite, scout new office locations, or manage product distribution points by adding locations to your cards and visualizing them geographically on a map.",
+    "col3": "",
+    "col4": "",
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Learn more"
+  },
+  {
+    "_id": 19,
+    "col1": "WORKSPACE TABLE VIEW",
+    "col2": "See your projects and tasks across Workspaces and boards in a spreadsheet-style list that can be sorted and filtered to drill down to exactly the cards you need to see.",
+    "col3": "",
+    "col4": "",
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Learn more"
+  },
+  {
+    "_id": 20,
+    "col1": "WORKSPACE CALENDAR VIEW",
+    "col2": "Workspace calendar displays items with start dates and due dates across your projects and boards, so you can see what lies ahead for all your teamwork.",
+    "col3": "",
+    "col4": "",
+    "col5": "✓",
+    "col6": "✓",
+    "link": "Learn more"
   }
 ]

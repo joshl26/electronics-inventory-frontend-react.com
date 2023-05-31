@@ -7,8 +7,25 @@ import { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import features from "../mock_data/features.json";
+import { arraySearch } from "../utils";
 
 const Pricing = () => {
+  const [population, setPopulation] = useState(features);
+  const [count, setCount] = useState(features.length);
+
+  const handleOnChange = async (e) => {
+    let value = e.target.value;
+    if (value.length > 2) {
+      let search = await arraySearch(population, value);
+      setPopulation(search);
+      setCount(search.length);
+    } else {
+      setPopulation(features);
+      setCount(features.length);
+    }
+  };
+  // searching word "JavaScript" in the given string
+
   const [totalCost, setTotalCost] = useState(50 ^ 0.125);
   const [numberOfUsers, setNumberOfUsers] = useState(50);
 
@@ -502,7 +519,16 @@ const Pricing = () => {
         <Row>
           <Col className="col-align-center">
             <h1>Compare our Plans</h1>
-            <input type="text" placeholder="Search" />
+            {/* <div>
+              Count: {count} */}
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search Filter"
+              onChange={handleOnChange}
+            />
+            {/* </div> */}
           </Col>
         </Row>
 
@@ -527,17 +553,31 @@ const Pricing = () => {
             </Col>
           </Row>
 
-          {features.map((feature) => (
-            <Row>
-              <Col className="pricing-table-col">{feature.col1}</Col>
-              <Col className="pricing-table-col  align-center">
-                {feature.col2}
+          {population.map((feature) => (
+            <Row className="pricing-table-row">
+              <Col className="pricing-table-col">
+                <Row>
+                  <p>{feature.col1}</p>
+                  <p>{feature.col2}</p>
+                </Row>
+                {feature.link.length > 0 ? (
+                  <Row>
+                    <Link>
+                      <p className="align-center">{feature.link}</p>
+                    </Link>
+                  </Row>
+                ) : (
+                  ""
+                )}
               </Col>
               <Col className="pricing-table-col  align-center">
                 {feature.col3}
               </Col>
               <Col className="pricing-table-col  align-center">
                 {feature.col4}
+              </Col>
+              <Col className="pricing-table-col  align-center">
+                {feature.col5}
               </Col>
               <Col className="pricing-table-col  align-center">
                 {feature.col5}
