@@ -122,6 +122,14 @@ tr {
   text-align: right;
 }
 
+.text-light {
+  color: white;
+}
+
+.text-dark {
+  color: black;
+}
+
 /* || GENERAL STYLES */
 body {
   font-family: "Nunito", sans-serif;

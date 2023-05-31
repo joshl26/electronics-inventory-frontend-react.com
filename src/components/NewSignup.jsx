@@ -30,8 +30,8 @@ const NewSignup = ({ colorMode }) => {
             <div className="spacer-small"></div>
           </Row>
           <Row>
-            <Col xs={1} md={4}></Col>
-            <Col className="align-right" xs={1} md={2}>
+            <Col xs={1} sm={2} md={4}></Col>
+            <Col className="text-center" xs={1} sm={3} md={3}>
               <input
                 className="email-input"
                 type="email"
@@ -39,12 +39,13 @@ const NewSignup = ({ colorMode }) => {
                 onChange={onEmailChange}
               />
             </Col>
-            <Col xs={1} md={2}>
+            <Col xs={1} sm={3} md={3}>
               <Button>Sign Up</Button>
             </Col>
-            <Col xs={1} md={4}></Col>
+            <Col xs={1} sm={3} md={2}></Col>
           </Row>
         </Col>
+        <div className="spacer"></div>
       </Container>
     </div>
   );

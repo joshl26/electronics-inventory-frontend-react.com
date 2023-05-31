@@ -585,6 +585,7 @@ const Pricing = () => {
             </Row>
           ))}
         </Container>
+        <div className="spacer"></div>
       </section>
 
       <LoginFooter colorMode={colorMode} />

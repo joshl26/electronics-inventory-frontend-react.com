@@ -2,12 +2,31 @@
   position: relative;
   width: 100vw;
   background-color: white;
+  color: black;
+  border-top: var(--color-two) solid 2px;
 }
 
 .login-footer-dark {
   position: relative;
   width: 100vw;
   background-color: black;
+  color: white;
+  border-top: white solid 2px;
+}
+
+.footer-button-dark {
+  background-color: transparent;
+  border: transparent;
+  color: white;
+}
+
+.footer-button-light:hover {
+  background-color: #e2e2e2;
+}
+
+.footer-button-dark:hover {
+  background-color: #252525;
+  color: white;
 }
 
 .social-container {
@@ -21,4 +40,20 @@
 
 .social-icon {
   margin: 1em;
+}
+
+.footer-icon {
+  width: 75px;
+}
+
+.section-break-light {
+  width: 100%;
+  border-top: black 1px solid;
+  height: 10px;
+}
+
+.section-break-dark {
+  width: 100%;
+  height: 10px;
+  border-top: white 1px solid;
 }
