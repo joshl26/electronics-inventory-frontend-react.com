@@ -6,12 +6,15 @@
 
   .login-light {
     background-color: white;
-    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 100vh;
   }
 
   .login-dark {
+    color: white;
     background-color: #161a1d;
-    height: 100vh;
   }
   .form {
     margin: 0 auto;
@@ -51,19 +54,31 @@
   }
 
   .login-container-inner-dark {
-    border: white 1px solid;
+    width: 25vw;
+    margin: 0 auto;
+    // border: white 1px solid;
+    box-shadow: rgba(255, 255, 255, 0.201) 0 0 10px;
   }
 
   .spacer-extra-small {
     height: 2vh;
   }
 
-  .section-break {
+  .section-break-light {
     border-top: black 1px solid;
+  }
+
+  .section-break-dark {
+    border-top: white 1px solid;
   }
 
   .login-header {
     padding-top: 1em;
+  }
+
+  .login-button-icon {
+    width: 25px;
+    padding-left: 0.25em;
   }
 }
 

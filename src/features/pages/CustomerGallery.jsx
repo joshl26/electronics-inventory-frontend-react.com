@@ -26,11 +26,20 @@ const CustomerGallery = () => {
         </Row>
         <Row>
           <Col>
-            <img alt="grandhyatt_icon" className="customer-icon" src={GrandHyatt} />
+            <img
+              alt="grandhyatt_icon"
+              className="customer-icon"
+              src={GrandHyatt}
+            />
           </Col>
           <Col>
-            <img alt="johndeers_icon" className="customer-icon" src={JohnDeere} />
+            <img
+              alt="johndeers_icon"
+              className="customer-icon"
+              src={JohnDeere}
+            />
           </Col>
+          <Col></Col>
         </Row>
       </Container>
     </div>

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import LandingPage from "../features/pages/LandingPage";
 import LoginHeader from "../features/pages/LoginHeader";
 import Experience from "../components/Experience";
 import "./Public.scss";
-import LoginFooter from "../features/pages/LoginFooter";
-import SwipeUpIcon from "../svg/SwipeUpIcon.json";
 import Lottie from "lottie-react";
-import CustomerGallery from "../features/pages/CustomerGallery";
 import { useEffect } from "react";
 import HamburgerIcon from "../svg/HamburgerMenu.json";
 import { Image } from "react-bootstrap";

@@ -5,6 +5,11 @@ import { useDispatch } from "react-redux";
 import { setCredentials } from "./authSlice";
 import { useLoginMutation } from "./authApiSlice";
 
+import googleColor from "../../svg/Google_color.svg";
+import microsoftColor from "../../svg/Microsoft_color.svg";
+import appleColor from "../../svg/Google_color.svg";
+import slackColor from "../../svg/Google_color.svg";
+
 import usePersist from "../../hooks/usePersist";
 
 import Lottie from "lottie-react";
@@ -33,6 +38,9 @@ const Login = () => {
     colorMode === "Light"
       ? "login-container-inner-light"
       : "login-container-inner-dark";
+
+  const sectionBreakStyle =
+    colorMode === "Light" ? "section-break-light" : "section-break-dark";
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -104,11 +112,14 @@ const Login = () => {
         <Row>
           <Col></Col>
           <Col md={2} className="login-col-align-left">
-            <Lottie
-              className="login-icon"
-              animationData={HamburgerMenu}
-              loop={false}
-            />
+            <Link to="/">
+              <Lottie
+                className="login-icon"
+                animationData={HamburgerMenu}
+                loop={false}
+              />
+            </Link>
+
             <h1 className="login-text">Ei</h1>
           </Col>
           <Col></Col>
@@ -186,7 +197,7 @@ const Login = () => {
             )}
           </form>
           <div className="spacer-extra-small"></div>
-          <Container>
+          <form className="form">
             <Row>
               <p className="text-center">OR</p>
             </Row>
@@ -196,10 +207,10 @@ const Login = () => {
                 onClick={handleContinueBtnClick}
                 className="form__submit-button"
               >
-                Continue with Google
+                Continue with Google{" "}
+                <img className="login-button-icon" src={googleColor} />
               </button>
             </Row>
-            <div className="spacer-extra-small"></div>
 
             <Row>
               <button
@@ -207,10 +218,10 @@ const Login = () => {
                 onClick={handleContinueBtnClick}
                 className="form__submit-button"
               >
-                Continue with Microsoft
+                Continue with Microsoft{" "}
+                <img className="login-button-icon" src={microsoftColor} />
               </button>
             </Row>
-            <div className="spacer-extra-small"></div>
 
             <Row>
               <button
@@ -218,10 +229,10 @@ const Login = () => {
                 onClick={handleContinueBtnClick}
                 className="form__submit-button"
               >
-                Continue with Apple
+                Continue with Apple{" "}
+                <img className="login-button-icon" src={appleColor} />
               </button>
             </Row>
-            <div className="spacer-extra-small"></div>
 
             <Row>
               <button
@@ -229,12 +240,12 @@ const Login = () => {
                 onClick={handleContinueBtnClick}
                 className="form__submit-button"
               >
-                Continue
+                Continue with Slack{" "}
+                <img className="login-button-icon" src={slackColor} />
               </button>
             </Row>
             <div className="spacer-extra-small"></div>
-            <div className="section-break"></div>
-            <div className="spacer-extra-small"></div>
+            <div className={sectionBreakStyle}></div>
 
             <Col>
               <Row className="text-center">
@@ -244,7 +255,7 @@ const Login = () => {
                 </p>
               </Row>
             </Col>
-          </Container>
+          </form>
         </div>
         <div className="spacer-extra-small"></div>
         <Col>
@@ -332,8 +343,9 @@ const Login = () => {
 
         <div className="spacer-extra-small"></div>
         <Col>
-          <div className="section-break"></div>
+          <div className={sectionBreakStyle}></div>
         </Col>
+        <div className="spacer-extra-small"></div>
         <div className="spacer-extra-small"></div>
 
         <Col>
@@ -343,33 +355,52 @@ const Login = () => {
 
         <Row>
           <Col>
-            <p>Templates</p>
+            <Link>
+              <p className="login-footer-links">Templates</p>
+            </Link>
           </Col>
           <Col>
-            <p>Pricing</p>
+            <Link>
+              <p>Pricing</p>
+            </Link>
           </Col>
           <Col>
-            <p>Apps</p>
+            <Link>
+              <p>Apps</p>
+            </Link>
           </Col>
           <Col>
-            <p>Jobs</p>
+            <Link>
+              <p>Jobs</p>
+            </Link>
           </Col>
           <Col>
-            <p>Blog</p>
+            <Link>
+              <p>Blog</p>
+            </Link>
           </Col>
           <Col>
-            <p>Developers</p>
+            <Link>
+              <p>Developers</p>
+            </Link>
           </Col>
           <Col>
-            <p>About</p>
+            <Link>
+              <p>About</p>
+            </Link>
           </Col>
           <Col>
-            <p>Help</p>
+            <Link>
+              <p>Help</p>
+            </Link>
           </Col>
           <Col>
-            <p>Cookie Settings</p>
+            <Link>
+              <p>Cookie Settings</p>
+            </Link>
           </Col>
         </Row>
+        <div className="spacer-extra-small"></div>
       </Container>
     </div>
   );
