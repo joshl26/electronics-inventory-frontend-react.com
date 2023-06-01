@@ -1,23 +1,22 @@
 .customer-gallery {
   position: relative;
-  z-index: 1;
   background-color: var(--color-four);
-  opacity: 1;
 }
 
 @media screen and (min-width: 769px) {
   .customer-header-text {
-    font-family: "Cabin", sans-serif;
-    font-size: 5em;
+    font-family: "Gloock", sans-serif;
+    font-size: 6em;
   }
 
   .customer-icon {
-    width: 400px;
+    width: 250px;
     padding-top: 5em;
   }
 
   .customer-gallery-container {
     width: 90vw;
+    text-align: center;
   }
 }
 

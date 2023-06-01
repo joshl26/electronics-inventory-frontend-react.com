@@ -7,8 +7,8 @@ import { useLoginMutation } from "./authApiSlice";
 
 import googleColor from "../../svg/Google_color.svg";
 import microsoftColor from "../../svg/Microsoft_color.svg";
-import appleColor from "../../svg/Google_color.svg";
-import slackColor from "../../svg/Google_color.svg";
+import appleColor from "../../svg/Apple_color.svg";
+import slackColor from "../../svg/Slack_color.svg";
 
 import usePersist from "../../hooks/usePersist";
 
