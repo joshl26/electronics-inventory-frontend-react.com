@@ -44,12 +44,17 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
                 Inventory Tracker
               </Link>
             </div>
-
-            <div className="nav-item">
-              <Link className="nav-link" to="/features">
-                Features
-              </Link>
-            </div>
+            <NavDropdown title="Features" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/">Views</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/">Automation</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/">Power-Ups</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/">Templates</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/">Integrations</NavDropdown.Item>
+            </NavDropdown>
             <NavDropdown title="Plans" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/pricing">Free Tier</NavDropdown.Item>
               <NavDropdown.Divider />

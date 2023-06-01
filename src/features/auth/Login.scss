@@ -31,6 +31,17 @@
   .login-icon {
     width: 100px;
   }
+
+  .login-text {
+    padding-top: 0.75em;
+    text-align: center;
+    width: min-content;
+    font-family: "Cabin", Times, serif;
+  }
+
+  .login-col-align-left {
+    display: flex;
+  }
 }
 
 @media screen and (max-width: 768px) {
