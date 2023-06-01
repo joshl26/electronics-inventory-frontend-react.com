@@ -5,7 +5,7 @@ import { useUpdateUserMutation, selectAllUsers } from "../users/usersApiSlice";
 import PartCard from "../../components/PartCard";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Part from "../parts/Part";
 import { Container } from "react-bootstrap";
 import { useSelector } from "react-redux";

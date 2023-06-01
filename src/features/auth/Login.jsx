@@ -29,6 +29,11 @@ const Login = () => {
     JSON.parse(localStorage.getItem("colorMode"))
   );
 
+  const loginContainerStyle =
+    colorMode === "Light"
+      ? "login-container-inner-light"
+      : "login-container-inner-dark";
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -67,9 +72,7 @@ const Login = () => {
   const handleUserInput = (e) => setUsername(e.target.value);
   const handlePwdInput = (e) => setPassword(e.target.value);
   const handleToggle = () => setPersist((prev) => !prev);
-  const handleContinueBtnClick = (e) => {
-    console.log(username.length);
-
+  const handleContinueBtnClick = () => {
     if (username.length > 0) {
       setContinueBtn(false);
       setShowPassword(true);
@@ -80,7 +83,6 @@ const Login = () => {
   };
 
   const handleUsernameClick = () => {
-    console.log(disabled);
     if (disabled === true) {
       setDisabled(false);
       setShowPassword(false);
@@ -98,9 +100,10 @@ const Login = () => {
   const content = (
     <div className={loginStyle}>
       <Container>
+        <div className="spacer-extra=small"></div>
         <Row>
           <Col></Col>
-          <Col md={5} className="login-col-align-left">
+          <Col md={2} className="login-col-align-left">
             <Lottie
               className="login-icon"
               animationData={HamburgerMenu}
@@ -110,76 +113,263 @@ const Login = () => {
           </Col>
           <Col></Col>
         </Row>
+        <div className={loginContainerStyle}>
+          <p ref={errRef} className={errClass} aria-live="assertive">
+            {errMsg}
+          </p>
+          <form className="form" onSubmit={handleSubmit}>
+            {/* <label htmlFor="username">Username:</label> */}
+            <h4 className="text-center login-header">Log in to Ei</h4>
 
-        <p ref={errRef} className={errClass} aria-live="assertive">
-          {errMsg}
-        </p>
-
-        <form className="form" onSubmit={handleSubmit}>
-          <label htmlFor="username">Username:</label>
-          <div onClick={handleUsernameClick}>
-            <input
-              className="form__input"
-              type="text"
-              id="username"
-              ref={userRef}
-              value={username}
-              onChange={handleUserInput}
-              autoComplete="off"
-              required
-              disabled={disabled}
-            />
-          </div>
-
-          {showPassword > 0 ? (
-            <>
-              <label htmlFor="password">Password:</label>
+            <div onClick={handleUsernameClick}>
               <input
                 className="form__input"
-                type="password"
-                id="password"
-                onChange={handlePwdInput}
-                value={password}
+                type="text"
+                id="username"
+                ref={userRef}
+                value={username}
+                onChange={handleUserInput}
+                autoComplete="off"
                 required
+                placeholder="Enter Username"
+                disabled={disabled}
               />
-            </>
-          ) : (
-            ""
-          )}
+            </div>
 
-          {continueBtn ? (
-            <button
-              type="button"
-              onClick={handleContinueBtnClick}
-              className="form__submit-button"
-            >
-              Continue
-            </button>
-          ) : (
-            ""
-          )}
-
-          <div className="spacer"></div>
-
-          {showSignIn ? (
-            <>
-              <button className="form__submit-button">Sign In</button>
-
-              <label htmlFor="persist" className="form__persist">
+            {showPassword > 0 ? (
+              <>
+                <label htmlFor="password">Password:</label>
                 <input
-                  type="checkbox"
-                  className="form__checkbox"
-                  id="persist"
-                  onChange={handleToggle}
-                  checked={persist}
+                  className="form__input"
+                  type="password"
+                  id="password"
+                  onChange={handlePwdInput}
+                  value={password}
+                  required
                 />
-                Trust This Device
-              </label>
-            </>
-          ) : (
-            ""
-          )}
-        </form>
+              </>
+            ) : (
+              ""
+            )}
+
+            {continueBtn ? (
+              <button
+                type="button"
+                onClick={handleContinueBtnClick}
+                className="form__submit-button"
+              >
+                Continue
+              </button>
+            ) : (
+              ""
+            )}
+
+            <div className="spacer-tiny"></div>
+
+            {showSignIn ? (
+              <>
+                <button className="form__submit-button">Sign In</button>
+
+                <label htmlFor="persist" className="form__persist">
+                  <input
+                    type="checkbox"
+                    className="form__checkbox"
+                    id="persist"
+                    onChange={handleToggle}
+                    checked={persist}
+                  />
+                  Trust This Device
+                </label>
+              </>
+            ) : (
+              ""
+            )}
+          </form>
+          <div className="spacer-extra-small"></div>
+          <Container>
+            <Row>
+              <p className="text-center">OR</p>
+            </Row>
+            <Row>
+              <button
+                type="button"
+                onClick={handleContinueBtnClick}
+                className="form__submit-button"
+              >
+                Continue with Google
+              </button>
+            </Row>
+            <div className="spacer-extra-small"></div>
+
+            <Row>
+              <button
+                type="button"
+                onClick={handleContinueBtnClick}
+                className="form__submit-button"
+              >
+                Continue with Microsoft
+              </button>
+            </Row>
+            <div className="spacer-extra-small"></div>
+
+            <Row>
+              <button
+                type="button"
+                onClick={handleContinueBtnClick}
+                className="form__submit-button"
+              >
+                Continue with Apple
+              </button>
+            </Row>
+            <div className="spacer-extra-small"></div>
+
+            <Row>
+              <button
+                type="button"
+                onClick={handleContinueBtnClick}
+                className="form__submit-button"
+              >
+                Continue
+              </button>
+            </Row>
+            <div className="spacer-extra-small"></div>
+            <div className="section-break"></div>
+            <div className="spacer-extra-small"></div>
+
+            <Col>
+              <Row className="text-center">
+                <p>
+                  <Link>Can't log in?</Link> |{" "}
+                  <Link>Sign up for an account</Link>
+                </p>
+              </Row>
+            </Col>
+          </Container>
+        </div>
+        <div className="spacer-extra-small"></div>
+        <Col>
+          <Row className="text-center">
+            <p>
+              <Link>Privacy Policy</Link> | <Link>Terms of Service</Link>
+            </p>
+          </Row>
+        </Col>
+        <div className="spacer-extra-small"></div>
+
+        <Col className="text-center">
+          <form class="LanguageSelectFormstyles__LanguageForm-sc-5xddw4-0 eSGOHD">
+            <select
+              aria-label="Select a language"
+              data-testid="language-select"
+            >
+              <option value="cs" data-uuid="cs_language">
+                Čeština
+              </option>
+              <option value="de" data-uuid="de_language">
+                Deutsch
+              </option>
+              <option value="en" data-uuid="en_language">
+                English
+              </option>
+              <option value="es" data-uuid="es_language">
+                Español
+              </option>
+              <option value="fr" data-uuid="fr_language">
+                Français
+              </option>
+              <option value="it" data-uuid="it_language">
+                Italiano
+              </option>
+              <option value="hu" data-uuid="hu_language">
+                Magyar
+              </option>
+              <option value="nl" data-uuid="nl_language">
+                Nederlands
+              </option>
+              <option value="nb" data-uuid="nb_language">
+                Norsk (bokmål)
+              </option>
+              <option value="pl" data-uuid="pl_language">
+                Polski
+              </option>
+              <option value="pt-BR" data-uuid="pt-BR_language">
+                Português (Brasil)
+              </option>
+              <option value="fi" data-uuid="fi_language">
+                Suomi
+              </option>
+              <option value="sv" data-uuid="sv_language">
+                Svenska
+              </option>
+              <option value="vi" data-uuid="vi_language">
+                Tiếng Việt
+              </option>
+              <option value="tr" data-uuid="tr_language">
+                Türkçe
+              </option>
+              <option value="ru" data-uuid="ru_language">
+                Русский
+              </option>
+              <option value="uk" data-uuid="uk_language">
+                Українська
+              </option>
+              <option value="th" data-uuid="th_language">
+                ภาษาไทย
+              </option>
+              <option value="zh-Hans" data-uuid="zh-Hans_language">
+                中文 (简体)
+              </option>
+              <option value="zh-Hant" data-uuid="zh-Hant_language">
+                中文 (繁體)
+              </option>
+              <option value="ja" data-uuid="ja_language">
+                日本語
+              </option>
+            </select>
+          </form>
+        </Col>
+        <div className="spacer-extra-small"></div>
+
+        <div className="spacer-extra-small"></div>
+        <Col>
+          <div className="section-break"></div>
+        </Col>
+        <div className="spacer-extra-small"></div>
+
+        <Col>
+          <h3 className="text-center">BlackRock Design Haus</h3>
+        </Col>
+        <div className="spacer-extra-small"></div>
+
+        <Row>
+          <Col>
+            <p>Templates</p>
+          </Col>
+          <Col>
+            <p>Pricing</p>
+          </Col>
+          <Col>
+            <p>Apps</p>
+          </Col>
+          <Col>
+            <p>Jobs</p>
+          </Col>
+          <Col>
+            <p>Blog</p>
+          </Col>
+          <Col>
+            <p>Developers</p>
+          </Col>
+          <Col>
+            <p>About</p>
+          </Col>
+          <Col>
+            <p>Help</p>
+          </Col>
+          <Col>
+            <p>Cookie Settings</p>
+          </Col>
+        </Row>
       </Container>
     </div>
   );

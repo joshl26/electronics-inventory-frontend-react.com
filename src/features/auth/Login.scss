@@ -15,7 +15,7 @@
   }
   .form {
     margin: 0 auto;
-    width: 30vw;
+    width: 20vw;
   }
 
   .login-header-text {
@@ -41,6 +41,29 @@
 
   .login-col-align-left {
     display: flex;
+  }
+
+  .login-container-inner-light {
+    // border: black 1px solid;
+    width: 25vw;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+  }
+
+  .login-container-inner-dark {
+    border: white 1px solid;
+  }
+
+  .spacer-extra-small {
+    height: 2vh;
+  }
+
+  .section-break {
+    border-top: black 1px solid;
+  }
+
+  .login-header {
+    padding-top: 1em;
   }
 }
 
