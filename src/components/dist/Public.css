@@ -20,6 +20,10 @@
   height: 100vh;
 }
 
+.pricing-table-top {
+  height: 500px;
+}
+
 @media screen and (min-width: 769px) {
   .hero-header-text {
     opacity: 0.95;

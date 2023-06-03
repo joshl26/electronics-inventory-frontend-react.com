@@ -80,140 +80,146 @@ const Pricing = () => {
 
           <Row>
             <Col xs={1} md={3} className="pricing-table-col">
-              <Row>
-                <div className="spacer-x-small"></div>
+              <div className="pricing-table-top">
+                <Row>
+                  <div className="spacer-x-small"></div>
 
-                <h4>FREE</h4>
-              </Row>
-              <Row>
-                <div className="spacer-x-small"></div>
+                  <h4>FREE</h4>
+                </Row>
+                <Row>
+                  <div className="spacer-x-small"></div>
 
-                <h1>$0USD</h1>
-              </Row>
-              <Row>
-                <p>Free for your whole team</p>
-                <div className="spacer-x-small"></div>
-              </Row>
-              <Row>
-                <h4>
-                  For individuals or teams looking to organize any project.
-                </h4>
-              </Row>
-              <div className="spacer"></div>
+                  <h1>$0USD</h1>
+                </Row>
+                <Row>
+                  <p>Free for your whole team</p>
+                  <div className="spacer-x-small"></div>
+                </Row>
+                <Row>
+                  <h4>
+                    For individuals or teams looking to organize any project.
+                  </h4>
+                </Row>
+                <div className="spacer"></div>
 
-              <Row>
-                <div>
-                  <Button>Get Started</Button>
-                </div>
-              </Row>
-              <div className="spacer-small"></div>
-              <Row classname="row-border-top">
-                <h4>INCLUDED IN FREE:</h4>
-              </Row>
-              <Row classname="row-border-top">
-                <Col xs={1} md={1}>
-                  <p>✓</p>
-                </Col>
-                <Col xs={1} md={11}>
-                  <p>Unlimited cards</p>
-                </Col>
-              </Row>
-              <Row classname="row-border-top">
-                <Col xs={1} md={1}>
-                  <p>✓</p>
-                </Col>
-                <Col xs={1} md={11}>
-                  <p>Up to 10 boards per Workspace</p>
-                </Col>
-              </Row>
-              <Row classname="row-border-top">
-                <Col xs={1} md={1}>
-                  <p>✓</p>
-                </Col>
-                <Col xs={1} md={11}>
-                  <p>Unlimited storage (10MB/file)</p>
-                </Col>
-              </Row>
-              <Row classname="row-border-top">
-                <Col xs={1} md={1}>
-                  <p>✓</p>
-                </Col>
-                <Col xs={1} md={11}>
-                  <p>250 Workspace command runs per month</p>
-                </Col>
-              </Row>
-              <Row classname="row-border-top">
-                <Col xs={1} md={1}>
-                  <p>✓</p>
-                </Col>
-                <Col xs={1} md={11}>
-                  <p>Custom backgrounds & stickers</p>
-                </Col>
-              </Row>
-              <Row classname="row-border-top">
-                <Col xs={1} md={1}>
-                  <p>✓</p>
-                </Col>
-                <Col xs={1} md={11}>
-                  <p>Unlimited activity log</p>
-                </Col>
-              </Row>
-              <Row classname="row-border-top">
-                <Col xs={1} md={1}>
-                  <p>✓</p>
-                </Col>
-                <Col xs={1} md={11}>
-                  <p>Assignee and due dates</p>
-                </Col>
-              </Row>
-              <Row classname="row-border-top">
-                <Col xs={1} md={1}>
-                  <p>✓</p>
-                </Col>
-                <Col xs={1} md={11}>
-                  <p>iOS and Android mobile apps</p>
-                </Col>
-              </Row>
-              <Row classname="row-border-top">
-                <Col xs={1} md={1}>
-                  <p>✓</p>
-                </Col>
-                <Col xs={1} md={11}>
-                  <p>2-factor authentication</p>
-                </Col>
-              </Row>
+                <Row>
+                  <div>
+                    <Button>Get Started</Button>
+                  </div>
+                </Row>
+              </div>
+              <div>
+                <div className="spacer-small"></div>
+                <Row classname="row-border-top">
+                  <h4>INCLUDED IN FREE:</h4>
+                </Row>
+                <Row classname="row-border-top">
+                  <Col xs={1} md={1}>
+                    <p>✓</p>
+                  </Col>
+                  <Col xs={1} md={11}>
+                    <p>Unlimited cards</p>
+                  </Col>
+                </Row>
+                <Row classname="row-border-top">
+                  <Col xs={1} md={1}>
+                    <p>✓</p>
+                  </Col>
+                  <Col xs={1} md={11}>
+                    <p>Up to 10 boards per Workspace</p>
+                  </Col>
+                </Row>
+                <Row classname="row-border-top">
+                  <Col xs={1} md={1}>
+                    <p>✓</p>
+                  </Col>
+                  <Col xs={1} md={11}>
+                    <p>Unlimited storage (10MB/file)</p>
+                  </Col>
+                </Row>
+                <Row classname="row-border-top">
+                  <Col xs={1} md={1}>
+                    <p>✓</p>
+                  </Col>
+                  <Col xs={1} md={11}>
+                    <p>250 Workspace command runs per month</p>
+                  </Col>
+                </Row>
+                <Row classname="row-border-top">
+                  <Col xs={1} md={1}>
+                    <p>✓</p>
+                  </Col>
+                  <Col xs={1} md={11}>
+                    <p>Custom backgrounds & stickers</p>
+                  </Col>
+                </Row>
+                <Row classname="row-border-top">
+                  <Col xs={1} md={1}>
+                    <p>✓</p>
+                  </Col>
+                  <Col xs={1} md={11}>
+                    <p>Unlimited activity log</p>
+                  </Col>
+                </Row>
+                <Row classname="row-border-top">
+                  <Col xs={1} md={1}>
+                    <p>✓</p>
+                  </Col>
+                  <Col xs={1} md={11}>
+                    <p>Assignee and due dates</p>
+                  </Col>
+                </Row>
+                <Row classname="row-border-top">
+                  <Col xs={1} md={1}>
+                    <p>✓</p>
+                  </Col>
+                  <Col xs={1} md={11}>
+                    <p>iOS and Android mobile apps</p>
+                  </Col>
+                </Row>
+                <Row classname="row-border-top">
+                  <Col xs={1} md={1}>
+                    <p>✓</p>
+                  </Col>
+                  <Col xs={1} md={11}>
+                    <p>2-factor authentication</p>
+                  </Col>
+                </Row>
+              </div>
             </Col>
 
             {/* ---------------------------------------------------------------------------------------- */}
 
             <Col xs={1} md={3} className="pricing-table-col">
-              <Row>
-                <div className="spacer-x-small"></div>
+              <div className="pricing-table-top">
+                {" "}
+                <Row>
+                  <div className="spacer-x-small"></div>
 
-                <h4>STANDARD</h4>
-              </Row>
-              <Row>
-                <div className="spacer-x-small"></div>
+                  <h4>STANDARD</h4>
+                </Row>
+                <Row>
+                  <div className="spacer-x-small"></div>
 
-                <h1>$5USD</h1>
-              </Row>
-              <Row>
-                <p>Per user/month if billed annually ($6 billed monthly)</p>
-                <div className="spacer-x-small"></div>
-              </Row>
-              <Row>
-                <h4>
-                  For small teams that need to manage work and scale
-                  collaboration.
-                </h4>
-              </Row>
-              <div className="spacer"></div>
-
-              <Row>
-                <div>
-                  <Button>Sign up now</Button>
-                </div>
-              </Row>
+                  <h1>$5USD</h1>
+                </Row>
+                <Row>
+                  <p>Per user/month if billed annually ($6 billed monthly)</p>
+                  <div className="spacer-x-small"></div>
+                </Row>
+                <Row>
+                  <h4>
+                    For small teams that need to manage work and scale
+                    collaboration.
+                  </h4>
+                </Row>
+                <div className="spacer"></div>
+                <Row>
+                  <div>
+                    <Button>Sign up now</Button>
+                  </div>
+                </Row>
+              </div>
               <div className="spacer-small"></div>
               <Row classname="row-border-top">
                 <h4>EVERYTHING IN FREE, PLUS:</h4>
