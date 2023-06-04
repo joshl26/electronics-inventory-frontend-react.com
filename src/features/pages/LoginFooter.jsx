@@ -4,8 +4,28 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import HamburgerMenu from "../../svg/HamburgerMenu.json";
+import { useState, useEffect } from "react";
 
 const LoginFooter = ({ colorMode }) => {
+  const [language, setLanguage] = useState();
+
+  useEffect(() => {
+    const language = JSON.parse(localStorage.getItem("language"));
+
+    if (language === null) {
+      localStorage.setItem("language", JSON.stringify("en"));
+      setLanguage("en");
+    } else {
+      setLanguage(language);
+    }
+  }, [colorMode, setLanguage]);
+
+  const onLanguageChangeHandler = (e) => {
+    let languageChange = e.target.value;
+    setLanguage(languageChange);
+    localStorage.setItem("language", JSON.stringify(languageChange));
+  };
+
   const LoginFooterStyle =
     colorMode === "Light" ? "login-footer-light" : "login-footer-dark";
 
@@ -84,19 +104,21 @@ const LoginFooter = ({ colorMode }) => {
               <h4>Language</h4>
             </Col>
             <Col>
-              <form class="LanguageSelectFormstyles__LanguageForm-sc-5xddw4-0 eSGOHD">
+              <form className="LanguageSelectFormstyles__LanguageForm-sc-5xddw4-0 eSGOHD">
                 <select
                   aria-label="Select a language"
                   data-testid="language-select"
+                  onChange={(e) => onLanguageChangeHandler(e)}
+                  value={language}
                 >
+                  <option value="en" data-uuid="en_language">
+                    English
+                  </option>
                   <option value="cs" data-uuid="cs_language">
                     Čeština
                   </option>
                   <option value="de" data-uuid="de_language">
                     Deutsch
-                  </option>
-                  <option value="en" data-uuid="en_language">
-                    English
                   </option>
                   <option value="es" data-uuid="es_language">
                     Español

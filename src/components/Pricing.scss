@@ -22,16 +22,27 @@
 }
 
 .pricing-table-col {
-  border: rgb(211, 211, 211) solid 1px;
+  border: var(--TABLE-COLOR-DARK) solid var(--TABLE-BORDER);
   padding-top: 0.5em;
 }
 
 .pricing-table-top {
-  height: 475px;
+  height: 500px;
 }
 
 .pricing-table-col-special {
-  border: rgb(0, 208, 255) solid 4px;
+  border: var(--color-three) solid var(--TABLE-BORDER-HIGHLIGHTED);
+}
+
+.pricing-table-col-right {
+  border: var(--TABLE-COLOR-DARK) solid var(--TABLE-BORDER);
+  border-left: none;
+}
+
+.pricing-table-col-left {
+  border: var(--TABLE-COLOR-DARK) solid var(--TABLE-BORDER);
+  border-right: none;
+  border-left: none;
 }
 
 .spacer-small {
@@ -42,9 +53,27 @@
   height: 2vh;
 }
 
-.input-container {
+.input-slider {
   width: 100%;
   background-color: transparent;
+}
+
+.input-users-light {
+  text-align: center;
+  width: 35px;
+  background-color: transparent;
+  color: var(--TEXT-LIGHT);
+  border: none;
+  text-decoration: underline;
+}
+
+.input-users-dark {
+  text-align: center;
+  width: 35px;
+  background-color: transparent;
+  color: var(--TEXT-DARK);
+  border: none;
+  text-decoration: underline;
 }
 
 input[type="range"] {
@@ -133,4 +162,12 @@ input[type="range"]:focus::-ms-fill-lower {
 }
 input[type="range"]:focus::-ms-fill-upper {
   background: var(--INPUT-RANGE-BG-DARK);
+}
+
+.premium-btn:hover {
+  border: white 1.5px solid;
+}
+
+.search-input {
+  text-align: center;
 }

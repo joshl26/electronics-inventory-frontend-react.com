@@ -42,13 +42,15 @@
   --TABLE-BGCOLOR-LIGHT: #fff;
   --TABLE-BGCOLOR-DARK: #264653;
   --TABLE-COLOR-LIGHT: rgb(0, 0, 0);
-  --TABLE-COLOR-DARK: #fff;
+  --TABLE-COLOR-DARK: rgb(230, 230, 230);
   --INPUT-INVALID: #f00;
   --color-one: #264653;
   --color-two: #2a9d8f;
   --color-three: #e9c46a;
   --color-four: #f4a261;
   --color-five: #e76f51;
+  --TABLE-BORDER: 1.5px;
+  --TABLE-BORDER-HIGHLIGHTED: 4px;
 }
 
 #root {

@@ -29,6 +29,9 @@ const Pricing = () => {
       ? "pricing-dark"
       : "";
 
+  const inputStyle =
+    colorMode === "Light" ? "input-users-light" : "input-users-dark";
+
   const onChangeColorMode = (e) => {
     console.log("On Change Color Mode " + e);
 
@@ -207,7 +210,7 @@ const Pricing = () => {
 
             {/* ---------------------------------------------------------------------------------------- */}
 
-            <Col xs={1} md={3} className="pricing-table-col">
+            <Col xs={1} md={3} className="pricing-table-col-left">
               <div className="pricing-table-top">
                 {" "}
                 <Row>
@@ -344,7 +347,9 @@ const Pricing = () => {
 
                 <Row>
                   <div>
-                    <Button>Try for free</Button>
+                    <Button className="premium-btn" variant="danger">
+                      Try for free
+                    </Button>
                   </div>
                 </Row>
               </div>
@@ -428,7 +433,7 @@ const Pricing = () => {
 
             {/* ---------------------------------------------------------------------------------------- */}
 
-            <Col xs={1} md={3} className="pricing-table-col">
+            <Col xs={1} md={3} className="pricing-table-col-right">
               <div className="pricing-table-top">
                 <Row>
                   <div className="spacer-x-small"></div>
@@ -459,7 +464,7 @@ const Pricing = () => {
                   <p>
                     Estimated cost for{" "}
                     <input
-                      type="number"
+                      className={inputStyle}
                       min="50"
                       max="5000"
                       onChange={(e) => handleInputChange(e)}
@@ -472,7 +477,7 @@ const Pricing = () => {
                 <Row>
                   <Container>
                     <input
-                      className="input-container"
+                      className="input-slider"
                       min="50"
                       max="5000"
                       type="range"
@@ -489,7 +494,12 @@ const Pricing = () => {
                     </p>
                   </Row>
                 ) : (
-                  ""
+                  <Row>
+                    <p>
+                      <br></br>
+                      <br></br>
+                    </p>
+                  </Row>
                 )}
                 <Row>
                   <div>
@@ -583,6 +593,7 @@ const Pricing = () => {
             {/* <div>
               Count: {count} */}
             <input
+              className="search-input"
               type="text"
               name="search"
               id="search"
