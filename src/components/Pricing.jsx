@@ -12,21 +12,10 @@ import { arraySearch } from "../utils";
 const Pricing = () => {
   const [population, setPopulation] = useState(features);
   const [count, setCount] = useState(features.length);
-
-  const handleOnChange = async (e) => {
-    let value = e.target.value;
-    if (value.length > 2) {
-      let search = await arraySearch(population, value);
-      setPopulation(search);
-      setCount(search.length);
-    } else {
-      setPopulation(features);
-      setCount(features.length);
-    }
-  };
-  // searching word "JavaScript" in the given string
-
-  const [totalCost, setTotalCost] = useState(50 ^ 0.125);
+  const [enterpriseCost, setEnterpriseCost] = useState(23.5);
+  const [totalCost, setTotalCost] = useState(23.5);
+  const [standardCost, setStandardCost] = useState(7.5);
+  const [premiumCost, setPremiumCost] = useState(13.5);
   const [numberOfUsers, setNumberOfUsers] = useState(50);
 
   const [colorMode, setColorMode] = useState(
@@ -51,6 +40,34 @@ const Pricing = () => {
       setColorMode("Light");
     }
   };
+
+  const handleOnChange = async (e) => {
+    let value = e.target.value;
+    if (value.length > 2) {
+      let search = await arraySearch(population, value);
+      setPopulation(search);
+      setCount(search.length);
+    } else {
+      setPopulation(features);
+      setCount(features.length);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    if (e.target.value > 250) {
+      setTotalCost(
+        Math.round(
+          (50.2 + -4.82 * Math.log(e.target.value) + Number.EPSILON) * 100
+        ) / 100
+      );
+      setNumberOfUsers(e.target.value);
+    } else {
+      setTotalCost(enterpriseCost);
+      setNumberOfUsers(e.target.value);
+    }
+  };
+
+  // searching word "JavaScript" in the given string
 
   useEffect(() => {
     const colorMode = JSON.parse(localStorage.getItem("colorMode"));
@@ -89,7 +106,7 @@ const Pricing = () => {
                 <Row>
                   <div className="spacer-x-small"></div>
 
-                  <h1>$0USD</h1>
+                  <h1>$0CAD</h1>
                 </Row>
                 <Row>
                   <p>Free for your whole team</p>
@@ -201,10 +218,13 @@ const Pricing = () => {
                 <Row>
                   <div className="spacer-x-small"></div>
 
-                  <h1>$5USD</h1>
+                  <h1>${standardCost}CAD</h1>
                 </Row>
                 <Row>
-                  <p>Per user/month if billed annually ($6 billed monthly)</p>
+                  <p>
+                    Per user/month if billed annually <br /> ($
+                    {standardCost * 1.2} billed monthly)
+                  </p>
                   <div className="spacer-x-small"></div>
                 </Row>
                 <Row>
@@ -300,10 +320,16 @@ const Pricing = () => {
               <Row>
                 <div className="spacer-x-small"></div>
 
-                <h1>$10USD</h1>
+                <h1>${premiumCost}CAD</h1>
               </Row>
               <Row>
-                <p>Per user/month if billed annually ($12.50 billed monthly)</p>
+                <p>
+                  Per user/month if billed annually <br />
+                  ($
+                  {Math.round((premiumCost * 1.25 + Number.EPSILON) * 100) /
+                    100}{" "}
+                  billed monthly)
+                </p>
                 <div className="spacer-x-small"></div>
               </Row>
               <Row>
@@ -408,12 +434,14 @@ const Pricing = () => {
               <Row>
                 <div className="spacer-x-small"></div>
 
-                <h1>${totalCost}USD</h1>
+                <h1>${totalCost}CAD</h1>
               </Row>
               <Row>
                 <p>
-                  Per user/month - billed annually ($210.00 annual price per
-                  user)
+                  Per user/month - billed annually <br /> ($
+                  {Math.round((totalCost * 12 + Number.EPSILON) * 100) /
+                    100}{" "}
+                  annual price per user)
                 </p>
                 <div className="spacer-x-small"></div>
               </Row>
@@ -424,19 +452,41 @@ const Pricing = () => {
                 </h4>
               </Row>
               <Row>
-                <p>Estimated cost for {numberOfUsers} users</p>
+                <p>
+                  Estimated cost for{" "}
+                  <input
+                    type="number"
+                    min="50"
+                    max="5000"
+                    onChange={(e) => handleInputChange(e)}
+                    onClick={(e) => handleInputChange(e)}
+                    value={numberOfUsers}
+                  ></input>{" "}
+                  users
+                </p>
               </Row>
-
-              <input
-                min="50"
-                max="5000"
-                type="range"
-                value={numberOfUsers}
-                onChange={(e) => {
-                  setTotalCost(35 ^ e.target.value);
-                  setNumberOfUsers(e.target.value);
-                }}
-              ></input>
+              <Row>
+                <Container>
+                  <input
+                    className="input-container"
+                    min="50"
+                    max="5000"
+                    type="range"
+                    value={numberOfUsers}
+                    onChange={(e) => handleInputChange(e)}
+                  ></input>
+                </Container>
+              </Row>
+              {numberOfUsers >= 4999 ? (
+                <Row>
+                  <p>
+                    For organizations with more than 5,000 users, please contact
+                    sales for pricing
+                  </p>
+                </Row>
+              ) : (
+                ""
+              )}
               <Row>
                 <div>
                   <Button>Contact Sales</Button>

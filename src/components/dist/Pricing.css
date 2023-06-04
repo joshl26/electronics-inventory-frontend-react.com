@@ -35,3 +35,7 @@
 .spacer-x-small {
   height: 2vh;
 }
+
+.input-container {
+  width: 100%;
+}
