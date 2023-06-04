@@ -63,11 +63,11 @@
   }
 
   .landing-one-text-light {
-    color: rgb(255, 255, 255);
+    color: var(--TEXT-LIGHT);
   }
 
   .landing-one-text-dark {
-    color: rgb(255, 255, 255);
+    color: var(--TEXT-DARK);
   }
 
   .landing-one {
@@ -81,15 +81,6 @@
     overflow: hidden;
     z-index: 2;
     position: relative;
-  }
-
-  .background-image {
-    background-image: url("/img/bg.jpg");
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    z-index: 0;
   }
 
   .spacer_small {
@@ -248,10 +239,6 @@
 
   .landing_container {
     background-color: #161a1d;
-  }
-
-  .spacer {
-    // height: 5vh;
   }
 
   .spacer_large {

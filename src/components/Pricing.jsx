@@ -117,7 +117,7 @@ const Pricing = () => {
                     For individuals or teams looking to organize any project.
                   </h4>
                 </Row>
-                <div className="spacer"></div>
+                <div className="spacer-small"></div>
 
                 <Row>
                   <div>
@@ -233,7 +233,7 @@ const Pricing = () => {
                     collaboration.
                   </h4>
                 </Row>
-                <div className="spacer"></div>
+                <div className="spacer-small"></div>
                 <Row>
                   <div>
                     <Button>Sign up now</Button>
@@ -312,39 +312,42 @@ const Pricing = () => {
             {/* ---------------------------------------------------------------------------------------- */}
 
             <Col xs={1} md={3} className="pricing-table-col-special">
-              <Row>
-                <div className="spacer-x-small"></div>
+              <div className="pricing-table-top">
+                <Row>
+                  <div className="spacer-x-small"></div>
 
-                <h4>PREMIUM</h4>
-              </Row>
-              <Row>
-                <div className="spacer-x-small"></div>
+                  <h4>PREMIUM</h4>
+                </Row>
+                <Row>
+                  <div className="spacer-x-small"></div>
 
-                <h1>${premiumCost}CAD</h1>
-              </Row>
-              <Row>
-                <p>
-                  Per user/month if billed annually <br />
-                  ($
-                  {Math.round((premiumCost * 1.25 + Number.EPSILON) * 100) /
-                    100}{" "}
-                  billed monthly)
-                </p>
-                <div className="spacer-x-small"></div>
-              </Row>
-              <Row>
-                <h4>
-                  For teams that need to track and visualize multiple projects
-                  in several ways, including boards, timelines, calendars, etc.
-                </h4>
-              </Row>
-              <div className="spacer"></div>
+                  <h1>${premiumCost}CAD</h1>
+                </Row>
+                <Row>
+                  <p>
+                    Per user/month if billed annually <br />
+                    ($
+                    {Math.round((premiumCost * 1.25 + Number.EPSILON) * 100) /
+                      100}{" "}
+                    billed monthly)
+                  </p>
+                  <div className="spacer-x-small"></div>
+                </Row>
+                <Row>
+                  <h4>
+                    For teams that need to track and visualize multiple projects
+                    in several ways, including boards, timelines, calendars,
+                    etc.
+                  </h4>
+                </Row>
+                <div className="spacer-small"></div>
 
-              <Row>
-                <div>
-                  <Button>Try for free</Button>
-                </div>
-              </Row>
+                <Row>
+                  <div>
+                    <Button>Try for free</Button>
+                  </div>
+                </Row>
+              </div>
               <div className="spacer-small"></div>
               <Row className="row-border-top">
                 <h4>EVERYTHING IN STANDARD, PLUS:</h4>
@@ -426,72 +429,74 @@ const Pricing = () => {
             {/* ---------------------------------------------------------------------------------------- */}
 
             <Col xs={1} md={3} className="pricing-table-col">
-              <Row>
-                <div className="spacer-x-small"></div>
+              <div className="pricing-table-top">
+                <Row>
+                  <div className="spacer-x-small"></div>
 
-                <h4>ENTERPRISE</h4>
-              </Row>
-              <Row>
-                <div className="spacer-x-small"></div>
+                  <h4>ENTERPRISE</h4>
+                </Row>
+                <Row>
+                  <div className="spacer-x-small"></div>
 
-                <h1>${totalCost}CAD</h1>
-              </Row>
-              <Row>
-                <p>
-                  Per user/month - billed annually <br /> ($
-                  {Math.round((totalCost * 12 + Number.EPSILON) * 100) /
-                    100}{" "}
-                  annual price per user)
-                </p>
-                <div className="spacer-x-small"></div>
-              </Row>
-              <Row>
-                <h4>
-                  For organizations that need to connect work across teams with
-                  more security and controls.
-                </h4>
-              </Row>
-              <Row>
-                <p>
-                  Estimated cost for{" "}
-                  <input
-                    type="number"
-                    min="50"
-                    max="5000"
-                    onChange={(e) => handleInputChange(e)}
-                    onClick={(e) => handleInputChange(e)}
-                    value={numberOfUsers}
-                  ></input>{" "}
-                  users
-                </p>
-              </Row>
-              <Row>
-                <Container>
-                  <input
-                    className="input-container"
-                    min="50"
-                    max="5000"
-                    type="range"
-                    value={numberOfUsers}
-                    onChange={(e) => handleInputChange(e)}
-                  ></input>
-                </Container>
-              </Row>
-              {numberOfUsers >= 4999 ? (
+                  <h1>${totalCost}CAD</h1>
+                </Row>
                 <Row>
                   <p>
-                    For organizations with more than 5,000 users, please contact
-                    sales for pricing
+                    Per user/month - billed annually <br /> ($
+                    {Math.round((totalCost * 12 + Number.EPSILON) * 100) /
+                      100}{" "}
+                    annual price per user)
+                  </p>
+                  <div className="spacer-x-small"></div>
+                </Row>
+                <Row>
+                  <h4>
+                    For organizations that need to connect work across teams
+                    with more security and controls.
+                  </h4>
+                </Row>
+                <Row>
+                  <p>
+                    Estimated cost for{" "}
+                    <input
+                      type="number"
+                      min="50"
+                      max="5000"
+                      onChange={(e) => handleInputChange(e)}
+                      onClick={(e) => handleInputChange(e)}
+                      value={numberOfUsers}
+                    ></input>{" "}
+                    users
                   </p>
                 </Row>
-              ) : (
-                ""
-              )}
-              <Row>
-                <div>
-                  <Button>Contact Sales</Button>
-                </div>
-              </Row>
+                <Row>
+                  <Container>
+                    <input
+                      className="input-container"
+                      min="50"
+                      max="5000"
+                      type="range"
+                      value={numberOfUsers}
+                      onChange={(e) => handleInputChange(e)}
+                    ></input>
+                  </Container>
+                </Row>
+                {numberOfUsers >= 4999 ? (
+                  <Row>
+                    <p>
+                      For organizations with more than 5,000 users, please
+                      contact sales for pricing
+                    </p>
+                  </Row>
+                ) : (
+                  ""
+                )}
+                <Row>
+                  <div>
+                    <Button>Contact Sales</Button>
+                  </div>
+                </Row>
+              </div>
               <div className="spacer-small"></div>
               <Row className="row-border-top">
                 <h4>EVERYTHING IN PREMIUM, PLUS:</h4>

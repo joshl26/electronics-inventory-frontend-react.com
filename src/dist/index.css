@@ -25,9 +25,13 @@
   --BORDER-LIGHT: rgb(0, 0, 0);
   --BORDER-DARK: rgb(255, 255, 255);
   --TEXT-LIGHT: #000000;
-  --TEXT-DARK: #ffffff;
+  --TEXT-DARK: rgb(235, 231, 221);
   --ERROR: firebrick;
   --INACTIVE: lightgray;
+  --INPUT-RANGE-BG-LIGHT: var(--color-two);
+  --INPUT-RANGE-BG-DARK: rgb(230, 230, 230);
+  --INPUT-RANGE-SLIDER-LIGHT: var(--color-three);
+  --INPUT-RANGE-SLIDER-DARK: rgb(230, 230, 230);
   --LINK-COLOR-LIGHT: rgb(0, 0, 0);
   --LINK-COLOR-DARK: rgb(255, 255, 255);
   --LINK-HOVER-LIGHT: rgba(245, 245, 245, 0.9);
@@ -53,26 +57,16 @@
   height: 100vh;
 }
 
-html {
-  background-color: var(--color-one);
-}
-
 body {
   overflow-x: hidden;
 }
 
-p,
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-label,
-tr {
-  color: var(--COLOR);
+.text-light {
+  color: var(--TEXT-LIGHT);
+}
+
+.text-dark {
+  color: var(--TEXT-DARK);
 }
 
 /* || UTILITY CLASSES */

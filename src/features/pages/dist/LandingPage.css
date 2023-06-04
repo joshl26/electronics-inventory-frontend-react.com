@@ -59,11 +59,11 @@
   }
 
   .landing-one-text-light {
-    color: white;
+    color: var(--TEXT-LIGHT);
   }
 
   .landing-one-text-dark {
-    color: white;
+    color: var(--TEXT-DARK);
   }
 
   .landing-one {
@@ -77,15 +77,6 @@
     overflow: hidden;
     z-index: 2;
     position: relative;
-  }
-
-  .background-image {
-    background-image: url("/img/bg.jpg");
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    z-index: 0;
   }
 
   .spacer_small {
