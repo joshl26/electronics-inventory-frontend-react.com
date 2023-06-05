@@ -61,7 +61,7 @@
   },
   {
     "_id": 7,
-    "col1": "Electronics Inventory TEMPLATES",
+    "col1": "TEMPLATES",
     "col2": "Give your team a blueprint for success with tried-and-true templates from the Electronics Inventory community.",
     "col3": "",
     "col4": "✓",
@@ -132,7 +132,7 @@
   {
     "_id": 14,
     "col1": "DASHBOARD VIEW",
-    "col2": " Electronics Inventory’s reporting tool lets you access real-time insights and communicate your team’s progress in a visual and meaningful way.",
+    "col2": "Electronic Inventory’s reporting tool lets you access real-time insights and communicate your team’s progress in a visual and meaningful way.",
     "col3": "",
     "col4": "",
     "col5": "✓",

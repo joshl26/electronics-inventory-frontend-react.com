@@ -8,20 +8,14 @@ import {
   faRightFromBracket,
   faHouse,
 } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate, Link, useLocation } from "react-router-dom";
-
+import { useNavigate, useLocation } from "react-router-dom";
 import { useSendLogoutMutation } from "../features/auth/authApiSlice";
-
 import Lottie from "lottie-react";
 import HamburgerMenu from "../svg/HamburgerMenu.json";
-
-import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
-
 import "./DashHeader.scss";
 
 import useAuth from "../hooks/useAuth";
 
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";

@@ -36,6 +36,7 @@
   --BG-SIDEBAR-LIGHT: #264653;
   --BORDER-LIGHT: rgb(0, 0, 0);
   --BORDER-DARK: rgb(255, 255, 255);
+  --CHECK-MARK: lime;
   --TEXT-LIGHT: #000000;
   --TEXT-DARK: rgb(235, 231, 221);
   --ERROR: firebrick;
@@ -142,6 +143,10 @@ body {
 
 .align-center {
   text-align: right;
+}
+
+.align-vertical {
+  vertical-align: middle;
 }
 
 .text-light {

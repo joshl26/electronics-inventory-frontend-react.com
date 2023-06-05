@@ -2,16 +2,63 @@
   text-align: center;
 }
 
+.table-p-bold {
+  padding-top: 1em;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+}
+
+.pricing-check {
+  color: var(--CHECK-MARK);
+}
+
+.pricing-check-table {
+  color: var(--CHECK-MARK);
+  padding-top: 1.25em;
+}
+
 .pricing-h1-text {
-  color: black;
+  font-family: "Gloock", serif;
+  font-size: 4em;
+}
+
+.pricing-h2-text {
+  font-family: "Cabin", sans-serif;
+  font-weight: 700;
+  font-size: 3.5em;
 }
 
 .pricing-h4-text {
-  color: black;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+  font-size: 2.5em;
+}
+
+.pricing-p-text {
+  font-family: "Figtree", sans-serif;
+}
+
+.currency-text {
+  font-family: "Gloock", serif;
+}
+
+.amount-text {
+  font-family: "Figtree", sans-serif;
+}
+
+.pricing-header-text {
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+}
+
+.top-table-title {
+  font-family: "Cabin", sans-serif;
+  font-weight: 500;
 }
 
 .pricing-light {
   background-color: var(--color-five);
+  color: black;
 }
 
 .pricing-dark {
@@ -20,8 +67,12 @@
 }
 
 .pricing-table-col {
-  border: var(--TABLE-COLOR-DARK) solid var(--TABLE-BORDER);
-  padding-top: 0.5em;
+  border-bottom: var(--TABLE-COLOR-DARK) solid var(--TABLE-BORDER);
+  border-right: var(--TABLE-COLOR-DARK) solid var(--TABLE-BORDER);
+}
+
+.table-top-row {
+  border-bottom: var(--TABLE-COLOR-DARK) solid var(--TABLE-BORDER);
 }
 
 .pricing-table-top {
@@ -40,7 +91,7 @@
 .pricing-table-col-left {
   border: var(--TABLE-COLOR-DARK) solid var(--TABLE-BORDER);
   border-right: none;
-  border-left: none;
+  border-left: var(--TABLE-COLOR-DARK) solid var(--TABLE-BORDER);
 }
 
 .spacer-small {
@@ -58,7 +109,7 @@
 
 .input-users-light {
   text-align: center;
-  width: 35px;
+  width: 40px;
   background-color: transparent;
   color: var(--TEXT-LIGHT);
   border: none;
@@ -67,7 +118,7 @@
 
 .input-users-dark {
   text-align: center;
-  width: 35px;
+  width: 40px;
   background-color: transparent;
   color: var(--TEXT-DARK);
   border: none;
@@ -100,7 +151,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 20px;
   width: 39px;
   border-radius: 7px;
-  background: var(--color-three);
+  background: var(--color-two);
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -3.6px;
@@ -127,7 +178,7 @@ input[type=range]::-moz-range-thumb {
   height: 20px;
   width: 39px;
   border-radius: 7px;
-  background: var(--color-three);
+  background: var(--color-two);
   cursor: pointer;
 }
 
@@ -162,7 +213,7 @@ input[type=range]::-ms-thumb {
   height: 20px;
   width: 39px;
   border-radius: 7px;
-  background: var(--color-three);
+  background: var(--color-two);
   cursor: pointer;
 }
 
@@ -196,4 +247,14 @@ input[type=range]:focus::-ms-fill-upper {
 
 .footer-transition-dark {
   background: linear-gradient(var(--color-one), black);
+}
+
+.inline-text {
+  display: inline;
+  float: left;
+}
+
+.text-spacer {
+  width: 15px;
+  height: 50px;
 }

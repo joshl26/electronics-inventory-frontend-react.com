@@ -58,10 +58,12 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
             <NavDropdown title="Plans" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/pricing">Free Tier</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/pricing">Creator Tier</NavDropdown.Item>
+              <NavDropdown.Item href="/pricing">Standard Tier</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/pricing">Premium Tier</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/pricing">
-                Corporate Tier
+                Enterprise Tier
               </NavDropdown.Item>
             </NavDropdown>
             <div className="nav-item">
