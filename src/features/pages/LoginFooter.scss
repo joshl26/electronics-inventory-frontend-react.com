@@ -60,13 +60,19 @@
 
 .login-footer-button-row {
   padding-bottom: 1em;
+  align-items: center;
 }
 
 .flex-container {
   display: flex;
+  text-decoration: none;
 }
 
 .footer-icon-text {
   padding-top: 0.25em;
   font-size: 4em;
+}
+
+.footer-social-row {
+  align-items: center;
 }

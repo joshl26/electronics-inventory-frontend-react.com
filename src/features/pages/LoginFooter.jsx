@@ -39,18 +39,21 @@ const LoginFooter = ({ colorMode }) => {
 
   return (
     <div className={LoginFooterStyle}>
-      <div className="spacer-footer"></div>
+      <div className="spacer-x-small"></div>
       <div className="social-container">
         <Container>
-          <Row>
+          <Row className="login-footer-button-row">
             <Col>
               <Row>
-                <div className="flex-container">
-                  <Lottie
-                    className="footer-icon"
-                    animationData={HamburgerMenu}
-                    loop={false}
-                  />
+                <div to="/" className="flex-container">
+                  <a href="/">
+                    <Lottie
+                      className="footer-icon"
+                      animationData={HamburgerMenu}
+                      loop={false}
+                    />
+                  </a>
+
                   <h1 className="footer-icon-text">Ei</h1>
                 </div>
               </Row>
@@ -97,7 +100,7 @@ const LoginFooter = ({ colorMode }) => {
             </Col>
           </Row>
           <div className={sectionBreakStyle} />
-          <Row>
+          <Row className="footer-social-row">
             <Col>
               <h4>Language</h4>
             </Col>
@@ -175,19 +178,23 @@ const LoginFooter = ({ colorMode }) => {
                 </select>
               </form>
             </Col>
-            <Col>
-              <p>Privacy Policy</p>
+            <Col md={1}>
+              <a href="">
+                <p>Privacy Policy</p>
+              </a>
+            </Col>
+            <Col md={1}>
+              <a href="">
+                <p>Terms</p>
+              </a>
             </Col>
             <Col>
-              <p>Terms</p>
-            </Col>
-            <Col>
-              <p>Cookie Settings</p>
+              <a href="">
+                <p>Cookie Settings</p>
+              </a>
             </Col>
             <Col md={2}>
-              <a href="">
-                <p>Copyright © 2023 BlackRock Design Haus</p>
-              </a>
+              <p>Copyright © 2023 BlackRock Design Haus</p>
             </Col>
 
             <Col>
