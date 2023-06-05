@@ -83,7 +83,7 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
           <Nav>
             <Link className="nav-link" to="/login">
               <Button className={SignupButtonStyle} variant="danger">
-                Signup
+                Sign Up
               </Button>
             </Link>
             <Link className="nav-link" to="/login">

@@ -40,7 +40,7 @@ const NewSignup = ({ colorMode }) => {
               />
             </Col>
             <Col xs={1} sm={3} md={3}>
-              <Button>Sign Up</Button>
+              <Button variant="danger">Sign Up</Button>
             </Col>
             <Col xs={1} sm={3} md={2}></Col>
           </Row>

@@ -181,3 +181,19 @@ input[type=range]:focus::-ms-fill-upper {
 .search-input {
   text-align: center;
 }
+
+.header-transition-light {
+  background: linear-gradient(white, #e76f51);
+}
+
+.footer-transition-light {
+  background: linear-gradient(#e76f51, white);
+}
+
+.header-transition-dark {
+  background: linear-gradient(black, var(--color-one));
+}
+
+.footer-transition-dark {
+  background: linear-gradient(var(--color-one), black);
+}

@@ -29,6 +29,16 @@ const Pricing = () => {
       ? "pricing-dark"
       : "";
 
+  const headerTransitionStyle =
+    colorMode === "Light"
+      ? "header-transition-light"
+      : "header-transition-dark";
+
+  const footerTransitionStyle =
+    colorMode === "Light"
+      ? "footer-transition-light"
+      : "footer-transition-dark";
+
   const inputStyle =
     colorMode === "Light" ? "input-users-light" : "input-users-dark";
 
@@ -88,16 +98,19 @@ const Pricing = () => {
         colorMode={colorMode}
       />
       <section className={pricingStyle}>
+        <div className={headerTransitionStyle}>
+          <div className="spacer"></div>
+          <Container>
+            <h1 classname="pricing-h1-text">Electronics Inventory YOUR WAY.</h1>
+            <h4 classname="pricing-h4-text">
+              Trusted by millions, Electronics Inventory powers teams all around
+              the world. Explore which option is right for you.
+            </h4>
+          </Container>
+        </div>
         <div className="spacer"></div>
 
         <Container>
-          <h1 classname="pricing-h1-text">Electronics Inventory YOUR WAY.</h1>
-          <h4 classname="pricing-h4-text">
-            Trusted by millions, Electronics Inventory powers teams all around
-            the world. Explore which option is right for you.
-          </h4>
-          <div className="spacer"></div>
-
           <Row>
             <Col xs={1} md={3} className="pricing-table-col">
               <div className="pricing-table-top">
@@ -657,8 +670,10 @@ const Pricing = () => {
             </Row>
           ))}
         </Container>
-        <div className="spacer"></div>
       </section>
+      <div className={footerTransitionStyle}>
+        <div className="spacer"></div>
+      </div>
 
       <LoginFooter colorMode={colorMode} />
     </>
