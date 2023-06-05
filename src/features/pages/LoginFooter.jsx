@@ -45,16 +45,14 @@ const LoginFooter = ({ colorMode }) => {
           <Row>
             <Col>
               <Row>
-                <Col>
+                <div className="flex-container">
                   <Lottie
                     className="footer-icon"
                     animationData={HamburgerMenu}
                     loop={false}
                   />
-                </Col>
-                <Col>
-                  <h1 className="">Ei</h1>
-                </Col>
+                  <h1 className="footer-icon-text">Ei</h1>
+                </div>
               </Row>
             </Col>
             <Col>
@@ -186,11 +184,12 @@ const LoginFooter = ({ colorMode }) => {
             <Col>
               <p>Cookie Settings</p>
             </Col>
-            <Col>
-              <p>Copyright © 2023 Ei</p>
+            <Col md={2}>
+              <a href="">
+                <p>Copyright © 2023 BlackRock Design Haus</p>
+              </a>
             </Col>
-            <Col></Col>
-            <Col></Col>
+
             <Col>
               <SocialIcon url="https://www.linkedin.com/company/90619779/" />
             </Col>

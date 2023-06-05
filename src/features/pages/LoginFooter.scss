@@ -43,7 +43,7 @@
 }
 
 .footer-icon {
-  width: 75px;
+  width: 115px;
 }
 
 .section-break-light {
@@ -55,6 +55,18 @@
 .section-break-dark {
   width: 100%;
   height: 10px;
-
   border-top: white 1px solid;
+}
+
+.login-footer-button-row {
+  padding-bottom: 1em;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.footer-icon-text {
+  padding-top: 0.25em;
+  font-size: 4em;
 }
