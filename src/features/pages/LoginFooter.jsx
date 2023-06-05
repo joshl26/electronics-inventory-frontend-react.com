@@ -61,40 +61,44 @@ const LoginFooter = ({ colorMode }) => {
             <Col>
               <Button className={footerButtonStyle}>
                 <Row>
-                  <h4>About</h4>
+                  <h4 className="footer-h4-text">About</h4>
                 </Row>
                 <Row>
-                  <p>What's behind the boards.</p>
+                  <p className="footer-p-text">What's behind the boards.</p>
                 </Row>
               </Button>
             </Col>
             <Col className="text-center">
               <Button className={footerButtonStyle} href="/jobs">
                 <Row>
-                  <h4>Jobs</h4>
+                  <h4 className="footer-h4-text">Jobs</h4>
                 </Row>
                 <Row>
-                  <p>Learn about open roles on the Ei team.</p>
+                  <p className="footer-p-text">
+                    Learn about open roles on the Ei team.
+                  </p>
                 </Row>
               </Button>
             </Col>
             <Col>
               <Button className={footerButtonStyle} href="/Apps">
                 <Row>
-                  <h4>Apps</h4>
+                  <h4 className="footer-h4-text">Apps</h4>
                 </Row>
                 <Row>
-                  <p>Download the Ei app for your Desktop or Mobile devices.</p>
+                  <p className="footer-p-text">
+                    Download the Ei app for your Desktop or Mobile devices.
+                  </p>
                 </Row>
               </Button>
             </Col>
             <Col>
               <Button className={footerButtonStyle} href="/contact">
                 <Row>
-                  <h4>Contact Us</h4>
+                  <h4 className="footer-h4-text">Contact Us</h4>
                 </Row>
                 <Row>
-                  <p>What's behind the boards.</p>
+                  <p className="footer-p-text">What's behind the boards.</p>
                 </Row>
               </Button>
             </Col>
@@ -102,10 +106,10 @@ const LoginFooter = ({ colorMode }) => {
           <div className={sectionBreakStyle} />
           <Row className="footer-social-row">
             <Col>
-              <h4>Language</h4>
+              <h4 className="footer-h4-text">Language</h4>
             </Col>
             <Col>
-              <form className="LanguageSelectFormstyles__LanguageForm-sc-5xddw4-0 eSGOHD">
+              <form className="footer-p-text">
                 <select
                   aria-label="Select a language"
                   data-testid="language-select"
@@ -180,23 +184,24 @@ const LoginFooter = ({ colorMode }) => {
             </Col>
             <Col md={1}>
               <a href="">
-                <p>Privacy Policy</p>
+                <p className="footer-p-text">Privacy Policy</p>
               </a>
             </Col>
             <Col md={1}>
               <a href="">
-                <p>Terms</p>
+                <p className="footer-p-text">Terms</p>
               </a>
             </Col>
             <Col>
               <a href="">
-                <p>Cookie Settings</p>
+                <p className="footer-p-text-light">Cookie Settings</p>
               </a>
             </Col>
             <Col md={2}>
-              <p>Copyright © 2023 BlackRock Design Haus</p>
+              <p className="footer-p-text">
+                Copyright © 2023 BlackRock Design Haus
+              </p>
             </Col>
-
             <Col>
               <SocialIcon url="https://www.linkedin.com/company/90619779/" />
             </Col>
