@@ -43,14 +43,8 @@
 .landing-header-1-inline {
   font-size: 7.25rem;
   font-size: clamp(2rem, 20vw, 7rem);
-  // font-size: clamp(1.5em, 3dvw, 3em);
+  font-size: clamp(2em, 20dvw, 7em);
   font-family: "Figtree", sans-serif;
-}
-
-.slider_header_2 {
-  font-size: clamp(1.5rem, 3vw, 3rem);
-  font-size: clamp(1.5rem, 3dvw, 3rem);
-  font-family: "Cabin", serif;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -138,8 +132,8 @@
   }
 
   .spacer_medium {
-    height: 10vh;
-    height: 10dvh;
+    height: 15vh;
+    height: 15dvh;
   }
 
   .spacer {

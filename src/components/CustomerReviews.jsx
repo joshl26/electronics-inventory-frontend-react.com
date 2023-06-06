@@ -3,7 +3,6 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import "./CustomerReviews.scss";
 import CustomerReviewCard from "./CustomerReviewCard";
-import userReviews from "../mock_data/userReviews.json";
 import { Container } from "react-bootstrap";
 
 const CustomerReviews = () => {
@@ -102,9 +101,16 @@ const CustomerReviews = () => {
 
   const responsiveSettings = [
     {
-      breakpoint: 800,
+      breakpoint: 1500,
       settings: {
         slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 1100,
+      settings: {
+        slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
@@ -130,8 +136,7 @@ const CustomerReviews = () => {
         </h3>
       </Container>
       <div className="spacer_small"></div>
-
-      <Slide responsive={responsiveSettings}>
+      <Slide autoplay={true} responsive={responsiveSettings}>
         {data.map((review, index) => (
           <div
             key={index}
@@ -144,8 +149,6 @@ const CustomerReviews = () => {
       </Slide>
       <div className="spacer_small"></div>
       <div className="spacer_small"></div>
-
-      {/* <CustomerReviewCard review={data[0]} /> */}
     </div>
   );
 };
