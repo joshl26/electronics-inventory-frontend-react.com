@@ -268,7 +268,7 @@ const Login = () => {
         <div className="spacer-extra-small"></div>
 
         <Col className="text-center">
-          <form class="LanguageSelectFormstyles__LanguageForm-sc-5xddw4-0 eSGOHD">
+          <form className="LanguageSelectFormstyles__LanguageForm-sc-5xddw4-0 eSGOHD">
             <select
               aria-label="Select a language"
               data-testid="language-select"

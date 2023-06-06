@@ -28,7 +28,7 @@ const Public = () => {
   };
 
   const onChangeColorMode = (e) => {
-    console.log("On Change Color Mode " + e);
+    // console.log("On Change Color Mode " + e);
 
     if (e === "Light") {
       localStorage.setItem("colorMode", JSON.stringify("Dark"));

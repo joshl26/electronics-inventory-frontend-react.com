@@ -44,7 +44,7 @@ const Pricing = () => {
     colorMode === "Light" ? "input-users-light" : "input-users-dark";
 
   const onChangeColorMode = (e) => {
-    console.log("On Change Color Mode " + e);
+    // console.log("On Change Color Mode " + e);
 
     if (e === "Light") {
       localStorage.setItem("colorMode", JSON.stringify("Dark"));
@@ -144,10 +144,10 @@ const Pricing = () => {
               </div>
               <div>
                 <div className="spacer-small"></div>
-                <Row classname="row-border-top">
+                <Row className="row-border-top">
                   <h4 className="top-table-title">INCLUDED IN FREE:</h4>
                 </Row>
-                <Row classname="row-border-top">
+                <Row className="row-border-top">
                   <Col xs={1} md={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
@@ -155,7 +155,7 @@ const Pricing = () => {
                     <p className="pricing-p-text">Unlimited cards</p>
                   </Col>
                 </Row>
-                <Row classname="row-border-top">
+                <Row className="row-border-top">
                   <Col xs={1} md={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
@@ -165,7 +165,7 @@ const Pricing = () => {
                     </p>
                   </Col>
                 </Row>
-                <Row classname="row-border-top">
+                <Row className="row-border-top">
                   <Col xs={1} md={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
@@ -175,7 +175,7 @@ const Pricing = () => {
                     </p>
                   </Col>
                 </Row>
-                <Row classname="row-border-top">
+                <Row className="row-border-top">
                   <Col xs={1} md={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
@@ -185,7 +185,7 @@ const Pricing = () => {
                     </p>
                   </Col>
                 </Row>
-                <Row classname="row-border-top">
+                <Row className="row-border-top">
                   <Col xs={1} md={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
@@ -195,7 +195,7 @@ const Pricing = () => {
                     </p>
                   </Col>
                 </Row>
-                <Row classname="row-border-top">
+                <Row className="row-border-top">
                   <Col xs={1} md={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
@@ -203,7 +203,7 @@ const Pricing = () => {
                     <p className="pricing-p-text">Unlimited activity log</p>
                   </Col>
                 </Row>
-                <Row classname="row-border-top">
+                <Row className="row-border-top">
                   <Col xs={1} md={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
@@ -211,7 +211,7 @@ const Pricing = () => {
                     <p className="pricing-p-text">Assignee and due dates</p>
                   </Col>
                 </Row>
-                <Row classname="row-border-top">
+                <Row className="row-border-top">
                   <Col xs={1} md={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
@@ -221,7 +221,7 @@ const Pricing = () => {
                     </p>
                   </Col>
                 </Row>
-                <Row classname="row-border-top">
+                <Row className="row-border-top">
                   <Col xs={1} md={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
@@ -238,8 +238,8 @@ const Pricing = () => {
               <div className="pricing-table-top">
                 {" "}
                 <Row>
+                  clamp
                   <div className="spacer-x-small"></div>
-
                   <h4 className="top-table-title">STANDARD</h4>
                 </Row>
                 <Row>
@@ -271,10 +271,10 @@ const Pricing = () => {
                 </Row>
               </div>
               <div className="spacer-small"></div>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <h4 className="top-table-title">EVERYTHING IN FREE, PLUS:</h4>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
@@ -290,7 +290,7 @@ const Pricing = () => {
                   <p className="pricing-p-text">Advanced checklists</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
@@ -298,7 +298,7 @@ const Pricing = () => {
                   <p className="pricing-p-text">Custom Fields</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
@@ -308,7 +308,7 @@ const Pricing = () => {
                   </p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>

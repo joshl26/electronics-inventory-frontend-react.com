@@ -20,8 +20,9 @@
 }
 
 .landing-header-2 {
-  font-size: clamp(1.5em, 3vw, 3em);
-  font-size: clamp(1.5em, 3dvw, 3em);
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 3dvw, 3rem);
   padding-top: 1em;
   padding-bottom: 1em;
   font-family: "Figtree", sans-serif;
@@ -30,22 +31,22 @@
 }
 
 .landing-header-3 {
-  font-size: 2.75em;
-  font-size: clamp(1.5em, 3vw, 3em);
-  font-size: clamp(1.5em, 3dvw, 3em);
+  font-size: 2.75rem;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 3dvw, 3rem);
   font-family: "Figtree", sans-serif;
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
 }
 
 .landing-header-1-inline {
   font-size: 7.25rem;
-  font-size: clamp(2em, 20vw, 7em);
+  font-size: clamp(2rem, 20vw, 7rem);
   font-family: "Figtree", sans-serif;
 }
 
 .slider_header_2 {
-  font-size: clamp(1.5em, 3vw, 3em);
-  font-size: clamp(1.5em, 3dvw, 3em);
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 3dvw, 3rem);
   font-family: "Cabin", serif;
 }
 
@@ -67,6 +68,7 @@
 
   .cube-one {
     height: 75vh;
+    height: 75dvh;
     background-color: rgba(42, 157, 143, 0.8);
     padding: 0;
     margin: 0;
@@ -74,6 +76,7 @@
 
   .cube-two {
     height: 75vh;
+    height: 75dvh;
     padding: 0;
     margin: 0;
     background-color: white;
@@ -81,6 +84,7 @@
 
   .cube-three {
     height: 75vh;
+    height: 75dvh;
     padding: 0;
     margin: 0;
     background-color: white;
@@ -88,6 +92,7 @@
 
   .cube-four {
     height: 75vh;
+    height: 75dvh;
     padding: 0;
     margin: 0;
     background-color: #e9c46a;
@@ -95,10 +100,12 @@
 
   .landing-spacer {
     height: 2.5vh;
+    height: 2.5dvh;
   }
 
   .landing-one-row {
     width: 100vw;
+    width: 100dvw;
     height: 300px;
   }
 
@@ -120,18 +127,22 @@
 
   .spacer_small {
     height: 5vh;
+    height: 5dvh;
   }
 
   .spacer_medium {
+    height: 10vh;
     height: 10dvh;
   }
 
   .spacer {
     height: 15vh;
+    height: 15dvh;
   }
 
   .spacer_large {
     height: 100vh;
+    height: 100dvh;
   }
 
   .business-metrics {
@@ -141,6 +152,7 @@
 
   .landing-text-container {
     width: 90vw;
+    width: 90dvw;
   }
 
   .landing-paragraph {
