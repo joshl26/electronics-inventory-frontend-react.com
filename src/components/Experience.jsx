@@ -52,7 +52,7 @@ const Experience = ({ colorMode }) => {
         maxPolarAngle={0}
         minPolarAngle={Math.PI / 2}
       /> */}
-      <ScrollControls pages={5.86} damping={0.1}>
+      <ScrollControls pages={7} damping={false}>
         {/* <Skateboard />
         <Office /> */}
         {/* <Suzie /> */}

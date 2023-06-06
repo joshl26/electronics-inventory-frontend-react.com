@@ -666,8 +666,8 @@ const Pricing = () => {
               <p className="table-p-bold">ENTERPRISE</p>
             </Col>
           </Row>
-          {population.map((feature) => (
-            <Row className="pricing-table-row">
+          {population.map((feature, idx) => (
+            <Row key={idx} className="pricing-table-row">
               <Col md={6} className="pricing-table-col">
                 <p className="table-p-bold">{feature.col1}</p>
 

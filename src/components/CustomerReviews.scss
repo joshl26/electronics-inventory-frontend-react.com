@@ -1,3 +1,13 @@
+.slider_header_1 {
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-family: "Gloock", serif;
+}
+
+.slider_header_2 {
+  font-size: clamp(1.5em, 3vw, 3em);
+  font-family: "Cabin", serif;
+}
+
 @media screen and (min-width: 769px) {
   .default-nav {
     position: relative;
@@ -40,15 +50,15 @@
   .slider_header_1 {
     padding-top: 1em;
     text-align: center;
-    font-size: 3em;
-    font-family: "Raleway";
+    // font-size: clamp(1em, 3em, 3em);
+    // font-family: "Gloock", serif;
   }
 
   .slider_header_2 {
     padding-top: 1em;
     text-align: center;
-    font-size: 1.5em;
-    font-family: "Raleway";
+    // font-size: 1.5em;
+    // font-family: "Raleway";
   }
 
   .slider {
@@ -84,13 +94,13 @@
 
   .slider_header_1 {
     padding-top: 0.5em;
-    text-align: center;
-    font-size: 1.5em;
+    // text-align: center;
+    // font-size: 1.5em;
   }
 
   .slider_header_2 {
     padding-top: 0.5em;
     text-align: center;
-    font-size: 1em;
+    // font-size: 1em;
   }
 }

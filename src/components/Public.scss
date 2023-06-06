@@ -9,20 +9,23 @@
 .hamburger-icon {
   transition: background-color 2s ease 0s, height 2s, width 2s, display 2s;
   opacity: 0.9;
-  height: 100vh;
-
-  position: absolute;
-  top: 0;
-  left: 25%;
+  position: relative;
+  height: 75vh;
+  height: 75dvh;
+  margin: 0 auto;
+  top: 20%;
 }
 
 .loading-background {
+  position: fixed;
   width: 100vw;
+  width: 100dvw;
   height: 100vh;
+  height: 100dvh;
 }
 
-
-@media screen and (min-width: 769px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
   .hero-header-text {
     opacity: 0.95;
     font-family: "Gloock", serif;
@@ -50,12 +53,99 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
   .hero-header-text {
-    margin: 0 auto;
     opacity: 0.95;
     font-family: "Gloock", serif;
-    font-size: 3em;
+    font-size: 8.5em;
+    padding-top: 20vh;
+    text-shadow: 2.5px 2.5px #0b090a;
+  }
+
+  .swipe-up-icon {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 10000;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    opacity: 0.6;
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-spacer {
+    width: 100vw;
+    position: relative;
+    background-color: RGBA(211, 211, 211, 0.7);
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .hero-header-text {
+    opacity: 0.95;
+    font-family: "Gloock", serif;
+    font-size: 8.5em;
+    padding-top: 20vh;
+    text-shadow: 2.5px 2.5px #0b090a;
+  }
+
+  .swipe-up-icon {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 10000;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    opacity: 0.6;
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-spacer {
+    width: 100vw;
+    position: relative;
+    background-color: RGBA(211, 211, 211, 0.7);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .hero-header-text {
+    opacity: 0.95;
+    font-family: "Gloock", serif;
+    font-size: 8.5em;
+    padding-top: 20vh;
+    text-shadow: 2.5px 2.5px #0b090a;
+  }
+
+  .swipe-up-icon {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 10000;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    opacity: 0.6;
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-spacer {
+    width: 100vw;
+    position: relative;
+    background-color: RGBA(211, 211, 211, 0.7);
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .hero-header-text {
+    opacity: 0.95;
+    font-family: "Gloock", serif;
+    font-size: 8.5em;
     padding-top: 20vh;
     text-shadow: 2.5px 2.5px #0b090a;
   }
