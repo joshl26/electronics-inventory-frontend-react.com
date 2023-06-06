@@ -282,7 +282,7 @@ const Pricing = () => {
                   <p className="pricing-p-text">Unlimited boards</p>
                 </Col>
               </Row>
-              <Row classname="row-border-top">
+              <Row className="row-border-top">
                 <Col xs={1} md={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
