@@ -50,6 +50,8 @@
 
 .pricing-p-text {
   font-family: "Figtree", sans-serif;
+  font-size: clamp(0.5rem, calc(0.625rem + 1.875vw), 1rem);
+  // font-size: clamp(1rem, calc(0.625rem + 1.875dvw), 2.5rem);
   width: auto;
 }
 

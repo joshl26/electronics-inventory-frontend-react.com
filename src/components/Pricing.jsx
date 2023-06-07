@@ -147,6 +147,8 @@ const Pricing = () => {
                 <Row className="row-border-top">
                   <h4 className="top-table-title">INCLUDED IN FREE:</h4>
                 </Row>
+                <div className="spacer-x-small"></div>
+
                 <Row className="row-border-top align-left">
                   <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
@@ -204,9 +206,7 @@ const Pricing = () => {
                     md={11}
                     lg={11}
                   >
-                    <p className="pricing-p-text">
-                      250 Workspace command runs per month
-                    </p>
+                    <p className="pricing-p-text">250 Workspace command runs</p>
                   </Col>
                 </Row>
                 <Row className="row-border-top">
@@ -288,7 +288,7 @@ const Pricing = () => {
 
             {/* ---------------------------------------------------------------------------------------- */}
 
-            <Col xs={1} md={3} className="pricing-table-col-left">
+            <Col xs={11} sm={11} md={3} className="pricing-table-col-left">
               <div className="pricing-table-top">
                 <Row>
                   <div className="spacer-x-small"></div>
@@ -326,6 +326,8 @@ const Pricing = () => {
               <Row className="row-border-top">
                 <h4 className="top-table-title">EVERYTHING IN FREE, PLUS:</h4>
               </Row>
+              <div className="spacer-x-small"></div>
+
               <Row className="row-border-top">
                 <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
@@ -365,9 +367,7 @@ const Pricing = () => {
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
                 <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
-                  <p className="pricing-p-text">
-                    1,000 Workspace command runs per month
-                  </p>
+                  <p className="pricing-p-text">1,000 Workspace command runs</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
@@ -397,7 +397,7 @@ const Pricing = () => {
 
             {/* ---------------------------------------------------------------------------------------- */}
 
-            <Col xs={1} md={3} className="pricing-table-col-special">
+            <Col xs={11} sm={11} md={3} className="pricing-table-col-special">
               <div className="pricing-table-top">
                 <Row>
                   <div className="spacer-x-small"></div>
@@ -443,13 +443,15 @@ const Pricing = () => {
                   EVERYTHING IN STANDARD, PLUS:
                 </h4>
               </Row>
+              <div className="spacer-x-small"></div>
+
               <Row className="row-border-top">
                 <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
                 <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">
-                    Views: Calendar, Timeline, Table, Dashboard, and Map
+                    Calendar, Timeline, Table, Dashboard
                   </p>
                 </Col>
               </Row>
@@ -459,7 +461,7 @@ const Pricing = () => {
                 </Col>
                 <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">
-                    Workspace views: Table and Calendar
+                    Workspace: Table and Calendar
                   </p>
                 </Col>
               </Row>
@@ -468,9 +470,7 @@ const Pricing = () => {
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
                 <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
-                  <p className="pricing-p-text">
-                    Unlimited Workspace command runs
-                  </p>
+                  <p className="pricing-p-text">Unlimited Workspace commands</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
@@ -524,7 +524,7 @@ const Pricing = () => {
 
             {/* ---------------------------------------------------------------------------------------- */}
 
-            <Col xs={1} md={3} className="pricing-table-col-right">
+            <Col xs={11} sm={11} md={3} className="pricing-table-col-right">
               <div className="pricing-table-top">
                 <Row>
                   <div className="spacer-x-small"></div>
@@ -607,6 +607,8 @@ const Pricing = () => {
                   EVERYTHING IN PREMIUM, PLUS:
                 </h4>
               </Row>
+              <div className="spacer-x-small"></div>
+
               <Row className="row-border-top">
                 <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
@@ -668,7 +670,7 @@ const Pricing = () => {
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
                 <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
-                  <p>Free SSO and user provisioning with Atlassian Access</p>
+                  <p>Free SSO and user provisioning</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
