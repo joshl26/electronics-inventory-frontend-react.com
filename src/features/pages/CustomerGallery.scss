@@ -3,17 +3,18 @@
   background-color: var(--color-four);
 }
 
+.customer-header-text {
+  font-family: "Gloock", sans-serif;
+  font-size: 6rem;
+  font-size: clamp(3rem, calc(2.25rem + 3.75vw), 6rem);
+}
+
+.customer-icon {
+  width: clamp(200px, calc(10.9375rem + 7.8125vw), 300px);
+  width: clamp(200px, calc(10.9375rem + 7.8125dvw), 300px);
+}
+
 @media screen and (min-width: 769px) {
-  .customer-header-text {
-    font-family: "Gloock", sans-serif;
-    font-size: 6em;
-  }
-
-  .customer-icon {
-    width: 250px;
-    padding-top: 5em;
-  }
-
   .customer-gallery-container {
     width: 90vw;
     text-align: center;
@@ -21,18 +22,19 @@
 }
 
 @media screen and (max-width: 768px) {
-  .customer-header-text {
-    font-family: "Cabin", sans-serif;
-    font-size: 1.5em;
-  }
-
   .customer-icon {
     margin: 0 auto;
-    width: 100px;
-    padding-top: 5em;
+    // width: 100px;
+    padding-top: 4em;
+  }
+
+  .customer-header-text {
+    text-align: left;
   }
 
   .customer-gallery-container {
     width: 90vw !important;
+    width: 90vw;
+    text-align: center;
   }
 }

@@ -1,7 +1,5 @@
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import "./LandingPage.scss";
-import Lottie from "lottie-react";
-import BusinessMetrics from "../../svg/BusinessMetrics.json";
 
 import ei_1 from "../../img/ei_1.png";
 import CustomerReviews from "../../components/CustomerReviews";

@@ -15,34 +15,34 @@
 .landing-header-1 {
   font-family: "Gloock", serif;
   font-size: 4rem;
-  font-size: clamp(4rem, 10vw, 7rem);
-  font-size: clamp(4rem, 10dvw, 7rem);
+  font-size: clamp(4rem, calc(3.25rem + 3.75vw), 7rem);
+  font-size: clamp(4rem, calc(3.25rem + 3.75dvw), 7rem);
 }
 
 .landing-header-2 {
+  font-family: "Figtree", sans-serif;
   font-size: 1.5rem;
-  font-size: clamp(1.5rem, 3vw, 3rem);
-  font-size: clamp(1.5rem, 3dvw, 3rem);
+  font-size: clamp(1.5rem, calc(1.125rem + 1.875vw), 3rem);
+  font-size: clamp(1.5rem, calc(1.125rem + 1.875dvw), 3rem);
   padding-top: 1em;
   padding-bottom: 1em;
-  font-family: "Figtree", sans-serif;
   width: 85%;
   text-align: left;
 }
 
 .landing-header-3 {
-  font-size: 2.75rem;
-  font-size: clamp(1.5rem, 3vw, 3rem);
-  font-size: clamp(1.5rem, 3dvw, 3rem);
   font-family: "Figtree", sans-serif;
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, calc(1.125rem + 1.875vw), 3rem);
+  font-size: clamp(1.5rem, calc(1.125rem + 1.875dvw), 3rem);
   padding-bottom: 1rem;
 }
 
 .landing-header-1-inline {
-  font-size: 7.25rem;
-  font-size: clamp(2rem, 20vw, 7rem);
-  font-size: clamp(2em, 20dvw, 7em);
   font-family: "Figtree", sans-serif;
+  font-size: 7.25rem;
+  font-size: clamp(4rem, calc(3.25rem + 3.75vw), 7rem);
+  font-size: clamp(4rem, calc(3.25rem + 3.75dvw), 7rem);
 }
 
 /* Extra small devices (phones, 600px and down) */
