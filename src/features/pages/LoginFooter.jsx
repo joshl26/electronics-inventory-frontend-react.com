@@ -44,8 +44,8 @@ const LoginFooter = ({ colorMode }) => {
         <Container>
           <Row className="login-footer-button-row">
             <Col xs={12} sm={12} md={2} lg={2}>
-              <Row>
-                <div to="/" className="flex-container">
+              <Row className="footer-row">
+                <Col className="footer-col">
                   <a href="/">
                     <Lottie
                       className="footer-icon"
@@ -53,9 +53,10 @@ const LoginFooter = ({ colorMode }) => {
                       loop={false}
                     />
                   </a>
-
+                </Col>
+                <Col>
                   <h1 className="footer-icon-text">Ei</h1>
-                </div>
+                </Col>
               </Row>
             </Col>
             <Col xs={12} sm={12} md={2} lg={2}>
@@ -105,10 +106,10 @@ const LoginFooter = ({ colorMode }) => {
           </Row>
           <div className={sectionBreakStyle} />
           <Row className="footer-social-row">
-            <Col>
+            <Col xs={12} md={1}>
               <h4 className="footer-h4-text">Language</h4>
             </Col>
-            <Col>
+            <Col xs={12} md={2}>
               <form className="footer-p-text">
                 <select
                   aria-label="Select a language"
@@ -202,17 +203,20 @@ const LoginFooter = ({ colorMode }) => {
                 Copyright © 2023 BlackRock Design Haus
               </p>
             </Col>
-            <Col className="col-auto-width" xs={1} sm={1} md={1}>
-              <SocialIcon url="https://www.linkedin.com/company/90619779/" />
+            <Col className="col-auto-width" xs={12} sm={6} md={1}>
+              <SocialIcon
+                className="social-icon"
+                url="https://www.linkedin.com/company/90619779/"
+              />
             </Col>
-            <Col className="col-auto-width" xs={1} sm={1} md={1}>
-              <SocialIcon url="https://facebook.com/" />
+            <Col className="col-auto-width" xs={6} sm={6} md={1}>
+              <SocialIcon className="social-icon" url="https://facebook.com/" />
             </Col>
-            <Col className="col-auto-width" xs={1} sm={1} md={1}>
-              <SocialIcon url="https://github.com/" />
+            <Col className="col-auto-width" xs={6} sm={6} md={1}>
+              <SocialIcon className="social-icon" url="https://github.com/" />
             </Col>
-            <Col className="col-auto-width" xs={1} sm={1} md={1}>
-              <SocialIcon url="https://google.com/" />
+            <Col className="col-auto-width" xs={6} sm={6} md={1}>
+              <SocialIcon className="social-icon" url="https://google.com/" />
             </Col>
           </Row>
         </Container>
