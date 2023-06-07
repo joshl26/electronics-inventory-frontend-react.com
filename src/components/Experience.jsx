@@ -53,10 +53,10 @@ const Experience = ({ colorMode }) => {
         minPolarAngle={Math.PI / 2}
       /> */}
       <ScrollControls pages={15} damping={false}>
-        {/* <Skateboard />
-        <Office /> */}
+        {/* <Skateboard />*/}
+        <Office />
         {/* <Suzie /> */}
-        <Ballpit colorMode={colorMode} />
+        {/* <Ballpit colorMode={colorMode} /> */}
         <Scroll html>
           <LandingPage colorMode={colorMode} />
           <CustomerGallery />
