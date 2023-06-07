@@ -111,8 +111,8 @@ const Pricing = () => {
         <div className="spacer"></div>
 
         <Container>
-          <Row>
-            <Col xs={1} md={3} className="pricing-table-col-left">
+          <Row className="pricing-table-row">
+            <Col xs={11} sm={11} md={3} className="pricing-table-col-left">
               <div className="pricing-table-top">
                 <Row>
                   <div className="spacer-x-small"></div>
@@ -147,85 +147,139 @@ const Pricing = () => {
                 <Row className="row-border-top">
                   <h4 className="top-table-title">INCLUDED IN FREE:</h4>
                 </Row>
-                <Row className="row-border-top">
-                  <Col xs={1} md={1}>
+                <Row className="row-border-top align-left">
+                  <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
-                  <Col xs={1} md={11}>
+                  <Col
+                    className="col-auto-width"
+                    xs={11}
+                    sm={11}
+                    md={11}
+                    lg={11}
+                  >
                     <p className="pricing-p-text">Unlimited cards</p>
                   </Col>
                 </Row>
                 <Row className="row-border-top">
-                  <Col xs={1} md={1}>
+                  <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
-                  <Col xs={1} md={11}>
+                  <Col
+                    className="col-auto-width"
+                    xs={11}
+                    sm={11}
+                    md={11}
+                    lg={11}
+                  >
                     <p className="pricing-p-text">
                       Up to 10 boards per Workspace
                     </p>
                   </Col>
                 </Row>
                 <Row className="row-border-top">
-                  <Col xs={1} md={1}>
+                  <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
-                  <Col xs={1} md={11}>
+                  <Col
+                    className="col-auto-width"
+                    xs={11}
+                    sm={11}
+                    md={11}
+                    lg={11}
+                  >
                     <p className="pricing-p-text">
                       Unlimited storage (10MB/file)
                     </p>
                   </Col>
                 </Row>
                 <Row className="row-border-top">
-                  <Col xs={1} md={1}>
+                  <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
-                  <Col xs={1} md={11}>
+                  <Col
+                    className="col-auto-width"
+                    xs={11}
+                    sm={11}
+                    md={11}
+                    lg={11}
+                  >
                     <p className="pricing-p-text">
                       250 Workspace command runs per month
                     </p>
                   </Col>
                 </Row>
                 <Row className="row-border-top">
-                  <Col xs={1} md={1}>
+                  <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
-                  <Col xs={1} md={11}>
+                  <Col
+                    className="col-auto-width"
+                    xs={11}
+                    sm={11}
+                    md={11}
+                    lg={11}
+                  >
                     <p className="pricing-p-text">
                       Custom backgrounds & stickers
                     </p>
                   </Col>
                 </Row>
                 <Row className="row-border-top">
-                  <Col xs={1} md={1}>
+                  <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
-                  <Col xs={1} md={11}>
+                  <Col
+                    className="col-auto-width"
+                    xs={11}
+                    sm={11}
+                    md={11}
+                    lg={11}
+                  >
                     <p className="pricing-p-text">Unlimited activity log</p>
                   </Col>
                 </Row>
                 <Row className="row-border-top">
-                  <Col xs={1} md={1}>
+                  <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
-                  <Col xs={1} md={11}>
+                  <Col
+                    className="col-auto-width"
+                    xs={11}
+                    sm={11}
+                    md={11}
+                    lg={11}
+                  >
                     <p className="pricing-p-text">Assignee and due dates</p>
                   </Col>
                 </Row>
                 <Row className="row-border-top">
-                  <Col xs={1} md={1}>
+                  <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
-                  <Col xs={1} md={11}>
+                  <Col
+                    className="col-auto-width"
+                    xs={11}
+                    sm={11}
+                    md={11}
+                    lg={11}
+                  >
                     <p className="pricing-p-text">
                       iOS and Android mobile apps
                     </p>
                   </Col>
                 </Row>
                 <Row className="row-border-top">
-                  <Col xs={1} md={1}>
+                  <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                   </Col>
-                  <Col xs={1} md={11}>
+                  <Col
+                    className="col-auto-width"
+                    xs={11}
+                    sm={11}
+                    md={11}
+                    lg={11}
+                  >
                     <p className="pricing-p-text">2-factor authentication</p>
                   </Col>
                 </Row>
@@ -236,9 +290,7 @@ const Pricing = () => {
 
             <Col xs={1} md={3} className="pricing-table-col-left">
               <div className="pricing-table-top">
-                {" "}
                 <Row>
-                  clamp
                   <div className="spacer-x-small"></div>
                   <h4 className="top-table-title">STANDARD</h4>
                 </Row>
@@ -275,62 +327,62 @@ const Pricing = () => {
                 <h4 className="top-table-title">EVERYTHING IN FREE, PLUS:</h4>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">Unlimited boards</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">Advanced checklists</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">Custom Fields</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">
                     Unlimited storage (250MB/file)
                   </p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">
                     1,000 Workspace command runs per month
                   </p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">Single board guests</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">Saved searches</p>
                 </Col>
               </Row>
@@ -392,72 +444,72 @@ const Pricing = () => {
                 </h4>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">
                     Views: Calendar, Timeline, Table, Dashboard, and Map
                   </p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">
                     Workspace views: Table and Calendar
                   </p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">
                     Unlimited Workspace command runs
                   </p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">Admin and security features</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">Workspace-level templates</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">Collections</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">Observers</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p className="pricing-p-text">Simple data export</p>
                 </Col>
               </Row>
@@ -556,66 +608,66 @@ const Pricing = () => {
                 </h4>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p>Unlimited Workspaces</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p>Organization-wide permissions</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p>Organization-visible boards</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p>Public board management</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p>Multi-board guests</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p>Attachment permissions</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p>Power-Up administration</p>
                 </Col>
               </Row>
               <Row className="row-border-top">
-                <Col xs={1} md={1}>
+                <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
                 </Col>
-                <Col xs={1} md={11}>
+                <Col className="col-auto-width" xs={11} sm={11} md={11} lg={11}>
                   <p>Free SSO and user provisioning with Atlassian Access</p>
                 </Col>
               </Row>

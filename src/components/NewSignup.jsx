@@ -12,7 +12,7 @@ const NewSignup = ({ colorMode }) => {
 
   return (
     <div className={signupSectionStlye}>
-      <div className="spacer"></div>
+      <div className="signup-spacer"></div>
       <Container>
         <Col>
           <Row>
@@ -45,8 +45,8 @@ const NewSignup = ({ colorMode }) => {
             <Col xs={0} sm={3} md={2}></Col>
           </Row>
         </Col>
-        <div className="spacer"></div>
-        <div className="spacer"></div>
+        <div className="signup-spacer"></div>
+        <div className="signup-spacer"></div>
       </Container>
     </div>
   );
