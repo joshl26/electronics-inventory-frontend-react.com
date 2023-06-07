@@ -43,7 +43,7 @@ const LoginFooter = ({ colorMode }) => {
       <div className="social-container">
         <Container>
           <Row className="login-footer-button-row">
-            <Col>
+            <Col xs={12} sm={12} md={2} lg={2}>
               <Row>
                 <div to="/" className="flex-container">
                   <a href="/">
@@ -58,8 +58,8 @@ const LoginFooter = ({ colorMode }) => {
                 </div>
               </Row>
             </Col>
-            <Col>
-              <Button className={footerButtonStyle}>
+            <Col xs={12} sm={12} md={2} lg={2}>
+              <Button href="" className={footerButtonStyle}>
                 <Row>
                   <h4 className="footer-h4-text">About</h4>
                 </Row>
@@ -68,7 +68,7 @@ const LoginFooter = ({ colorMode }) => {
                 </Row>
               </Button>
             </Col>
-            <Col className="text-center">
+            <Col xs={12} sm={12} md={2} lg={2}>
               <Button className={footerButtonStyle} href="/jobs">
                 <Row>
                   <h4 className="footer-h4-text">Jobs</h4>
@@ -80,7 +80,7 @@ const LoginFooter = ({ colorMode }) => {
                 </Row>
               </Button>
             </Col>
-            <Col>
+            <Col xs={12} sm={12} md={2} lg={2}>
               <Button className={footerButtonStyle} href="/Apps">
                 <Row>
                   <h4 className="footer-h4-text">Apps</h4>
@@ -92,7 +92,7 @@ const LoginFooter = ({ colorMode }) => {
                 </Row>
               </Button>
             </Col>
-            <Col>
+            <Col xs={12} sm={12} md={2} lg={2}>
               <Button className={footerButtonStyle} href="/contact">
                 <Row>
                   <h4 className="footer-h4-text">Contact Us</h4>
@@ -182,36 +182,36 @@ const LoginFooter = ({ colorMode }) => {
                 </select>
               </form>
             </Col>
-            <Col md={1}>
+            <Col xs={12} md={1}>
               <a href="">
                 <p className="footer-p-text">Privacy Policy</p>
               </a>
             </Col>
-            <Col md={1}>
+            <Col xs={12} md={1}>
               <a href="">
                 <p className="footer-p-text">Terms</p>
               </a>
             </Col>
-            <Col>
+            <Col xs={12} md={1}>
               <a href="">
                 <p className="footer-p-text-light">Cookie Settings</p>
               </a>
             </Col>
-            <Col md={2}>
+            <Col xs={12} md={2}>
               <p className="footer-p-text">
                 Copyright © 2023 BlackRock Design Haus
               </p>
             </Col>
-            <Col>
+            <Col className="col-auto-width" xs={1} sm={1} md={1}>
               <SocialIcon url="https://www.linkedin.com/company/90619779/" />
             </Col>
-            <Col>
+            <Col className="col-auto-width" xs={1} sm={1} md={1}>
               <SocialIcon url="https://facebook.com/" />
             </Col>
-            <Col>
+            <Col className="col-auto-width" xs={1} sm={1} md={1}>
               <SocialIcon url="https://github.com/" />
             </Col>
-            <Col>
+            <Col className="col-auto-width" xs={1} sm={1} md={1}>
               <SocialIcon url="https://google.com/" />
             </Col>
           </Row>
