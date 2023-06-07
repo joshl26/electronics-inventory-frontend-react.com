@@ -5,7 +5,8 @@
   }
 
   .login-light {
-    background-color: white;
+    background-color: var(--color-one);
+    color: shite;
     position: relative;
     top: 0;
     left: 0;
@@ -14,7 +15,7 @@
 
   .login-dark {
     color: white;
-    background-color: #161a1d;
+    background-color: var(--color-three);
   }
   .form {
     margin: 0 auto;
@@ -83,17 +84,21 @@
 }
 
 @media screen and (max-width: 768px) {
+  .login-col-align-left {
+    display: contents;
+  }
+
   .login-light {
-    background-color: white;
+    background-color: var(--color-one);
   }
 
   .login-dark {
-    background-color: var(--color-five);
+    background-color: var(--color-three);
   }
 
   .form {
     margin: 0 auto;
-    width: 60vw;
+    width: 85vw;
   }
 
   .login-header-text {
@@ -108,5 +113,18 @@
 
   .login-icon {
     width: 100px;
+  }
+
+  .login-button-icon {
+    width: 25px;
+    padding-left: 0.25em;
+  }
+
+  .login-text {
+    padding-top: 0.5em;
+    text-align: center;
+    width: min-content;
+    font-family: "Cabin", Times, serif;
+    font-size: 3em;
   }
 }

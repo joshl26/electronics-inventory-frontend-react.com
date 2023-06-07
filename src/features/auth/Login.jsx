@@ -339,6 +339,7 @@ const Login = () => {
             </select>
           </form>
         </Col>
+        <div className="spacer-small"></div>
         <div className="spacer-extra-small"></div>
 
         <div className="spacer-extra-small"></div>
