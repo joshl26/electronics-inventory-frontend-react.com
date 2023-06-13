@@ -784,11 +784,12 @@ const Pricing = () => {
             </Row>
           ))}
         </Container>
-        <div className="spacer-x-small" />
+        <div className={footerTransitionStyle}>
+          <div className="spacer"></div>
+          <div className="spacer-x-small" />
+        </div>
       </section>
-      <div className={footerTransitionStyle}>
-        <div className="spacer"></div>
-      </div>
+
       <LoginFooter colorMode={colorMode} />
     </>
   );

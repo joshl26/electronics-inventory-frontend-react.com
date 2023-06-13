@@ -68,9 +68,9 @@ const LandingPage = ({ colorMode }) => {
           <div className="spacer_small"></div>
         </Container>
       </div>
-      <div className="spacer_large"></div>
+      {/* <div className="spacer_large"></div> */}
       <CustomerReviews />
-      <div className="spacer_large"></div>
+      {/* <div className="spacer_large"></div> */}
 
       {/* <div className="landing-three">
         <div className="spacer_small"></div>

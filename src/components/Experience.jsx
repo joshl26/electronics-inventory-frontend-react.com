@@ -22,17 +22,28 @@ const Experience = ({ colorMode }) => {
   const backgroundColor = colorMode === "Light" ? "#e76f51" : "#264653";
 
   return (
-    // <Canvas
-    //   flat
-    //   shadows
-    //   style={{ background: backgroundColor }}
-    //   camera={{ position: [0, 0, 100], fov: 100 }}
-    // >
+    <>
+      <LandingPage colorMode={colorMode} />
+      <CustomerGallery />
+      <NewSignup colorMode={colorMode} />
+      <LoginFooter colorMode={colorMode} />
+    </>
+  );
+};
+
+export default Experience;
+
+/* <Canvas
+      flat
+      shadows
+      style={{ background: backgroundColor }}
+      camera={{ position: [0, 0, 100], fov: 100 }}
+    >
     <Canvas
       gl={{ stencil: false, antialias: false }}
       camera={{ position: [0, 0, 20], fov: 50, near: 17, far: 40 }}
     >
-      <Environment preset="city" />
+      {/* <Environment preset="city" /> 
       <fog attach="fog" args={[backgroundColor, 25, 35]} />
       <color attach="background" args={[backgroundColor]} />
 
@@ -47,25 +58,18 @@ const Experience = ({ colorMode }) => {
         shadow-mapSize={2048}
       />
 
-      {/* <OrbitControls
+       <OrbitControls
         enableZoom={false}
         maxPolarAngle={0}
         minPolarAngle={Math.PI / 2}
-      /> */}
-      <ScrollControls pages={15} damping={false}>
-        {/* <Skateboard />*/}
-        <Office />
-        {/* <Suzie /> */}
-        {/* <Ballpit colorMode={colorMode} /> */}
-        <Scroll html>
-          <LandingPage colorMode={colorMode} />
-          <CustomerGallery />
-          <NewSignup colorMode={colorMode} />
-          <LoginFooter colorMode={colorMode} />
-        </Scroll>
-      </ScrollControls>
-    </Canvas>
-  );
-};
-
-export default Experience;
+      /> 
+       <ScrollControls pages={15} damping={false}> 
+       <Skateboard />
+       <Office /> 
+       <Suzie /> 
+       <Ballpit colorMode={colorMode} /> 
+       <Scroll html> 
+      
+       </Scroll> 
+       </ScrollControls> 
+     </Canvas>*/
