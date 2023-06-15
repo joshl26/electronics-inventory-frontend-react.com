@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import features from "../mock_data/features.json";
 import { arraySearch } from "../utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const Pricing = () => {
   const [population, setPopulation] = useState(features);
@@ -23,29 +23,15 @@ const Pricing = () => {
     JSON.parse(localStorage.getItem("colorMode"))
   );
 
-  const pricingStyle =
-    colorMode === "Light"
-      ? "pricing-light"
-      : "" || colorMode === "Dark"
-      ? "pricing-dark"
-      : "";
-
-  const headerTransitionStyle =
-    colorMode === "Light"
-      ? "header-transition-light"
-      : "header-transition-dark";
-
-  const footerTransitionStyle =
-    colorMode === "Light"
-      ? "footer-transition-light"
-      : "footer-transition-dark";
-
-  const inputStyle =
-    colorMode === "Light" ? "input-users-light" : "input-users-dark";
+  const displayColormode = (styleClass) => {
+    if (colorMode === "Light") {
+      return `${styleClass}-light`;
+    } else {
+      return `${styleClass}-dark`;
+    }
+  };
 
   const onChangeColorMode = (e) => {
-    // console.log("On Change Color Mode " + e);
-
     if (e === "Light") {
       localStorage.setItem("colorMode", JSON.stringify("Dark"));
       setColorMode("Dark");
@@ -88,7 +74,7 @@ const Pricing = () => {
       localStorage.setItem("colorMode", JSON.stringify("Light"));
       setColorMode("Light");
     }
-  }, [colorMode, pricingStyle]);
+  }, [colorMode, displayColormode]);
 
   const content = (
     <>
@@ -96,8 +82,8 @@ const Pricing = () => {
         onChangeColorMode={onChangeColorMode}
         colorMode={colorMode}
       />
-      <section className={pricingStyle}>
-        <div className={headerTransitionStyle}>
+      <section className={displayColormode("pricing")}>
+        <div className={displayColormode("header-transition")}>
           <div className="spacer"></div>
           <div className="spacer-small"></div>
           <Container>
@@ -109,7 +95,6 @@ const Pricing = () => {
           </Container>
         </div>
         <div className="spacer"></div>
-
         <Container>
           <Row className="pricing-table-row">
             <Col xs={11} sm={11} md={3} className="pricing-table-col-left">
@@ -148,7 +133,6 @@ const Pricing = () => {
                   <h4 className="top-table-title">INCLUDED IN FREE:</h4>
                 </Row>
                 <div className="spacer-x-small"></div>
-
                 <Row className="row-border-top align-left">
                   <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                     <FontAwesomeIcon icon={faCheck} className="pricing-check" />
@@ -327,7 +311,6 @@ const Pricing = () => {
                 <h4 className="top-table-title">EVERYTHING IN FREE, PLUS:</h4>
               </Row>
               <div className="spacer-x-small"></div>
-
               <Row className="row-border-top">
                 <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
@@ -444,7 +427,6 @@ const Pricing = () => {
                 </h4>
               </Row>
               <div className="spacer-x-small"></div>
-
               <Row className="row-border-top">
                 <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
@@ -558,7 +540,7 @@ const Pricing = () => {
                   <p className="pricing-p-text">
                     Estimated cost for{" "}
                     <input
-                      className={inputStyle}
+                      className={displayColormode("input-users")}
                       min="50"
                       max="5000"
                       onChange={(e) => handleInputChange(e)}
@@ -608,7 +590,6 @@ const Pricing = () => {
                 </h4>
               </Row>
               <div className="spacer-x-small"></div>
-
               <Row className="row-border-top">
                 <Col className="col-auto-width" xs={1} sm={1} md={1} lg={1}>
                   <FontAwesomeIcon icon={faCheck} className="pricing-check" />
@@ -688,8 +669,6 @@ const Pricing = () => {
           <Col className="col-align-center">
             <h1 className="pricing-h2-text">Compare our Plans</h1>
             <div className="spacer-x-small" />
-            {/* <div>
-              Count: {count} */}
             <input
               className="search-input"
               type="text"
@@ -698,7 +677,6 @@ const Pricing = () => {
               placeholder="Search Filter"
               onChange={handleOnChange}
             />
-            {/* </div> */}
           </Col>
         </Row>
         <div className="spacer-small" />
@@ -784,12 +762,11 @@ const Pricing = () => {
             </Row>
           ))}
         </Container>
-        <div className={footerTransitionStyle}>
+        <div className={displayColormode("footer-transition")}>
           <div className="spacer"></div>
           <div className="spacer-x-small" />
         </div>
       </section>
-
       <LoginFooter colorMode={colorMode} />
     </>
   );
