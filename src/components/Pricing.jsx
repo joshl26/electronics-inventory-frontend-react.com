@@ -90,7 +90,7 @@ const Pricing = () => {
             <h1 className="pricing-h1-text">Electronics Inventory YOUR WAY.</h1>
             <h4 className="pricing-h4-text">
               Trusted by millions, Electronics Inventory powers teams all around
-              the world. Explore which option is right for you?
+              the world. Explore which option is right for you.
             </h4>
           </Container>
         </div>
