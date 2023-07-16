@@ -1,7 +1,6 @@
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import "./LandingPage.scss";
 
-import ei_1 from "../../img/ei_1.png";
 import CustomerReviews from "../../components/CustomerReviews";
 
 const LandingPage = ({ colorMode }) => {
@@ -61,7 +60,10 @@ const LandingPage = ({ colorMode }) => {
             <Col className="landing_one_row" xs={12} md={6} lg={6}>
               <div className="spacer_small"></div>
               <div>
-                <Image className={landingOneImageStyle} src={ei_1}></Image>
+                <Image
+                  className={landingOneImageStyle}
+                  src="https://res.cloudinary.com/dv6keahg3/image/upload/v1689524251/ElectronicsInventory/frontend_ui_images/ei_1_pxgvpd.png"
+                ></Image>
               </div>
             </Col>
           </Row>

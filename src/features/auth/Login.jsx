@@ -5,11 +5,6 @@ import { useDispatch } from "react-redux";
 import { setCredentials } from "./authSlice";
 import { useLoginMutation } from "./authApiSlice";
 
-import googleColor from "../../svg/Google_color.svg";
-import microsoftColor from "../../svg/Microsoft_color.svg";
-import appleColor from "../../svg/Apple_color.svg";
-import slackColor from "../../svg/Slack_color.svg";
-
 import usePersist from "../../hooks/usePersist";
 
 import Lottie from "lottie-react";
@@ -207,33 +202,42 @@ const Login = () => {
                 onClick={handleContinueBtnClick}
                 className="form__submit-button"
               >
-                Continue with Google{" "}
-                <img className="login-button-icon" src={googleColor} />
+                Continue with Google
+                <img
+                  className="login-button-icon"
+                  alt="Google Login"
+                  src="https://res.cloudinary.com/dv6keahg3/image/upload/v1689541688/ElectronicsInventory/frontend_ui_images/Google_color_edzwj2.svg"
+                />
               </button>
             </Row>
-
             <Row>
               <button
                 type="button"
                 onClick={handleContinueBtnClick}
                 className="form__submit-button"
               >
-                Continue with Microsoft{" "}
-                <img className="login-button-icon" src={microsoftColor} />
+                Continue with Microsoft
+                <img
+                  alt="Microsoft Login"
+                  className="login-button-icon"
+                  src="https://res.cloudinary.com/dv6keahg3/image/upload/v1689541690/ElectronicsInventory/frontend_ui_images/Microsoft_color_duzdcl.svg"
+                />
               </button>
             </Row>
-
             <Row>
               <button
                 type="button"
                 onClick={handleContinueBtnClick}
                 className="form__submit-button"
               >
-                Continue with Apple{" "}
-                <img className="login-button-icon" src={appleColor} />
+                Continue with Apple
+                <img
+                  alt="Apple Login"
+                  className="login-button-icon"
+                  src="https://res.cloudinary.com/dv6keahg3/image/upload/v1689541690/ElectronicsInventory/frontend_ui_images/Apple_color_ax7zu9.svg"
+                />
               </button>
             </Row>
-
             <Row>
               <button
                 type="button"
@@ -241,7 +245,11 @@ const Login = () => {
                 className="form__submit-button"
               >
                 Continue with Slack{" "}
-                <img className="login-button-icon" src={slackColor} />
+                <img
+                  alt="Slack Login"
+                  className="login-button-icon"
+                  src="https://res.cloudinary.com/dv6keahg3/image/upload/v1689541691/ElectronicsInventory/frontend_ui_images/Slack_color_gfgg0w.svg"
+                />
               </button>
             </Row>
             <div className="spacer-extra-small"></div>
@@ -341,19 +349,16 @@ const Login = () => {
         </Col>
         <div className="spacer-small"></div>
         <div className="spacer-extra-small"></div>
-
         <div className="spacer-extra-small"></div>
         <Col>
           <div className={sectionBreakStyle}></div>
         </Col>
         <div className="spacer-extra-small"></div>
         <div className="spacer-extra-small"></div>
-
         <Col>
           <h3 className="text-center">BlackRock Design Haus</h3>
         </Col>
         <div className="spacer-extra-small"></div>
-
         <Row>
           <Col>
             <Link>
