@@ -95,7 +95,7 @@ This project is being created created using Node.js, ReactJS, Redux, MongoDB, Cl
 
 ### ✨ [Live Site Demo](https://el-in.ca)
 
-<p>Hosted with th efree tier of Render.com</p>
+<p>Hosted with the free tier of Render.com</p>
 
 ## Prerequisites
 
