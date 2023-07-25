@@ -30,33 +30,52 @@ This project is being created created using Node.js, ReactJS, Redux, MongoDB, Cl
 
 > All the data will pe persistent and is stored in the amazon cloud.
 
-## Technologies Used:
+## Technologies Utilized
 
-> HTML5 - markup language for creating web pages and web applications
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
 
-> CSS3 - used for describing the presentation of a document written in a markup language
+> HTML5 - A markup language for creating web pages and web applications.
 
-> Bootstrap - free and open-source front-end web framework for designing websites and web applications quickly
+> CSS3 - used for describing the presentation of a document written in a markup language.
 
-> jQuery - cross-platform JavaScript library designed to simplify the client-side scripting of HTML
+> Bootstrap - A free and open-source front-end web framework for designing websites and web applications quickly.
 
-> DOM Manipulation - is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document
+> Node.js - Open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side.
 
-> Node.js - pen-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side
+> Express.js - For building web applications and APIs and connecting middleware.
 
-> Express.js - for building web applications and APIs and connecting middleware
+> Joi - Used for schema description and data validation.
 
-> REST - REST (REpresentational State Transfer) is an architectural style for developing web services
+> Swagger-UI/JSDOC - Powerful UI interface for documenting, testing and displaying API endpoints.
 
-> MongoDB - open-source cross-platform document-oriented NoSQL database program to store details
+> UMLs - Unified Modeling Language diagrams which illustrate the sequence of events between objects within this app.
 
-> JWT Web Tokens - authentication middleware for Node.js. Extremely flexible and modular, can be unobtrusively dropped in to any Express-based web application
+> REST - REST (REpresentational State Transfer) is an architectural style for developing web services.
 
-> Data Associations - associating user data with the respective inventory items and note using reference method
+> MongoDB - Open-source cross-platform document-oriented NoSQL database program to store details like user info, campsites info and comments.
 
-> Render.com - cloud platform as a service used as a web application deployment model
+> PassportJS - Authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped into any Express-based web application.
 
-> AWS - mongodb is hosted on amazon ec2 instance
+> Data Associations - Associating user data with the respective campsites and comments using the reference method.
+
+> Render.com - Cloud platform as a service used as a web application deployment model.
+
+> AWS - Mongodb is hosted on Amazon ec2 instance.
+
+## API Documentation
+
+### ✨ [Live API Documentation](https://el-in.ca/api-docs/)
+
+> <p>Created using Swagger UI</p>
 
 ## Screenshots
 
