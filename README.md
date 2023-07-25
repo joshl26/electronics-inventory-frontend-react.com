@@ -16,8 +16,6 @@
 
 Electronics Inventory is a full-stack website project where users can keep track of an electronics lab inventory. With thousands of small components its easy to lose track of where and how many of each part you currently have in stock. With this website you have full control over you inventory, from anywhere in the world. In order to use this website, you must have an account. This project was coded from scratch by myself as a capstone project for my career change into Software Engineering.
 
-This project is being created created using Node.js, ReactJS, Redux, MongoDB, Cloudinary and AWS. JWT web tokens are used to handle authentication.
-
 ## Backend Code is in this Repository
 
 - [Electronics Inventory Backend Code](https://github.com/joshl26/electronics-inventory-backend)
