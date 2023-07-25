@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Electronics Inventory 👋</h1>
+<h1 align="center">Welcome to Electronics Inventory - Frontend👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/npm-%3E%3D8.0.0-blue.svg" />
@@ -19,6 +19,9 @@ Electronics Inventory is a full-stack website project where users can keep track
 
 This project is being created created using Node.js, ReactJS, Redux, MongoDB, Cloudinary and AWS. JWT web tokens are used to handle authentication.
 
+## Backend Code is in this Repository
+
+- [Electronics Inventory Backend Code](https://github.com/joshl26/electronics-inventory-backend)
 
 ## Functionalities
 
