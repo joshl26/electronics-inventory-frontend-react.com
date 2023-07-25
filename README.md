@@ -10,10 +10,9 @@
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
   <a href="https://github.com/joshl26/electronics-inventory-frontend/blob/master/LICENSE" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/github/license/joshl26/electronics-inventory-frontend" />
+    <img alt="License: MIT" src="https://img.shields.io/github/license/joshl26/electronics-inventory-frontend" />
   </a>
 </p>
-
 
 Electronics Inventory is a full-stack website project where users can keep track of an electronics lab inventory. With thousands of small components its easy to lose track of where and how many of each part you currently have in stock. With this website you have full control over you inventory, from anywhere in the world. In order to use this website, you must have an account. This project was coded from scratch by myself as a capstone project for my career change into Software Engineering.
 
@@ -25,56 +24,58 @@ This project is being created created using Node.js, ReactJS, Redux, MongoDB, Cl
 
 ## Functionalities
 
->The user will have to login to edit the inventory details.
+> The user will have to login to edit the inventory details.
 
->The user can only edit/delete the inventory that they have access too.
+> The user can only edit/delete the inventory that they have access too.
 
->All the data will pe persistent and is stored in the amazon cloud.
+> All the data will pe persistent and is stored in the amazon cloud.
 
 ## Technologies Used:
 
->HTML5 - markup language for creating web pages and web applications
+> HTML5 - markup language for creating web pages and web applications
 
->CSS3 - used for describing the presentation of a document written in a markup language
+> CSS3 - used for describing the presentation of a document written in a markup language
 
->Bootstrap - free and open-source front-end web framework for designing websites and web applications quickly
+> Bootstrap - free and open-source front-end web framework for designing websites and web applications quickly
 
->jQuery - cross-platform JavaScript library designed to simplify the client-side scripting of HTML
+> jQuery - cross-platform JavaScript library designed to simplify the client-side scripting of HTML
 
->DOM Manipulation - is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document
+> DOM Manipulation - is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document
 
->Node.js - pen-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side
+> Node.js - pen-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side
 
->Express.js - for building web applications and APIs and connecting middleware
+> Express.js - for building web applications and APIs and connecting middleware
 
->REST - REST (REpresentational State Transfer) is an architectural style for developing web services
+> REST - REST (REpresentational State Transfer) is an architectural style for developing web services
 
->MongoDB - open-source cross-platform document-oriented NoSQL database program to store details
+> MongoDB - open-source cross-platform document-oriented NoSQL database program to store details
 
->JWT Web Tokens - authentication middleware for Node.js. Extremely flexible and modular, can be unobtrusively dropped in to any Express-based web application
+> JWT Web Tokens - authentication middleware for Node.js. Extremely flexible and modular, can be unobtrusively dropped in to any Express-based web application
 
->Data Associations - associating user data with the respective inventory items and note using reference method
+> Data Associations - associating user data with the respective inventory items and note using reference method
 
->Render.com - cloud platform as a service used as a web application deployment model
+> Render.com - cloud platform as a service used as a web application deployment model
 
->AWS - mongodb is hosted on amazon ec2 instance
+> AWS - mongodb is hosted on amazon ec2 instance
 
 ## Screenshots
->HomePage
-![home](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_1.png)
 
->Customers
-![All campgrounds](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_2.png)
+> HomePage
+> ![home](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_1.png)
 
->Electronics Inventory Dashboard
-![showPage](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_4.png)
+> Customers
+> ![All campgrounds](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_2.png)
 
->Login & Register page
-![login,register](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_3.png)
+> Electronics Inventory Dashboard
+> ![showPage](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_4.png)
+
+> Login & Register page
+> ![login,register](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_3.png)
 
 ## Demo
 
 ### ✨ [Live Site Demo](https://el-in.ca)
+
 <p>Allow up to 1 minute for Render.com to start the app, depending on how recent the last load was.</p>
 
 ## Prerequisites
