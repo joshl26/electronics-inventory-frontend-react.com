@@ -95,7 +95,7 @@ This project is being created created using Node.js, ReactJS, Redux, MongoDB, Cl
 
 ### ✨ [Live Site Demo](https://el-in.ca)
 
-<p>Allow up to 1 minute for Render.com to start the app, depending on how recent the last load was.</p>
+<p>Hosted with th efree tier of Render.com</p>
 
 ## Prerequisites
 
