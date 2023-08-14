@@ -6,6 +6,8 @@ const baseUrl =
     ? "https://electronics-inventory-server.onrender.com"
     : "http://localhost:3500";
 
+//TODO Google login
+
 const baseQuery = fetchBaseQuery({
   baseUrl,
 
