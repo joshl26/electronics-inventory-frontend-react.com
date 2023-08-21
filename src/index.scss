@@ -66,6 +66,9 @@
   --color-five: #e76f51;
   --TABLE-BORDER-HIGHLIGHTED: 4px;
   --TABLE-BORDER: 1.5px solid grey;
+  --TABLE-SELECTED-ROW: lightGrey;
+  --BUTTON-BG: white;
+  --BUTTON-BG-HOVER: lightGrey;
 }
 
 #root {
@@ -94,6 +97,11 @@ body {
 
 .vh2-spacer {
   height: 2vh;
+  width: 100%;
+}
+
+.vh3-spacer {
+  height: 3vh;
   width: 100%;
 }
 

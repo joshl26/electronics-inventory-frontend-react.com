@@ -7,8 +7,9 @@ import { useState } from "react";
 import Part from "../parts/Part";
 import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
-import { Col, Dropdown, Row } from "react-bootstrap";
+import { Button, Col, Dropdown, Row } from "react-bootstrap";
 import "./PartsList.css";
+import { Link } from "react-router-dom";
 
 const PartsList = () => {
   const [partsListView, setPartsListView] = useState("");
@@ -46,23 +47,23 @@ const PartsList = () => {
   //   };
   // }, [currentUser.partsListView]);
 
-  const onSaveUserClicked = async (e) => {
-    await updateUser({
-      id: currentUser.id,
-      username,
-      roles: currentUser.roles,
-      active: currentUser.active,
-      colorMode,
-      partsListView,
-    });
+  // const onSaveUserClicked = async (e) => {
+  //   await updateUser({
+  //     id: currentUser.id,
+  //     username,
+  //     roles: currentUser.roles,
+  //     active: currentUser.active,
+  //     colorMode,
+  //     partsListView,
+  //   });
 
-    setPartsListView(e.target.value);
-  };
+  //   setPartsListView(e.target.value);
+  // };
 
-  const radios = [
-    { name: "Table View", value: "Card" },
-    { name: "Card View", value: "Table" },
-  ];
+  // const radios = [
+  //   { name: "Table View", value: "Card" },
+  //   { name: "Card View", value: "Table" },
+  // ];
 
   //TODO Determnine why the first argument in useGetPartsQuery needs to be undefined here
   const {
@@ -88,9 +89,9 @@ const PartsList = () => {
   if (isSuccess) {
     const { ids } = parts;
 
-    const cardContent =
-      ids?.length &&
-      ids.map((partId) => <PartCard key={partId} partId={partId} />);
+    // const cardContent =
+    //   ids?.length &&
+    //   ids.map((partId) => <PartCard key={partId} partId={partId} />);
 
     const tableContent =
       ids?.length && ids.map((partId) => <Part key={partId} partId={partId} />);
@@ -128,19 +129,23 @@ const PartsList = () => {
 
     content = (
       <>
-        <h1>Parts</h1>
+        <Row>
+          <Col md={10}>
+            <h1>Parts Inventory</h1>
+          </Col>
+          <Col style={{ textAlign: "right" }} md={2}>
+            <Button className="btn-new-part">
+              <Link className="btn-text" to="/dash/parts/new">
+                Add New Part
+              </Link>
+            </Button>
+          </Col>
+        </Row>
+
+        <div className="vh3-spacer"></div>
         <div className="parts-container">
           <div className="parts-search-bar">
             <Row>
-              <Row>
-                <Col md={11}></Col>
-                <Col
-                  style={{ border: "1px grey solid", textAlign: "right" }}
-                  md={1}
-                >
-                  <p>{ids.length} parts</p>
-                </Col>
-              </Row>
               <div className="vh2-spacer"></div>
               <Col style={{ textAlign: "center" }}>
                 <input
@@ -230,7 +235,6 @@ const PartsList = () => {
                     >
                       {partsListType}
                     </Dropdown.Toggle>
-
                     <Dropdown.Menu className="parts-status-dropdown-menu">
                       <Dropdown.Item
                         onClick={() => setPartsListType("Resistor")}

@@ -43,13 +43,13 @@ const Part = ({ partId }) => {
     const handleEdit = () => navigate(`/dash/parts/${partId}`);
 
     return (
-      <tr className="">
+      <tr onClick={() => handleEdit()} className="part-list-row">
         <td className="part-number">{part.partNumber}</td>
         <td className="part-name">{part.name}</td>
         <td className="part-type">{part.partType}</td>
         <td className="part-description">{part.description}</td>
         <td className="part-qty">{part.qty}</td>
-        <td className="part-qtyback">{part.backOrder}</td>
+        <td className="part-backqty">{part.backOrder}</td>
         <td className="part-edit">
           <button className="icon-button table__button" onClick={handleEdit}>
             <FontAwesomeIcon icon={faPenToSquare} />

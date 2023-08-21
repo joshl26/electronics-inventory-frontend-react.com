@@ -1,9 +1,10 @@
 .parts-search-bar {
   background-color: var(--BG-DASH-DARK);
   border-top: var(--TABLE-BORDER);
+  border-bottom: var(--TABLE-BORDER);
   /* margin: 1rem; */
   padding: 1rem;
-  height: 175px;
+  height: 125px;
   width: 100%;
 }
 
@@ -57,11 +58,36 @@
 
 .part-qty {
   width: 50px;
+  text-align: center;
 }
 .part-backqty {
   width: 50px;
+  text-align: center;
 }
 
 .part-edit {
   width: 50px;
+}
+
+.part-list-row:hover {
+  background-color: var(--TABLE-SELECTED-ROW);
+  cursor: pointer;
+}
+
+.btn-new-part {
+  border: var(--TABLE-BORDER);
+  color: white;
+}
+
+.btn-new-part:hover {
+  background-color: var(--BUTTON-BG-HOVER);
+  color: white;
+}
+
+.btn-text {
+  color: black;
+}
+
+.btn-text:hover {
+  color: white;
 }
