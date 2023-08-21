@@ -3,13 +3,12 @@
 import { useGetPartsQuery } from "./partsApiSlice";
 import { useUpdateUserMutation, selectAllUsers } from "../users/usersApiSlice";
 import PartCard from "../../components/PartCard";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import ToggleButton from "react-bootstrap/ToggleButton";
-import React, { useState } from "react";
+import { useState } from "react";
 import Part from "../parts/Part";
-import { Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
+import "./PartsList.css";
+import { Col, Row } from "react-bootstrap";
 
 const PartsList = () => {
   const [partsListView, setPartsListView] = useState("");
@@ -122,28 +121,58 @@ const PartsList = () => {
     );
 
     content = (
-      <>
-        <Container>
-          <ButtonGroup>
-            {radios.map((radio, idx) => (
-              <ToggleButton
-                key={idx}
-                id={`radio-${idx}`}
-                type="radio"
-                variant={idx % 2 ? "outline-success" : "outline-danger"}
-                name="radio"
-                value={radio.value}
-                checked={partsListView === radio.value}
-                onChange={(e) => onSaveUserClicked(e)}
-              >
-                {radio.name}
-              </ToggleButton>
-            ))}
-          </ButtonGroup>
-        </Container>
+      <div className="parts-container">
+        <h1>Parts</h1>
+        <div className="parts-search-bar">
+          <Row>
+            <div className="vh2-spacer"></div>
+            <Col>
+              <input
+                className="parts-search-input"
+                placeholder="Search jobs..."
+              ></input>
+            </Col>
+            <Col>
+              <input
+                className="parts-search-input"
+                placeholder="Search jobs..."
+              ></input>
+            </Col>
+            <Col>
+              <input
+                className="parts-search-input"
+                placeholder="Search jobs..."
+              ></input>
+            </Col>
+            <Col>
+              <input
+                className="parts-search-input"
+                placeholder="Search jobs..."
+              ></input>
+            </Col>
+          </Row>
+        </div>
 
-        {partsListView === "Card" ? table : cardContent}
-      </>
+        {/* <ButtonGroup>
+          {radios.map((radio, idx) => (
+            <ToggleButton
+              key={idx}
+              id={`radio-${idx}`}
+              type="radio"
+              variant={idx % 2 ? "outline-success" : "outline-danger"}
+              name="radio"
+              value={radio.value}
+              checked={partsListView === radio.value}
+              onChange={(e) => onSaveUserClicked(e)}
+            >
+              {radio.name}
+            </ToggleButton>
+          ))}
+        </ButtonGroup> */}
+
+        {/* {partsListView === "Card" ? table : cardContent} */}
+        {/* {table} */}
+      </div>
     );
   }
 

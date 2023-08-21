@@ -12,7 +12,7 @@
 .sidebar-hide-btn {
   position: fixed;
   top: 75px;
-  left: 257px;
+  left: 232px;
   z-index: 1;
   width: 35px;
   height: 35px;
@@ -23,13 +23,13 @@
 .sidebar-hide-btn-hidden {
   position: fixed;
   top: 75px;
-  left: 15px;
+  left: 55px;
   z-index: 1;
   width: 35px;
   height: 35px;
   border-radius: 50%;
   transform: rotate(180deg);
-  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+  transition: height 0.5s, top 0.5s, left 0.25s;
   // background-color: rgb(229, 140, 140);
 }
 
@@ -37,5 +37,14 @@
   width: 40px;
   height: 40px;
   top: 72.5px;
-  left: 12.5px;
+  left: 55px;
+  transition: height 1s, top 1s, left 0.25s;
+}
+
+.sidebar-hide-btn:hover {
+  width: 40px;
+  height: 40px;
+  top: 72.5px;
+  left: 232px;
+  transition: height 1s, top 1s, left 0.25s;
 }

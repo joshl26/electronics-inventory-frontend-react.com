@@ -18,6 +18,7 @@
   padding: 1em;
   border-right: 1px solid var(--BORDER-COLOR);
   transition: width 1s, right 1s;
+  text-align: center;
 }
 
 .welcome-header-text {

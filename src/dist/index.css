@@ -23,7 +23,7 @@
   --BG-SIDEBAR-DARK: #264653;
   --BG-SIDEBAR-LIGHT: #012939;
   --BG-DASH-LIGHT: #f4f4f4;
-  --BG-DASH-DARK: #616161;
+  --BG-DASH-DARK: #a3a3a3;
   --BORDER-LIGHT: rgb(0, 0, 0);
   --BORDER-DARK: rgb(255, 255, 255);
   --CHECK-MARK: lime;
@@ -64,6 +64,11 @@
 
 body {
   overflow-x: hidden;
+}
+
+.vh2-spacer {
+  height: 2vh;
+  width: 100%;
 }
 
 .text-light {
