@@ -6,7 +6,7 @@ import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../hooks/useAuth";
 import ImagePicker from "../../components/ImagePicker";
 import { Row, Col } from "react-bootstrap";
-// import classes from "./EditPartForm.module.scss";
+import "./EditPartForm.css";
 import Form from "react-bootstrap/Form";
 
 const EditPartForm = ({ part, partTypes }) => {
@@ -143,19 +143,19 @@ const EditPartForm = ({ part, partTypes }) => {
     navigate(`/dash/parts`);
   };
 
-  // const onImageDeleteClicked = async (e) => {
-  //   e.preventDefault();
-  //   console.log(e.target.getAttribute("name"));
+  const onImageDeleteClicked = async (e) => {
+    e.preventDefault();
+    console.log(e.target.getAttribute("name"));
 
-  //   const fileName = e.target.getAttribute("name");
+    const fileName = e.target.getAttribute("name");
 
-  //   const tag = {
-  //     fileName: fileName,
-  //   };
-  //   setDeletedImages([...deletedImages, tag]);
+    const tag = {
+      fileName: fileName,
+    };
+    setDeletedImages([...deletedImages, tag]);
 
-  //   setImages(images.filter((image) => image.fileName !== fileName));
-  // };
+    setImages(images.filter((image) => image.fileName !== fileName));
+  };
 
   // const options = partTypes.map((types, idx) => {
   //   return (
@@ -165,16 +165,20 @@ const EditPartForm = ({ part, partTypes }) => {
   //   );
   // });
 
-  // const partImages = images.map((image, idx) => {
-  //   return (
-  //     <div key={idx}>
-  //       <img alt="" className={classes.part_image} src={image.url} />
-  //       <a href="/" onClick={onImageDeleteClicked}>
-  //         <p name={image.fileName}>Delete</p>
-  //       </a>
-  //     </div>
-  //   );
-  // });
+  const partImages = images.map((image, idx) => {
+    return (
+      <Col md={2} className="part-image" key={idx}>
+        <Row>
+          <img alt="" className="part-image" src={image.url} />
+        </Row>
+        <Row style={{ textAlign: "center" }}>
+          <a href="/" onClick={onImageDeleteClicked}>
+            <p name={image.fileName}>Delete</p>
+          </a>
+        </Row>
+      </Col>
+    );
+  });
 
   // const errClass = isError || isDelError ? "errmsg" : "offscreen";
 
@@ -404,7 +408,13 @@ const EditPartForm = ({ part, partTypes }) => {
           </Form.Group>
         </Row>
       </Form>
+      <div className="vh2-spacer"></div>
+      <h4>Attach a file:</h4>
+      <div className="vh2-spacer"></div>
       <ImagePicker images={images} setImages={setImages} />
+      <div className="vh2-spacer"></div>
+      <Row>{partImages}</Row>
+      <div className="vh5-spacer"></div>
     </>
   );
 

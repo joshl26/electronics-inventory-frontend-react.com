@@ -72,9 +72,7 @@
 }
 
 #root {
-  background-color: var(--color-one);
   width: 100vw;
-  height: 100vh;
 }
 
 /* html {
@@ -95,6 +93,11 @@ body {
    color: var(--COLOR);
  } */
 
+.vh1-spacer {
+  height: 1vh;
+  width: 100%;
+}
+
 .vh2-spacer {
   height: 2vh;
   width: 100%;
@@ -102,6 +105,11 @@ body {
 
 .vh3-spacer {
   height: 3vh;
+  width: 100%;
+}
+
+.vh5-spacer {
+  height: 5vh;
   width: 100%;
 }
 

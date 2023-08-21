@@ -62,11 +62,11 @@ function ImagePicker(props) {
   };
   return (
     <div className="App">
-      <label htmlFor="file" className="btn-grey">
-        {" "}
+      {/* <label htmlFor="file" className="btn-grey">
         select file
-      </label>
+      </label> */}
       {file && <center> {file.name}</center>}
+      <div className="vh1-spacer" />
       <input
         id="file"
         type="file"

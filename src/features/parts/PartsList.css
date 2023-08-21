@@ -31,10 +31,6 @@
   border-radius: 0;
 }
 
-.table-parts {
-  /* grid-template-columns: repeat(3, 1fr) 2fr repeat(2, 1fr); */
-}
-
 .parts-container {
   border: var(--TABLE-BORDER);
   width: 80vw;
