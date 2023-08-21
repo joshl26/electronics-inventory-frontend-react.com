@@ -26,9 +26,7 @@ const DashLayout = () => {
         <Row>
           {sidebarShown ? (
             <Col xs={2} md={2} onClick={() => setSideBarShown(!sidebarShown)}>
-              <div className="dash-sidebar-container">
-                <SideBar />
-              </div>
+              <SideBar />
               <button className="sidebar-hide-btn" title="New User">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

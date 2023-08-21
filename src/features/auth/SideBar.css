@@ -1,6 +1,6 @@
 .dash-sidebar-container {
   position: fixed;
-  background-color: var(--color-one);
+  background-color: var(--BG-SIDEBAR-LIGHT);
   top: 50px;
   height: 100%;
   width: 275px;
@@ -20,16 +20,18 @@
   transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
 }
 
-.welcome_header_text {
+.welcome-header-text {
   font-size: 2em;
+  color: var(--TEXT-DARK);
 }
 
-.sidebar_links {
+.sidebar-links {
   font-size: 1.4em;
+  /* padding-top: 50px; */
   display: inline;
 }
 
-.sidebar_links:hover {
+.sidebar-links:hover {
   background-color: rgba(255, 255, 255, 0.8);
   color: black;
   border-radius: 0.125em;
@@ -38,6 +40,13 @@
   transition: background-color 0.75s;
 }
 
-.welcome_today_text {
+.welcome-today-text {
   width: 225px;
+  color: var(--TEXT-DARK);
+}
+
+.sidebar-icon {
+  color: white;
+  width: 30px;
+  height: 30px;
 }

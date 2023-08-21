@@ -1,25 +1,3 @@
-.dash-sidebar-container {
-  position: fixed;
-  background-color: var(--color-one);
-  top: 50px;
-  height: 100%;
-  width: 275px;
-  padding: 1em;
-  border-right: 1px solid var(--BORDER-COLOR);
-  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
-}
-
-.dash-sidebar-container-minimized {
-  position: fixed;
-  background-color: var(--color-one);
-  top: 50px;
-  height: 100%;
-  width: 25px;
-  padding: 1em;
-  border-right: 1px solid var(--BORDER-COLOR);
-  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
-}
-
 .dash-outlet-container {
   width: fit-content;
   position: absolute;
@@ -28,6 +6,7 @@
 
 .dash-container {
   height: 100vh;
+  background-color: var(--BG-DASH-LIGHT);
 }
 
 .sidebar-hide-btn {
