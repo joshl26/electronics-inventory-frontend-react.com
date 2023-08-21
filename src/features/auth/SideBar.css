@@ -3,7 +3,7 @@
   background-color: var(--BG-SIDEBAR-LIGHT);
   top: 50px;
   height: 100%;
-  width: 275px;
+  /* width: 275px; */
   padding: 1em;
   border-right: 1px solid var(--BORDER-COLOR);
   transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
@@ -11,13 +11,13 @@
 
 .dash-sidebar-container-minimized {
   position: fixed;
-  background-color: var(--color-one);
+  background-color: var(--BG-SIDEBAR-LIGHT);
   top: 50px;
   height: 100%;
-  width: 25px;
+  width: 75px;
   padding: 1em;
   border-right: 1px solid var(--BORDER-COLOR);
-  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+  transition: width 1s, right 1s;
 }
 
 .welcome-header-text {
@@ -26,18 +26,19 @@
 }
 
 .sidebar-links {
-  font-size: 1.4em;
+  /* font-size: 1.3em;
+  line-height: 2;
+  text-decoration: none; */
   /* padding-top: 50px; */
-  display: inline;
+  /* vertical-align: middle; */
+  /* display: inline; */
+  color: #c1c9ce;
 }
 
 .sidebar-links:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: black;
-  border-radius: 0.125em;
-  padding-left: 0.125em;
-  padding-right: 0.125em;
-  transition: background-color 0.75s;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  color: white;
+  transition: color 0.5s;
 }
 
 .welcome-today-text {
@@ -46,7 +47,21 @@
 }
 
 .sidebar-icon {
+  width: 25px;
+  height: 40px;
+}
+
+.sidebar-text {
+  color: #c1c9ce;
+  font-size: 1.3em;
+  line-height: 2;
+  text-decoration: none;
+}
+
+.sidebar-row {
+  color: #c1c9ce;
+}
+
+.sidebar-row:hover {
   color: white;
-  width: 30px;
-  height: 30px;
 }

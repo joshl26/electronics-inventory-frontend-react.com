@@ -1,23 +1,15 @@
 import { Outlet } from "react-router-dom";
 import DashHeader from "./DashHeader";
 import DashFooter from "./DashFooter";
-import "./DashLayout.scss";
 import SideBar from "../features/auth/SideBar";
 import { Col, Row } from "react-bootstrap";
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFileCirclePlus,
-  faFilePen,
-  faUserGear,
-  faUserPlus,
-  faRightFromBracket,
-  faLeftFromBracket,
-  faHouse,
-} from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect } from "react";
+import "./DashLayout.scss";
 
 const DashLayout = () => {
-  const [sidebarShown, setSideBarShown] = useState(true);
+  const [sidebarShown, setSideBarShown] = useState(false);
+
+  useEffect(() => {}, [sidebarShown, setSideBarShown]);
 
   return (
     <div>
@@ -25,9 +17,13 @@ const DashLayout = () => {
       <div className="dash-container">
         <Row>
           {sidebarShown ? (
-            <Col xs={2} md={2} onClick={() => setSideBarShown(!sidebarShown)}>
-              <SideBar />
-              <button className="sidebar-hide-btn" title="New User">
+            <Col xs={2} md={2}>
+              <SideBar sidebarShown={sidebarShown} />
+              <button
+                onClick={() => setSideBarShown(!sidebarShown)}
+                className="sidebar-hide-btn"
+                title="New User"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -52,9 +48,13 @@ const DashLayout = () => {
               {sidebarShown ? <DashFooter /> : ""}
             </Col>
           ) : (
-            <Col xs={1} md={1} onClick={() => setSideBarShown(!sidebarShown)}>
-              <div className="dash-sidebar-container-minimized" />
-              <button className="sidebar-hide-btn-hidden" title="New User">
+            <Col xs={1} md={1}>
+              <SideBar sidebarShown={sidebarShown} />
+
+              <button
+                onClick={() => setSideBarShown(!sidebarShown)}
+                className="sidebar-hide-btn-hidden"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
