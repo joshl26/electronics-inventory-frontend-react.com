@@ -132,16 +132,15 @@ const DashHeader = () => {
   }
 
   const content = (
-    <header className={`dash-header__container ${dashClass}`}>
+    <header className={`dheader_textash-header__container ${dashClass}`}>
       {error ? <p className={errClass}>{error?.data?.message}</p> : ""}
       <Navbar collapseOnSelect expand="lg" className="navbar-dash">
-        <a href="" className="dash-header__nav hero-link">
+        <a href="/dash" className="dash-header__nav hero-link">
           <Lottie
             className="header_icon"
             animationData={HamburgerMenu}
             loop={false}
           />
-          {/* <h1 className="header_text">Ei</h1> */}
         </a>
         <Navbar.Brand href="#home"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

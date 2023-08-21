@@ -7,13 +7,8 @@
   border-bottom: 1px solid var(--BORDER-COLOR);
 }
 
-.hero-link:hover {
-  background-color: RGBA(256, 256, 256, 0.1);
-  border-radius: 0.25em;
-}
-
 .navbar-dash {
-  background-color: green;
+  background-color: var(--BG-NAVBAR-DASH-LIGHT);
   position: fixed;
   left: 0px;
   right: 0px;
@@ -24,12 +19,6 @@
   .header_container {
     width: 100vw;
     height: 10vh;
-  }
-
-  .header_text {
-    color: white;
-    font-size: 1.5em;
-    padding-top: 0.25em;
   }
 
   .header_icon {
@@ -44,30 +33,5 @@
   .dash-nav-link {
     padding-left: 1em !important;
     padding-right: 1em !important;
-    color: white;
-  }
-
-  .link_text {
-    color: #9f9f9f;
-  }
-
-  .link_text:hover {
-    color: #b4b4b4;
-  }
-
-  .logo_text {
-    font-family: "Figtree", sans-serif;
-    margin: 0;
-    font-size: 2em;
-  }
-
-  .nav-item {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-  .animated-logo {
-    width: fit-content;
   }
 }
