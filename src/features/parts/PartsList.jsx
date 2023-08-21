@@ -12,6 +12,9 @@ import "./PartsList.css";
 
 const PartsList = () => {
   const [partsListView, setPartsListView] = useState("");
+  const [partsListStatus, setPartsListStatus] = useState("All");
+  const [partsListSort, setPartsListSort] = useState("Part Number");
+  const [partsListType, setPartsListType] = useState("All");
 
   const { username } = useAuth();
 
@@ -96,22 +99,25 @@ const PartsList = () => {
       <table className="table table-parts">
         <thead className="table__thead">
           <tr>
-            <th scope="col" className="table__th note__status">
-              Part Name
+            <th scope="col" className="table__th part-number">
+              Number
             </th>
-            <th scope="col" className="table__th note__title">
-              Part Type
+            <th scope="col" className="table__th part-name">
+              Name
             </th>
-            <th scope="col" className="table__th note__updated">
-              Qty
+            <th scope="col" className="table__th part-type">
+              Type
             </th>
-            <th scope="col" className="table__th note__created">
+            <th scope="col" className="table__th part-description">
               Description
             </th>
-            <th scope="col" className="table__th note__edit">
-              Images
+            <th scope="col" className="table__th part-qty">
+              Qty
             </th>
-            <th scope="col" className="table__th note__edit">
+            <th scope="col" className="table__th part-backqty">
+              B/O
+            </th>
+            <th scope="col" className="table__th note-edit">
               Edit
             </th>
           </tr>
@@ -153,15 +159,23 @@ const PartsList = () => {
                       variant="success"
                       id="dropdown-basic"
                     >
-                      All
+                      {partsListStatus}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu className="parts-status-dropdown-menu">
-                      <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">
+                      <Dropdown.Item
+                        onClick={() => setPartsListStatus("In Stock")}
+                      >
+                        In Stock
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() => setPartsListStatus("Out of Stock")}
+                      >
                         Out of Stock
                       </Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">All</Dropdown.Item>
+                      <Dropdown.Item onClick={() => setPartsListStatus("All")}>
+                        All
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </Row>
@@ -177,16 +191,27 @@ const PartsList = () => {
                       variant="success"
                       id="dropdown-basic"
                     >
-                      All
+                      {partsListSort}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu className="parts-status-dropdown-menu">
-                      <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">
-                        Out of Stock
+                      <Dropdown.Item
+                        onClick={() => setPartsListSort("Part Number")}
+                        href="#/action-1"
+                      >
+                        Part Number
                       </Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        Out of Stock
+                      <Dropdown.Item
+                        onClick={() => setPartsListSort("Qty")}
+                        href="#/action-2"
+                      >
+                        Qty
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() => setPartsListSort("Backorder Qty")}
+                        href="#/action-3"
+                      >
+                        Backorder Qty
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -203,15 +228,28 @@ const PartsList = () => {
                       variant="success"
                       id="dropdown-basic"
                     >
-                      All
+                      {partsListType}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu className="parts-status-dropdown-menu">
-                      <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">
-                        Out of Stock
+                      <Dropdown.Item
+                        onClick={() => setPartsListType("Resistor")}
+                        href="#/action-1"
+                      >
+                        Resistor
                       </Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">All</Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() => setPartsListType("Capacitor")}
+                        href="#/action-2"
+                      >
+                        Capacitor
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() => setPartsListType("All")}
+                        href="#/action-3"
+                      >
+                        All
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </Row>

@@ -31,10 +31,37 @@
 }
 
 .table-parts {
-  grid-template-columns: repeat(3, 1fr) 2fr repeat(2, 1fr);
+  /* grid-template-columns: repeat(3, 1fr) 2fr repeat(2, 1fr); */
 }
 
 .parts-container {
   border: var(--TABLE-BORDER);
   width: 80vw;
+}
+
+.part-number {
+  width: 125px;
+}
+
+.part-name {
+  width: 200px;
+}
+
+.part-type {
+  width: 100px;
+}
+
+.part-description {
+  width: 900px;
+}
+
+.part-qty {
+  width: 50px;
+}
+.part-backqty {
+  width: 50px;
+}
+
+.part-edit {
+  width: 50px;
 }
