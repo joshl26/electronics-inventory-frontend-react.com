@@ -7,8 +7,8 @@ import { useState } from "react";
 import Part from "../parts/Part";
 import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
+import { Col, Dropdown, Row } from "react-bootstrap";
 import "./PartsList.css";
-import { Col, Dropdown, DropdownButton, Row } from "react-bootstrap";
 
 const PartsList = () => {
   const [partsListView, setPartsListView] = useState("");
@@ -93,7 +93,7 @@ const PartsList = () => {
       ids?.length && ids.map((partId) => <Part key={partId} partId={partId} />);
 
     const table = (
-      <table className="table table--notes">
+      <table className="table table-parts">
         <thead className="table__thead">
           <tr>
             <th scope="col" className="table__th note__status">
@@ -121,99 +121,105 @@ const PartsList = () => {
     );
 
     content = (
-      <div className="parts-container">
+      <>
         <h1>Parts</h1>
-        <div className="parts-search-bar">
-          <Row>
+        <div className="parts-container">
+          <div className="parts-search-bar">
             <Row>
-              <Col md={11}></Col>
-              <Col
-                style={{ border: "1px grey solid", textAlign: "right" }}
-                md={1}
-              >
-                <p>125 parts</p>
+              <Row>
+                <Col md={11}></Col>
+                <Col
+                  style={{ border: "1px grey solid", textAlign: "right" }}
+                  md={1}
+                >
+                  <p>{ids.length} parts</p>
+                </Col>
+              </Row>
+              <div className="vh2-spacer"></div>
+              <Col style={{ textAlign: "center" }}>
+                <input
+                  className="parts-search-input"
+                  placeholder="    Search jobs..."
+                ></input>
+              </Col>
+              <Col style={{ textAlign: "center" }}>
+                <Row style={{ textAlign: "left" }}>
+                  <p style={{ lineHeight: "0" }}>Status</p>
+                </Row>
+                <Row>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="parts-status-dropdown"
+                      variant="success"
+                      id="dropdown-basic"
+                    >
+                      All
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu className="parts-status-dropdown-menu">
+                      <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">
+                        Out of Stock
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">All</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
+              </Col>
+              <Col style={{ textAlign: "center" }}>
+                <Row style={{ textAlign: "left" }}>
+                  <p style={{ lineHeight: "0" }}>Sort</p>
+                </Row>
+                <Row>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="parts-status-dropdown"
+                      variant="success"
+                      id="dropdown-basic"
+                    >
+                      All
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu className="parts-status-dropdown-menu">
+                      <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">
+                        Out of Stock
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">
+                        Out of Stock
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
+              </Col>
+              <Col style={{ textAlign: "center" }}>
+                <Row style={{ textAlign: "left" }}>
+                  <p style={{ lineHeight: "0" }}>Type</p>
+                </Row>
+                <Row>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="parts-status-dropdown"
+                      variant="success"
+                      id="dropdown-basic"
+                    >
+                      All
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu className="parts-status-dropdown-menu">
+                      <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">
+                        Out of Stock
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">All</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
               </Col>
             </Row>
-            <div className="vh2-spacer"></div>
-            <Col style={{ textAlign: "center" }}>
-              <input
-                className="parts-search-input"
-                placeholder="    Search jobs..."
-              ></input>
-            </Col>
-            <Col style={{ textAlign: "center" }}>
-              <Row style={{ textAlign: "left" }}>
-                <p style={{ lineHeight: "0" }}>Status</p>
-              </Row>
-              <Row>
-                <Dropdown>
-                  <Dropdown.Toggle
-                    className="parts-status-dropdown"
-                    variant="success"
-                    id="dropdown-basic"
-                  >
-                    All
-                  </Dropdown.Toggle>
+          </div>
 
-                  <Dropdown.Menu className="parts-status-dropdown-menu">
-                    <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">
-                      Out of Stock
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Row>
-            </Col>
-            <Col style={{ textAlign: "center" }}>
-              <Row style={{ textAlign: "left" }}>
-                <p style={{ lineHeight: "0" }}>Status</p>
-              </Row>
-              <Row>
-                <Dropdown>
-                  <Dropdown.Toggle
-                    className="parts-status-dropdown"
-                    variant="success"
-                    id="dropdown-basic"
-                  >
-                    All
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu className="parts-status-dropdown-menu">
-                    <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">
-                      Out of Stock
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Row>
-            </Col>
-            <Col style={{ textAlign: "center" }}>
-              <Row style={{ textAlign: "left" }}>
-                <p style={{ lineHeight: "0" }}>Status</p>
-              </Row>
-              <Row>
-                <Dropdown>
-                  <Dropdown.Toggle
-                    className="parts-status-dropdown"
-                    variant="success"
-                    id="dropdown-basic"
-                  >
-                    All
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu className="parts-status-dropdown-menu">
-                    <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">
-                      Out of Stock
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Row>
-            </Col>
-          </Row>
-        </div>
-
-        {/* <ButtonGroup>
+          {/* <ButtonGroup>
           {radios.map((radio, idx) => (
             <ToggleButton
               key={idx}
@@ -230,9 +236,10 @@ const PartsList = () => {
           ))}
         </ButtonGroup> */}
 
-        {/* {partsListView === "Card" ? table : cardContent} */}
-        {/* {table} */}
-      </div>
+          {/* {partsListView === "Card" ? table : cardContent} */}
+          {table}
+        </div>
+      </>
     );
   }
 

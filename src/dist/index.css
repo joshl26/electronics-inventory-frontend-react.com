@@ -1,14 +1,20 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+/* font-family: 'Cabin', sans-serif; */
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+/* font-family: 'Abril Fatface', cursive; */
 @import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
+/* font-family: 'Gloock', serif; */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* font-family: 'Fira Sans', sans-serif */
 @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300&display=swap");
+/* font-family: 'Figtree', sans-serif; */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: red solid 1px; */
 }
 
 /* || VARIABLES */
@@ -23,7 +29,7 @@
   --BG-SIDEBAR-DARK: #264653;
   --BG-SIDEBAR-LIGHT: #012939;
   --BG-DASH-LIGHT: #f4f4f4;
-  --BG-DASH-DARK: #a3a3a3;
+  --BG-DASH-DARK: #c1c1c1;
   --BORDER-LIGHT: rgb(0, 0, 0);
   --BORDER-DARK: rgb(255, 255, 255);
   --CHECK-MARK: lime;
@@ -52,8 +58,8 @@
   --color-three: #e9c46a;
   --color-four: #f4a261;
   --color-five: #e76f51;
-  --TABLE-BORDER: 1.5px;
   --TABLE-BORDER-HIGHLIGHTED: 4px;
+  --TABLE-BORDER: 1.5px solid grey;
 }
 
 #root {
@@ -62,10 +68,22 @@
   height: 100vh;
 }
 
+/* html {
+   background-color: var(--color-one);
+ } */
 body {
   overflow-x: hidden;
 }
 
+/* p,
+ h1,
+ h2,
+ h3,
+ h4,
+ label,
+ tr {
+   color: var(--COLOR);
+ } */
 .vh2-spacer {
   height: 2vh;
   width: 100%;
@@ -155,6 +173,7 @@ select {
 
 #root {
   /* React root div */
+  /* min-height: 100vh; */
   display: flex;
   flex-flow: column nowrap;
 }
@@ -166,6 +185,12 @@ h1,
 }
 
 /* || PAGES */
+/* .public,
+ .welcome {
+  display: flex;
+   flex-direction: column;
+   gap: 1rem;
+ } */
 .public {
   background-color: var(--BGCOLOR);
 }
@@ -182,6 +207,9 @@ h1,
   margin-top: 1em;
 }
 
+/* .welcome a::before {
+   content: "➜ ";
+ } */
 /* || LOGIN HEADER, CONTAINER & FOOTER */
 .login-header__container {
   display: flex;
@@ -190,13 +218,22 @@ h1,
   align-items: center;
 }
 
+/* .login-header__container--small {
+   max-width: 800px;
+ } */
 .login-header__nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
+  /* gap: 0.5em; */
   padding-right: 0.75em;
 }
 
+/* .login-footer__button {
+   font-size: 1rem;
+   width: auto;
+   height: auto;
+ } */
 /* || TABLES - GENERAL */
 thead,
 tbody,
@@ -369,10 +406,9 @@ tr {
     font-size: 1.5rem;
   }
 
-  .table--notes {
-    grid-template-columns: repeat(3, 1fr) 2fr repeat(2, 1fr);
-  }
-
+  /* .table--parts {
+     grid-template-columns: repeat(6, 1fr) 2fr repeat(2, 1fr);
+   } */
   .note__created,
 .note__updated,
 .note__username {

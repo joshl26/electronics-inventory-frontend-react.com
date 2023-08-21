@@ -35,7 +35,7 @@
   --BG-SIDEBAR-DARK: #264653;
   --BG-SIDEBAR-LIGHT: #012939;
   --BG-DASH-LIGHT: #f4f4f4;
-  --BG-DASH-DARK: #a3a3a3;
+  --BG-DASH-DARK: #c1c1c1;
   --BORDER-LIGHT: rgb(0, 0, 0);
   --BORDER-DARK: rgb(255, 255, 255);
   --CHECK-MARK: lime;
@@ -64,8 +64,8 @@
   --color-three: #e9c46a;
   --color-four: #f4a261;
   --color-five: #e76f51;
-  --TABLE-BORDER: 1.5px;
   --TABLE-BORDER-HIGHLIGHTED: 4px;
+  --TABLE-BORDER: 1.5px solid grey;
 }
 
 #root {
@@ -421,10 +421,6 @@ tr {
 
   .table {
     font-size: 1.5rem;
-  }
-
-  .table--notes {
-    grid-template-columns: repeat(3, 1fr) 2fr repeat(2, 1fr);
   }
 
   /* .table--parts {
