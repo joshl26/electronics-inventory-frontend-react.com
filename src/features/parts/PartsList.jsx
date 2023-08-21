@@ -8,7 +8,7 @@ import Part from "../parts/Part";
 import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
 import "./PartsList.css";
-import { Col, Row } from "react-bootstrap";
+import { Col, Dropdown, DropdownButton, Row } from "react-bootstrap";
 
 const PartsList = () => {
   const [partsListView, setPartsListView] = useState("");
@@ -125,30 +125,90 @@ const PartsList = () => {
         <h1>Parts</h1>
         <div className="parts-search-bar">
           <Row>
+            <Row>
+              <Col md={11}></Col>
+              <Col
+                style={{ border: "1px grey solid", textAlign: "right" }}
+                md={1}
+              >
+                <p>125 parts</p>
+              </Col>
+            </Row>
             <div className="vh2-spacer"></div>
-            <Col>
+            <Col style={{ textAlign: "center" }}>
               <input
                 className="parts-search-input"
-                placeholder="Search jobs..."
+                placeholder="    Search jobs..."
               ></input>
             </Col>
-            <Col>
-              <input
-                className="parts-search-input"
-                placeholder="Search jobs..."
-              ></input>
+            <Col style={{ textAlign: "center" }}>
+              <Row style={{ textAlign: "left" }}>
+                <p style={{ lineHeight: "0" }}>Status</p>
+              </Row>
+              <Row>
+                <Dropdown>
+                  <Dropdown.Toggle
+                    className="parts-status-dropdown"
+                    variant="success"
+                    id="dropdown-basic"
+                  >
+                    All
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="parts-status-dropdown-menu">
+                    <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">
+                      Out of Stock
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Row>
             </Col>
-            <Col>
-              <input
-                className="parts-search-input"
-                placeholder="Search jobs..."
-              ></input>
+            <Col style={{ textAlign: "center" }}>
+              <Row style={{ textAlign: "left" }}>
+                <p style={{ lineHeight: "0" }}>Status</p>
+              </Row>
+              <Row>
+                <Dropdown>
+                  <Dropdown.Toggle
+                    className="parts-status-dropdown"
+                    variant="success"
+                    id="dropdown-basic"
+                  >
+                    All
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="parts-status-dropdown-menu">
+                    <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">
+                      Out of Stock
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Row>
             </Col>
-            <Col>
-              <input
-                className="parts-search-input"
-                placeholder="Search jobs..."
-              ></input>
+            <Col style={{ textAlign: "center" }}>
+              <Row style={{ textAlign: "left" }}>
+                <p style={{ lineHeight: "0" }}>Status</p>
+              </Row>
+              <Row>
+                <Dropdown>
+                  <Dropdown.Toggle
+                    className="parts-status-dropdown"
+                    variant="success"
+                    id="dropdown-basic"
+                  >
+                    All
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="parts-status-dropdown-menu">
+                    <Dropdown.Item href="#/action-1">In Stock</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">
+                      Out of Stock
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Row>
             </Col>
           </Row>
         </div>
