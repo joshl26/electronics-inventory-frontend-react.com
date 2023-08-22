@@ -60,7 +60,7 @@
   --color-five: #e76f51;
   --TABLE-BORDER-HIGHLIGHTED: 4px;
   --TABLE-BORDER: 1.5px solid grey;
-  --TABLE-SELECTED-ROW: lightGrey;
+  --TABLE-SELECTED-ROW: rgb(255, 253, 232);
   --BUTTON-BG: white;
   --BUTTON-BG-HOVER: lightGrey;
 }

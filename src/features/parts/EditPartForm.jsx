@@ -169,7 +169,9 @@ const EditPartForm = ({ part, partTypes }) => {
     return (
       <Col md={2} className="part-image" key={idx}>
         <Row>
-          <img alt="" className="part-image" src={image.url} />
+          <a href="">
+            <img alt="" className="part-image" src={image.url} />
+          </a>
         </Row>
         <Row style={{ textAlign: "center" }}>
           <a href="/" onClick={onImageDeleteClicked}>
@@ -234,7 +236,7 @@ const EditPartForm = ({ part, partTypes }) => {
               Please choose a valid Part Name.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationPartNumber">
+          <Form.Group as={Col} md="4" controlId="validationPartNumber">
             <Form.Label>Part Number</Form.Label>
             <Form.Control
               onChange={onPartNumberChanged}
@@ -249,7 +251,7 @@ const EditPartForm = ({ part, partTypes }) => {
               Please choose a valid Part Number.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationPartType">
+          <Form.Group as={Col} md="4" controlId="validationPartType">
             <Form.Label>Part Type</Form.Label>
             <Form.Control
               onChange={onPartTypeChanged}
@@ -261,12 +263,13 @@ const EditPartForm = ({ part, partTypes }) => {
           </Form.Group>
         </Row>
         <Row className="mt-3 mb-3">
-          <Form.Group as={Col} md="8" controlId="validationDescription">
+          <Form.Group as={Col} md="12" controlId="validationDescription">
             <Form.Label>Description</Form.Label>
             <Form.Control
               onChange={onDescriptionChanged}
               name="description"
-              type="text"
+              as="textarea"
+              rows={4}
               placeholder="Description"
               defaultValue={description}
             />
