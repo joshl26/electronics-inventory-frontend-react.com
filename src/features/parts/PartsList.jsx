@@ -3,6 +3,7 @@
 import { useGetPartsQuery } from "./partsApiSlice";
 import { useUpdateUserMutation, selectAllUsers } from "../users/usersApiSlice";
 import { useState } from "react";
+import OutletLoadingPage from "../../components/OutletLoadingPage";
 import Part from "../parts/Part";
 import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
@@ -79,7 +80,7 @@ const PartsList = () => {
 
   let content;
 
-  if (isLoading) content = <p>Loading...</p>;
+  if (isLoading) content = <OutletLoadingPage />;
 
   if (isError) {
     content = <p className="errmsg">{error?.data?.message}</p>;
@@ -99,25 +100,25 @@ const PartsList = () => {
       <table className="table table-parts">
         <thead className="table__thead">
           <tr>
-            <th scope="col" className="table__th part-number">
+            <th scope="col" className="part-number">
               Number
             </th>
-            <th scope="col" className="table__th part-name">
+            <th scope="col" className="part-name">
               Name
             </th>
-            <th scope="col" className="table__th part-type">
+            <th scope="col" className="part-type">
               Type
             </th>
-            <th scope="col" className="table__th part-description">
+            <th scope="col" className="part-description">
               Description
             </th>
-            <th scope="col" className="table__th part-qty">
+            <th scope="col" className="part-qty">
               Qty
             </th>
-            <th scope="col" className="table__th part-backqty">
+            <th scope="col" className="part-backqty">
               B/O
             </th>
-            <th scope="col" className="table__th note-edit">
+            <th scope="col" className="note-edit">
               Edit
             </th>
           </tr>

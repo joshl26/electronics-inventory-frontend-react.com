@@ -10,8 +10,10 @@ import usePersist from "../../hooks/usePersist";
 import Lottie from "lottie-react";
 import HamburgerMenu from "../../svg/HamburgerMenu.json";
 
-import "./Login.scss";
 import { Col, Container, Row } from "react-bootstrap";
+import LoadingPage from "../../components/LoadingPage";
+import "./Login.css";
+
 
 const Login = () => {
   const userRef = useRef();
@@ -98,7 +100,7 @@ const Login = () => {
 
   const loginStyle = colorMode === "Light" ? "login-light" : "login-dark";
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <LoadingPage />;
 
   const content = (
     <div className={loginStyle}>

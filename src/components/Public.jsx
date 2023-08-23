@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import LoginHeader from "../features/pages/LoginHeader";
 import Experience from "../components/Experience";
-import "./Public.scss";
-import Lottie from "lottie-react";
 import { useEffect } from "react";
-import HamburgerIcon from "../svg/HamburgerMenu.json";
-import { Image } from "react-bootstrap";
-import background from "../img/background_2.png";
+import LoadingPage from "./LoadingPage";
+import "./Public.scss";
 
 const Public = () => {
   const [loading, setLoading] = useState(true);
@@ -59,28 +56,15 @@ const Public = () => {
   }, [colorMode, publicStyle]);
 
   const content = loading ? (
-    <section className={publicStyle}>
-      <Image className="loading-background" src={background} />
-      <Lottie
-        className="hamburger-icon"
-        animationData={HamburgerIcon}
-        loop={true}
-      />
-    </section>
+    <LoadingPage />
   ) : (
-    <>
-      {/* <Lottie
-        onClick={SwipeUpClickHandler}
-        className="swipe-up-icon"
-        animationData={SwipeUpIcon}
-        loop={true}
-      /> */}
+    <section>
       <LoginHeader
         onChangeColorMode={onChangeColorMode}
         colorMode={colorMode}
       />
       <Experience colorMode={colorMode} backgroundColor={backgroundColor} />
-    </>
+    </section>
   );
 
   return content;

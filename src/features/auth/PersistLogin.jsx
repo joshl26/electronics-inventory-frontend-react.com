@@ -4,6 +4,7 @@ import { useRefreshMutation } from "./authApiSlice";
 import usePersist from "../../hooks/usePersist";
 import { useSelector } from "react-redux";
 import { selectCurrentToken } from "./authSlice";
+import LoadingPage from "../../components/LoadingPage";
 
 const PersistLogin = () => {
   const [persist] = usePersist();
@@ -46,10 +47,10 @@ const PersistLogin = () => {
   } else if (isLoading) {
     //persist: yes, token: no
     // console.log("loading");
-    content = <p>Loading...</p>;
+    content = <LoadingPage />;
   } else if (isError) {
     //persist: yes, token: no
-    console.log("error");
+    // console.log("error");
     content = (
       <p className="errmsg">
         {`${error?.data?.message} - `}

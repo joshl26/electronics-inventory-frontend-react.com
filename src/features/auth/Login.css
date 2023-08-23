@@ -53,7 +53,7 @@
   }
 
   .login-container-inner-light {
-    // border: black 1px solid;
+    /* // border: black 1px solid; */
     width: 25vw;
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
@@ -62,7 +62,7 @@
   .login-container-inner-dark {
     width: 25vw;
     margin: 0 auto;
-    // border: white 1px solid;
+    /* // border: white 1px solid; */
     box-shadow: rgba(255, 255, 255, 0.201) 0 0 10px;
   }
 

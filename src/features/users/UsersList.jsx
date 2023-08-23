@@ -1,7 +1,9 @@
 import { useGetUsersQuery } from "./usersApiSlice";
 import User from "./User";
 import "./UsersList.css";
-import { Col, Dropdown, Row } from "react-bootstrap";
+import { Button, Col, Dropdown, Row } from "react-bootstrap";
+import OutletLoadingPage from "../../components/OutletLoadingPage";
+import { Link } from "react-router-dom";
 
 const UsersList = () => {
   const {
@@ -18,7 +20,7 @@ const UsersList = () => {
 
   let content;
 
-  if (isLoading) content = <p>Loading...</p>;
+  if (isLoading) content = <OutletLoadingPage />;
 
   if (isError) {
     content = (
@@ -36,13 +38,13 @@ const UsersList = () => {
       <table className="table table-notes">
         <thead className="table__thead">
           <tr>
-            <th scope="col" className="table__th user-status">
+            <th scope="col" className="user-status">
               Username
             </th>
-            <th scope="col" className="table__th user-created">
+            <th scope="col" className="user-created">
               Assigned Role(s)
             </th>
-            <th scope="col" className="table__th user-updated">
+            <th scope="col" className="user-updated">
               Edit User
             </th>
           </tr>
@@ -53,6 +55,18 @@ const UsersList = () => {
 
     content = (
       <>
+        <Row>
+          <Col md={10}>
+            <h1>Users List</h1>
+          </Col>
+          <Col style={{ textAlign: "right" }} md={2}>
+            <Button className="btn-new-part">
+              <Link className="btn-text" to="/dash/users/new">
+                Add New User
+              </Link>
+            </Button>
+          </Col>
+        </Row>
         <div className="vh3-spacer"></div>
         <div className="parts-container">
           <div className="parts-search-bar">

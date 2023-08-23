@@ -53,7 +53,7 @@ const router = createBrowserRouter(
         >
           <Route element={<Prefetch />}>
             <Route element={<DashLayout />} path="dash">
-              <Route index element={<ReactGridLayout />} />
+              <Route index />
               <Route
                 element={
                   <RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />

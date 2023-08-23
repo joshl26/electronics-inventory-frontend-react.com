@@ -1,8 +1,10 @@
 import { useGetNotesQuery } from "./notesApiSlice";
 import Note from "./Note";
+import OutletLoadingPage from "../../components/OutletLoadingPage";
 import useAuth from "../../hooks/useAuth";
-import { Col, Dropdown, Row } from "react-bootstrap";
+import { Button, Col, Dropdown, Row } from "react-bootstrap";
 import "./NotesList.css";
+import { Link } from "react-router-dom";
 
 const NotesList = () => {
   const { username, isManager, isAdmin } = useAuth();
@@ -21,7 +23,7 @@ const NotesList = () => {
 
   let content;
 
-  if (isLoading) content = <p>Loading...</p>;
+  if (isLoading) content = <OutletLoadingPage />;
 
   if (isError) {
     content = <p className="errmsg">{error?.data?.message}</p>;
@@ -77,6 +79,18 @@ const NotesList = () => {
 
     content = (
       <>
+        <Row>
+          <Col md={10}>
+            <h1>Notes List</h1>
+          </Col>
+          <Col style={{ textAlign: "right" }} md={2}>
+            <Button className="btn-new-part">
+              <Link className="btn-text" to="/dash/notes/new">
+                Add New Note
+              </Link>
+            </Button>
+          </Col>
+        </Row>
         <div className="vh3-spacer"></div>
         <div className="parts-container">
           <div className="parts-search-bar">
