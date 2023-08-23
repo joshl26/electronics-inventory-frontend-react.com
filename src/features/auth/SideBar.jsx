@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { Col, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { FaGlasses, FaHammer, FaHome, FaPlusCircle } from "react-icons/fa";
+import {
+  FaGlasses,
+  FaHammer,
+  FaHome,
+  FaPlus,
+  FaPlusCircle,
+} from "react-icons/fa";
 import "./SideBar.css";
 
 const SideBar = ({ sidebarShown }) => {
@@ -36,6 +42,25 @@ const SideBar = ({ sidebarShown }) => {
               </Row>
               <Row>
                 <div className="spacer-small"></div>
+              </Row>
+              <Row
+                className="sidebar-links"
+                style={{ color: "rgb(125, 176, 14)" }}
+              >
+                <Col md={2}>
+                  <FaPlus className="sidebar-icon" />
+                </Col>
+                <Col>
+                  <Link to="/dash">
+                    <p
+                      className="sidebar-links sidebar-text"
+                      style={{ color: "rgb(125, 176, 14)", fontWeight: "700" }}
+                    >
+                      {" "}
+                      CREATE
+                    </p>
+                  </Link>
+                </Col>
               </Row>
               <Row className="sidebar-links">
                 <Col md={2}>
