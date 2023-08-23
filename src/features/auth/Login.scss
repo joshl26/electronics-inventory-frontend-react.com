@@ -1,3 +1,7 @@
+.light {
+  color: white;
+}
+
 @media screen and (min-width: 769px) {
   .login-footer {
     position: absolute;
@@ -41,6 +45,7 @@
     text-align: center;
     width: min-content;
     font-family: "Cabin", Times, serif;
+    color: white;
   }
 
   .login-col-align-left {
@@ -66,7 +71,7 @@
   }
 
   .section-break-light {
-    border-top: black 1px solid;
+    border-top: white 1px solid;
   }
 
   .section-break-dark {
@@ -75,6 +80,7 @@
 
   .login-header {
     padding-top: 1em;
+    color: white;
   }
 
   .login-button-icon {
@@ -126,5 +132,6 @@
     width: min-content;
     font-family: "Cabin", Times, serif;
     font-size: 3em;
+    color: white;
   }
 }

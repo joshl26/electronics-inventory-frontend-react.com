@@ -7,7 +7,7 @@ const LandingPage = ({ colorMode }) => {
   const landingHeader1Style =
     colorMode === "Light"
       ? "landing-one-text-light landing-header-1"
-      : "landing-one-text-dark landing-header-1";
+      : "landing-one-text-dark landing-header-1 light";
 
   const landingHeader1InlineStyle =
     colorMode === "Light"

@@ -33,6 +33,8 @@ const NewSignup = ({ colorMode }) => {
             <Col xs={0} sm={2} md={4}></Col>
             <Col className="text-center" xs={12} sm={3} md={3}>
               <input
+                autoComplete="true"
+                name="email"
                 className="email-input"
                 type="email"
                 placeholder="Email"

@@ -194,7 +194,7 @@ const Login = () => {
           <div className="spacer-extra-small"></div>
           <form className="form">
             <Row>
-              <p className="text-center">OR</p>
+              <p className="text-center light">OR</p>
             </Row>
             <Row>
               <button
@@ -258,7 +258,8 @@ const Login = () => {
             <Col>
               <Row className="text-center">
                 <p>
-                  <Link>Can't log in?</Link> |{" "}
+                  <Link>Can't log in?</Link>{" "}
+                  <p style={{ display: "inline", color: " white" }}> | </p>{" "}
                   <Link>Sign up for an account</Link>
                 </p>
               </Row>
@@ -269,7 +270,9 @@ const Login = () => {
         <Col>
           <Row className="text-center">
             <p>
-              <Link>Privacy Policy</Link> | <Link>Terms of Service</Link>
+              <Link>Privacy Policy</Link>
+              <p style={{ display: "inline", color: " white" }}> | </p>
+              <Link>Terms of Service</Link>
             </p>
           </Row>
         </Col>

@@ -112,6 +112,7 @@ const LoginFooter = ({ colorMode }) => {
             <Col xs={12} md={2}>
               <form className="footer-p-text">
                 <select
+                  name="language"
                   aria-label="Select a language"
                   data-testid="language-select"
                   onChange={(e) => onLanguageChangeHandler(e)}

@@ -9,11 +9,10 @@
 .hamburger-icon {
   transition: background-color 2s ease 0s, height 2s, width 2s, display 2s;
   opacity: 0.9;
-  position: relative;
-  height: 75vh;
-  height: 75dvh;
-  margin: 0 auto;
-  top: 20%;
+  position: absolute;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
 }
 
 .loading-background {
