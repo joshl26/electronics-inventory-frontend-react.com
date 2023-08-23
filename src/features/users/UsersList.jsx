@@ -1,9 +1,9 @@
 import { useGetUsersQuery } from "./usersApiSlice";
+import { Button, Col, Dropdown, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import OutletLoadingPage from "../../components/OutletLoadingPage";
 import User from "./User";
 import "./UsersList.css";
-import { Button, Col, Dropdown, Row } from "react-bootstrap";
-import OutletLoadingPage from "../../components/OutletLoadingPage";
-import { Link } from "react-router-dom";
 
 const UsersList = () => {
   const {
@@ -54,7 +54,7 @@ const UsersList = () => {
     );
 
     content = (
-      <>
+      <section>
         <Row>
           <Col md={10}>
             <h1>Users List</h1>
@@ -113,7 +113,6 @@ const UsersList = () => {
                     >
                       All
                     </Dropdown.Toggle>
-
                     <Dropdown.Menu className="parts-status-dropdown-menu">
                       <Dropdown.Item href="#/action-1">
                         Date Created
@@ -151,7 +150,7 @@ const UsersList = () => {
           </div>
           {table}
         </div>
-      </>
+      </section>
     );
   }
   return content;

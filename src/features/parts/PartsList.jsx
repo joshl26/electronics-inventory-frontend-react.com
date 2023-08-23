@@ -1,69 +1,18 @@
 // import str from "../../mock_data/parts.json";
 
 import { useGetPartsQuery } from "./partsApiSlice";
-import { useUpdateUserMutation, selectAllUsers } from "../users/usersApiSlice";
 import { useState } from "react";
-import OutletLoadingPage from "../../components/OutletLoadingPage";
-import Part from "../parts/Part";
-import { useSelector } from "react-redux";
-import useAuth from "../../hooks/useAuth";
 import { Button, Col, Dropdown, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import OutletLoadingPage from "../../components/OutletLoadingPage";
+import Part from "../parts/Part";
+
 import "./PartsList.css";
 
 const PartsList = () => {
-  const [partsListView, setPartsListView] = useState("");
   const [partsListStatus, setPartsListStatus] = useState("All");
   const [partsListSort, setPartsListSort] = useState("Part Number");
   const [partsListType, setPartsListType] = useState("All");
-
-  const { username } = useAuth();
-
-  const users = useSelector((state) => selectAllUsers(state));
-
-  let currentUser = users.find((user) => user.username === username);
-
-  // console.log(currentUser.partsListView);
-
-  // console.log(currentUser.partsListView);
-
-  // if (currentUser.partsListView) {
-  //   setPartsListView(currentUser.partsListView);
-  // }
-  const [colorMode] = useState("");
-
-  const [updateUser] = useUpdateUserMutation();
-
-  // useEffect(() => {
-  //   async function asyncCall() {
-  //     console.log("calling");
-  //     const result = await currentUser.partsListView;
-  //     setPartsListView(currentUser.partsListView);
-  //     console.log(result);
-  //     // Expected output: "resolved"
-  //   }
-  //   return () => {
-  //     asyncCall();
-  //   };
-  // }, [currentUser.partsListView]);
-
-  // const onSaveUserClicked = async (e) => {
-  //   await updateUser({
-  //     id: currentUser.id,
-  //     username,
-  //     roles: currentUser.roles,
-  //     active: currentUser.active,
-  //     colorMode,
-  //     partsListView,
-  //   });
-
-  //   setPartsListView(e.target.value);
-  // };
-
-  // const radios = [
-  //   { name: "Table View", value: "Card" },
-  //   { name: "Card View", value: "Table" },
-  // ];
 
   //TODO Determnine why the first argument in useGetPartsQuery needs to be undefined here
   const {
@@ -88,10 +37,6 @@ const PartsList = () => {
 
   if (isSuccess) {
     const { ids } = parts;
-
-    // const cardContent =
-    //   ids?.length &&
-    //   ids.map((partId) => <PartCard key={partId} partId={partId} />);
 
     const tableContent =
       ids?.length && ids.map((partId) => <Part key={partId} partId={partId} />);
@@ -128,7 +73,7 @@ const PartsList = () => {
     );
 
     content = (
-      <>
+      <section>
         <Row>
           <Col md={10}>
             <h1>Parts Inventory</h1>
@@ -141,7 +86,6 @@ const PartsList = () => {
             </Button>
           </Col>
         </Row>
-
         <div className="vh3-spacer"></div>
         <div className="parts-container">
           <div className="parts-search-bar">
@@ -149,8 +93,9 @@ const PartsList = () => {
               <div className="vh2-spacer"></div>
               <Col style={{ textAlign: "center" }}>
                 <input
+                  name="searchParts"
                   className="parts-search-input"
-                  placeholder="    Search jobs..."
+                  placeholder="    Search parts..."
                 ></input>
               </Col>
               <Col style={{ textAlign: "center" }}>
@@ -262,7 +207,7 @@ const PartsList = () => {
           </div>
           {table}
         </div>
-      </>
+      </section>
     );
   }
 
@@ -270,26 +215,3 @@ const PartsList = () => {
 };
 
 export default PartsList;
-
-{
-  /* <ButtonGroup>
-          {radios.map((radio, idx) => (
-            <ToggleButton
-              key={idx}
-              id={`radio-${idx}`}
-              type="radio"
-              variant={idx % 2 ? "outline-success" : "outline-danger"}
-              name="radio"
-              value={radio.value}
-              checked={partsListView === radio.value}
-              onChange={(e) => onSaveUserClicked(e)}
-            >
-              {radio.name}
-            </ToggleButton>
-          ))}
-        </ButtonGroup> */
-}
-
-{
-  /* {partsListView === "Card" ? table : cardContent} */
-}

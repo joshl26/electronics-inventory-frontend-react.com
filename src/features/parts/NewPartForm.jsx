@@ -1,21 +1,16 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAddNewPartMutation } from "./partsApiSlice";
 import { FaSave } from "react-icons/fa";
-// import { set } from "lodash";
+import { Row, Col } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import useAuth from "../../hooks/useAuth";
 import ImagePicker from "../../components/ImagePicker";
-import { Row, Col } from "react-bootstrap";
 import "./NewPartForm.css";
 
 const NewPartForm = ({ users, partTypes }) => {
-  // const { username, isManager, isAdmin } = useAuth();
-  const { username, isManager } = useAuth();
-
-  // const [addNewPart, { isLoading, isSuccess, isError, error }] =
-  // useAddNewPartMutation();
+  const { username } = useAuth();
 
   const [addNewPart, { isLoading, isSuccess }] = useAddNewPartMutation();
 
@@ -80,8 +75,6 @@ const NewPartForm = ({ users, partTypes }) => {
   const onPackageTypeChanged = (e) => setPartPackage(e.target.value);
   const onLocationChanged = (e) => setPartLocation(e.target.value);
   const onCostChanged = (e) => setCost(e.target.value);
-
-  // const canSave = [name, description, userId].every(Boolean) && !isLoading;
 
   const canSave = [name, partNumber, description].every(Boolean) && !isLoading;
 
@@ -180,12 +173,7 @@ const NewPartForm = ({ users, partTypes }) => {
   // };
 
   const content = (
-    <>
-      {/* {partImages} */}
-      {/* <ImagePicker images={images} setImages={setImages} /> */}
-
-      {/* <Form noValidate validated={validated} onSubmit={handleSubmit}> */}
-
+    <section>
       <Form noValidate validated={validated} onSubmit={onSavePartClicked}>
         <h2>Add New Part to Inventory</h2>
         <div className="form__action-buttons">
@@ -401,16 +389,6 @@ const NewPartForm = ({ users, partTypes }) => {
             />
           </Form.Group>
         </Row>
-
-        {/* <Row className="mt-3 mb-3">
-          <Form.Group as={Col} md="6" controlId="formFile" className="mb-3">
-            <Form.Label>Add Part Images</Form.Label>
-            <Form.Control type="file" />
-          </Form.Group>
-        </Row> */}
-
-        {/* {partImages} */}
-
         <Button
           title="Save"
           onClick={onSavePartClicked}
@@ -421,7 +399,7 @@ const NewPartForm = ({ users, partTypes }) => {
         </Button>
       </Form>
       <ImagePicker images={images} setImages={setImages} />
-    </>
+    </section>
   );
 
   return content;

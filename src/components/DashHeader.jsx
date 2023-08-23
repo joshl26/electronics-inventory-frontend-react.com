@@ -35,11 +35,11 @@ const DashHeader = () => {
     if (isSuccess) navigate("/");
   }, [isSuccess, navigate]);
 
-  const onNewNoteClicked = () => navigate("/dash/notes/new");
-  const onNewUserClicked = () => navigate("/dash/users/new");
-  const onNotesClicked = () => navigate("/dash/notes");
-  const onUsersClicked = () => navigate("/dash/users");
-  const onHomeClicked = () => navigate("/dash");
+  // const onNewNoteClicked = () => navigate("/dash/notes/new");
+  // const onNewUserClicked = () => navigate("/dash/users/new");
+  // const onNotesClicked = () => navigate("/dash/notes");
+  // const onUsersClicked = () => navigate("/dash/users");
+  // const onHomeClicked = () => navigate("/dash");
   const onSettingsClicked = () => navigate(`/dash/users/${id}settings`);
 
   let dashClass = null;
@@ -51,60 +51,60 @@ const DashHeader = () => {
     dashClass = "dash-header__container--small";
   }
 
-  let newNoteButton = null;
-  if (NOTES_REGEX.test(pathname)) {
-    newNoteButton = (
-      <button
-        className="icon-button"
-        title="New Note"
-        onClick={onNewNoteClicked}
-      >
-        <faFileCirclePlus />
-      </button>
-    );
-  }
+  // let newNoteButton = null;
+  // if (NOTES_REGEX.test(pathname)) {
+  //   newNoteButton = (
+  //     <button
+  //       className="icon-button"
+  //       title="New Note"
+  //       onClick={onNewNoteClicked}
+  //     >
+  //       <faFileCirclePlus />
+  //     </button>
+  //   );
+  // }
 
-  let newUserButton = null;
-  if (USERS_REGEX.test(pathname)) {
-    newUserButton = (
-      <button
-        className="icon-button"
-        title="New User"
-        onClick={onNewUserClicked}
-      >
-        <FaUserPlus />
-      </button>
-    );
-  }
+  // let newUserButton = null;
+  // if (USERS_REGEX.test(pathname)) {
+  //   newUserButton = (
+  //     <button
+  //       className="icon-button"
+  //       title="New User"
+  //       onClick={onNewUserClicked}
+  //     >
+  //       <FaUserPlus />
+  //     </button>
+  //   );
+  // }
 
-  let userButton = null;
-  if (isManager || isAdmin) {
-    if (!USERS_REGEX.test(pathname) && pathname.includes("/dash")) {
-      userButton = (
-        <button className="icon-button" title="Users" onClick={onUsersClicked}>
-          <FaCog />
-        </button>
-      );
-    }
-  }
+  // let userButton = null;
+  // if (isManager || isAdmin) {
+  //   if (!USERS_REGEX.test(pathname) && pathname.includes("/dash")) {
+  //     userButton = (
+  //       <button className="icon-button" title="Users" onClick={onUsersClicked}>
+  //         <FaCog />
+  //       </button>
+  //     );
+  //   }
+  // }
 
-  let notesButton = null;
-  if (!NOTES_REGEX.test(pathname) && pathname.includes("/dash")) {
-    notesButton = (
-      <button className="icon-button" title="Notes" onClick={onNotesClicked}>
-        <FaFileUpload />
-      </button>
-    );
-  }
+  // let notesButton = null;
+  // if (!NOTES_REGEX.test(pathname) && pathname.includes("/dash")) {
+  //   notesButton = (
+  //     <button className="icon-button" title="Notes" onClick={onNotesClicked}>
+  //       <FaFileUpload />
+  //     </button>
+  //   );
+  // }
 
-  const homeButton =
-    pathname !== "/dash" ? (
-      <button className="icon-button" onClick={onHomeClicked} title="Home">
-        <FaHouseUser />
-      </button>
-    ) : (
-      ""
-    );
+  // const homeButton =
+  //   pathname !== "/dash" ? (
+  //     <button className="icon-button" onClick={onHomeClicked} title="Home">
+  //       <FaHouseUser />
+  //     </button>
+  //   ) : (
+  //     ""
+  //   );
 
   const logoutButton = (
     <button className="icon-button" title="Logout" onClick={sendLogout}>
@@ -205,7 +205,7 @@ const DashHeader = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <input type="text" placeholder="Search here" />
+          <input name="headerSearch" type="text" placeholder="Search here" />
           {buttonContent}
         </Navbar.Collapse>
       </Navbar>
