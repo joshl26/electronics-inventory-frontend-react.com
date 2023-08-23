@@ -1,5 +1,7 @@
 import { useGetUsersQuery } from "./usersApiSlice";
 import User from "./User";
+import "./UsersList.css";
+import { Col, Dropdown, Row } from "react-bootstrap";
 
 const UsersList = () => {
   const {
@@ -30,23 +32,112 @@ const UsersList = () => {
     const tableContent =
       ids?.length && ids.map((userId) => <User key={userId} userId={userId} />);
 
-    content = (
-      <table className="table table--users">
-        <thead className="table__head">
+    const table = (
+      <table className="table table-notes">
+        <thead className="table__thead">
           <tr>
-            <th scope="col" className="table__th user__username">
+            <th scope="col" className="table__th user-status">
               Username
             </th>
-            <th scope="col" className="table__th user__roles">
-              Roles
+            <th scope="col" className="table__th user-created">
+              Assigned Role(s)
             </th>
-            <th scope="col" className="table__th user__edit">
-              Edit
+            <th scope="col" className="table__th user-updated">
+              Edit User
             </th>
           </tr>
         </thead>
         <tbody>{tableContent}</tbody>
       </table>
+    );
+
+    content = (
+      <>
+        <div className="vh3-spacer"></div>
+        <div className="parts-container">
+          <div className="parts-search-bar">
+            <Row>
+              <div className="vh2-spacer"></div>
+              <Col style={{ textAlign: "center" }}>
+                <input
+                  className="parts-search-input"
+                  placeholder="    Search users..."
+                ></input>
+              </Col>
+              <Col style={{ textAlign: "center" }}>
+                <Row style={{ textAlign: "left" }}>
+                  <p style={{ lineHeight: "0" }}>Role</p>
+                </Row>
+                <Row>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="parts-status-dropdown"
+                      variant="success"
+                      id="dropdown-basic"
+                    >
+                      All
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu className="parts-status-dropdown-menu">
+                      <Dropdown.Item>Employee</Dropdown.Item>
+                      <Dropdown.Item>Manager</Dropdown.Item>
+                      <Dropdown.Item>Admin</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
+              </Col>
+              <Col style={{ textAlign: "center" }}>
+                <Row style={{ textAlign: "left" }}>
+                  <p style={{ lineHeight: "0" }}>Sort</p>
+                </Row>
+                <Row>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="parts-status-dropdown"
+                      variant="success"
+                      id="dropdown-basic"
+                    >
+                      All
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu className="parts-status-dropdown-menu">
+                      <Dropdown.Item href="#/action-1">
+                        Date Created
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">
+                        Created By
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">
+                        Description
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
+              </Col>
+              <Col style={{ textAlign: "center" }}>
+                <Row style={{ textAlign: "left" }}>
+                  <p style={{ lineHeight: "0" }}>Date Created</p>
+                </Row>
+                <Row>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="parts-status-dropdown"
+                      variant="success"
+                      id="dropdown-basic"
+                    ></Dropdown.Toggle>
+                    <Dropdown.Menu className="parts-status-dropdown-menu">
+                      <Dropdown.Item href="#/action-1"></Dropdown.Item>
+                      <Dropdown.Item href="#/action-2"></Dropdown.Item>
+                      <Dropdown.Item href="#/action-3"></Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
+              </Col>
+            </Row>
+          </div>
+          {table}
+        </div>
+      </>
     );
   }
   return content;
