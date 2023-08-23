@@ -1,18 +1,14 @@
 import Button from "react-bootstrap/Button";
-
 import Form from "react-bootstrap/Form";
-// import InputGroup from "react-bootstrap/InputGroup";
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAddNewPartMutation } from "./partsApiSlice";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { FaSave } from "react-icons/fa";
 // import { set } from "lodash";
 import useAuth from "../../hooks/useAuth";
 import ImagePicker from "../../components/ImagePicker";
 import { Row, Col } from "react-bootstrap";
-import "./NewPartForm.scss";
+import "./NewPartForm.css";
 
 const NewPartForm = ({ users, partTypes }) => {
   // const { username, isManager, isAdmin } = useAuth();
@@ -199,7 +195,7 @@ const NewPartForm = ({ users, partTypes }) => {
             onClick={onSavePartClicked}
             disabled={!canSave}
           >
-            <FontAwesomeIcon icon={faSave} />
+            <FaSave />
           </button>
         </div>
 
@@ -370,7 +366,7 @@ const NewPartForm = ({ users, partTypes }) => {
           <Form.Group as={Col} md="2" controlId="validationStockQty">
             <Form.Label>Date Created</Form.Label>
             <Form.Control
-              readOnly={true}
+              readOnly
               defaultValue={createdAt}
               type="text"
               placeholder=""
@@ -378,11 +374,17 @@ const NewPartForm = ({ users, partTypes }) => {
           </Form.Group>
           <Form.Group as={Col} md="2" controlId="validationBackorderQty">
             <Form.Label>Created By</Form.Label>
-            <Form.Control defaultValue={createdBy} type="text" placeholder="" />
+            <Form.Control
+              readOnly
+              defaultValue={createdBy}
+              type="text"
+              placeholder=""
+            />
           </Form.Group>
           <Form.Group as={Col} md="2" controlId="validationStockQty">
             <Form.Label>Date Edited</Form.Label>
             <Form.Control
+              readOnly
               defaultValue={editedAt}
               onChange={onStockQtyChanged}
               type="text"
@@ -391,7 +393,12 @@ const NewPartForm = ({ users, partTypes }) => {
           </Form.Group>
           <Form.Group as={Col} md="2" controlId="validationBackorderQty">
             <Form.Label>Edited By</Form.Label>
-            <Form.Control defaultValue={editedBy} type="text" placeholder="" />
+            <Form.Control
+              readOnly
+              defaultValue={editedBy}
+              type="text"
+              placeholder=""
+            />
           </Form.Group>
         </Row>
 

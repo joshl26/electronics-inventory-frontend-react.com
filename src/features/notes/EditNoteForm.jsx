@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useUpdateNoteMutation, useDeleteNoteMutation } from "./notesApiSlice";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { FaSave, FaTrash } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
+import "./EditNoteForm.css";
 
 const EditNoteForm = ({ note, users }) => {
   const { isManager, isAdmin } = useAuth();
@@ -88,7 +88,7 @@ const EditNoteForm = ({ note, users }) => {
         title="Delete"
         onClick={onDeleteNoteClicked}
       >
-        <FontAwesomeIcon icon={faTrashCan} />
+        <FaTrash />
       </button>
     );
   }
@@ -96,8 +96,7 @@ const EditNoteForm = ({ note, users }) => {
   const content = (
     <>
       <p className={errClass}>{errContent}</p>
-
-      <form className="form" onSubmit={(e) => e.preventDefault()}>
+      <form className="edit-note-form" onSubmit={(e) => e.preventDefault()}>
         <div className="form__title-row">
           <h2>Edit Note #{note.ticket}</h2>
           <div className="form__action-buttons">
@@ -107,7 +106,7 @@ const EditNoteForm = ({ note, users }) => {
               onClick={onSaveNoteClicked}
               disabled={!canSave}
             >
-              <FontAwesomeIcon icon={faSave} />
+              <FaSave />
             </button>
             {deleteButton}
           </div>

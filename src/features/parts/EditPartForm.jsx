@@ -1,14 +1,7 @@
 import { useState, useEffect } from "react";
 import { useUpdatePartMutation, useDeletePartMutation } from "./partsApiSlice";
 import { useNavigate } from "react-router-dom";
-import {
-  FaArrowLeft,
-  FaBackspace,
-  FaBackward,
-  FaEdit,
-  FaSave,
-  FaTrash,
-} from "react-icons/fa";
+import { FaArrowLeft, FaEdit, FaSave, FaTrash } from "react-icons/fa";
 import { Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import useAuth from "../../hooks/useAuth";

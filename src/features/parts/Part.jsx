@@ -6,40 +6,10 @@ import { selectPartById } from "./partsApiSlice";
 import "./PartsList.css";
 
 const Part = ({ partId }) => {
-  // console.log(partId);
   const part = useSelector((state) => selectPartById(state, partId));
-  // const pal = useSelector((state) => selectAllParts(state));
-
-  // const partImages = part.images.map((image, idx) => {
-  //   return (
-  //     <div key={idx}>
-  //       <a href={image.url}>
-  //         <img
-  //           className={classes.partlist_image}
-  //           src={image.url}
-  //           alt="part_image"
-  //         />
-  //       </a>
-  //     </div>
-  //   );
-  // });
-
-  // console.log(part);
-  // console.log(pal);
-
   const navigate = useNavigate();
 
   if (part) {
-    // const created = new Date(part.createdAt).toLocaleString("en-US", {
-    //   day: "numeric",
-    //   month: "long",
-    // });
-
-    // const updated = new Date(part.updatedAt).toLocaleString("en-US", {
-    //   day: "numeric",
-    //   month: "long",
-    // });
-
     const handleEdit = () => navigate(`/dash/parts/${partId}`);
 
     return (
@@ -61,7 +31,11 @@ const Part = ({ partId }) => {
       </tr>
     );
   } else {
-    return null;
+    return (
+      <tr>
+        <h1>NO PARTS TO SHOW</h1>
+      </tr>
+    );
   }
 };
 

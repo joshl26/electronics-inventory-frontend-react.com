@@ -7,13 +7,13 @@ import { Outlet } from "react-router-dom";
 
 const Prefetch = () => {
   useEffect(() => {
-    console.log("subscribing");
+    // console.log("subscribing");
     const notes = store.dispatch(notesApiSlice.endpoints.getNotes.initiate());
     const users = store.dispatch(usersApiSlice.endpoints.getUsers.initiate());
     const parts = store.dispatch(partsApiSlice.endpoints.getParts.initiate());
 
     return () => {
-      console.log("unsubscribing");
+      // console.log("unsubscribing");
       notes.unsubscribe();
       users.unsubscribe();
       parts.unsubscribe();

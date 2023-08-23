@@ -10,8 +10,8 @@
 
 .sidebar-hide-btn {
   position: fixed;
-  top: 75px;
-  left: 232px;
+  top: 91vh;
+  left: 20px;
   z-index: 1;
   width: 35px;
   height: 35px;
@@ -21,8 +21,8 @@
 
 .sidebar-hide-btn-hidden {
   position: fixed;
-  top: 75px;
-  left: 55px;
+  top: 95vh;
+  left: 20px;
   z-index: 1;
   width: 35px;
   height: 35px;
@@ -31,18 +31,7 @@
   transition: height 0.5s, top 0.5s, left 0.25s;
 }
 
-.sidebar-hide-btn-hidden:hover {
-  width: 40px;
-  height: 40px;
-  top: 72.5px;
-  left: 55px;
-  transition: height 1s, top 1s, left 0.25s;
-}
-
-.sidebar-hide-btn:hover {
-  width: 40px;
-  height: 40px;
-  top: 72.5px;
-  left: 232px;
-  transition: height 1s, top 1s, left 0.25s;
+.btn:hover {
+  background-color: var(--TABLE-SELECTED-ROW);
+  color: black;
 }
