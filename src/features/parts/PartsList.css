@@ -1,6 +1,6 @@
 .parts-search-bar {
   background-color: var(--BG-DASH-DARK);
-  border-top: var(--TABLE-BORDER);
+  /* border-top: var(--TABLE-BORDER); */
   border-bottom: var(--TABLE-BORDER);
   /* margin: 1rem; */
   padding: 1rem;

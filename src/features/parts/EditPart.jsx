@@ -5,13 +5,11 @@ import { selectAllUsers } from "../users/usersApiSlice";
 import EditPartForm from "./EditPartForm";
 import partTypes from "../../mock_data/partTypes";
 
-const EditPart = ({ idReadOnly }) => {
+const EditPart = () => {
   const { id } = useParams();
 
   const part = useSelector((state) => selectPartById(state, id));
   const users = useSelector(selectAllUsers);
-
-  console.log(idReadOnly);
 
   const content =
     part && users ? (

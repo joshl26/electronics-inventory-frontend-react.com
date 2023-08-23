@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
 import { useUpdatePartMutation, useDeletePartMutation } from "./partsApiSlice";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import {
+  FaArrowLeft,
+  FaBackspace,
+  FaBackward,
+  FaEdit,
+  FaSave,
+  FaTrash,
+} from "react-icons/fa";
+import { Row, Col } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 import useAuth from "../../hooks/useAuth";
 import ImagePicker from "../../components/ImagePicker";
-import { Row, Col } from "react-bootstrap";
 import "./EditPartForm.css";
-import Form from "react-bootstrap/Form";
 
 const EditPartForm = ({ part, idReadOnly }) => {
   const { username, isManager, isAdmin } = useAuth();
@@ -139,6 +145,21 @@ const EditPartForm = ({ part, idReadOnly }) => {
     }
   };
 
+  const onBackClicked = async (e) => {
+    e.preventDefault();
+    navigate(`/dash/parts`);
+  };
+
+  const onViewClicked = async (e) => {
+    e.preventDefault();
+    navigate(`/dash/parts/${part.id}`);
+  };
+
+  const onEditPartClicked = async (e) => {
+    e.preventDefault();
+    navigate(`/dash/parts/${part.id}/edit`);
+  };
+
   const onDeletePartClicked = async (e) => {
     e.preventDefault();
     await deletePart({ id: part.id });
@@ -193,10 +214,10 @@ const EditPartForm = ({ part, idReadOnly }) => {
     deleteButton = (
       <button
         className="icon-button"
-        title="Delete"
+        title="Delete Part"
         onClick={(e) => onDeletePartClicked(e)}
       >
-        <FontAwesomeIcon icon={faTrashCan} />
+        <FaTrash />
       </button>
     );
   }
@@ -209,17 +230,48 @@ const EditPartForm = ({ part, idReadOnly }) => {
       {isError}
       {isDelError}
       <Form noValidate validated={validated} onSubmit={onSavePartClicked}>
-        <h2>Edit Part in Inventory</h2>
+        <h2>{idReadOnly ? "View" : "Edit"} Part Details</h2>
         <div className="form__action-buttons">
-          <button
-            className="icon-button"
-            title="Save"
-            onClick={onSavePartClicked}
-            disabled={!canSave}
-          >
-            <FontAwesomeIcon icon={faSave} />
-          </button>
-          {deleteButton}
+          {idReadOnly ? (
+            <button
+              className="icon-button-left"
+              title="Back to parts list"
+              onClick={onBackClicked}
+            >
+              <FaArrowLeft />
+            </button>
+          ) : (
+            <button
+              className="icon-button-left"
+              title="View Part Details"
+              onClick={onViewClicked}
+            >
+              <FaArrowLeft />
+            </button>
+          )}
+
+          {idReadOnly ? (
+            <button
+              className="icon-button"
+              title="Edit Part Details"
+              onClick={onEditPartClicked}
+              disabled={!canSave}
+            >
+              <FaEdit />
+            </button>
+          ) : (
+            <>
+              <button
+                className="icon-button"
+                title="Save Part"
+                onClick={onSavePartClicked}
+                disabled={!canSave}
+              >
+                <FaSave />
+              </button>{" "}
+              {deleteButton}
+            </>
+          )}
         </div>
 
         <Row className="mt-3 mb-3">
@@ -233,6 +285,7 @@ const EditPartForm = ({ part, idReadOnly }) => {
               type="text"
               placeholder="Part Name"
               defaultValue={name}
+              title="Part Name"
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
@@ -249,6 +302,7 @@ const EditPartForm = ({ part, idReadOnly }) => {
               type="text"
               placeholder="Part Number"
               defaultValue={partNumber}
+              title="Part Number"
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
@@ -258,6 +312,8 @@ const EditPartForm = ({ part, idReadOnly }) => {
           <Form.Group as={Col} md="4" controlId="validationPartType">
             <Form.Label>Part Type</Form.Label>
             <Form.Control
+              title="Part Type"
+              readOnly={idReadOnly}
               onChange={onPartTypeChanged}
               name="parttype"
               type="text"
@@ -270,12 +326,14 @@ const EditPartForm = ({ part, idReadOnly }) => {
           <Form.Group as={Col} md="12" controlId="validationDescription">
             <Form.Label>Description</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onDescriptionChanged}
               name="description"
               as="textarea"
               rows={4}
               placeholder="Description"
               defaultValue={description}
+              title="Part Description"
             />
           </Form.Group>
         </Row>
@@ -283,6 +341,7 @@ const EditPartForm = ({ part, idReadOnly }) => {
           <Form.Group as={Col} md="3" controlId="validationStockQty">
             <Form.Label>Stock Qty</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               name="stockqty"
               defaultValue={qty}
               onChange={onStockQtyChanged}
@@ -290,29 +349,34 @@ const EditPartForm = ({ part, idReadOnly }) => {
               max="10000"
               type="number"
               placeholder="Stock Qty"
+              title="Stock Qty"
             />
           </Form.Group>
           <Form.Group as={Col} md="3" controlId="validationBackorderQty">
-            <Form.Label>Backorder Qty</Form.Label>
+            <Form.Label>Backorder Qty (B/O)</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onBackorderQtyChanged}
               defaultValue={backOrder}
               min="0"
               max="10000"
               type="number"
               placeholder="Backorder Qty"
+              title="Backorder Qty"
             />
           </Form.Group>
           <Form.Group as={Col} md="3" controlId="validationBackorderQty">
             <Form.Label>Unit Cost</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onCostChanged}
               defaultValue={cost}
               min="0.00"
               max="10000.00"
               step="0.01"
               type="number"
-              placeholder="Backorder Qty"
+              placeholder="Unit Cost"
+              title="Unit Cost"
             />
           </Form.Group>
         </Row>
@@ -321,67 +385,81 @@ const EditPartForm = ({ part, idReadOnly }) => {
           <Form.Group as={Col} md="3" controlId="validationStockQty">
             <Form.Label>Location</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onLocationChanged}
               defaultValue={partLocation}
               type="text"
               placeholder="Location"
+              title="Location"
             />
           </Form.Group>
           <Form.Group as={Col} md="3" controlId="validationBackorderQty">
             <Form.Label>Package Type</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onPackageTypeChanged}
               defaultValue={partPackage}
               type="text"
               placeholder="Part Package"
+              title="Part Package"
             />
           </Form.Group>
           <Form.Group as={Col} md="3" controlId="validationBackorderQty">
             <Form.Label>Lot Id</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onLotIdChanged}
               defaultValue={lotId}
               type="text"
               placeholder="Lot Id"
+              title="Lot Id"
             />
           </Form.Group>
         </Row>
 
         <Row className="mt-3 mb-3">
           <Form.Group as={Col} md="3" controlId="validationStockQty">
-            <Form.Label>S/N</Form.Label>
+            <Form.Label>Serial Number (S/N)</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               defaultValue={serialNumber}
               onChange={onSerialNumberChanged}
               type="text"
               placeholder="Serial Number"
+              title="Serial Number"
             />
           </Form.Group>
           <Form.Group as={Col} md="3" controlId="validationBackorderQty">
-            <Form.Label>Mfg Date</Form.Label>
+            <Form.Label>Manufacturing Date</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onMfgDateChanged}
               defaultValue={mfgDate}
               type="date"
-              placeholder=""
+              placeholder="Mfg Date"
+              title="Mfg Date"
             />
           </Form.Group>
           <Form.Group as={Col} md="3" controlId="validationBackorderQty">
             <Form.Label>Manufacturer</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onManufacturerChanged}
               defaultValue={manufacturer}
               type="text"
               placeholder="Manufacturer"
+              title="Manufacturer"
             />
           </Form.Group>
           <Form.Group as={Col} md="3" controlId="validationBackorderQty">
             <Form.Label>Vendor</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onVendorNameChanged}
               defaultValue={vendorName}
               type="text"
-              placeholder=""
+              placeholder="Vendor"
+              title="Vendor"
             />
           </Form.Group>
         </Row>
@@ -390,28 +468,43 @@ const EditPartForm = ({ part, idReadOnly }) => {
           <Form.Group as={Col} md="2" controlId="validationStockQty">
             <Form.Label>Date Created</Form.Label>
             <Form.Control
-              readOnly={true}
+              readOnly
               defaultValue={createdAt}
               type="text"
-              placeholder=""
+              placeholder="Date Created"
+              title="Date Created"
             />
           </Form.Group>
           <Form.Group as={Col} md="2" controlId="validationBackorderQty">
             <Form.Label>Created By</Form.Label>
-            <Form.Control defaultValue={createdBy} type="text" placeholder="" />
+            <Form.Control
+              readOnly
+              defaultValue={createdBy}
+              type="text"
+              placeholder="Created By"
+              title="Created By"
+            />
           </Form.Group>
           <Form.Group as={Col} md="2" controlId="validationStockQty">
             <Form.Label>Date Edited</Form.Label>
             <Form.Control
+              readOnly
               defaultValue={updatedAt}
               onChange={onStockQtyChanged}
               type="text"
-              placeholder=""
+              placeholder="Date Edited"
+              title="Date Edited"
             />
           </Form.Group>
           <Form.Group as={Col} md="2" controlId="validationBackorderQty">
             <Form.Label>Edited By</Form.Label>
-            <Form.Control defaultValue={updatedBy} type="text" placeholder="" />
+            <Form.Control
+              readOnly
+              defaultValue={updatedBy}
+              type="text"
+              placeholder="Updated By"
+              title="Updated By"
+            />
           </Form.Group>
         </Row>
       </Form>

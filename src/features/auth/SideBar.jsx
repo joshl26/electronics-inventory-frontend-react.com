@@ -132,14 +132,22 @@ const SideBar = ({ sidebarShown }) => {
               </Row>
               <Row className="sidebar-links">
                 <Col>
-                  <Link className="sidebar-links sidebar-text" to="/dash">
+                  <Link
+                    title="Home"
+                    className="sidebar-links sidebar-text"
+                    to="/dash"
+                  >
                     <FaHome className="sidebar-icon" />
                   </Link>
                 </Col>
               </Row>
               <Row className="sidebar-links">
                 <Col>
-                  <Link to="/dash/parts" className="sidebar-links sidebar-text">
+                  <Link
+                    title="View Inventory"
+                    to="/dash/parts"
+                    className="sidebar-links sidebar-text"
+                  >
                     <FaHammer className="sidebar-icon" />
                   </Link>
                 </Col>
@@ -149,6 +157,7 @@ const SideBar = ({ sidebarShown }) => {
                   <Link
                     className="sidebar-links sidebar-text"
                     to="/dash/parts/new"
+                    title="Add New Part"
                   >
                     <FaPlusCircle className="sidebar-icon" />
                   </Link>
@@ -156,7 +165,11 @@ const SideBar = ({ sidebarShown }) => {
               </Row>
               <Row className="sidebar-links">
                 <Col>
-                  <Link className="sidebar-links sidebar-text" to="/dash/notes">
+                  <Link
+                    title="Edit/View Notes"
+                    className="sidebar-links sidebar-text"
+                    to="/dash/notes"
+                  >
                     <FaGlasses className="sidebar-icon" />
                   </Link>
                 </Col>
@@ -164,6 +177,7 @@ const SideBar = ({ sidebarShown }) => {
               <Row className="sidebar-links">
                 <Col>
                   <Link
+                    title="Add New Note"
                     className="sidebar-links sidebar-text"
                     to="/dash/notes/new"
                   >
@@ -175,6 +189,7 @@ const SideBar = ({ sidebarShown }) => {
                 {(isManager || isAdmin) && (
                   <Col>
                     <Link
+                      title="Edit/View Users"
                       className="sidebar-links sidebar-text"
                       to="/dash/users"
                     >
@@ -187,6 +202,7 @@ const SideBar = ({ sidebarShown }) => {
                 {(isManager || isAdmin) && (
                   <Col>
                     <Link
+                      title="Add New User"
                       className="sidebar-links sidebar-text"
                       to="/dash/users/new"
                     >
