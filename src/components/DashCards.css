@@ -1,0 +1,62 @@
+.card {
+  height: 20vh !important;
+  width: 25vw;
+}
+
+.card-color-1 {
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-one);
+}
+
+.card-color-2 {
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-two);
+}
+
+.card-color-3 {
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-three);
+}
+
+.card-color-4 {
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-four);
+}
+
+.small-card-1 {
+  border-radius: 0.5rem;
+  background-color: var(--color-one);
+  color: white;
+  text-align: center;
+  width: 100px;
+}
+
+.small-card-2 {
+  border-radius: 0.5rem;
+  background-color: var(--color-two);
+  color: white;
+  text-align: center;
+  width: 100px;
+}
+.small-card-3 {
+  border-radius: 0.5rem;
+  background-color: var(--color-three);
+  color: white;
+  text-align: center;
+  width: 100px;
+}
+.small-card-4 {
+  border-radius: 0.5rem;
+  background-color: var(--color-four);
+  color: white;
+  text-align: center;
+  width: 100px;
+}
+
+.home-page-container {
+  width: 80vw;
+}

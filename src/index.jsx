@@ -34,6 +34,7 @@ import Features from "./components/Features";
 import Plans from "./components/Plans";
 import Pricing from "./components/Pricing";
 import ViewPart from "./features/parts/ViewPart";
+import DashCards from "./components/DashCards";
 
 if (process.env.NODE_ENV === "production") disableReactDevTools();
 
@@ -53,7 +54,7 @@ const router = createBrowserRouter(
         >
           <Route element={<Prefetch />}>
             <Route element={<DashLayout />} path="dash">
-              <Route index />
+              <Route index element={<DashCards />} />
               <Route
                 element={
                   <RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />

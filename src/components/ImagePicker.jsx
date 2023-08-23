@@ -12,8 +12,8 @@ function ImagePicker(props) {
   const handleSelectFile = (e) => setFile(e.target.files[0]);
 
   useEffect(() => {
-    console.log(file);
-    console.log(imageData);
+    // console.log(file);
+    // console.log(imageData);
   }, [file, imageData]);
 
   const handleUpload = async () => {
