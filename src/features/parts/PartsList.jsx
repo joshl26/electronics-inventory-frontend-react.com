@@ -2,14 +2,13 @@
 
 import { useGetPartsQuery } from "./partsApiSlice";
 import { useUpdateUserMutation, selectAllUsers } from "../users/usersApiSlice";
-import PartCard from "../../components/PartCard";
 import { useState } from "react";
 import Part from "../parts/Part";
 import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
 import { Button, Col, Dropdown, Row } from "react-bootstrap";
-import "./PartsList.css";
 import { Link } from "react-router-dom";
+import "./PartsList.css";
 
 const PartsList = () => {
   const [partsListView, setPartsListView] = useState("");
@@ -260,8 +259,19 @@ const PartsList = () => {
               </Col>
             </Row>
           </div>
+          {table}
+        </div>
+      </>
+    );
+  }
 
-          {/* <ButtonGroup>
+  return content;
+};
+
+export default PartsList;
+
+{
+  /* <ButtonGroup>
           {radios.map((radio, idx) => (
             <ToggleButton
               key={idx}
@@ -276,16 +286,9 @@ const PartsList = () => {
               {radio.name}
             </ToggleButton>
           ))}
-        </ButtonGroup> */}
+        </ButtonGroup> */
+}
 
-          {/* {partsListView === "Card" ? table : cardContent} */}
-          {table}
-        </div>
-      </>
-    );
-  }
-
-  return content;
-};
-
-export default PartsList;
+{
+  /* {partsListView === "Card" ? table : cardContent} */
+}

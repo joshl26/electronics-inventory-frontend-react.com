@@ -1,0 +1,84 @@
+.notes-search-bar {
+  background-color: var(--BG-DASH-DARK);
+  /* border-top: var(--TABLE-BORDER); */
+  border-bottom: var(--TABLE-BORDER);
+  /* margin: 1rem; */
+  padding: 1rem;
+  height: 125px;
+  width: 100%;
+}
+
+.notes-search-input {
+  border: var(--TABLE-BORDER);
+  width: 100%;
+  height: 55px;
+}
+
+.notes-status-dropdown {
+  border: 1px solid grey;
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  text-align: left;
+  border-radius: 0;
+}
+
+.notes-status-dropdown-menu {
+  width: 100px;
+  height: 115px;
+  background-color: aliceblue;
+  text-align: left;
+  border-radius: 0;
+}
+
+.notes-container {
+  border: var(--TABLE-BORDER);
+  width: 80vw;
+}
+
+.note-status {
+  width: 125px;
+}
+
+.note-created {
+  width: 125px;
+}
+
+.note-updated {
+  width: 125px;
+}
+
+.note-title {
+  width: 700px;
+}
+
+.note-username {
+  width: 100px;
+}
+.note-edit {
+  width: 125px;
+  text-align: center;
+}
+
+.note-list-row:hover {
+  background-color: var(--TABLE-SELECTED-ROW);
+  cursor: pointer;
+}
+
+.btn-new-note {
+  border: var(--TABLE-BORDER);
+  color: white;
+}
+
+.btn-new-note:hover {
+  background-color: var(--BUTTON-BG-HOVER);
+  color: white;
+}
+
+.btn-text {
+  color: black;
+}
+
+.btn-text:hover {
+  color: white;
+}

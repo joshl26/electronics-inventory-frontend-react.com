@@ -1,16 +1,12 @@
-import "./LoginHeader.scss";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Lottie from "lottie-react";
 import HamburgerMenu from "../../svg/HamburgerMenu.json";
-import LightToDarkButton from "../../svg/minimal_light_dark_toggle_button_2.json";
-import DarkToLightButton from "../../svg/minimal_light_dark_toggle_button_1.json";
-import { useEffect } from "react";
-
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import "./LoginHeader.css";
 
 const LoginHeader = ({ colorMode, onChangeColorMode }) => {
   const NavBarStyle =
@@ -84,12 +80,18 @@ const LoginHeader = ({ colorMode, onChangeColorMode }) => {
 
           <Nav>
             <Link className="nav-link" to="/login">
-              <Button className={SignupButtonStyle} variant="danger">
+              <Button
+                title="Signup"
+                className={SignupButtonStyle}
+                variant="danger"
+              >
                 Sign Up
               </Button>
             </Link>
             <Link className="nav-link" to="/login">
-              <Button className={LoginButtonStyle}>Log In</Button>
+              <Button title="Login" className={LoginButtonStyle}>
+                Log In
+              </Button>
             </Link>
           </Nav>
         </Navbar.Collapse>

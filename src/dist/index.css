@@ -142,6 +142,19 @@ body {
   place-content: center;
 }
 
+.icon-button-edit {
+  width: 35px;
+  height: 35px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  color: var(--COLOR);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .icon-button-left {
   width: 35px;
   height: 35px;

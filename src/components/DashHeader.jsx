@@ -1,24 +1,20 @@
 import { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFileCirclePlus,
-  faFilePen,
-  faUserGear,
-  faUserPlus,
-  faRightFromBracket,
-  faHouse,
-} from "@fortawesome/free-solid-svg-icons";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { useSendLogoutMutation } from "../features/auth/authApiSlice";
 import Lottie from "lottie-react";
 import HamburgerMenu from "../svg/HamburgerMenu.json";
-import "./DashHeader.scss";
-
 import useAuth from "../hooks/useAuth";
-
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import {
+  FaArrowRight,
+  FaCog,
+  FaFileUpload,
+  FaHouseUser,
+  FaUserPlus,
+} from "react-icons/fa";
+import "./DashHeader.scss";
 
 const DASH_REGEX = /^\/dash(\/)?$/;
 const NOTES_REGEX = /^\/dash\/notes(\/)?$/;
@@ -26,6 +22,8 @@ const USERS_REGEX = /^\/dash\/users(\/)?$/;
 
 const DashHeader = () => {
   const { isManager, isAdmin } = useAuth();
+
+  const { id } = useParams();
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -42,6 +40,7 @@ const DashHeader = () => {
   const onNotesClicked = () => navigate("/dash/notes");
   const onUsersClicked = () => navigate("/dash/users");
   const onHomeClicked = () => navigate("/dash");
+  const onSettingsClicked = () => navigate(`/dash/users/${id}settings`);
 
   let dashClass = null;
   if (
@@ -60,7 +59,7 @@ const DashHeader = () => {
         title="New Note"
         onClick={onNewNoteClicked}
       >
-        <FontAwesomeIcon icon={faFileCirclePlus} />
+        <faFileCirclePlus />
       </button>
     );
   }
@@ -73,7 +72,7 @@ const DashHeader = () => {
         title="New User"
         onClick={onNewUserClicked}
       >
-        <FontAwesomeIcon icon={faUserPlus} />
+        <FaUserPlus />
       </button>
     );
   }
@@ -83,7 +82,7 @@ const DashHeader = () => {
     if (!USERS_REGEX.test(pathname) && pathname.includes("/dash")) {
       userButton = (
         <button className="icon-button" title="Users" onClick={onUsersClicked}>
-          <FontAwesomeIcon icon={faUserGear} />
+          <FaCog />
         </button>
       );
     }
@@ -93,7 +92,7 @@ const DashHeader = () => {
   if (!NOTES_REGEX.test(pathname) && pathname.includes("/dash")) {
     notesButton = (
       <button className="icon-button" title="Notes" onClick={onNotesClicked}>
-        <FontAwesomeIcon icon={faFilePen} />
+        <FaFileUpload />
       </button>
     );
   }
@@ -101,7 +100,7 @@ const DashHeader = () => {
   const homeButton =
     pathname !== "/dash" ? (
       <button className="icon-button" onClick={onHomeClicked} title="Home">
-        <FontAwesomeIcon icon={faHouse} />
+        <FaHouseUser />
       </button>
     ) : (
       ""
@@ -109,7 +108,17 @@ const DashHeader = () => {
 
   const logoutButton = (
     <button className="icon-button" title="Logout" onClick={sendLogout}>
-      <FontAwesomeIcon icon={faRightFromBracket} />
+      <FaArrowRight />
+    </button>
+  );
+
+  const settingsButton = (
+    <button
+      className="icon-button"
+      title="Settings"
+      onClick={onSettingsClicked}
+    >
+      <FaCog />
     </button>
   );
 
@@ -121,11 +130,12 @@ const DashHeader = () => {
   } else {
     buttonContent = (
       <>
-        {homeButton}
+        {/* {homeButton}
         {newNoteButton}
         {newUserButton}
         {notesButton}
-        {userButton}
+        {userButton} */}
+        {settingsButton}
         {logoutButton}
       </>
     );

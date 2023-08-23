@@ -42,10 +42,10 @@
     background-color: #161a1d;
     z-index: 10;
     position: fixed;
-    // min-height: 50px;
-    // max-height: 50px;
+    /* // min-height: 50px;
+    // max-height: 50px; */
     width: 100%;
-    // border-bottom: 1px solid var(--BORDER-COLOR);
+    /* // border-bottom: 1px solid var(--BORDER-COLOR); */
   }
 
   .link_text {
@@ -74,7 +74,7 @@
     background-color: var(--BGCOLOR);
     padding: 0 0.5em;
     border-bottom: 1px solid var(--BORDER-COLOR);
-    // height: 200px;
+    /* // height: 200px; */
   }
 
   .hero-link:hover {
@@ -120,9 +120,9 @@
     position: fixed;
     width: 100%;
     transition: background-color 0.5s ease 0s, box-shadow 0.5s ease 0s;
-    // min-height: 50px;
+    /* // min-height: 50px;
     // max-height: 50px;
-    // border-bottom: 1px solid var(--BORDER-COLOR);
+    // border-bottom: 1px solid var(--BORDER-COLOR); */
   }
 
   .nav-bg-light {
@@ -198,7 +198,7 @@
     background-color: var(--BGCOLOR);
     padding: 0 0.5em;
     border-bottom: 1px solid var(--BORDER-COLOR);
-    // height: 200px;
+    /* // height: 200px; */
   }
 
   .hero-link:hover {
