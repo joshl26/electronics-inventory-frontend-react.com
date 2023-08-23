@@ -9,7 +9,7 @@ import { Row, Col } from "react-bootstrap";
 import "./EditPartForm.css";
 import Form from "react-bootstrap/Form";
 
-const EditPartForm = ({ part, partTypes }) => {
+const EditPartForm = ({ part, idReadOnly }) => {
   const { username, isManager, isAdmin } = useAuth();
 
   const [updatePart, { isLoading, isSuccess, isError, error }] =
@@ -64,6 +64,8 @@ const EditPartForm = ({ part, partTypes }) => {
   const [userId, setUserId] = useState(part.user);
 
   useEffect(() => {
+    console.log(idReadOnly);
+
     if (isSuccess || isDelSuccess) {
       setUserId("");
       setName("");
@@ -86,7 +88,7 @@ const EditPartForm = ({ part, partTypes }) => {
       setCost(0.0);
       navigate("/dash/parts");
     }
-  }, [isSuccess, isDelSuccess, navigate, images, deletedImages]);
+  }, [isSuccess, isDelSuccess, navigate, images, deletedImages, idReadOnly]);
 
   const onNameChanged = (e) => setName(e.target.value);
   const onDescriptionChanged = (e) => setDescription(e.target.value);
@@ -224,6 +226,7 @@ const EditPartForm = ({ part, partTypes }) => {
           <Form.Group as={Col} md="4" controlId="validationPartName">
             <Form.Label>Part Name</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onNameChanged}
               name="partname"
               required
@@ -239,6 +242,7 @@ const EditPartForm = ({ part, partTypes }) => {
           <Form.Group as={Col} md="4" controlId="validationPartNumber">
             <Form.Label>Part Number</Form.Label>
             <Form.Control
+              readOnly={idReadOnly}
               onChange={onPartNumberChanged}
               name="partnumber"
               required

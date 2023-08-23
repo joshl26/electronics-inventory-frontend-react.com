@@ -33,6 +33,7 @@ import NewPart from "./features/parts/NewPart";
 import Features from "./components/Features";
 import Plans from "./components/Plans";
 import Pricing from "./components/Pricing";
+import ViewPart from "./features/parts/ViewPart";
 
 if (process.env.NODE_ENV === "production") disableReactDevTools();
 
@@ -60,7 +61,12 @@ const router = createBrowserRouter(
               >
                 <Route path="parts">
                   <Route index element={<PartsList />} />
-                  <Route path=":id" element={<EditPart />} />
+                  <Route path=":id" element={<ViewPart />}></Route>
+                  <Route path=":id">
+                    <Route path="edit">
+                      <Route index element={<EditPart />} />
+                    </Route>
+                  </Route>
                   <Route path="new" element={<NewPart />} />
                 </Route>
                 <Route path="notes">
