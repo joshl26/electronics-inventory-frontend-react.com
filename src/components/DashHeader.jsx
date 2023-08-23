@@ -1,19 +1,15 @@
 import { useEffect } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { useSendLogoutMutation } from "../features/auth/authApiSlice";
+import { FaArrowRight, FaCog, FaGlasses } from "react-icons/fa";
+import { Form, InputGroup } from "react-bootstrap";
+
 import Lottie from "lottie-react";
 import HamburgerMenu from "../svg/HamburgerMenu.json";
 import useAuth from "../hooks/useAuth";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import {
-  FaArrowRight,
-  FaCog,
-  FaFileUpload,
-  FaHouseUser,
-  FaUserPlus,
-} from "react-icons/fa";
 import "./DashHeader.scss";
 
 const DASH_REGEX = /^\/dash(\/)?$/;
@@ -205,7 +201,6 @@ const DashHeader = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <input name="headerSearch" type="text" placeholder="Search here" />
           {buttonContent}
         </Navbar.Collapse>
       </Navbar>

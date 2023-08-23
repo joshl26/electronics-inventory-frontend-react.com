@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAddNewNoteMutation } from "./notesApiSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
+import "./NewNote.css";
 
 const NewNoteForm = ({ users }) => {
   const [addNewNote, { isLoading, isSuccess, isError, error }] =
@@ -53,7 +54,7 @@ const NewNoteForm = ({ users }) => {
     <>
       <p className={errClass}>{error?.data?.message}</p>
 
-      <form className="form" onSubmit={onSaveNoteClicked}>
+      <form className="form-new-note" onSubmit={onSaveNoteClicked}>
         <div className="form__title-row">
           <h2>Add New Note</h2>
           <div className="form__action-buttons">

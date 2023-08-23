@@ -74,6 +74,7 @@ const UsersList = () => {
               <div className="vh2-spacer"></div>
               <Col style={{ textAlign: "center" }}>
                 <input
+                  name="searchUsers"
                   className="parts-search-input"
                   placeholder="    Search users..."
                 ></input>

@@ -74,11 +74,8 @@ const NotesList = () => {
       </table>
     );
 
-    // console.log(filteredIds);
-    // console.log(notes);
-
     content = (
-      <>
+      <section>
         <Row>
           <Col md={10}>
             <h1>Notes List</h1>
@@ -92,14 +89,15 @@ const NotesList = () => {
           </Col>
         </Row>
         <div className="vh3-spacer"></div>
-        <div className="parts-container">
-          <div className="parts-search-bar">
+        <div className="notes-container">
+          <div className="notes-search-bar">
             <Row>
               <div className="vh2-spacer"></div>
               <Col style={{ textAlign: "center" }}>
                 <input
-                  className="parts-search-input"
-                  placeholder="    Search jobs..."
+                  name="searchNotes"
+                  className="notes-search-input"
+                  placeholder="    Search notes..."
                 ></input>
               </Col>
               <Col style={{ textAlign: "center" }}>
@@ -109,14 +107,14 @@ const NotesList = () => {
                 <Row>
                   <Dropdown>
                     <Dropdown.Toggle
-                      className="parts-status-dropdown"
+                      className="notes-status-dropdown"
                       variant="success"
                       id="dropdown-basic"
                     >
                       All
                     </Dropdown.Toggle>
 
-                    <Dropdown.Menu className="parts-status-dropdown-menu">
+                    <Dropdown.Menu className="notes-status-dropdown-menu">
                       <Dropdown.Item>Open</Dropdown.Item>
                       <Dropdown.Item>Completed</Dropdown.Item>
                       <Dropdown.Item>All</Dropdown.Item>
@@ -131,14 +129,14 @@ const NotesList = () => {
                 <Row>
                   <Dropdown>
                     <Dropdown.Toggle
-                      className="parts-status-dropdown"
+                      className="notes-status-dropdown"
                       variant="success"
                       id="dropdown-basic"
                     >
                       All
                     </Dropdown.Toggle>
 
-                    <Dropdown.Menu className="parts-status-dropdown-menu">
+                    <Dropdown.Menu className="notes-status-dropdown-menu">
                       <Dropdown.Item href="#/action-1">
                         Date Created
                       </Dropdown.Item>
@@ -159,11 +157,11 @@ const NotesList = () => {
                 <Row>
                   <Dropdown>
                     <Dropdown.Toggle
-                      className="parts-status-dropdown"
+                      className="notes-status-dropdown"
                       variant="success"
                       id="dropdown-basic"
                     ></Dropdown.Toggle>
-                    <Dropdown.Menu className="parts-status-dropdown-menu">
+                    <Dropdown.Menu className="notes-status-dropdown-menu">
                       <Dropdown.Item href="#/action-1">Resistor</Dropdown.Item>
                       <Dropdown.Item href="#/action-2">Capacitor</Dropdown.Item>
                       <Dropdown.Item href="#/action-3">All</Dropdown.Item>
@@ -175,7 +173,7 @@ const NotesList = () => {
           </div>
           {table}
         </div>
-      </>
+      </section>
     );
   }
 
@@ -183,31 +181,3 @@ const NotesList = () => {
 };
 
 export default NotesList;
-
-{
-  /* <table className="table table--notes">
-<thead className="table__thead">
-  <tr>
-    <th scope="col" className="table__th note__status">
-      Username
-    </th>
-    <th scope="col" className="table__th note__created">
-      Created
-    </th>
-    <th scope="col" className="table__th note__updated">
-      Updated
-    </th>
-    <th scope="col" className="table__th note__title">
-      Title
-    </th>
-    <th scope="col" className="table__th note__username">
-      Owner
-    </th>
-    <th scope="col" className="table__th note__edit">
-      Edit
-    </th>
-  </tr>
-</thead>
-<tbody>{tableContent}</tbody>
-</table> */
-}

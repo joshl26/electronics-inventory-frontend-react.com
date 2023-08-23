@@ -111,7 +111,6 @@ const PartsList = () => {
                     >
                       {partsListStatus}
                     </Dropdown.Toggle>
-
                     <Dropdown.Menu className="parts-status-dropdown-menu">
                       <Dropdown.Item
                         onClick={() => setPartsListStatus("In Stock")}

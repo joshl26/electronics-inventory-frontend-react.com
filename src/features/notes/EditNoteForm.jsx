@@ -158,6 +158,7 @@ const EditNoteForm = ({ note, users }) => {
               ASSIGNED TO:
             </label>
             <select
+              autoComplete="username"
               id="note-username"
               name="username"
               className="form__select"

@@ -267,7 +267,7 @@ const NewPartForm = ({ users, partTypes }) => {
               placeholder="Backorder Qty"
             />
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+          <Form.Group as={Col} md="3" controlId="validationUnitCost">
             <Form.Label>Unit Cost</Form.Label>
             <Form.Control
               onChange={onCostChanged}
@@ -282,7 +282,7 @@ const NewPartForm = ({ users, partTypes }) => {
         </Row>
 
         <Row className="mt-3 mb-3">
-          <Form.Group as={Col} md="3" controlId="validationStockQty">
+          <Form.Group as={Col} md="3" controlId="validationLocation">
             <Form.Label>Location</Form.Label>
             <Form.Control
               onChange={onLocationChanged}
@@ -291,7 +291,7 @@ const NewPartForm = ({ users, partTypes }) => {
               placeholder="Location"
             />
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+          <Form.Group as={Col} md="3" controlId="validationPackageType">
             <Form.Label>Package Type</Form.Label>
             <Form.Control
               onChange={onPackageTypeChanged}
@@ -300,7 +300,7 @@ const NewPartForm = ({ users, partTypes }) => {
               placeholder="Part Package"
             />
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+          <Form.Group as={Col} md="3" controlId="validationLotId">
             <Form.Label>Lot Id</Form.Label>
             <Form.Control
               onChange={onLotIdChanged}
@@ -312,7 +312,7 @@ const NewPartForm = ({ users, partTypes }) => {
         </Row>
 
         <Row className="mt-3 mb-3">
-          <Form.Group as={Col} md="3" controlId="validationStockQty">
+          <Form.Group as={Col} md="3" controlId="validationSerialNumber">
             <Form.Label>S/N</Form.Label>
             <Form.Control
               defaultValue={serialNumber}
@@ -321,7 +321,7 @@ const NewPartForm = ({ users, partTypes }) => {
               placeholder="Serial Number"
             />
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+          <Form.Group as={Col} md="3" controlId="validationMfgDate">
             <Form.Label>Mfg Date</Form.Label>
             <Form.Control
               onChange={onMfgDateChanged}
@@ -330,7 +330,7 @@ const NewPartForm = ({ users, partTypes }) => {
               placeholder=""
             />
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+          <Form.Group as={Col} md="3" controlId="validationManufacturer">
             <Form.Label>Manufacturer</Form.Label>
             <Form.Control
               onChange={onManufacturerChanged}
@@ -339,7 +339,7 @@ const NewPartForm = ({ users, partTypes }) => {
               placeholder="Manufacturer"
             />
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationBackorderQty">
+          <Form.Group as={Col} md="3" controlId="validationVendor">
             <Form.Label>Vendor</Form.Label>
             <Form.Control
               onChange={onVendorNameChanged}
@@ -351,7 +351,7 @@ const NewPartForm = ({ users, partTypes }) => {
         </Row>
 
         <Row className="mt-3 mb-3">
-          <Form.Group as={Col} md="2" controlId="validationStockQty">
+          <Form.Group as={Col} md="2" controlId="validationDateCreated">
             <Form.Label>Date Created</Form.Label>
             <Form.Control
               readOnly
@@ -360,7 +360,7 @@ const NewPartForm = ({ users, partTypes }) => {
               placeholder=""
             />
           </Form.Group>
-          <Form.Group as={Col} md="2" controlId="validationBackorderQty">
+          <Form.Group as={Col} md="2" controlId="validationCreatedBy">
             <Form.Label>Created By</Form.Label>
             <Form.Control
               readOnly
@@ -369,7 +369,7 @@ const NewPartForm = ({ users, partTypes }) => {
               placeholder=""
             />
           </Form.Group>
-          <Form.Group as={Col} md="2" controlId="validationStockQty">
+          <Form.Group as={Col} md="2" controlId="validationDateEdited">
             <Form.Label>Date Edited</Form.Label>
             <Form.Control
               readOnly
@@ -379,7 +379,7 @@ const NewPartForm = ({ users, partTypes }) => {
               placeholder=""
             />
           </Form.Group>
-          <Form.Group as={Col} md="2" controlId="validationBackorderQty">
+          <Form.Group as={Col} md="2" controlId="validationEditedBy">
             <Form.Label>Edited By</Form.Label>
             <Form.Control
               readOnly
