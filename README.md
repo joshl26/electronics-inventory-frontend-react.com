@@ -14,7 +14,7 @@
   </a>
 </p>
 
-Electronics Inventory is a full-stack website project where users can keep track of an electronics lab inventory. With thousands of small components its easy to lose track of where and how many of each part you currently have in stock. With this website you have full control over you inventory, from anywhere in the world. In order to use this website, you must have an account. This project was coded from scratch by myself as a capstone project for my career change into Software Engineering.
+Electronics Inventory is a cutting-edge SAAS webapp that efficiently organizes electronic lab inventory for both small businesses and individuals with ease. With its user-friendly interface, you can effortlessly keep track of thousands of small components and have complete command over your inventory from anywhere in the world. To take advantage of this revolutionary app, you must have an account. I am proud to say that I created this project from scratch as a capstone project for my career change into Software Engineering.
 
 ## Demo
 
