@@ -16,6 +16,12 @@
 
 Electronics Inventory is a full-stack website project where users can keep track of an electronics lab inventory. With thousands of small components its easy to lose track of where and how many of each part you currently have in stock. With this website you have full control over you inventory, from anywhere in the world. In order to use this website, you must have an account. This project was coded from scratch by myself as a capstone project for my career change into Software Engineering.
 
+## Demo
+
+### ✨ [Live Site Demo](https://el-in.ca)
+
+<p>Hosted with the free tier of Render.com</p>
+
 ## Backend Code is in this Repository
 
 - [Electronics Inventory Backend Code](https://github.com/joshl26/electronics-inventory-backend)
@@ -88,12 +94,6 @@ Electronics Inventory is a full-stack website project where users can keep track
 
 > Login & Register page
 > ![login,register](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_3.png)
-
-## Demo
-
-### ✨ [Live Site Demo](https://el-in.ca)
-
-<p>Hosted with the free tier of Render.com</p>
 
 ## Prerequisites
 
