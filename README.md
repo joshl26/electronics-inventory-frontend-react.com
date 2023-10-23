@@ -65,7 +65,7 @@ If you would like to see my progress throughout the development of this applicat
 
 ## Introduction
 
-Electronics Inventory is a cutting-edge SAAS webapp that efficiently organizes electronic lab inventory for both small businesses and individuals with ease. With its user-friendly interface, you can effortlessly keep track of thousands of small components and have complete command over your inventory from anywhere in the world. To take advantage of this revolutionary app, you must have an account.
+Electronics Inventory is a cutting-edge SAAS web app that efficiently organizes electronic lab inventory for both small businesses and individuals with ease. With its user-friendly interface, you can effortlessly keep track of thousands of small components and have complete command over your inventory from anywhere in the world. To take advantage of this revolutionary app, you must have an account.
 
 Electronics inventory software is the best way to keep track of stock and ensure that your business has the right items in the right amounts.
 
@@ -101,11 +101,11 @@ I am proud to say that I created this project from scratch as a capstone project
 
 ## Functionalities
 
-- The user will have to login to edit the inventory details.
+- The user will have to log in to edit the inventory details.
 
-- The user can only edit/delete the inventory that they have access too.
+- The user can only edit/delete the inventory that they have access to.
 
-- All the data will pe persistent and is stored in the amazon cloud.
+- All the data will be persistent and be stored in the Amazon cloud.
 
 <a name="technologies-utilized"></a>
 
@@ -147,17 +147,17 @@ Electronics inventory uses Javascript so you will need node.js installed to run 
 
 You will also need `git` installed on your computer. You can download it [here](https://git-scm.com/downloads).
 
-Next open a git bash wherever you would like to store electronics inventory and run:
+Next, open a git bash wherever you would like to store electronics inventory and run:
 
 ### Frontend (Client) installation
 
 `git clone https://github.com/joshl26/electronics-inventory-frontend`
 
-Once you have the project on your local machine you will want open it in a new terminal window and run:
+Once you have the project on your local machine you will want to open it in a new terminal window and run:
 
 `npm install`
 
-This command will install the client side dependencies, this may take a bit of time.
+This command will install the client-side dependencies, this may take a bit of time.
 
 Once the installation of the dependencies is complete you can start the project by typing the following command:
 
@@ -171,11 +171,11 @@ and you will have the development version of the frontend (client) application r
 
 `git clone https://github.com/joshl26/electronics-inventory-backend`
 
-Once you have the project on your local machine you will want open it in a new terminal window and run:
+Once you have the project on your local machine you will want to open it in a new terminal window and run:
 
 `npm install`
 
-This command will install the server side dependencies, this may take a bit of time.
+This command will install the server-side dependencies, this may take a bit of time.
 
 Once the installation of the dependencies is complete you can start the project by typing the following command:
 
@@ -409,7 +409,7 @@ Above is an example of the payload sent upon making a `POST` request to the /par
 }
 ```
 
-Above is an example of the payload that is sent upon making a `POST` request to the /users route effectively creating a new user in the DB by utilizing the createNewUser controller.
+Above is an example of the payload sent upon making a `POST` request to the /users route effectively creating a new user in the DB by utilizing the createNewUser controller.
 
 ```json
 {
@@ -439,7 +439,6 @@ This is the home page of the electronics inventory system dashboard. Clicking on
 
 ## Usage - Parts List Page
 
-**Parts List Page**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/el-in-parts-list.png)
 
 While in the inventory page tab, you will be met with your entire electronics inventory in table form. Clicking on a part row in a table will open a new window displaying all the current information regarding that specific part.
@@ -448,55 +447,47 @@ While in the inventory page tab, you will be met with your entire electronics in
 
 ## Usage - New Part Page
 
-**Create Part Page**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/el-in-add-new-part.png)
 
 <a name="usage-edit-part"></a>
 
 ## Usage - Edit Part Page
 
-**Edit Part Page**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/el-in-edit-part-details.png)
 
 <a name="usage-users-list"></a>
 
 ## Usage - Users List Page
 
-**Users List Page**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/el-in-users-list.png)
 
 <a name="usage-new-user"></a>
 
 ## Usage - New User Page
 
-**Create User Page**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/el-in-new-user.png)
 
 <a name="usage-edit-user"></a>
 
 ## Usage - Edit User Page
 
-**Edit User Page**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/el-in-edit-user.png)
 
 <a name="usage-notes-list"></a>
 
 ## Usage - Notes List Page
 
-**Notes List Page**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/el-in-notes-list.png)
 
 ## Usage - New Note Page
 
-**New Note Page**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/el-in-add-new-note.png)
 
 <a name="usage-edit-part-info"></a>
 
 ## Usage - Edit Note Page
 
-**Edit Note Page**
-![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/el-in-edit.png)
+![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/el-in-edit-note.png)
 
 <a name="usage-tablet"></a>
 
@@ -518,16 +509,12 @@ While in the root folder, running `npm run test` in the terminal will run the te
 
 ## Screenshots
 
-**Home Page**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_1.png)
 
-**Home Page Continued**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_2.png)
 
-**User Login Page**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/electronicsInventory_3.png)
 
-**Dashboard**
 ![](https://raw.githubusercontent.com/joshl26/joshl26/main/assets/Laptop_el-in_1.png)
 
 <a name="author"></a>
